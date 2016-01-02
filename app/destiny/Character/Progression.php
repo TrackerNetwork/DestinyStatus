@@ -42,6 +42,7 @@ class Progression extends Model
 	const TOS_WINS            = 'r1_s3_tickets.pvp.trials_of_osiris.wins';
 	const TOS_LOSSES          = 'r1_s3_tickets.pvp.trials_of_osiris.losses';
 	const GUNSMITH            = 'r1_s4_factions_gunsmith';
+	const SRL                 = 'r1_s4_pvp_racing';
 
 	protected $names = [
 		self::WEEKLY_PVE        => 'Weekly Vanguard Marks',
@@ -58,6 +59,7 @@ class Progression extends Model
 		self::IRON_BANNER       => 'Iron Banner',
 		self::HOUSE_OF_JUDGMENT => 'House of Judgment',
 		self::GUNSMITH          => 'Gunsmith',
+		self::SRL               => 'SRL',
 	];
 
 	/**

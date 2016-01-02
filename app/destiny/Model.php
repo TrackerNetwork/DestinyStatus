@@ -99,12 +99,12 @@ abstract class Model implements JsonSerializable, ArrayableInterface, ArrayAcces
 			return $this->cached[$key];
 		}
 
-		$value  = (isset($this->properties[$key]) ? $this->properties[$key] : null);
-		$method = 'g'.$key;
+		$value         = (isset($this->properties[$key]) ? $this->properties[$key] : null);
+		$mutator       = 'g'.$key;
 
-		if (is_callable([$this, $method]))
+		if (is_callable([$this, $mutator]))
 		{
-			$this->cached[$key] = $value = $this->$method($value);
+			$this->cached[$key] = $value = $this->$mutator($value);
 		}
 
 		return $value;

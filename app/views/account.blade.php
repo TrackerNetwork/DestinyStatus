@@ -82,7 +82,7 @@
 						@include('block/progression', ['progression' => $character->progression->erisMorn])
 						@include('block/progression', ['progression' => $character->progression->queen])
 						@include('block/progression', ['progression' => $character->progression->houseOfJudgment])
-
+                        @include('block/progression', ['progression' => $character->progression->srl])
 						{{--
 						@foreach($character->progression as $progression)
 						@include('block/progression', ['progression' => $progression])

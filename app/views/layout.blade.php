@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="csrf-token" content="<?= csrf_token() ?>">
-	<title>@yield('title', 'Destiny Status')</title>
+     <meta name="description" content="Destiny progression, weekly checklist and Grimoire completion!">
+	<title>@yield('title', 'Destiny Status - Character Progress & Checklist')</title>
 	<link rel="shortcut icon" href="{{ url('favicon.ico') }}"/>
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500">
 	<link rel="stylesheet" type="text/css" href="<?= Asset::url('css/destiny.css') ?>">
@@ -83,6 +84,9 @@
 
   ga('create', 'UA-55937533-1', 'auto');
   ga('send', 'pageview');
+
+  ga('create', 'UA-42280104-15', 'auto', { 'name' : 'tracker' });
+  ga('tracker.send', 'pageview');
 </script>
 
 </body>

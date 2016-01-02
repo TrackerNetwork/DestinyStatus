@@ -24,7 +24,8 @@ class ProgressionCollection extends Collection
 	const QUEEN               = '807090922';
 	const TOS_WINS            = '692939593';
 	const TOS_LOSSES          = '2760041825';
-
+	const gSrl                = '2763619072';
+     
 	public function __construct(Character $character, array $properties)
 	{
 		foreach ($properties['progressions'] as $properties)
@@ -112,5 +113,10 @@ class ProgressionCollection extends Collection
 	protected function gTrialsLosses()
 	{
 		return $this->get(self::TOS_LOSSES);
+	}
+    
+	protected function gSrl()
+	{
+		return $this->get(self::SRL);
 	}
 }

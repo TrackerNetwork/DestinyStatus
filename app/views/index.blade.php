@@ -7,7 +7,7 @@
  * @var array $entry
  */
 ?>
-
+<div class="alert alert-success">Good news! Destiny Status is here to stay, and we're going open source! More details soon!</div>
 <?php if(isset($advisors)): ?>
 	<?php if($advisors->events->count()): ?>
 	<h3>Current events</h3>
