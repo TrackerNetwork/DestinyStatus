@@ -1,11 +1,13 @@
 /.idea
+/.vscode
 /.sass-cache
 /bootstrap/compiled.php
 /vendor
 /node_modules
 /app/assets/vendor
 /app/config/local/*
-/app/config/**/*
+/app/config/production/*
+/app/config/packages/**/production/*
 /public/data
 composer.phar
 .env.*.php
