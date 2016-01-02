@@ -68,17 +68,10 @@ class Card extends Model
 	 * @var array
 	 */
 	protected $psnExclusive = [
-		'302095' => 'Hawkmoon',
-		'302035' => 'Monte Carlo',
-		'601030' => 'Dust Palace',
-		'205070' => 'Siege Dancers',
-		'601040' => 'The Psion Flayers',
-		'303093' => 'The 4th Horseman',
-		'603073' => 'The Undying Mind (Enemy)',
-		'601150' => 'The Undying Mind (Strike)',
-		'609060' => 'Exodus Blue',
-		'609110' => 'Timekeeper',
-		'609180' => 'Skyshock',
+		'701650' => 'Echo Chamber',
+		'701700' => 'Sector 618',
+		'700150' => 'The Jade Rabit',
+		'700590' => 'Theosyion, the Restorative Mind'
 	];
 
 	public function __construct(Page $page, array $properties)
