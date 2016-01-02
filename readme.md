@@ -1,6 +1,6 @@
 ## DestinyStatus
 
-### Community, please help us build this site! We are accepting all pull-requests that are in the spirit of the site.  For all other ideas and concepts, please contact [/u/htr_xorth](https://www.reddit.com/user/htr_xorth), we can figure out something! 
+### Community, please help us build this site! We are accepting all pull-requests that are in the spirit of the site.  For all other ideas and concepts, please create an issue, we can figure out something! 
 
 This project is based on the Laravel framework [v4.2].
 
