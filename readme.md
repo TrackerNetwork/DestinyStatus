@@ -21,10 +21,10 @@ Please [read these instructions](https://laravel.com/docs/4.2#server-requirement
 ### Compile CSS/JS
 
 1. Install bower: `npm install -g bower`
-2. Install gulp: `npm install -g gulp`
+2. Install grunt: `npm install -g grunt-cli`
 3. Install dependencies:
     * `bower install`
     * `npm install`
 4. Build:
-    * Local: `gulp`
-    * Production: `gulp --production`
+    * Local: `grunt`
+    * Production: `grunt --production`
