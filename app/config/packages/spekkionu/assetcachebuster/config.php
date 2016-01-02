@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Config;
+
 return array(
 
     /*
@@ -19,7 +21,7 @@ return array(
     |
     */
 
-    'enable' => true,
+    'enable' => ! Config::get('app.debug'),
 
     /*
     |--------------------------------------------------------------------------
