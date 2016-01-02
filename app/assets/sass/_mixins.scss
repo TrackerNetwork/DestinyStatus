@@ -1,0 +1,18 @@
+// Bootstrap mixins
+@import "bootstrap/mixins";
+
+// Compass mixins
+@import "compass-mixins/lib/compass/utilities";
+@import "compass-mixins/lib/compass/css3";
+@import "compass-mixins/lib/animation/core";
+
+//
+// Clearfix
+//---------------------------------------------------
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

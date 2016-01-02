@@ -1,0 +1,25 @@
+{
+  "name": "TrackerNetwork/DestinyStatus",
+  "version": "1.0",
+  "description": "Destiny Status",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "jquery-cookie": "~1.4.1",
+    "jquery-placeholder": "~2.0.8",
+    "jquery-mousewheel": "~3.1.12",
+    "jquery-mcustomscrollbar": "malihu-custom-scrollbar-plugin#~3.0.3",
+    "greensock": "~1.12.1",
+    "underscore": "~1.6.0",
+    "bootstrap": "bootstrap-sass-official#~3.2.0",
+    "font-awesome": "~4.2.0",
+    "compass-mixins": "~1.0.0"
+  }
+}

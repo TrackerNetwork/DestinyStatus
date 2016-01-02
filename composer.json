@@ -1,0 +1,55 @@
+{
+	"name": "TrackerNetwork/DestinyStatus",
+	"description": "A website for checking your Destiny character status",
+	"keywords": ["destiny", "gamestats"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Frode Knutsen",
+			"email": "frodekn@gmail.com"
+		}
+	],
+	"require": {
+		"laravel/framework": "4.2.*",
+		"barryvdh/laravel-debugbar": "~1.8",
+		"barryvdh/laravel-ide-helper": "1.*",
+		"guzzlehttp/guzzle": "~5.0",
+		"guzzlehttp/log-subscriber": "~1.0",
+		"spekkionu/assetcachebuster": "~1.0",
+		"bugsnag/bugsnag-laravel": "1.*"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/database/migrations",
+			"app/database/seeds"
+		],
+		"psr-4": {
+			"Destiny\\": "app/destiny"
+		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize",
+			"php artisan ide-helper:generate",
+			"php artisan destiny:version",
+			"php artisan destiny:manifest"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize",
+			"php artisan ide-helper:generate",
+			"php artisan destiny:version",
+			"php artisan destiny:manifest"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable"
+}

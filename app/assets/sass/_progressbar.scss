@@ -1,0 +1,64 @@
+
+.progress-bar[aria-valuenow="0"],
+.progress-bar[aria-valuenow="1"],
+.progress-bar[aria-valuenow="2"]
+{
+  min-width: 0;
+}
+
+.progress {
+  margin: 0;
+  border-radius: 0px;
+  @include box-shadow(none);
+
+  height: $progress-bar-height;
+  @include gradient-vertical(darken(#89978F, 5%), #89978F);
+  //@include gradient-vertical(rgba(0,0,0,0.2), transparent);
+  //background: rgba(255, 255, 255, 0.15);
+
+  .progress-bar {
+    @include gradient-vertical($progress-bar-active, darken($progress-bar-active, 5%));
+    //background: $background-color-from;//#5da469;
+    font-size: 11px;
+    line-height: 16px;
+    white-space: nowrap;
+    @include box-shadow(none);
+    text-align: left;
+
+    &:before { content: "\a0"; }
+  }
+}
+
+.panel .progress {
+
+  background-color: darken($progress-bar-bg, 2.5%);
+  background-image: none;
+  @include box-shadow(inset 0 2px 4px #476166);
+  //@include gradient-vertical(darken($progress-bar-bg, 3%), darken($progress-bar-bg, 2%));
+  //@include gradient-vertical(darken($panel-bg, 3%), darken($panel-bg, 2%));
+  height: 18px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid $panel-bg;
+
+  &[data-complete="true"] {
+    border-top: 1px solid rgba(0,0,0,0.3);
+  }
+
+  .progress-bar[aria-valuenow="0"] {
+    color: darken($background-color-from, 5%);
+  }
+  .progress-bar[aria-valuenow="100"] {
+    //@include gradient-vertical(darken($color-moteoflight, 20%), darken($color-moteoflight, 25%));
+    @include gradient-vertical($progress-bar-complete, darken($progress-bar-complete, 5%));
+    color: white;
+  }
+}
+
+.grimoire-index .progress {
+  &[data-complete="true"] {
+    border-top: 1px solid darken($color-moteoflight, 25%);
+  }
+  .progress-bar[aria-valuenow="100"] {
+    @include gradient-vertical(darken($color-moteoflight, 23%), darken($color-moteoflight, 28%));
+  }
+}
