@@ -32,4 +32,17 @@ class Activity extends ActivityDefinition
 		$this->rewards->put($definition->activityLevel, $level);
 
 	}
+
+	public function addActiveSkulls(ActivityDefinition $definition, array $skulls)
+	{
+		foreach ($definition->getNonMutatedProperty('skulls') as $key => $skull)
+		{
+			if (! in_array($key, $skulls))
+			{
+				unset($definition->properties['skulls'][$key]);
+			}
+		}
+
+		$this->skulls = $definition->getNonMutatedProperty('skulls');
+	}
 }

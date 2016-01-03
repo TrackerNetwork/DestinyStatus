@@ -110,6 +110,18 @@ abstract class Model implements JsonSerializable, ArrayableInterface, ArrayAcces
 		return $value;
 	}
 
+	protected function getNonMutatedProperty($key)
+	{
+		if (isset($this->cached[$key]))
+		{
+			return $this->cached[$key];
+		}
+
+		$value         = (isset($this->properties[$key]) ? $this->properties[$key] : null);
+
+		return $value;
+	}
+
 	protected function setProperty($key, $value)
 	{
 		$this->properties[$key] = $value;

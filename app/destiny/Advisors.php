@@ -34,15 +34,19 @@ class Advisors extends Model
 
 	protected function gNightfall()
 	{
-		if ( ! $this->nightfallActivityHash)
+		$nightfall = $this->getNonMutatedProperty('nightfall');
+
+		if ($nightfall == null)
 		{
 			return null;
 		}
 
-		$definition = manifest()->activity($this->nightfallActivityHash);
+		$definition = manifest()->activity($nightfall['specificActivityHash']);
+		$skulls = manifest()->activity($nightfall['activityBundleHash']);
 
 		$activity = new Advisors\Activity($this, $definition, $this->nightfallResetDate);
-		$activity->addLevelRewards($definition);
+		$activity->addLevelRewards($skulls);
+		$activity->addActiveSkulls($skulls, $nightfall['tiers'][0]['skullIndexes']);
 
 		return $activity;
 	}
