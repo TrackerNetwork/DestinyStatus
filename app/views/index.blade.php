@@ -24,14 +24,7 @@
 			<h3>Daily Story Mission</h3>
 			@include('block/advisor', ['advisor' => $advisors->daily])
 		</div>
-		@endif
-
-		@if($advisors->heroic)
-		<div class="col-md-4 heroic">
-			<h3>Weekly Heroic Strike</h3>
-			@include('block/advisor', ['advisor' => $advisors->heroic])
-		</div>
-		@endif
+		@endif		
 
 		@if($advisors->nightfall)
 		<div class="col-md-4 nightfall">
