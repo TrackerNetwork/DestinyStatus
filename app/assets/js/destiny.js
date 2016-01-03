@@ -7,7 +7,7 @@ $(function()
 		var $tab = $(this)
 			, $group = $tab.data('group');
 		if ($group) $.cookie('t'+$group, $tab.attr('href'));
-  });
+  	});
 
 	$.each($.cookie(), function(cookie) {
 		$('a[href="'+ $.cookie(cookie)+'"]').tab('show');
@@ -35,7 +35,7 @@ $(function()
 			ctx.drawImage(img, 0, 0, w, h, x, y, w, h);
 		};
 		*/
-	})
+	});
 
 	$('[data-toggle="popover"]').popover({
 		container: 'body',
