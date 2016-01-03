@@ -51,7 +51,17 @@ class Inventory extends Model
 
 	public function __construct(Character $character, array $properties)
 	{
-		parent::__construct($properties);
+		$items = [];
+		foreach(array_get($properties, 'items', null) as $property)
+		{
+			$hash = (string) $property['itemHash'];
+			$definition = manifest()->inventoryItem($hash);
+			$property = array_merge($property, $definition->getProperties());
+
+			$items['buckets'][$property['bucketHash']] = new InventoryItem(new InventoryBucket($this, $properties), $property);
+		}
+
+		parent::__construct($items);
 		$this->character = $character;
 	}
 
@@ -63,28 +73,6 @@ class Inventory extends Model
 	protected function gAccount()
 	{
 		return $this->character->account;
-	}
-
-	protected function gBuckets()
-	{
-		$bucketData = array_get($this->properties, 'buckets.Equippable') ?: [];
-		$collection = $this->newCollection();
-
-		foreach ($bucketData as $properties)
-		{
-			$bucketHash = (string) $properties['bucketHash'];
-
-			/** @var \Destiny\Character\InventoryBucket $bucket */
-			$bucket = $collection->get($bucketHash);
-
-			if ( ! $bucket)
-			{
-				$bucket = new InventoryBucket($this, $properties);
-				$collection->put($bucketHash, $bucket);
-			};
-		}
-
-		return $collection->sortBy('bucketOrder');
 	}
 
 	protected function gSubclass()

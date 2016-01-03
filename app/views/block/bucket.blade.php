@@ -1,11 +1,7 @@
 <?php
 /**
- * @var \Destiny\Character\InventoryBucket $bucket
  * @var \Destiny\Character\InventoryItem $item
  */
-
-$item = $bucket->equipped;
-
 ?>
 
 @if($item)

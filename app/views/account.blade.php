@@ -46,26 +46,26 @@
 			<div class="tab-content">
 				<div class="inventory tab-pane active" role="tabpanel" id="inventory-<?=$i?>">
 					<div class="equipment panel">
-						@include('block/bucket', ['bucket' => $inventory->subclass])
-						@include('block/bucket', ['bucket' => $inventory->primaryWeapons])
-						@include('block/bucket', ['bucket' => $inventory->specialWeapons])
-						@include('block/bucket', ['bucket' => $inventory->heavyWeapons])
-						@include('block/bucket', ['bucket' => $inventory->ghost])
+						@include('block/bucket', ['item' => $inventory->subclass])
+						@include('block/bucket', ['item' => $inventory->primaryWeapons])
+						@include('block/bucket', ['item' => $inventory->specialWeapons])
+						@include('block/bucket', ['item' => $inventory->heavyWeapons])
+						@include('block/bucket', ['item' => $inventory->ghost])
 					</div>
 					<div class="equipment panel">
-						@include('block/bucket', ['bucket' => $inventory->head])
-						@include('block/bucket', ['bucket' => $inventory->arms])
-						@include('block/bucket', ['bucket' => $inventory->chest])
-						@include('block/bucket', ['bucket' => $inventory->legs])
-						@include('block/bucket', ['bucket' => $inventory->class])
-						@include('block/bucket', ['bucket' => $inventory->artifact])
+						@include('block/bucket', ['item' => $inventory->head])
+						@include('block/bucket', ['item' => $inventory->arms])
+						@include('block/bucket', ['item' => $inventory->chest])
+						@include('block/bucket', ['item' => $inventory->legs])
+						@include('block/bucket', ['item' => $inventory->class])
+						@include('block/bucket', ['item' => $inventory->artifact])
 					</div>
 					<div class="equipment panel">
-						@include('block/bucket', ['bucket' => $inventory->shader])
-						@include('block/bucket', ['bucket' => $inventory->emblem])
-						@include('block/bucket', ['bucket' => $inventory->vehicle])
-						@include('block/bucket', ['bucket' => $inventory->ship])
-						@include('block/bucket', ['bucket' => $inventory->emote])
+						@include('block/bucket', ['item' => $inventory->shader])
+						@include('block/bucket', ['item' => $inventory->emblem])
+						@include('block/bucket', ['item' => $inventory->vehicle])
+						@include('block/bucket', ['item' => $inventory->ship])
+						@include('block/bucket', ['item' => $inventory->emote])
 					</div>
 				</div>
 
