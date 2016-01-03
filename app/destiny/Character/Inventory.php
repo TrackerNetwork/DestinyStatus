@@ -74,84 +74,94 @@ class Inventory extends Model
 	{
 		return $this->character->account;
 	}
+	
+	protected function gItems($key)
+	{
+		if (array_key_exists($key, $this->properties['buckets']))
+		{
+			return $this->properties['buckets'][$key];
+		}
+		
+		return null;
+	}
 
 	protected function gSubclass()
 	{
-		return $this->buckets[self::BUCKET_SUBCLASS];
+		return $this->gItems(self::BUCKET_SUBCLASS);
 	}
 
 	protected function gPrimaryWeapons()
 	{
-		return $this->buckets[self::BUCKET_PRIMARY_WEAPONS];
+		return $this->gItems(self::BUCKET_PRIMARY_WEAPONS);
 	}
 
 	protected function gSpecialWeapons()
 	{
-		return $this->buckets[self::BUCKET_SPECIAL_WEAPONS];
+		return $this->gItems(self::BUCKET_SPECIAL_WEAPONS);
 	}
 
 	protected function gHeavyWeapons()
 	{
-		return $this->buckets[self::BUCKET_HEAVY_WEAPONS];
+		return $this->gItems(self::BUCKET_HEAVY_WEAPONS);
 	}
 
 	protected function gHead()
 	{
-		return $this->buckets[self::BUCKET_HEAD];
+		return $this->gItems(self::BUCKET_HEAD);
 	}
 
 	protected function gArms()
 	{
-		return $this->buckets[self::BUCKET_ARMS];
+		return $this->gItems(self::BUCKET_ARMS);
 	}
 
 	protected function gChest()
 	{
-		return $this->buckets[self::BUCKET_CHEST];
+		return $this->gItems(self::BUCKET_CHEST);
 	}
 
 	protected function gLegs()
 	{
-		return $this->buckets[self::BUCKET_LEGS];
+		return $this->gItems(self::BUCKET_LEGS);
 	}
 
 	protected function gClass()
 	{
-		return $this->buckets[self::BUCKET_CLASS];
+		return $this->gItems(self::BUCKET_CLASS);
 	}
 
 	protected function gVehicle()
 	{
-		return $this->buckets[self::BUCKET_VEHICLES];
+		return $this->gItems(self::BUCKET_VEHICLES);
 	}
 
 	protected function gShip()
 	{
-		return $this->buckets[self::BUCKET_SHIPS];
+		return $this->gItems(self::BUCKET_SHIPS);
 	}
 
 	protected function gGhost()
 	{
-		return $this->buckets[self::BUCKET_GHOST];
+		return $this->gItems(self::BUCKET_GHOST);
 	}
 
 	protected function gShader()
 	{
-		return $this->buckets[self::BUCKET_SHADERS];
+		return $this->gItems(self::BUCKET_SHADERS);
 	}
 
 	protected function gEmblem()
 	{
-		return $this->buckets[self::BUCKET_EMBLEMS];
+		return $this->gItems(self::BUCKET_EMBLEMS);
 	}
 
 	protected function gEmote()
 	{
-		return $this->buckets[self::BUCKET_EMOTES];
+		return $this->gItems(self::BUCKET_EMOTES);
 	}
 
 	protected function gArtifact()
 	{
-		return $this->buckets[self::BUCKET_ARTIFACTS];
+		return $this->gItems(self::BUCKET_ARTIFACTS);
 	}
 }
