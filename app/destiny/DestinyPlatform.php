@@ -31,7 +31,7 @@ class DestinyPlatform
 
 	public function account(Player $player)
 	{
-		return $this->request("destiny/$player->membershipType/account/$player->membershipId/", CACHE_DEFAULT);
+		return $this->request("destiny/$player->membershipType/account/$player->membershipId/summary/", CACHE_DEFAULT);
 	}
 
 	public function inventory(Character $character)
@@ -40,7 +40,7 @@ class DestinyPlatform
 		$membershipId = $character->membershipId;
 		$characterId = $character->characterId;
 
-		return $this->request("destiny/$membershipType/account/$membershipId/character/$characterId/inventory/", CACHE_DEFAULT);
+		return $this->request("destiny/$membershipType/account/$membershipId/character/$characterId/inventory/summary/", CACHE_DEFAULT);
 	}
 
 	public function progression(Character $character)
