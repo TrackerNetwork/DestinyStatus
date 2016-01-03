@@ -64,6 +64,7 @@
 						@include('block/bucket', ['item' => $inventory->shader])
 						@include('block/bucket', ['item' => $inventory->emblem])
 						@include('block/bucket', ['item' => $inventory->vehicle])
+						@include('block/bucket', ['item' => $inventory->sparrowHorn])
 						@include('block/bucket', ['item' => $inventory->ship])
 						@include('block/bucket', ['item' => $inventory->emote])
 					</div>

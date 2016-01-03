@@ -43,6 +43,7 @@ class Inventory extends Model
 	const BUCKET_EMBLEMS         = '4274335291';
 	const BUCKET_EMOTES          = '3054419239';
 	const BUCKET_ARTIFACTS       = '434908299';
+	const BUCKET_SPARROW_HORN    = '3796357825';
 
 	/**
 	 * @var \Destiny\Character
@@ -163,5 +164,10 @@ class Inventory extends Model
 	protected function gArtifact()
 	{
 		return $this->gItems(self::BUCKET_ARTIFACTS);
+	}
+
+	protected function gSparrowHorn()
+	{
+		return $this->gItems(self::BUCKET_SPARROW_HORN);
 	}
 }
