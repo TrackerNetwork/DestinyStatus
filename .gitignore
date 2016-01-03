@@ -19,3 +19,6 @@ _ide_helper.php
 Thumbs.db
 /app/storage/cookies
 /app/database/manifest/*
+
+# OS Generated Files #
+*~

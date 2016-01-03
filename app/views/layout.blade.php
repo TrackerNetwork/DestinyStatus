@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="csrf-token" content="<?= csrf_token() ?>">
-     <meta name="description" content="Destiny progression, weekly checklist and Grimoire completion!">
+	<meta name="description" content="Destiny progression, weekly checklist and Grimoire completion!">
 	<title>@yield('title', 'Destiny Status - Character Progress & Checklist')</title>
 	<link rel="shortcut icon" href="{{ url('favicon.ico') }}"/>
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500">
