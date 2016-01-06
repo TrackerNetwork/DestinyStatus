@@ -40,6 +40,7 @@ class ActivityType extends Definition
 
 	public function isDaily()
 	{
+		// cannot be trusted anymore. Daily PVE Events do not have this ActivityType
 		return $this->identifier == 'ACTIVITY_TYPE_STORY_FEATURED';
 	}
 

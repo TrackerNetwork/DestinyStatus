@@ -104,6 +104,14 @@
 						@include('block/weekly', ['progression' => $character->progression->weeklyCrucible])
 					</div> */ ?>
 
+					@if(count($character->dailyAndNightfall))
+					<div class="panel-heading">Activities</div>
+					<div class="activities panel">
+						@foreach($character->dailyAndNightfall as $activity)
+								@include('block/activity', ['activity' => $activity])
+							@endforeach
+						</div>
+					@endif
 					@if(count($character->weeklyRaids))
 					<div class="panel-heading">Raids</div>
 					<div class="activities panel">

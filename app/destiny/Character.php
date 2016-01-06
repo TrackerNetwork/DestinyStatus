@@ -213,6 +213,11 @@ class Character extends Model
 		return $this->activities->weekly;
 	}
 
+	protected function gDailyAndNightfall()
+	{
+		return $this->activities->dailyAndNightfall;
+	}
+
 	protected function gWeeklyStrikes()
 	{
 		return $this->activities->weeklyStrikes;

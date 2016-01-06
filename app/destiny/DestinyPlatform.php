@@ -80,6 +80,11 @@ class DestinyPlatform
 		return $this->statsActivityHistory($character, "ArenaChallenge");
 	}
 
+	public function pve(Character $character)
+	{
+		return $this->statsActivityHistory($character, "AllPvE", 0, 35);
+	}
+
 	public function statsAccount(Player $player)
 	{
 		return $this->request("destiny/stats/account/$player->membershipType/$player->membershipId/", ['groups' => ['General']], CACHE_DEFAULT);
