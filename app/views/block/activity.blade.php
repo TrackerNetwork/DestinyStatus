@@ -19,7 +19,7 @@
 				<strong><?= ($activity->activityLevel) ?></strong>
 			</span>
 		</div>
-		@if($activity->isRaid())
+		@if($activity->isRaid() || $activity->isArena())
 		<div class="stats opaque">
 			Completions:
 			<strong><?= $activity->timesCompleted ?></strong>
