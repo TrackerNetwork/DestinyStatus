@@ -39,7 +39,7 @@
 			<ul class="nav nav-pills nav-justified" role="tablist">
 				<li class="active"><a href="#inventory-<?=$i?>" role="tab" data-toggle="tab" data-group="<?=$i?>">Items</a></li>
 				<li><a href="#progressions-<?=$i?>" role="tab" data-toggle="tab" data-group="<?=$i?>">Reputation</a></li>
-				<li><a href="#weekly-<?=$i?>" role="tab" data-toggle="tab" data-group="<?=$i?>">Weekly</a></li>
+				<li><a href="#weekly-<?=$i?>" role="tab" data-toggle="tab" data-group="<?=$i?>">Checklist</a></li>
 				<li><a href="#stats-<?=$i?>" role="tab" data-toggle="tab" data-group="<?=$i?>">Stats</a></li>
 			</ul>
 
@@ -104,6 +104,14 @@
 						@include('block/weekly', ['progression' => $character->progression->weeklyCrucible])
 					</div> */ ?>
 
+					@if(count($character->dailyAndNightfall))
+					<div class="panel-heading">Activities</div>
+					<div class="activities panel">
+						@foreach($character->dailyAndNightfall as $activity)
+							@include('block/activity', ['activity' => $activity])
+						@endforeach
+					</div>
+					@endif
 					@if(count($character->weeklyRaids))
 					<div class="panel-heading">Raids</div>
 					<div class="activities panel">
