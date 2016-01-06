@@ -22,7 +22,7 @@ $pvp   = $stats->pvp;
 		<tbody id="<?= $key ?>">
 			<tr>
 				<td class="header" colspan="2">Score</td>
-				<td><?= $pvp->score->value ?></td>
+				<td><?= $pvp->score->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header" colspan="2">K/D Ratio</td>
@@ -44,7 +44,7 @@ $pvp   = $stats->pvp;
 			</tr>
 			<tr>
 				<td class="header" colspan="2">Top Match Score</td>
-				<td><?= $pvp->bestSingleGameScore->value ?></td>
+				<td><?= $pvp->bestSingleGameScore->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header" colspan="2">Top Match Kills</td>
@@ -52,7 +52,7 @@ $pvp   = $stats->pvp;
 			</tr>
 			<tr>
 				<td class="header" colspan="2">Zones Captured</td>
-				<td><?= $pvp->zonesCaptured->value ?></td>
+				<td><?= $pvp->zonesCaptured->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header" colspan="2">Matches Won</td>
@@ -78,11 +78,11 @@ $pvp   = $stats->pvp;
 		<tbody id="<?= $key ?>">
 			<tr>
 				<td class="header" colspan="2">Public Events Joined</td>
-				<td><?= $pve->publicEventsJoined->value ?></td>
+				<td><?= $pve->publicEventsJoined->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header" colspan="2">Public Events Completed</td>
-				<td><?= $pve->publicEventsCompleted->value ?></td>
+				<td><?= $pve->publicEventsCompleted->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header" colspan="2">Activities Cleared</td>
@@ -110,33 +110,33 @@ $pvp   = $stats->pvp;
 		<tbody id="<?= $key ?>">
 			<tr>
 				<td class="header">Kills</td>
-				<td><?= $pve->kills->value ?></td>
-				<td><?= $pvp->kills->value ?></td>
+				<td><?= $pve->kills->formattedValue ?></td>
+				<td><?= $pvp->kills->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Assists</td>
-				<td><?= $pve->assists->value ?></td>
-				<td><?= $pvp->assists->value ?></td>
+				<td><?= $pve->assists->formattedValue ?></td>
+				<td><?= $pvp->assists->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Precision Kills</td>
-				<td><?= $pve->precisionKills->value ?></td>
-				<td><?= $pvp->precisionKills->value ?></td>
+				<td><?= $pve->precisionKills->formattedValue ?></td>
+				<td><?= $pvp->precisionKills->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Deaths</td>
-				<td><?= $pve->deaths->value ?></td>
-				<td><?= $pvp->deaths->value ?></td>
+				<td><?= $pve->deaths->formattedValue ?></td>
+				<td><?= $pvp->deaths->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Suicides</td>
-				<td><?= $pve->suicides->value ?></td>
-				<td><?= $pvp->suicides->value ?></td>
+				<td><?= $pve->suicides->formattedValue ?></td>
+				<td><?= $pvp->suicides->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Orbs Created</td>
-				<td><?= $pve->orbsDropped->value ?></td>
-				<td><?= $pvp->orbsDropped->value ?></td>
+				<td><?= $pve->orbsDropped->formattedValue ?></td>
+				<td><?= $pvp->orbsDropped->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Time Played</td>
@@ -159,18 +159,18 @@ $pvp   = $stats->pvp;
 		<tbody id="<?= $key ?>">
 			<tr>
 				<td class="header">Super</td>
-				<td><?= $pve->weaponKillsSuper->value ?></td>
-				<td><?= $pvp->weaponKillsSuper->value ?></td>
+				<td><?= $pve->weaponKillsSuper->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsSuper->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Grenade</td>
-				<td><?= $pve->weaponKillsGrenade->value ?></td>
-				<td><?= $pvp->weaponKillsGrenade->value ?></td>
+				<td><?= $pve->weaponKillsGrenade->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsGrenade->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Melee</td>
-				<td><?= $pve->weaponKillsMelee->value ?></td>
-				<td><?= $pvp->weaponKillsMelee->value ?></td>
+				<td><?= $pve->weaponKillsMelee->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsMelee->formattedValue ?></td>
 			</tr>
 		</tbody>
 	</table>
@@ -188,23 +188,23 @@ $pvp   = $stats->pvp;
 		<tbody id="<?= $key ?>">
 			<tr>
 				<td class="header">Hand Cannon</td>
-				<td><?= $pve->weaponKillsHandCannon->value ?></td>
-				<td><?= $pvp->weaponKillsHandCannon->value ?></td>
+				<td><?= $pve->weaponKillsHandCannon->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsHandCannon->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Auto Rifle</td>
-				<td><?= $pve->weaponKillsAutoRifle->value ?></td>
-				<td><?= $pvp->weaponKillsAutoRifle->value ?></td>
+				<td><?= $pve->weaponKillsAutoRifle->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsAutoRifle->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Scout Rifle</td>
-				<td><?= $pve->weaponKillsScoutRifle->value ?></td>
-				<td><?= $pvp->weaponKillsScoutRifle->value ?></td>
+				<td><?= $pve->weaponKillsScoutRifle->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsScoutRifle->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Pulse Rifle</td>
-				<td><?= $pve->weaponKillsPulseRifle->value ?></td>
-				<td><?= $pvp->weaponKillsPulseRifle->value ?></td>
+				<td><?= $pve->weaponKillsPulseRifle->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsPulseRifle->formattedValue ?></td>
 			</tr>
 		</tbody>
 	</table>
@@ -222,23 +222,23 @@ $pvp   = $stats->pvp;
 		<tbody id="<?= $key ?>">
 			<tr>
 				<td class="header">Sidearm</td>
-				<td><?= $pve->weaponKillsSideArm->value ?></td>
-				<td><?= $pvp->weaponKillsSideArm->value ?></td>
+				<td><?= $pve->weaponKillsSideArm->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsSideArm->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Fusion Rifle</td>
-				<td><?= $pve->weaponKillsFusionRifle->value ?></td>
-				<td><?= $pvp->weaponKillsFusionRifle->value ?></td>
+				<td><?= $pve->weaponKillsFusionRifle->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsFusionRifle->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Shotgun</td>
-				<td><?= $pve->weaponKillsShotgun->value ?></td>
-				<td><?= $pvp->weaponKillsShotgun->value ?></td>
+				<td><?= $pve->weaponKillsShotgun->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsShotgun->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Sniper</td>
-				<td><?= $pve->weaponKillsSniper->value ?></td>
-				<td><?= $pvp->weaponKillsSniper->value ?></td>
+				<td><?= $pve->weaponKillsSniper->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsSniper->formattedValue ?></td>
 			</tr>
 		</tbody>
 	</table>
@@ -256,18 +256,18 @@ $pvp   = $stats->pvp;
 		<tbody id="<?= $key ?>">
 			<tr>
 				<td class="header">Machinegun</td>
-				<td><?= $pve->weaponKillsMachinegun->value ?></td>
-				<td><?= $pvp->weaponKillsMachinegun->value ?></td>
+				<td><?= $pve->weaponKillsMachinegun->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsMachinegun->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Rocket Launcher</td>
-				<td><?= $pve->weaponKillsRocketLauncher->value ?></td>
-				<td><?= $pvp->weaponKillsRocketLauncher->value ?></td>
+				<td><?= $pve->weaponKillsRocketLauncher->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsRocketLauncher->formattedValue ?></td>
 			</tr>
 			<tr>
 				<td class="header">Sword</td>
-				<td><?= $pve->weaponKillsSword->value ?></td>
-				<td><?= $pvp->weaponKillsSword->value ?></td>
+				<td><?= $pve->weaponKillsSword->formattedValue ?></td>
+				<td><?= $pvp->weaponKillsSword->formattedValue ?></td>
 			</tr>
 		</tbody>
 	</table>
