@@ -15,7 +15,7 @@ class StatisticCollection extends Collection
 			{
 				$statistic = new Statistic($card, $properties);
 
-				if ($statistic->value)
+				if ($statistic->value || $statistic->hasRanks())
 				{
 					$this->items[$statistic->statNumber] = $statistic;
 				}
