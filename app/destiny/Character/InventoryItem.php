@@ -152,12 +152,12 @@ class InventoryItem extends InventoryItemDefinition
 
 	protected function gDamageTypeName()
 	{
-		return array_get($this->damageTypes, "$this->damageType.name");
+		return array_get($this->damageTypes, "$this->damageType.name", "Kinetic");
 	}
 
 	protected function gDamageTypeIcon()
 	{
-		return array_get($this->damageTypes, "$this->damageType.icon");
+		return array_get($this->damageTypes, "$this->damageType.icon", "/img/kinetic.png");
 	}
 
 	protected function gLightStat()
