@@ -52,11 +52,6 @@ class InventoryItem extends InventoryItemDefinition
 	];
 
 	protected $classified = [
-		'4097026463' => [
-			'itemName' => 'No Time To Explain',
-			'itemTypeName' => 'Pulse Rifle',
-			'tierTypeName' => 'Exotic',
-		],
 	];
 
 	/**
