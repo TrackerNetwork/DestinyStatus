@@ -66,12 +66,7 @@ class Grimoire extends Model
 			{
 				foreach ($page->cardBriefs as $card)
 				{
-					$skip = ($this->player->platform != 'psn' && $card->isPlaystationExclusive());
-
-					if ( ! $skip)
-					{
 						$collection->put($card->cardId, $card);
-					}
 				}
 			}
 		}
