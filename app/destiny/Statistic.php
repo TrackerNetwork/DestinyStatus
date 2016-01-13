@@ -5,6 +5,7 @@
  * @property string $statName
  * @property mixed $value
  * @property string $displayValue
+ * @property string $formattedValue
  *
  * @property \Destiny\Definitions\HistoricalStats $definition
  */
@@ -28,5 +29,10 @@ class Statistic extends Model
 	protected function gDisplayValue()
 	{
 		return array_get($this->properties, 'basic.displayValue');
+	}
+
+	protected function gFormattedValue()
+	{
+		return number_format(array_get($this->properties, 'basic.value'));
 	}
 }

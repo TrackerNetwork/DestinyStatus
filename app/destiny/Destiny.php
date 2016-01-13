@@ -74,9 +74,10 @@ class Destiny
 			$requests["$cid.activitystats"] = $this->platform->statsActivityAggregated($character);
 			$requests["$cid.inventory"]     = $this->platform->inventory($character);
 			$requests["$cid.progression"]   = $this->platform->progression($character);
-			$requests["$cid.raids"]         = $this->platform->raids($character);
-			$requests["$cid.arenas"]        = $this->platform->arenas($character);
+			$requests["$cid.pve"]			= $this->platform->pve($character);
 			#$requests["$cid.stats"]         = $this->platform->statsCharacter($character);
+			#$requests["$cid.raids"]         = $this->platform->raids($character);
+			#$requests["$cid.arenas"]        = $this->platform->arenas($character);
 		}
 
 		$results = $this->client->request($requests);
@@ -89,10 +90,11 @@ class Destiny
 			$activityStats = array_get($results["$cid.activitystats"], 'data.activities', []);
 			$inventory     = array_get($results["$cid.inventory"],     'data', []);
 			$progression   = array_get($results["$cid.progression"],   'data', []);
-			$raids         = array_get($results["$cid.raids"],         'data.activities', []);
-			$arenas        = array_get($results["$cid.arenas"],        'data.activities', []);
+			$pve           = array_get($results["$cid.pve"],		   'data.activities', []);
+			#$raids         = array_get($results["$cid.raids"],         'data.activities', []);
+			#$arenas        = array_get($results["$cid.arenas"],        'data.activities', []);
 
-			$character->activities   = new ActivityCollection($character, $activities, $raids, $arenas, $activityStats);
+			$character->activities   = new ActivityCollection($character, $activities, $pve, $activityStats);
 			$character->inventory    = new Inventory($character, $inventory);
 			$character->progression  = new ProgressionCollection($character, $progression);
 			#$character->statistics   = new CharacterStatistics($character, $results["$cid.stats"]);
