@@ -7,7 +7,6 @@
  * @var array $entry
  */
 ?>
-<div class="alert alert-success">Good news! Destiny Status is here to stay! We're asking the community for help though! Check out our <a href="https://github.com/TrackerNetwork/DestinyStatus">GitHub Repository</a></div>
 <?php if(isset($advisors)): ?>
 	<?php if($advisors->events->count()): ?>
 	<h3>Current events</h3>
@@ -30,6 +29,21 @@
 		<div class="col-md-4 nightfall">
 			<h3>Weekly Nightfall Strike</h3>
 			@include('block/advisor', ['advisor' => $advisors->nightfall])
+		</div>
+		@endif
+		@if( App::environment('production'))
+		<div class="col-md-4">
+			<div style="margin-top:50px;">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Destiny Status Box -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:300px;height:250px"
+			     data-ad-client="ca-pub-6063092344832731"
+			     data-ad-slot="1557454912"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+			</div>
 		</div>
 		@endif
 	</div>

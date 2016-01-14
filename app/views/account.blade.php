@@ -149,6 +149,21 @@
 			</div>
 
 		</div>
+		@if($i === 2 && App::environment('production'))
+		<div class="col-md-4">
+			<div style="margin-top:50px;">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Destiny Status Box -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:300px;height:250px"
+			     data-ad-client="ca-pub-6063092344832731"
+			     data-ad-slot="1557454912"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+			</div>
+		</div>
+		@endif
 	</div>
 
 	<?php endforeach; ?>

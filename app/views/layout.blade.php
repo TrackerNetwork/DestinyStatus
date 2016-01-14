@@ -36,6 +36,8 @@
 					</span>
 				</div>
 			</form>
+			<ul class="nav navbar-nav navbar-right">
+			   <li><a href="https://github.com/TrackerNetwork/DestinyStatus"><i class="fa fa-github"></i> Source Code</a></li>
 		</div>
 	</div>
 </nav>
@@ -46,7 +48,24 @@
 	<?php endif; ?>
 
 	@yield('content')
-
+	
+	@if( App::environment('production'))
+	<div class="row">
+		<div class="col-xs-12" style="text-align:center;width:100%;">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Destiny Status Responsive -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-6063092344832731"
+			     data-ad-slot="5987654519"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+	@endif
+	
 	<div class="footer row">
 		<div class="col-md-8 about">
 			<p class="version">
@@ -56,11 +75,12 @@
 				@endif
 			</p>
 			<p>
-				This is a hobby project by <a href="/psn/HermanGatevold">HermanGatevold</a> and is not financed by or associated with Bungie.<br>
+				Ads support server costs<br>
+				Originally Developed by <a href="/psn/HermanGatevold">HermanGatevold</a> and is not financed by or associated with Bungie.<br>
 				All information used on this site is the property of Bungie.
 			</p>
 			<p>
-				Contact me on <a href="http://reddit.com/u/mofrodo" target="_blank"><i class="fa fa-reddit-square"></i> Reddit</a>
+				Contact us on <a href="https://github.com/TrackerNetwork/DestinyStatus" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
 				or <a href="http://twitter.com/DestinyStatus" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>.
 			</p>
 		</div>
