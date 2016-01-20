@@ -71,7 +71,8 @@ class Card extends Model
 		'701650' => 'Echo Chamber',
 		'701700' => 'Sector 618',
 		'700150' => 'The Jade Rabit',
-		'700590' => 'Theosyion, the Restorative Mind'
+		'700590' => 'Theosyion, the Restorative Mind',
+        '701370' => 'Ghost Fragment: Vex 5'
 	];
 
 	public function __construct(Page $page, array $properties)
