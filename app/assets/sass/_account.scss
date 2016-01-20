@@ -192,7 +192,15 @@
       border: 2px solid darken(white, 5%);
     }
 
-    > .name { position: absolute; top: 0px; }
+    > .name { 
+      position: absolute; 
+      top: 0px; 
+
+      a {
+        color: $color-title;
+      }
+	}
+
     > .type { position: absolute; top: 16px; }
     > .tier { display: none; position: absolute; top: 18px; right: 2px }
     > .tier, .type { font-size: 11px; }

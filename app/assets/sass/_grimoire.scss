@@ -37,7 +37,14 @@ h1.grimoire {
     .title {
       margin-bottom: 4px;
 
-      h3 { margin: 0 0 2px 0; }
+      h3 { 
+        margin: 0 0 2px 0;
+
+        a {
+          color: $color-title;
+        }
+      }
+
       .block-label {
         font-size: 12px;
         display: block;

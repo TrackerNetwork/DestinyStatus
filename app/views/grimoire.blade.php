@@ -25,7 +25,7 @@
 					<?= $card->theme->thumbnail ?>
 				</div>
 				<div class="grimoire"><?= $card->score ?><span class="total"> / <?= $card->totalPoints ?></span></div>
-				<h3 class="name"><?= e($card->cardName) ?></h3>
+				<h3 class="name"><a href="<?= dtrgrimoire($card) ?>" target="_blank"><?= e($card->cardName) ?></a></h3>
 			</div>
 
 			<?php if($card->hasStats()): ?>

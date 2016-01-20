@@ -26,6 +26,36 @@ function bungie($url)
 	return url('http://www.bungie.net'.$url);
 }
 
+function dtrgrimoire($card)
+{
+	return url('http://db.destinytracker.com/grimoire/'.slug($card->theme->themeId).'/'.slug($card->page->pageName).'/'.slug($card->cardName));
+}
+
+function dtritem($item)
+{
+	return url('http://db.destinytracker.com/items/'.$item->itemHash.'-'.slug($item->itemName));
+}
+
+function slug($name)
+{
+	/*
+		This method generates url slugs:
+		- Converts accented characters
+		- Makes the string lowercase
+		- Converts multiple spaces to one
+		- Trim to a max length of 45 characters.
+		- Replace spaces with hypens.
+	*/
+
+	$name = html_entity_decode($name);
+	$name = strtolower(iconv("UTF-8", "ASCII//TRANSLIT//IGNORE", $name));
+	$name = preg_replace('/[^a-z0-9 -]/', '', $name);
+	$name = preg_replace('!\s+!', ' ', $name);
+	$name = trim(mb_strimwidth($name, 0, 45));
+	$name = str_replace(' ', '-', $name);
+	return $name;
+}
+
 function duration($minutes, $output = 'days,hours,minutes')
 {
 	return timespan(time() + ($minutes * 60), time(), $output);

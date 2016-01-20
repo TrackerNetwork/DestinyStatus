@@ -11,7 +11,7 @@
 	data-hash="<?= $item->itemHash ?>"
 	>
 	<img class="icon" src="<?= bungie($item->icon) ?>">
-	<div class="name"><?= e($item->itemName) ?></div>
+	<div class="name"><a href="<?= dtritem($item) ?>" target="_blank"><?= e($item->itemName) ?></a></div>
 	<div class="tier"><?= e($item->tierTypeName) ?></div>
 	<div class="type opaque"><?= e($item->itemTypeName) ?></div>
 
