@@ -31,8 +31,8 @@
 			<form action="/" class="navbar-form navbar-left" role="search" method="post">
 				<div class="form-group input-group">
 					<input type="text" class="form-control" placeholder="Gamertag" 
-                        name="gamertag" value="<?= e(Input::get('gamertag')) ?>" maxlength="16"
-                        pattern="[A-Za-z][A-Za-z0-9_-]{0,15}" title="Please enter a valid gamertag or PSN Id">
+						name="gamertag" value="<?= e(Input::get('gamertag')) ?>" maxlength="16"
+						pattern="[A-Za-z][A-Za-z0-9_-]{0,15}" title="Please enter a valid gamertag or PSN Id">
 					<span class="input-group-btn">
 						<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
 					</span>
