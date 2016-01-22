@@ -1,6 +1,7 @@
-// Core variables and mixins
+// Core variables, mixins and overrides
 @import "variables";
 @import "mixins";
+@import "overrides";
 
 // Reset and dependencies
 @import "bootstrap/normalize";
