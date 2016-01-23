@@ -20,6 +20,11 @@ Please [read these instructions](https://laravel.com/docs/4.2#server-requirement
 1. `composer install`
 2. `php artisan key:generate`
 
+### Download/Update your manifest
+1. Visit the [Destiny API Registration Portal](https://www.bungie.net/en/user/api) to sign up for an API key
+2. Add your key to `app/config/destiny.php`
+3. `php artisan destiny:manifest -d`
+
 ### Compile CSS/JS
 
 1. Install bower: `npm install -g bower`
@@ -28,5 +33,5 @@ Please [read these instructions](https://laravel.com/docs/4.2#server-requirement
     * `bower install`
     * `npm install`
 4. Build:
-    * Local: `grunt`
-    * Production: `grunt --production`
+    * Local: `grunt build`
+    * Production: `grunt build --production`
