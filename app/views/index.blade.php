@@ -31,21 +31,35 @@
 			@include('block/advisor', ['advisor' => $advisors->nightfall])
 		</div>
 		@endif
-		@if( App::environment('production'))
-		<div class="col-md-4">
-			<div style="margin-top:50px;">
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- Destiny Status Box -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:300px;height:250px"
-			     data-ad-client="ca-pub-6063092344832731"
-			     data-ad-slot="1557454912"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+	</div>
+	<div class="activities row">
+		@if($advisors->dailyCrucible)
+			<div class="col-md-4 daily">
+				<h3>Daily PVP Activity</h3>
+				@include('block/advisor', ['advisor' => $advisors->dailyCrucible])
 			</div>
-		</div>
 		@endif
+		@if($advisors->weeklyCrucible)
+			<div class="col-md-4 daily">
+				<h3>Weekly PVP Activity</h3>
+				@include('block/advisor', ['advisor' => $advisors->weeklyCrucible])
+			</div>
+		@endif
+        @if( App::environment('production'))
+            <div class="col-md-4">
+                <div style="margin-top:50px;">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Destiny Status Box -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:250px"
+                         data-ad-client="ca-pub-6063092344832731"
+                         data-ad-slot="1557454912"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        @endif
 	</div>
 
 	<h3>Prison of Elders</h3>

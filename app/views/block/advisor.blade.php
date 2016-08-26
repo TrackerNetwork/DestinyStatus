@@ -30,7 +30,13 @@ if ($advisor instanceof \Destiny\Advisors\Activity): $id = 'activity-'.$advisor-
 	<div role="tabpanel" class="rewards levels">
 		<ul class="nav nav-pills" role="tablist">
 			<?php $i = 0; foreach($advisor->rewards as $activity): $i++; ?>
-			<li class="<?= ($i == 1 ? 'active' : '') ?>"><a href="#<?= $id . $i ?>" role="tab" data-toggle="tab">Level <?= $activity->level ?></a></li>
+			<li class="<?= ($i == 1 ? 'active' : '') ?>"><a href="#<?= $id . $i ?>" role="tab" data-toggle="tab">
+				@if ($activity->level > 1)
+					Level <?= $activity->level ?>
+				@else
+					Rewards
+				@endif
+			</a></li>
 			<?php endforeach; ?>
 		</ul>
 

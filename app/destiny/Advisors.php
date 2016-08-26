@@ -4,16 +4,22 @@ use Destiny\Advisors\ArenaCollection;
 
 /**
  * @property string $nightfallActivityHash
+ * @property string $dailyCrucibleHash
  * @property array $heroicStrikeHashes
  * @property array $dailyChapterHashes
+ * @property array $weeklyCrucible
  * @property \Carbon\Carbon $nightfallResetDate
  * @property \Carbon\Carbon $heroicStrikeResetDate
  * @property \Carbon\Carbon $dailyChapterResetDate
+ * @property \Carbon\Carbon $dailyCrucibleResetDate
  *
  * @property \Destiny\Advisors\Activity $nightfall
  * @property \Destiny\Advisors\Activity $heroic
  * @property \Destiny\Advisors\Activity $daily
+ * @property \Destiny\Advisors\Activity $dailyCrucible
  * @property \Destiny\Advisors\Event[] $events
+ *
+ * @property ArenaCollection $arena
  */
 class Advisors extends Model
 {
@@ -28,6 +34,11 @@ class Advisors extends Model
 	}
 
 	protected function gDailyChapterResetDate($value)
+	{
+		return carbon($value);
+	}
+
+	protected function gDailyCrucibleResetDate($value)
 	{
 		return carbon($value);
 	}
@@ -91,6 +102,30 @@ class Advisors extends Model
 		{
 			$activity->addLevelRewards(manifest()->activity($activityHash));
 		}
+
+		return $activity;
+	}
+
+	protected function gWeeklyCrucible()
+	{
+		$activityHash = $this->properties['weeklyCrucible'][0]['activityBundleHash'];
+
+		$activity = new Advisors\Activity($this, manifest()->activity($activityHash), $this->nightfallResetDate);
+		$activity->addLevelRewards(manifest()->activity($activityHash));
+
+		// set image manually to remove placeholder
+		$activity->pgcrImage = $this->properties['weeklyCrucible'][0]['image'];
+
+		return $activity;
+	}
+
+	protected function gDailyCrucible()
+	{
+		$activity = new Advisors\Activity($this, manifest()->activity($this->dailyCrucibleHash), $this->dailyCrucibleResetDate);
+		$activity->addLevelRewards(manifest()->activity($this->dailyCrucibleHash));
+
+		// set image manually to remove placeholder
+		$activity->pgcrImage = $this->properties['dailyCrucible']['image'];
 
 		return $activity;
 	}
