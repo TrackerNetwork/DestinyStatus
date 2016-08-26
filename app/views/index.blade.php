@@ -35,13 +35,13 @@
 	<div class="activities row">
 		@if($advisors->dailyCrucible)
 			<div class="col-md-4 daily">
-				<h3>Daily PVP Mission</h3>
+				<h3>Daily PVP Activity</h3>
 				@include('block/advisor', ['advisor' => $advisors->dailyCrucible])
 			</div>
 		@endif
 		@if($advisors->weeklyCrucible)
 			<div class="col-md-4 daily">
-				<h3>Weekly PVP Mission</h3>
+				<h3>Weekly PVP Activity</h3>
 				@include('block/advisor', ['advisor' => $advisors->weeklyCrucible])
 			</div>
 		@endif
