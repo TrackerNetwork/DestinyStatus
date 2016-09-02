@@ -14,6 +14,7 @@ Please [read these instructions](https://laravel.com/docs/4.2#server-requirement
 * Mcrypt extension
 * [Node.js](https://nodejs.org)
 * [Composer](https://getcomposer.org)
+* [Ruby](https://www.ruby-lang.org)
 
 ### Install the framework
 
@@ -32,6 +33,7 @@ Please [read these instructions](https://laravel.com/docs/4.2#server-requirement
 3. Install dependencies:
     * `bower install`
     * `npm install`
+    * `gem install compass`
 4. Build:
     * Local: `grunt build`
     * Production: `grunt build --production`
