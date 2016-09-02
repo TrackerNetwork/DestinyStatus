@@ -40,4 +40,9 @@ class HomeController extends BaseController
 
 		return View::make('select', ['gamertag' => $gamertag, 'players' => $players]);
 	}
+
+	public function privacy()
+	{
+		return View::make('privacy');
+	}
 }

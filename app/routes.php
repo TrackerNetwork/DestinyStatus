@@ -7,6 +7,9 @@ Route::pattern('platform', 'psn|xbl');
 Route::any('/',                   ['uses' => 'HomeController@index',
 	'as' => 'home']);
 
+Route::any('/privacy',            ['uses' => 'HomeController@privacy',
+	'as' => 'privacy']);
+
 Route::get('select/{gamertag}',   ['uses' => 'HomeController@select',
 	'as' => 'select']);
 
