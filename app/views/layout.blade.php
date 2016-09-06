@@ -12,9 +12,15 @@
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500">
 	<link rel="stylesheet" type="text/css" href="<?= Asset::url('css/destiny.css') ?>">
 	<script src="<?= Asset::url('js/destiny.js') ?>"></script>
+	<script src="//tags-cdn.deployads.com/a/destinystatus.com.js" async></script>
 </head>
 <body>
-
+	<script>
+		window.device = 'mobile';
+	        if (window.matchMedia !== undefined && window.matchMedia("(min-width: 1000px)").matches) {
+	            window.device = 'desktop';
+	        }
+	</script>
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
@@ -54,16 +60,16 @@
 	@if( App::environment('production'))
 	<div class="row">
 		<div class="col-xs-12" style="text-align:center;width:100%;">
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- Destiny Status Responsive -->
-			<ins class="adsbygoogle"
-			     style="display:block"
-			     data-ad-client="ca-pub-6063092344832731"
-			     data-ad-slot="5987654519"
-			     data-ad-format="auto"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+			<script src="//tags-cdn.deployads.com/a/destinystatus.com.js" async></script>
+		    <script>
+		        if (window.device == 'mobile') {
+		            document.write('<div class="ad-tag" data-ad-name="300x250_#1" data-ad-size="300x250" ></div>');
+		        }
+		        else {
+		            document.write('<div class="ad-tag" data-ad-name="728x90_#1" data-ad-size="728x90" ></div>');
+		        }
+		        (deployads = window.deployads || []).push({});
+		    </script>
 		</div>
 	</div>
 	@endif
