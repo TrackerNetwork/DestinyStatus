@@ -7,4 +7,4 @@ install:
   - ./build/ci-install.sh
   - ./build/ci-compile.sh
 script:
-  - phpunit
+  - ./vendor/bin/phpunit

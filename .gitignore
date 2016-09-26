@@ -1,24 +1,23 @@
 /.idea
 /.vscode
-/.sass-cache
 /bootstrap/compiled.php
 /vendor
 /node_modules
-/app/assets/vendor
-/app/config/local/*
-/app/config/production/*
-/app/config/packages/**/production/*
+/resources/assets/vendor
 /public/data
 composer.phar
-.env.*.php
-.env.php
-.environment.php
+.env
 .version.php
 _ide_helper.php
+.phpstorm.meta.php
 .DS_Store
 Thumbs.db
-/app/storage/cookies
-/app/database/manifest/*
+storage/cookies
+database/manifest/*
+public/css
+public/img
+public/js
+public/build
 
 # OS Generated Files #
 *~
