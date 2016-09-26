@@ -8,19 +8,16 @@
     "type": "git",
     "url": "git://github.com/TrackerNetwork/DestinyStatus.git"
   },
-  "keywords": [
-    "destiny",
-    "gamestats"
-  ],
-  "author": "Frode Knutsen",
-  "dependencies": {},
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-concat": "~0.5.0",
-    "grunt-contrib-sass": "latest",
-    "grunt-contrib-compass": "latest",
-    "grunt-contrib-uglify": "~0.6.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-clean": "~0.6.0"
+    "gulp": "^3.8.8"
+  },
+  "author": "Frode Knutsen",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "compass-sass-mixins": "^0.12.7",
+    "font-awesome": "^4.6.3",
+    "jquery": "^3.1.0",
+    "jquery.cookie": "^1.4.1",
+    "laravel-elixir": "^4.0.0"
   }
 }
