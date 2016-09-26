@@ -43,16 +43,16 @@
 				</div>
 				<h3>Raids</h3>
 				<div class="arenas row">
-					<div class="col-md-4 arena">
+					<div class="col-md-3 arena">
 						@include('block/raid', ['activity' => $advisors->wrathofthemachine])
 					</div>
-					<div class="col-md-4 arena">
+					<div class="col-md-3 arena">
 						@include('block/raid', ['activity' => $advisors->kingsfall])
 					</div>
-					<div class="col-md-4 arena">
+					<div class="col-md-3 arena">
 						@include('block/raid', ['activity' => $advisors->crota])
 					</div>
-					<div class="col-md-4 arena">
+					<div class="col-md-3 arena">
 						@include('block/raid', ['activity' => $advisors->vaultofglass])
 					</div>
 				</div>
