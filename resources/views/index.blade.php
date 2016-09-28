@@ -28,16 +28,16 @@
 		<div class="tab-content">
 			<div class="pve tab-pane active" role="tabpanel" id="pve">
 				<div class="activities row">
-					<h3>Rise of Iron Weekly</h3>
-					<div class="col-md-4">
-						<h3>Daily Story Mission</h3>
-						@include('block/advisor', ['activity' => $advisors->dailychapter])
-					</div>
+					<h3>Activities</h3>
 					<div class="col-md-4">
 						<h3>Nightfall Strike</h3>
 						@include('block/advisor', ['activity' => $advisors->nightfall])
 					</div>
-					@if( App::environment('production'))
+					<div class="col-md-4">
+						<h3>Daily Story Mission</h3>
+						@include('block/advisor', ['activity' => $advisors->dailychapter])
+					</div>
+					@if( ! App::isLocal())
 						<div class="col-md-4">
 							<div style="margin-top:50px;">
 								<div class="ad-tag" data-ad-name="300x250_#1" data-ad-size="300x250" ></div>
@@ -46,23 +46,29 @@
 							</div>
 						</div>
 					@endif
+				</div>
+				<div class="activities arenas row">
 					<div class="col-md-4">
 						<h3>Weekly Heroic Strikes</h3>
 						@include('block/advisor', ['activity' => $advisors->heroicstrike])
 					</div>
-				</div>
-				<h3>Raids</h3>
-				<div class="arenas row">
-					<div class="col-md-3 arena">
+					<div class="col-md-4">
+
+					</div>
+					<div class="col-md-4 arena">
+						<h3>Raid</h3>
 						@include('block/raid', ['activity' => $advisors->wrathofthemachine])
 					</div>
-					<div class="col-md-3 arena">
+				</div>
+				<h3>Legacy Raids</h3>
+				<div class="arenas row">
+					<div class="col-md-4 arena">
 						@include('block/raid', ['activity' => $advisors->kingsfall])
 					</div>
-					<div class="col-md-3 arena">
+					<div class="col-md-4 arena">
 						@include('block/raid', ['activity' => $advisors->crota])
 					</div>
-					<div class="col-md-3 arena">
+					<div class="col-md-4 arena">
 						@include('block/raid', ['activity' => $advisors->vaultofglass])
 					</div>
 				</div>
