@@ -1,7 +1,7 @@
 <?php namespace Destiny\AdvisorsTwo;
 
 use Destiny\Character;
-use Destiny\Definitions\Activity;
+use Destiny\Definitions\Activity as ActivityDefinition;
 use Destiny\Definitions\ActivityData;
 use Destiny\Definitions\Objective;
 use Destiny\Definitions\SkullModifier;
@@ -13,7 +13,7 @@ use Destiny\Model;
  * @property string $activityName
  * @property string $iconPath
  *
- * @property Activity $activity
+ * @property ActivityDefinition $activity
  * @property ActivityData $data
  * @property ActivityData $activityData
  * @property Reward[] $rewards
@@ -21,7 +21,7 @@ use Destiny\Model;
  * @property ArenaRound[] $rounds
  * @property Completion $completion
  *
- * @property Activity $definition
+ * @property ActivityDefinition $definition
  * @property SkullModifier[] $skulls
  */
 class ActivityTier extends Model
