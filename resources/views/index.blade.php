@@ -28,6 +28,7 @@
 		<div class="tab-content">
 			<div class="pve tab-pane active" role="tabpanel" id="pve">
 				<div class="activities row">
+					<h3>Rise of Iron Weekly</h3>
 					<div class="col-md-4">
 						<h3>Daily Story Mission</h3>
 						@include('block/advisor', ['activity' => $advisors->dailychapter])
@@ -36,16 +37,25 @@
 						<h3>Nightfall Strike</h3>
 						@include('block/advisor', ['activity' => $advisors->nightfall])
 					</div>
+					@if( App::environment('production'))
+						<div class="col-md-4">
+							<div style="margin-top:50px;">
+								<div class="ad-tag" data-ad-name="300x250_#1" data-ad-size="300x250" ></div>
+								<script src="//tags-cdn.deployads.com/a/destinystatus.com.js " async ></script>
+								<script>(deployads = window.deployads || []).push({});</script>
+							</div>
+						</div>
+					@endif
 					<div class="col-md-4">
 						<h3>Weekly Heroic Strikes</h3>
 						@include('block/advisor', ['activity' => $advisors->heroicstrike])
 					</div>
-				</div>
-				<h3>Raids</h3>
-				<div class="arenas row">
 					<div class="col-md-4 arena">
 						@include('block/raid', ['activity' => $advisors->wrathofthemachine])
 					</div>
+				</div>
+				<h3>Legacy Raids</h3>
+				<div class="arenas row">					
 					<div class="col-md-4 arena">
 						@include('block/raid', ['activity' => $advisors->kingsfall])
 					</div>
