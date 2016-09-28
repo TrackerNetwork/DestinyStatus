@@ -28,7 +28,6 @@
 		<div class="tab-content">
 			<div class="pve tab-pane active" role="tabpanel" id="pve">
 				<div class="activities row">
-					<h3>Activities</h3>
 					<div class="col-md-4">
 						<h3>Nightfall Strike</h3>
 						@include('block/advisor', ['activity' => $advisors->nightfall])
