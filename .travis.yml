@@ -4,6 +4,9 @@ php:
   - '5.6'
   - '5.5'
 install:
+  - . $HOME/.nvm/nvm.sh
+  - nvm install stable
+  - nvm use stable
   - ./build/ci-install.sh
   - ./build/ci-compile.sh
 script:
