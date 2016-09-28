@@ -2,8 +2,7 @@
 
 use Destiny\AdvisorsTwo\Activity;
 use Destiny\AdvisorsTwo\ActivityTier;
-use Illuminate\Support\Collection;
-
+use Destiny\Collection;
 /**
  * @method ActivityTier offsetGet($key)
  */

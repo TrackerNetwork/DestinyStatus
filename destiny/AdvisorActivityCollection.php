@@ -1,7 +1,6 @@
 <?php namespace Destiny;
 
 use Destiny\AdvisorsTwo\Activity;
-use Illuminate\Support\Collection;
 
 /**
  * @method \Destiny\AdvisorsTwo\Activity offsetGet($key)
