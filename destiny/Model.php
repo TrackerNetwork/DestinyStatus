@@ -1,7 +1,6 @@
 <?php namespace Destiny;
 
 use ArrayAccess;
-use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Arrayable;
 use JsonSerializable;
 

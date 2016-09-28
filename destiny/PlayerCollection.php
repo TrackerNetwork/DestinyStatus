@@ -1,7 +1,5 @@
 <?php namespace Destiny;
 
-use Illuminate\Support\Collection;
-
 /**
  * @method \Destiny\Player offsetGet($key)
  */
