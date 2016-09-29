@@ -85,9 +85,9 @@
 				<a class="privacy" href="/privacy">Privacy Policy</a>
 			</p>
 			<p>
-				Ads support server costs<br>
-				Originally Developed by <a href="/psn/HermanGatevold">HermanGatevold</a> and is not financed by or associated with Bungie.<br>
-				All information used on this site is the property of Bungie.
+				Ads support server costs and all information used on this site is the property of Bungie<br>
+				Originally Developed by <a href="/psn/HermanGatevold">HermanGatevold</a>, currently maintained by <a href="https://github.com/iBotPeaches" target="_blank">iBotPeaches</a>
+				and the Tracker Network and is not financed by or associated with Bungie.<br>
 			</p>
 			<p>
 				Contact us on <a href="https://github.com/TrackerNetwork/DestinyStatus" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
