@@ -95,7 +95,15 @@ class Destiny
 			$activityStats = array_get($results["$cid.activitystats"], 'data.activities', []);
 			$inventory     = array_get($results["$cid.inventory"],     'data', []);
 			$progression   = array_get($results["$cid.progression"],   'data', []);
-			$checklist	   = array_get($results["$cid.checklist"],	   'data', []);
+
+			if (! isset($results["$cid.checklist"]['private']))
+			{
+				$checklist = array_get($results["$cid.checklist"],	   'data', []);
+			}
+			else
+			{
+				$checklist = [];
+			}
 
 			$character->activities   = new ActivityCollection($character, $activityStats, $checklist);
 			$character->inventory    = new Inventory($character, $inventory);

@@ -15,6 +15,7 @@ class DestinyClient extends Client
 	protected $domain = 'https://www.bungie.net';
 	protected $baseUri = '/platform/';
 
+	protected $destinyPrivacyRestriction = 1665;
 	protected $destinyLegacyPlatformErrorCode = 1670;
 
 	public function __construct($apiKey)
@@ -111,13 +112,19 @@ class DestinyClient extends Client
 						{
 							throw new \DestinyLegacyPlatformException(array_get($response, 'Message'), array_get($response, 'ErrorCode'));
 						}
+						else if (array_get($response, 'ErrorCode') === $this->destinyPrivacyRestriction)
+						{
+							$response = ['private' => true];
+						}
 						else
 						{
 							throw new DestinyException(array_get($response, 'Message'), array_get($response, 'ErrorCode'));
 						}
 					}
-
-					$response = array_get($response, 'Response');
+					else
+					{
+						$response = array_get($response, 'Response');
+					}
 
 					if (empty($response))
 					{

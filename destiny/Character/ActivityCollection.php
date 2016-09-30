@@ -1,6 +1,5 @@
 <?php namespace Destiny\Character;
 
-use Destiny\AdvisorActivityCollection;
 use Destiny\Advisors;
 use Destiny\AdvisorsTwo\ActivityTier;
 use Destiny\Character;
@@ -8,6 +7,7 @@ use Destiny\Collection;
 use Destiny\StatisticsCollection;
 
 /**
+ * @property boolean $private
  * @method \Destiny\Character\Activity offsetGet($key)
  */
 class ActivityCollection extends Collection
@@ -20,6 +20,11 @@ class ActivityCollection extends Collection
 	public function __construct(Character $character, array $stats, array $checklist)
 	{
 		$this->character = $character;
+		if (count($checklist) === 0)
+		{
+			return;
+		}
+
 		$advisors = new Advisors($checklist);
 
 		// stats grouped by activity hash

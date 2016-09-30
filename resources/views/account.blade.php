@@ -84,6 +84,11 @@
 						<?= duration_human(next_weekly()->diffInMinutes()) ?> until reset
 					</div>
 
+					@if ($character->private)
+						<div class="alert alert-info">
+							This guardian has made their Destiny profile hidden.
+						</div>
+					@endif
 					@if (count($character->dailyAndNightfall))
 						<div class="panel-heading">Activities</div>
 						<div class="activities panel">

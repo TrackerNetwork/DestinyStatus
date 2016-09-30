@@ -46,6 +46,7 @@ use Destiny\Character\ProgressionCollection;
  * @property \Destiny\Character\Activity[] $weeklyActivities
  * @property \Destiny\Character\Activity[] $weeklyStrikes
  * @property \Destiny\Character\Activity[] $weeklyRaids
+ * @property boolean $private
  *
  * @property \Destiny\Character\Inventory $inventory
  * @property \Destiny\Character\ProgressionCollection $progression
@@ -235,6 +236,11 @@ class Character extends Model
 	protected function gWeeklyArenas()
 	{
 		return $this->activities->weeklyArenas;
+	}
+
+	protected function gPrivate()
+	{
+		return count($this->activities) === 0;
 	}
 
 	protected function gStatistics()
