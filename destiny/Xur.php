@@ -30,11 +30,14 @@ class Xur extends Model
 
 	protected function gWeapons()
 	{
-		foreach ($this->itemCategories as $itemCategory)
+		if (is_array($this->itemCategories))
 		{
-			if ($itemCategory->categoryTitle === "Exotic Gear")
+			foreach ($this->itemCategories as $itemCategory)
 			{
-				return $itemCategory->items;
+				if ($itemCategory->categoryTitle === "Exotic Gear")
+				{
+					return $itemCategory->items;
+				}
 			}
 		}
 

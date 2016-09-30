@@ -17,22 +17,28 @@
         <?= e($activity->display->flavor); ?>
     </p>
     <div class="rounds">
-        @foreach($activity->weapons as $i => $weapon)
-            <div class="round">
-                <div class="info">
-                    <div class="round-number">Item <?= ($i + 1); ?></div>
-                    <div class="enemy">
-                        <?= $weapon->itemName; ?>
+        @if (count($activity->weapons) > 0)
+            @foreach($activity->weapons as $i => $weapon)
+                <div class="round">
+                    <div class="info">
+                        <div class="round-number">Item <?= ($i + 1); ?></div>
+                        <div class="enemy">
+                            <?= $weapon->itemName; ?>
+                        </div>
+                    </div>
+                    <div class="skulls">
+                        <div class="skull">
+                            <img src="<?= bungie($weapon->icon) ?>" data-toggle="popover" alt="<?= e($weapon->itemName) ?>" title="<?= e($weapon->itemName) ?>" data-content="<?= e($weapon->itemDescription) ?>">
+                            <span><?= e($weapon->tierTypeName) ?></span>
+                        </div>
                     </div>
                 </div>
-                <div class="skulls">
-                    <div class="skull">
-                        <img src="<?= bungie($weapon->icon) ?>" data-toggle="popover" alt="<?= e($weapon->itemName) ?>" title="<?= e($weapon->itemName) ?>" data-content="<?= e($weapon->itemDescription) ?>">
-                        <span><?= e($weapon->tierTypeName) ?></span>
-                    </div>
-                </div>
-            </div>
-        @endforeach
+            @endforeach
+        @else
+            <span class="panel-heading">
+                Weapon data cannot be loaded.
+            </span>
+        @endif
     </div>
     <?php if ($activity->expirationKnown): ?>
     <div class="expires">

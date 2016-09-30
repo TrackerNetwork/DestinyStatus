@@ -13,8 +13,15 @@ class Xur extends Activity implements ActivityInterface, EventInterface
 	{
 		if ($properties['status']['active'])
 		{
-			$vendorXur = destiny()->xur();
-			$properties['xur'] = $vendorXur;
+			try
+			{
+				$vendorXur = destiny()->xur();
+				$properties['xur'] = $vendorXur;
+			}
+			catch (\Exception $e)
+			{
+				$properties['xur'] = new \Destiny\Xur([]);
+			}
 		}
 		parent::__construct($properties);
 	}
