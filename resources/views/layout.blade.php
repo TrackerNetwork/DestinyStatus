@@ -12,7 +12,9 @@
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500">
 	<link rel="stylesheet" type="text/css" href="<?= elixir('css/destiny.css'); ?>">
 	<script src="<?= elixir('js/destiny.js'); ?>"></script>
-	<script src="//tags-cdn.deployads.com/a/destinystatus.com.js" async></script>
+	@if (! App::isLocal())
+		<script src="//tags-cdn.deployads.com/a/destinystatus.com.js" async></script>
+	@endif
 </head>
 <body>
 <script>
@@ -96,7 +98,7 @@
 		</div>
 	</div>
 </div>
-
+@if (! App::isLocal())
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -109,6 +111,6 @@
   ga('create', 'UA-42280104-15', 'auto', { 'name' : 'tracker' });
   ga('tracker.send', 'pageview');
 </script>
-
+@endif
 </body>
 </html>
