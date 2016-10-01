@@ -105,6 +105,19 @@
   @extend .advisor
 }
 
+.advisor-trials {
+  &.type-activity {
+    .levels {
+      .rewards {
+        .reward {
+          img { width: 32px; margin: 2px 2px 2px 2px; }
+        }
+      }
+    }
+  }
+  @extend .advisor
+}
+
 .arenas {
   .arena {
     .display {
