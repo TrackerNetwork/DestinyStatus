@@ -73,7 +73,8 @@ class Card extends Model
 		'700150' => 'The Jade Rabit',
 		'700590' => 'Theosyion, the Restorative Mind',
 		'701370' => 'Ghost Fragment: Vex 5',
-		'790010' => 'Zen Meteor'
+		'790010' => 'Zen Meteor',
+		'800448' => 'Icarus - Languid Sea, Mercury'
 	];
 
 	public function __construct(Page $page, array $properties)
