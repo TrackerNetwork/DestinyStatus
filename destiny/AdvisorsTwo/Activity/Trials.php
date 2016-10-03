@@ -11,8 +11,6 @@ use Destiny\Definitions\InventoryItem;
  */
 class Trials extends Activity implements ActivityInterface, EventInterface
 {
-	const UNKNOWN_REWARDS = '3747303650';
-
     public function __construct(Advisors $advisors, array $properties)
     {
     	$bounties = [];
@@ -33,8 +31,6 @@ class Trials extends Activity implements ActivityInterface, EventInterface
 					$winDetails[$winRewardDetail['winCount']][] = manifest()->inventoryItem($itemHash);
 				}
 			}
-
-			$winDetails[9][] = manifest()->inventoryItem(self::UNKNOWN_REWARDS);
 		}
 
 		$properties['winRewards'] = $winDetails;
