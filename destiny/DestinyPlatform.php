@@ -14,12 +14,12 @@ class DestinyPlatform
 
 	public function advisors()
 	{
-		return $this->request("destiny/advisors/v2/", next_daily(), CACHE_DEFAULT);
+		return $this->request("destiny/advisors/v2/", next_daily(), CACHE_INDEX);
 	}
 
 	public function xur()
 	{
-		return $this->request("destiny/advisors/xur/", next_weekly(), CACHE_DEFAULT);
+		return $this->request("destiny/advisors/xur/", next_weekly(), CACHE_INDEX);
 	}
 
 	public function searchDestinyPlayer($gamertag)

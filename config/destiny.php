@@ -46,6 +46,17 @@ return [
 
     'cache_default' => env('DESTINY_CACHE_DEFAULT', 3),
 
+	/*
+	|--------------------------------------------------------------------------
+	| Cache Index
+	|--------------------------------------------------------------------------
+	|
+	| The default value of cache on index (minutes)
+	|
+	*/
+
+	'cache_index' => env('DESTINY_CACHE_INDEX', 60),
+
     /*
     |--------------------------------------------------------------------------
     | Cache Player Time
