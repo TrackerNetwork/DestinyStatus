@@ -20,5 +20,8 @@ class Issue32Test extends TestCase
 
 		$primus = 'Primus Ta\'aun';
 		$this->assertEquals('primus-taaun', slug($primus));
+
+		$norusk = 'Noru\'usk, Servant of Oryx';
+		$this->assertEquals('noruusk-servant-of-oryx', slug($norusk));
     }
 }
