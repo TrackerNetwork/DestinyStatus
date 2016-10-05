@@ -66,5 +66,5 @@ return [
     |
     */
 
-    'cache_player' => env('DESTINY_CACHE_PLAYER', 60 * 24 * 7),
+    'cache_player' => env('DESTINY_CACHE_PLAYER', 60 * 24),
 ];
