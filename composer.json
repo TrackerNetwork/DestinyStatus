@@ -11,7 +11,8 @@
         "barryvdh/laravel-debugbar": "^2.2",
         "barryvdh/laravel-ide-helper": "^2.2",
         "guzzlehttp/guzzle": "~5.0",
-        "filp/whoops": " ~1.0"
+        "filp/whoops": " ~1.0",
+        "predis/predis": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
