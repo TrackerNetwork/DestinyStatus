@@ -23,7 +23,7 @@
                     <div class="info">
                         <div class="round-number">Weapon <?= ($i + 1); ?></div>
                         <div class="enemy">
-                            <?= $weapon->itemName; ?>
+                            <a href="<?= dtritem($weapon); ?>" target="_blank"><?= $weapon->itemName; ?></a>
                         </div>
                     </div>
                     <div class="skulls">
