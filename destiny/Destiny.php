@@ -33,6 +33,9 @@ class Destiny
 		return new Advisors($result['data']);
 	}
 
+	/**
+	 * @return Xur
+	 */
 	public function xur()
 	{
 		$result = $this->client->request($this->platform->xur());
