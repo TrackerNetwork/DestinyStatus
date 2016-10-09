@@ -218,7 +218,10 @@ function version($update = false)
 		$version = require($versionFile);
 	}
 
-	return trim($version);
+	if (App::isLocal()) {
+		return trim($version);
+	}
+	return substr($version, 0, -9);
 }
 
 function n($number, $decimals = 0)
