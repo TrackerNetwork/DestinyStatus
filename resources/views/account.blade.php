@@ -94,7 +94,7 @@
 						<div class="panel-heading">Activities</div>
 						<div class="activities panel">
 							@foreach($character->dailyAndNightfall as $activity)
-								@include('block/activity', ['activity' => $activity])
+								@include('block/activity', ['activity' => $activity, 'character' => $character])
 							@endforeach
 						</div>
 					@endif
@@ -102,7 +102,7 @@
 						<div class="panel-heading">Raids</div>
 						<div class="activities panel">
 							@foreach($character->weeklyRaids as $activity)
-								@include('block/activity', ['activity' => $activity])
+								@include('block/activity', ['activity' => $activity, 'character' => $character])
 							@endforeach
 						</div>
 					@endif
@@ -111,7 +111,7 @@
 						<div class="panel-heading">Arenas</div>
 						<div class="activities panel">
 							@foreach($character->weeklyArenas as $activity)
-								@include('block/activity', ['activity' => $activity])
+								@include('block/activity', ['activity' => $activity, 'character' => $character])
 							@endforeach
 						</div>
 					@endif
@@ -129,7 +129,7 @@
 						<div class="info">Active Time Played</div>
 						@include('block/timespan', ['minutes' => $character->minutesPlayedActive])
 					</div>
-					<?php if ($character->statistics->total->score->value == 0): ?>
+					<?php if (! $character->hasStats()): ?>
 						<div class="alert alert-info">
 							Statistics are currently unavailable.
 						</div>

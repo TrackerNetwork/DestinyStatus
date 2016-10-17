@@ -1,6 +1,7 @@
 <?php
 /**
  * @var \Destiny\Character\Activity $activity
+ * @var \Destiny\Character $character
  */
 ?>
 
@@ -27,7 +28,7 @@
 				<?php endif; ?>
 			</span>
 		</div>
-		@if ($activity->isRaid() || $activity->isArena())
+		@if (($activity->isRaid() || $activity->isArena()) && $character->hasStats())
 			<div class="stats opaque">
 				Completions:
 				<strong><?= $activity->timesCompleted ?></strong>

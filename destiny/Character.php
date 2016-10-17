@@ -253,6 +253,11 @@ class Character extends Model
 		return $this->statistics->total->secondsPlayed->value / 60;
 	}
 
+	public function hasStats()
+	{
+		return $this->statistics->total->score->value > 0;
+	}
+
 
 	//
 	// Getters
