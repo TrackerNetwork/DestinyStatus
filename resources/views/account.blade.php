@@ -2,6 +2,7 @@
 /**
  * @var \Destiny\Player $player
  * @var \Destiny\Account $account
+ * @var \Destiny\Character $character
  */
 ?>
 @extends('layout')
@@ -128,8 +129,13 @@
 						<div class="info">Active Time Played</div>
 						@include('block/timespan', ['minutes' => $character->minutesPlayedActive])
 					</div>
-
-					@include('block/stats', ['stats' => $character->statistics])
+					<?php if ($character->statistics->total->score->value == 0): ?>
+						<div class="alert alert-info">
+							Statistics are currently unavailable.
+						</div>
+					<?php else: ?>
+						@include('block/stats', ['stats' => $character->statistics])
+					<?php endif; ?>
 				</div>
 			</div>
 

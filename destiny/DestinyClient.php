@@ -96,8 +96,15 @@ class DestinyClient extends Client
 
 				if ($result instanceof Exception)
 				{
-					Cache::forget($request->key);
-					throw new DestinyException($result->getMessage(), $result->getCode(), $result);
+					if ($request->salvageable)
+					{
+						$responses[$key] = null;
+					}
+					else
+					{
+						Cache::forget($request->key);
+						throw new DestinyException($result->getMessage(), $result->getCode(), $result);
+					}
 				}
 
 				if ($result instanceof Response)
@@ -118,7 +125,14 @@ class DestinyClient extends Client
 						}
 						else
 						{
-							throw new DestinyException(array_get($response, 'Message'), array_get($response, 'ErrorCode'));
+							if ($request->salvageable)
+							{
+								$response = null;
+							}
+							else
+							{
+								throw new DestinyException(array_get($response, 'Message'), array_get($response, 'ErrorCode'));
+							}
 						}
 					}
 					else

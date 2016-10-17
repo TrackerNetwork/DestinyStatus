@@ -35,16 +35,27 @@ class DestinyRequest implements SubscriberInterface
 	 */
 	public $raw = false;
 
+	/**
+	 * @var bool
+	 */
+	public $salvageable = true;
+
 	protected $time;
 
-	public function __construct($uri, $params = [], $cache = null)
+	public function __construct($uri, $params = [], $cache = null, $salvageable = true)
 	{
 		$this->uri = $uri;
 
-		if ( ! is_array($params))
+		if (is_bool($params))
+		{
+			$salvageable = $params;
+			$params = [];
+		}
+		else if ( ! is_array($params))
 		{
 			$cache = $params;
 			$params = [];
+			$salvageable = $cache;
 		}
 
 		$this->params   = $params;
@@ -55,6 +66,7 @@ class DestinyRequest implements SubscriberInterface
 
 		$this->url = $this->uri.'?'.http_build_query($query);
 		$this->key = 'bungie:platform:'.sha1($this->url);
+		$this->salvageable = $salvageable;
 	}
 
 	public function raw()

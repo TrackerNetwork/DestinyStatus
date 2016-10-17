@@ -2,14 +2,14 @@
 
 class DestinyPlatform
 {
-	protected function request($uri, $params = [], $cacheMinutes = null)
+	protected function request($uri, $params = [], $cacheMinutes = null, $salvageable = true)
 	{
-		return new DestinyRequest($uri, $params, $cacheMinutes);
+		return new DestinyRequest($uri, $params, $cacheMinutes, $salvageable);
 	}
 
 	public function manifest()
 	{
-		return $this->request("destiny/manifest/");
+		return $this->request("destiny/manifest/", false);
 	}
 
 	public function advisors()
@@ -26,17 +26,17 @@ class DestinyPlatform
 	{
 		$gamertag = rawurlencode(trim($gamertag));
 
-		return $this->request("destiny/searchdestinyplayer/all/$gamertag/", CACHE_PLAYER);
+		return $this->request("destiny/searchdestinyplayer/all/$gamertag/", CACHE_PLAYER, false);
 	}
 
 	public function grimoire(Player $player)
 	{
-		return $this->request("destiny/vanguard/grimoire/$player->membershipType/$player->membershipId/", ['flavour' => 'true'], CACHE_DEFAULT);
+		return $this->request("destiny/vanguard/grimoire/$player->membershipType/$player->membershipId/", ['flavour' => 'true'], CACHE_DEFAULT, false);
 	}
 
 	public function account(Player $player)
 	{
-		return $this->request("destiny/$player->membershipType/account/$player->membershipId/summary/", CACHE_DEFAULT);
+		return $this->request("destiny/$player->membershipType/account/$player->membershipId/summary/", CACHE_DEFAULT, false);
 	}
 
 	public function inventory(Character $character)
