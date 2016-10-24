@@ -33,6 +33,8 @@ class Card extends Model
 	 */
 	protected $unobtainable = [
 		'302030', // Fate of All Fools
+		'800312', // Khvostov Field Manual, pg. 90
+		'800407', // Lady Efideet
 	];
 
 	/**
