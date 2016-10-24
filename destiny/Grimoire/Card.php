@@ -76,6 +76,8 @@ class Card extends Model
 		'700590' => 'Theosyion, the Restorative Mind',
 		'701370' => 'Ghost Fragment: Vex 5',
 		'790010' => 'Zen Meteor',
+		'800110' => 'Ghost Fragment: Icarus',
+		'800131' => 'Ghost Fragment: Sector 618',
 		'800448' => 'Icarus - Languid Sea, Mercury'
 	];
 
