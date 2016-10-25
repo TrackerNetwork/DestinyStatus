@@ -33,8 +33,16 @@ class Card extends Model
 	 */
 	protected $unobtainable = [
 		'302030', // Fate of All Fools
+	];
+
+	/**
+	 * @var array
+	 */
+	protected $bugged = [
+		'790020', // Chroma
 		'800312', // Khvostov Field Manual, pg. 90
 		'800407', // Lady Efideet
+		'800439', // Beauty in Destruction
 	];
 
 	/**
@@ -139,6 +147,11 @@ class Card extends Model
 	public function isObtainable()
 	{
 		return ! in_array($this->cardId, $this->unobtainable);
+	}
+
+	public function isBugged()
+	{
+		return in_array($this->cardId, $this->bugged);
 	}
 
 	public function isIncomplete()

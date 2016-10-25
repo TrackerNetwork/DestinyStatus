@@ -60,6 +60,10 @@
 			<?php if($card->isPlaystationExclusive()): ?>
 			<div class="exclusive opaque"><i class="fa fa-info-circle"></i> PlayStation Exclusive</div>
 			<?php endif; ?>
+
+			<?php if($card->isBugged()): ?>
+			<div class="bugged opaque"><i class="fa fa-question-circle"></i> This card is bugged</div>
+			<?php endif; ?>
 		</div>
 	</div>
 <?php $i++; endforeach; ?>
