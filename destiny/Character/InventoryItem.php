@@ -103,12 +103,7 @@ class InventoryItem extends InventoryItemDefinition
 	{
 		if ($value) return $value;
 
-		if ( ! $this->isClassified)
-		{
-			return null;
-		}
-
-		return '/common/destiny_content/icons/f0dcc71487f77a69005bec2e3fb6e4e8.jpg';
+		return '/img/misc/missing_icon.png';
 	}
 
 	protected function gDefinition()
