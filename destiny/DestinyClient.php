@@ -61,13 +61,13 @@ class DestinyClient extends Client
 
 			if ( ! CACHE_ENABLED || $request->raw)
 			{
-				Cache::forget($request->key);
+				Cache::store('file')->forget($request->key);
 			}
 
 			if ($request->cache && Cache::has($request->key))
 			{
 				Debugbar::startMeasure("CACHE: " . $request->url);
-				$responses[$key] = Cache::get($request->key);
+				$responses[$key] = Cache::store('file')->get($request->key);
 				Debugbar::stopMeasure("CACHE: " . $request->url);
 			}
 			else
@@ -102,7 +102,7 @@ class DestinyClient extends Client
 					}
 					else
 					{
-						Cache::forget($request->key);
+						Cache::store('file')->forget($request->key);
 						throw new DestinyException($result->getMessage(), $result->getCode(), $result);
 					}
 				}
@@ -113,7 +113,7 @@ class DestinyClient extends Client
 
 					if (array_get($response, 'ErrorStatus') !== 'Success')
 					{
-						Cache::forget($request->key);
+						Cache::store('file')->forget($request->key);
 						Bugsnag::setMetaData(['bungie' => $response]);
 						if (array_get($response, 'ErrorCode') === $this->destinyLegacyPlatformErrorCode)
 						{
@@ -142,12 +142,12 @@ class DestinyClient extends Client
 
 					if (empty($response))
 					{
-						Cache::forget($request->key);
+						Cache::store('file')->forget($request->key);
 					}
 
 					if ($request->cache)
 					{
-						Cache::put($request->key, $response, $request->cache);
+						Cache::store('file')->put($request->key, $response, $request->cache);
 					}
 
 					$responses[$key] = $response;
