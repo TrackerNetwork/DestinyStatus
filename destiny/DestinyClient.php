@@ -64,7 +64,7 @@ class DestinyClient extends Client
 				Cache::store('file')->forget($request->key);
 			}
 
-			if ($request->cache && Cache::has($request->key))
+			if ($request->cache && Cache::store('file')->has($request->key))
 			{
 				Debugbar::startMeasure("CACHE: " . $request->url);
 				$responses[$key] = Cache::store('file')->get($request->key);
