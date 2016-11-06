@@ -1,3 +1,9 @@
+# v2.2.0 (November 6, 2016)
+ * Added "Exotic Weapon" quest tab.
+ * Mark classified items properly to prevent dead images.
+ * Add "Bugged" grimoire cards.
+ * Switch to a file store for some caches
+
 # v2.1.0 (October 17, 2016)
  * Ability for profiles to be private and still work.
  * Ability for requests to fail (Checklist, stats, history, etc) and still work.
