@@ -16,4 +16,5 @@
 <ul class="nav nav-pills nav-span">
 	<li class="<?= $tab == 'account' ? 'active' : '' ?>"><a href="<?= route('account', ['platform' => $player->platform, 'gamertag' => $player->displayName]) ?>">Characters</a></li>
 	<li class="<?= $tab == 'grimoire' ? 'active' : '' ?>"><a href="<?= route('grimoire', ['platform' => $player->platform, 'gamertag' => $player->displayName]) ?>">Grimoire</a></li>
+	<li class="<?= $tab == 'exotics' ? 'active' : '' ?>"><a href="<?= route('exotics', ['platform' => $player->platform, 'gamertag' => $player->displayName]) ?>">Exotic Weapons</a></li>
 </ul>

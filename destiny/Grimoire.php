@@ -34,6 +34,18 @@ class Grimoire extends Model
 		$this->themeCollection = new ThemeCollection($this, $this->definitions->themeCollection);
 	}
 
+	public function getCard($cardId)
+	{
+		$cards = $this->cards;
+
+		if (isset($cards[$cardId]))
+		{
+			return $cards[$cardId];
+		}
+
+		return null;
+	}
+
 	protected function gDefinitions()
 	{
 		return manifest()->grimoire();

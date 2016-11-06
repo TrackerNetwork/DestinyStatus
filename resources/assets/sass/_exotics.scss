@@ -1,0 +1,31 @@
+.exotics-index
+{
+  .card {
+    &.first {
+      clear: left;
+    }
+    .title[data-completed="true"] .name {
+      color: $color-light;
+    }
+    .title {
+      margin-bottom: 4px;
+
+      h3 {
+        margin: 0 0 2px 0;
+
+        a {
+          color: $color-title;
+        }
+      }
+    }
+    .images {
+      font-size: 0;
+      margin-bottom: 5px;
+
+      canvas {
+        width: (100% / 3);
+        height: auto;
+      }
+    }
+  }
+}

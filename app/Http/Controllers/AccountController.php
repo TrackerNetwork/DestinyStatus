@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Destiny\Exotics;
 use Destiny\Player;
 use Illuminate\Http\Request;
 use Illuminate\View\Factory as View;
@@ -61,6 +62,24 @@ class AccountController extends Controller
 			'player'   => $player,
 			'platform' => $platform,
 			'grimoire' => $grimoire,
+		]);
+	}
+
+	/**
+	 * @param $platform string
+	 * @param $gamertag string
+	 * @return \Illuminate\Contracts\View\View
+	 */
+	public function exotics($platform, $gamertag)
+	{
+		$player = $this->findPlayer($platform, $gamertag);
+		$grimoire = $player->grimoire;
+
+		return $this->view->make('exotics', [
+			'player'   => $player,
+			'platform' => $platform,
+			'grimoire' => $grimoire,
+			'exotics'  => new Exotics($grimoire)
 		]);
 	}
 
