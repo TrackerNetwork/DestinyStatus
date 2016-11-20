@@ -44,7 +44,7 @@ return [
     |
     */
 
-    'cache_default' => env('DESTINY_CACHE_DEFAULT', 3),
+    'cache_default' => env('DESTINY_CACHE_DEFAULT', 0),
 
 	/*
 	|--------------------------------------------------------------------------
