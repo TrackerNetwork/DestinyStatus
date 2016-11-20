@@ -60,20 +60,22 @@ class Advisors extends Model
 	}
 
 	protected function gEvents()
-    {
-        $events = ['trials', 'armsDay', 'ironBanner', 'xur', 'srl'];
-        $return = [];
+	{
+		$events = ['trials', 'armsDay', 'ironBanner', 'xur', 'srl'];
+		$return = [];
 
-        foreach ($events as $event) {
-			if ($this->{$event}->minutesUntilExpiration > 0) {
+		foreach ($events as $event)
+		{
+			if ($this->{$event}->minutesUntilExpiration > 0)
+			{
 				$return[] = $this->{$event};
 			}
-        }
+		}
 
-        return array_filter($return);
-    }
+		return array_filter($return);
+	}
 
-    protected function gActiveEvents()
+	protected function gActiveEvents()
 	{
 		$events = $this->events;
 		$return = [];
@@ -114,11 +116,11 @@ class Advisors extends Model
 	}
 
 	protected function gTrials()
-    {
-        return $this->getActivity(Trials::getIdentifier());
-    }
+	{
+		return $this->getActivity(Trials::getIdentifier());
+	}
 
-    protected function gArmsDay()
+	protected function gArmsDay()
 	{
 		return $this->getActivity(ArmsDay::getIdentifier());
 	}
@@ -183,10 +185,10 @@ class Advisors extends Model
 		return $this->getActivity(Srl::getIdentifier());
 	}
 
-    protected function gWrathOfTheMachine()
-    {
-        return $this->getActivity(WrathOfTheMachine::getIdentifier());
-    }
+	protected function gWrathOfTheMachine()
+	{
+		return $this->getActivity(WrathOfTheMachine::getIdentifier());
+	}
 
 	public function eventsExist()
 	{
