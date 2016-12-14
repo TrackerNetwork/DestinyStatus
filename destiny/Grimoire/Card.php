@@ -39,10 +39,6 @@ class Card extends Model
 	 * @var array
 	 */
 	protected $bugged = [
-		'790020', // Chroma
-		'800312', // Khvostov Field Manual, pg. 90
-		'800407', // Lady Efideet
-		'800439', // Beauty in Destruction
 	];
 
 	/**
