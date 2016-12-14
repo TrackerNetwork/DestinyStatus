@@ -9,19 +9,22 @@ class Issue32Test extends TestCase
      */
     public function testUnicodeDuringSlugging()
     {
-		$ir = 'Ir Yût, the Deathsinger';
+		$ir = 'Ir Y&#251;t, the Deathsinger';
 		$this->assertEquals('ir-yut-the-deathsinger', slug($ir));
 
-		$alzok = 'Alzok Däl, Gornuk Däl, Zyrok Däl';
+		$alzok = 'Alzok D&#228;l, Gornuk D&#228;l, Zyrok D&#228;l';
 		$this->assertEquals('alzok-dal-gornuk-dal-zyrok-dal', slug($alzok));
 
-		$balwur = 'Balwûr';
+		$balwur = 'Balw&#251;r';
 		$this->assertEquals('balwur', slug($balwur));
 
-		$primus = 'Primus Ta\'aun';
+		$primus = 'Primus Ta&#39;aun';
 		$this->assertEquals('primus-taaun', slug($primus));
 
-		$norusk = 'Noru\'usk, Servant of Oryx';
+		$norusk = 'Noru&#39;usk, Servant of Oryx';
 		$this->assertEquals('noruusk-servant-of-oryx', slug($norusk));
+
+		$lysanders = 'Lysander&#39;s Cry';
+		$this->assertEquals('lysanders-cry', slug($lysanders));
     }
 }

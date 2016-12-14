@@ -28,7 +28,7 @@ function bungie($url)
 
 function dtrgrimoire($card)
 {
-	return url('http://db.destinytracker.com/grimoire/' . slug($card->theme->themeId) . '/' . slug($card->page->pageName) . '/' . slug($card->cardName));
+	return url('http://db.destinytracker.com/grimoire/') . slug($card->theme->themeId) . '/' . slug($card->page->pageName) . '/' . slug($card->cardName);
 }
 
 function dtritem($item)
@@ -47,7 +47,7 @@ function slug($name)
 		- Replace spaces with hypens.
 	*/
 
-	$name = html_entity_decode($name);
+	$name = html_entity_decode($name, ENT_QUOTES | ENT_XML1, 'UTF-8');
 	$name = strtolower(iconv("UTF-8", "ASCII//TRANSLIT//IGNORE", $name));
 	$name = preg_replace('/[^a-z0-9 -]/', '', $name);
 	$name = preg_replace('!\s+!', ' ', $name);
