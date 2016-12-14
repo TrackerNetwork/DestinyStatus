@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
 	{
 		define('CACHE_ENABLED', config('destiny.cache', true));
 		define('CACHE_DEFAULT', config('destiny.cache_default', false));
-		define('CACHE_INDEX', config('destiny.cache_index'), 60);
+		define('CACHE_INDEX', config('destiny.cache_index', 60));
 		define('CACHE_PLAYER',  config('destiny.cache_player'));
 	}
 
