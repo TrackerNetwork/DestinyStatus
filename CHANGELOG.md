@@ -1,3 +1,10 @@
+# v2.2.1 (December 14, 2016)
+ * Fix index cache not expiring properly.
+ * Sort characters by last played, not static.
+ * Don't show expired events.
+ * Update bugged grimoire cards (Thanks 1436346).
+ * Handle decoding of entities properly.
+
 # v2.2.0 (November 6, 2016)
  * Added "Exotic Weapon" quest tab.
  * Mark classified items properly to prevent dead images.
