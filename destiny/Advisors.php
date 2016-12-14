@@ -66,7 +66,7 @@ class Advisors extends Model
 
 		foreach ($events as $event)
 		{
-			if ($this->{$event}->minutesUntilExpiration > 0 && $this->{$event}->status->active)
+			if ($this->{$event}->minutesUntilExpiration > 0)
 			{
 				$return[] = $this->{$event};
 			}
