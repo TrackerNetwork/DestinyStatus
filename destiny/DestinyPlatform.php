@@ -14,7 +14,7 @@ class DestinyPlatform
 
 	public function advisors()
 	{
-		return $this->request("destiny/advisors/v2/", next_daily(), CACHE_INDEX);
+		return $this->request("destiny/advisors/v2/", null, CACHE_INDEX, false);
 	}
 
 	public function xur()

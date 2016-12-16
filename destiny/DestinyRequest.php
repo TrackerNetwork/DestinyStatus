@@ -51,6 +51,10 @@ class DestinyRequest implements SubscriberInterface
 			$salvageable = $params;
 			$params = [];
 		}
+		else if ($params === null)
+		{
+			$params = [];
+		}
 		else if ( ! is_array($params))
 		{
 			$salvageable = ($cache === null) ? true : $cache;
