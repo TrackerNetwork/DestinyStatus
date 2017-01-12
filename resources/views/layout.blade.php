@@ -84,7 +84,7 @@
 				@if (App::isLocal())
 					[<?= App::environment() ?>]
 				@endif
-				<a class="privacy" href="/privacy">Privacy Policy</a>
+				<a class="" href="https://github.com/TrackerNetwork/DestinyStatus/blob/master/CHANGELOG.md" target="_blank">Changelog</a><a class="privacy" href="/privacy">Privacy Policy</a>
 			</p>
 			<p>
 				Ads support server costs and all information used on this site is the property of Bungie<br>
