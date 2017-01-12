@@ -130,6 +130,18 @@ class Exotics extends Model
 			'weapon' => 700220,
 			'hint' => 'Obtain Level 40 and hit Rank 3 in Crucible.'
 		],
+		[
+			'name' => 'Nova Mortis',
+			'cardIds' => [801031],
+			'weapon' => 801031,
+			'hint' => 'Get Xur\'s Tag via the 7th reward in Competitive Spirit book to start the Quest.',
+		],
+		[
+			'name' => 'Abbadon',
+			'cardIds' => [801030],
+			'weapon' => 801030,
+			'hint' => 'Obtain quest after unlocking the Nova Mortis.'
+		],
 	];
 
 	/**
