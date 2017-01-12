@@ -1,3 +1,7 @@
+# v2.2.2 (January 12, 2017)
+ * Revert (Sort characters by last played, not static.)
+ * Add Abbadon & Nova Mortis to exotics tab.
+
 # v2.2.1 (December 14, 2016)
  * Fix index cache not expiring properly.
  * Sort characters by last played, not static.
