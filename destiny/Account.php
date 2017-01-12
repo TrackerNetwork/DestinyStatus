@@ -39,7 +39,7 @@ class Account extends Model
 		$this->statistics = new AccountStatistics($this, $stats);
 
 		$properties['characters'] = array_sort($properties['characters'], function($value) {
-			return carbon($value['characterBase']['dateLastPlayed'])->diffInSeconds();
+			return $value['characterBase']['characterId'];
 		});
 
 		$this->characters = (new CharacterCollection($this, $properties['characters']));
