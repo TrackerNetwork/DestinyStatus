@@ -1,3 +1,6 @@
+# v2.2.3 (January 15, 2017)
+ * Fix characters that are returning ("No stats") - #55.
+
 # v2.2.2 (January 12, 2017)
  * Revert (Sort characters by last played, not static.)
  * Add Abbadon & Nova Mortis to exotics tab.
