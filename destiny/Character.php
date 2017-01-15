@@ -255,7 +255,7 @@ class Character extends Model
 
 	public function hasStats()
 	{
-		return $this->statistics->total->score->value > 0;
+		return $this->statistics->total->secondsPlayed->value > 0;
 	}
 
 
