@@ -67,4 +67,15 @@ return [
     */
 
     'cache_player' => env('DESTINY_CACHE_PLAYER', 60 * 24),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Proxy Url
+    |--------------------------------------------------------------------------
+    |
+    | URL to proxy outbound API requests when over limit
+    |
+    */
+
+    'proxy_url' => env('PROXY_URL', null),
 ];

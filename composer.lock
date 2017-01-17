@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d9f0ba59ad71538fd5587f5ef6514f03",
-    "content-hash": "4cc0e05cdb3a0b02fc652d12bfbb1b28",
+    "hash": "1e753d8d81daba1aefc8aca5a20430ce",
+    "content-hash": "d5db0d35948d0b6475884862e4713c0d",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -973,6 +973,52 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "jeroenvisser101/leakybucket",
+            "version": "0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeroenvisser101/LeakyBucket.git",
+                "reference": "49a53e795b043af28b0f9da3004f620f8fd2439e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeroenvisser101/LeakyBucket/zipball/49a53e795b043af28b0f9da3004f620f8fd2439e",
+                "reference": "49a53e795b043af28b0f9da3004f620f8fd2439e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "predis/predis": ">=0.8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "LeakyBucket": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeroen Visser",
+                    "email": "jeroenvisser101@gmail.com"
+                }
+            ],
+            "description": "An implementation of the Leaky Bucket algorithm.",
+            "keywords": [
+                "firewall",
+                "leakybucket",
+                "limits",
+                "throttling"
+            ],
+            "time": "2015-01-17 10:45:03"
         },
         {
             "name": "laravel/framework",

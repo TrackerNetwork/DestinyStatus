@@ -9,6 +9,8 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\FileCookieJar;
 use Barryvdh\Debugbar\Facade as Debugbar;
 use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
+use LeakyBucket\LeakyBucket;
+use LeakyBucket\Storage\RedisStorage;
 
 class DestinyClient extends Client
 {
@@ -17,6 +19,9 @@ class DestinyClient extends Client
 
 	protected $destinyPrivacyRestriction = 1665;
 	protected $destinyLegacyPlatformErrorCode = 1670;
+
+	/** @var LeakyBucket $bucket */
+	static $bucket = null;
 
 	public function __construct($apiKey)
 	{
@@ -72,6 +77,21 @@ class DestinyClient extends Client
 			}
 			else
 			{
+				if (self::$bucket === null)
+				{
+					$this->initBucket();
+					self::$bucket->fill();
+				}
+				else
+				{
+					self::$bucket->fill();
+
+					if (self::$bucket->isFull())
+					{
+						$request->url = config('destiny.proxy_url') .  $this->domain.$this->baseUri.$request->url;
+					}
+				}
+
 				$req = $this->createRequest('GET', $request->url);
 				$req->getEmitter()->attach($request);
 
@@ -156,5 +176,13 @@ class DestinyClient extends Client
 		}
 
 		return $multi ? $responses : array_shift($responses);
+	}
+
+	private function initBucket()
+	{
+		self::$bucket = new LeakyBucket('destiny-throttle', new RedisStorage(), [
+			'capacity' => 250,
+			'leak' => 25
+		]);
 	}
 }
