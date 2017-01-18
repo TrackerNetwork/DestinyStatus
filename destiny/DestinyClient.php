@@ -19,6 +19,8 @@ class DestinyClient extends Client
 
 	protected $destinyPrivacyRestriction = 1665;
 	protected $destinyLegacyPlatformErrorCode = 1670;
+	
+	protected $proxyUrl = null;
 
 	/** @var LeakyBucket $bucket */
 	static $bucket = null;
@@ -35,8 +37,10 @@ class DestinyClient extends Client
 				],
 			],
 		];
-
+		
 		parent::__construct($config);
+
+		$this->proxyUrl = config('destiny.proxy_url', null);
 	}
 
 	/**
@@ -77,18 +81,21 @@ class DestinyClient extends Client
 			}
 			else
 			{
-				if (self::$bucket === null)
+				if ($this->proxyUrl !== null) 
 				{
-					$this->initBucket();
-					self::$bucket->fill();
-				}
-				else
-				{
-					self::$bucket->fill();
-
-					if (self::$bucket->isFull())
+					if (self::$bucket === null)
 					{
-						$request->url = config('destiny.proxy_url') .  $this->domain.$this->baseUri.$request->url;
+						$this->initBucket();
+						self::$bucket->fill();
+					}
+					else
+					{
+						self::$bucket->fill();
+
+						if (self::$bucket->isFull())
+						{
+							$request->url = config('destiny.proxy_url') .  $this->domain.$this->baseUri.$request->url;
+						}
 					}
 				}
 
