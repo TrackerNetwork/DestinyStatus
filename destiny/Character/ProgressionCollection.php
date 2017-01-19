@@ -24,7 +24,7 @@ class ProgressionCollection extends Collection
 	const QUEEN               = '807090922';
 	const TOS_WINS            = '692939593';
 	const TOS_LOSSES          = '2760041825';
-	const SRL                = '2763619072';
+	const SRL				  = '2763619072';
      
 	public function __construct(Character $character, array $properties)
 	{
