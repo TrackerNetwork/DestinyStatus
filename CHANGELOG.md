@@ -1,3 +1,7 @@
+# v2.3.0 (January 19, 2017)
+ * Leaky Bucket algorithm to prevent going over rate limit - #19
+ * Add "Stats" tab.
+
 # v2.2.3 (January 15, 2017)
  * Fix characters that are returning ("No stats") - #55.
 
