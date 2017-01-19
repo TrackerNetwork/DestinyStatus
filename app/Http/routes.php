@@ -24,4 +24,5 @@ Route::group(['prefix' => '{platform}/{player}'], function () {
 	Route::get('/', ['uses' => 'AccountController@index', 'as' => 'account']);
 	Route::get('grimoire', ['uses' => 'AccountController@grimoire', 'as' => 'grimoire']);
 	Route::get('exotics', ['uses' => 'AccountController@exotics', 'as' => 'exotics']);
+	Route::get('stats', ['uses' => 'AccountController@stats', 'as' => 'stats']);
 });

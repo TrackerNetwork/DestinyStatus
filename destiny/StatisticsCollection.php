@@ -10,6 +10,7 @@
  * @property \Destiny\Statistic $allParticipantsTimePlayed
  * @property \Destiny\Statistic $assists
  * @property \Destiny\Statistic $closeCalls
+ * @property \Destiny\Statistic $combatRating
  * @property \Destiny\Statistic $bestSingleGameKills
  * @property \Destiny\Statistic $bestSingleGameScore
  * @property \Destiny\Statistic $deaths
@@ -33,9 +34,11 @@
  * @property \Destiny\Statistic $resurrectionsReceived
  * @property \Destiny\Statistic $score
  * @property \Destiny\Statistic $secondsPlayed
+ * @property \Destiny\Statistic $averageLifespan
  * @property \Destiny\Statistic $suicides
  * @property \Destiny\Statistic $totalDeathDistance
  * @property \Destiny\Statistic $totalKillDistance
+ * @property \Destiny\Statistic $averageKillDistance
  * @property \Destiny\Statistic $totalActivityDurationSeconds
  * @property \Destiny\Statistic $teamScore
  * @property \Destiny\Statistic $weaponKillsSuper
@@ -60,6 +63,12 @@
  * @property \Destiny\Statistic $courtOfOryxWinsTier2
  * @property \Destiny\Statistic $courtOfOryxWinsTier3
  * @property \Destiny\Statistic $weaponBestType
+ * @property \Destiny\Statistic $winLossRatio
+ * @property \Destiny\Statistic $killsDeathsRatio
+ * @property \Destiny\Statistic $killsDeathsAssists
+ * @property \Destiny\Statistic $highestCharacterLevel
+ * @property \Destiny\Statistic $highestLightLevel
+ * @property \Destiny\Statistic $averageDeathDistance
  */
 class StatisticsCollection extends Collection
 {

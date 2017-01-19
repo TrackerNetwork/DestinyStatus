@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Destiny\Exotics;
 use Destiny\Player;
+use Destiny\StatisticsCollection;
 use Illuminate\Http\Request;
 use Illuminate\View\Factory as View;
 
@@ -80,6 +81,23 @@ class AccountController extends Controller
 			'platform' => $platform,
 			'grimoire' => $grimoire,
 			'exotics'  => new Exotics($grimoire)
+		]);
+	}
+
+	/**
+	 * @param $platform string
+	 * @param $gamertag string
+	 * @return \Illuminate\Contracts\View\View
+	 */
+	public function stats($platform, $gamertag)
+	{
+		$player = $this->findPlayer($platform, $gamertag);
+		$account = $player->account;
+
+		return $this->view->make('stats', [
+			'player'   => $player,
+			'platform' => $platform,
+			'stats'    => new StatisticsCollection($account->statistics->mergedAllCharacters['merged']['allTime']),
 		]);
 	}
 
