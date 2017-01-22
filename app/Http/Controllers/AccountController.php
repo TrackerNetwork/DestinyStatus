@@ -93,11 +93,12 @@ class AccountController extends Controller
 	{
 		$player = $this->findPlayer($platform, $gamertag);
 		$account = $player->account;
+		$stats = $account->mergedStats;
 
 		return $this->view->make('stats', [
 			'player'   => $player,
 			'platform' => $platform,
-			'stats'    => new StatisticsCollection($account->statistics->mergedAllCharacters['merged']['allTime']),
+			'stats'    => $stats,
 		]);
 	}
 

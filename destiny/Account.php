@@ -14,6 +14,7 @@ use Destiny\CurrencyCollection;
  * @property \Destiny\CurrencyCollection $currencies
  * @property \Destiny\CharacterCollection $characters
  * @property \Destiny\AccountStatistics $statistics
+ * @property StatisticsCollection $mergedStats
  */
 class Account extends Model
 {
@@ -62,6 +63,16 @@ class Account extends Model
 	protected function gPlayer()
 	{
 		return $this->player;
+	}
+
+	protected function gMergedStats()
+	{
+		if (! isset($this->statistics->mergedAllCharacters['merged']['allTime']))
+		{
+			throw new \Exception('No stats found');
+		}
+
+		return new StatisticsCollection($this->statistics->mergedAllCharacters['merged']['allTime']);
 	}
 
 	protected function sStatistics(AccountStatistics $stats)
