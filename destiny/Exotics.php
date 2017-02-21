@@ -142,6 +142,12 @@ class Exotics extends Model
 			'weapon' => 801030,
 			'hint' => 'Obtain quest after unlocking the Nova Mortis.'
 		],
+		[
+			'name' => 'Ice Breaker',
+			'cardIds' => [303090],
+			'weapon' => 303090,
+			'hint' => 'Random chance for completing Zavala\'s Sunrise Bounty'
+		]
 	];
 
 	/**
