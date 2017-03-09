@@ -286,6 +286,24 @@ class DestinyManifest
 	}
 
 	/**
+	 * @param $hash
+	 * @return \Destiny\Definitions\RecordBook
+	 */
+	public function recordBook($hash)
+	{
+		return $this->instance('RecordBook', $hash);
+	}
+
+	/**
+	 * @param $hash
+	 * @return \Destiny\Definitions\Record
+	 */
+	public function record($hash)
+	{
+		return $this->instance('Record', $hash);
+	}
+
+	/**
 	 * @param string $hash
 	 *
 	 * @return \Destiny\Definitions\StatGroup
