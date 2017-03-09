@@ -8,10 +8,10 @@ use Destiny\Character;
  */
 class RecordBookCollection extends Collection
 {
-	const SRL_RECORD_BOOK            = '0';
-	const TRIUMPH_Y2				 = '2175864601';
-	const COMPETITIVE_SPIRIT		 = '2225855327';
-	const RISE_OF_IRON				 = '3433868304';
+	const SRL_RECORD_BOOK 		= '0';
+	const TRIUMPH_Y2 			= '2175864601';
+	const COMPETITIVE_SPIRIT 	= '2225855327';
+	const RISE_OF_IRON 			= '3433868304';
 
 	public function __construct(Character $character, array $properties)
 	{
@@ -21,6 +21,4 @@ class RecordBookCollection extends Collection
 			$this->put($recordBook->bookHash, $recordBook);
 		}
 	}
-
-
 }
