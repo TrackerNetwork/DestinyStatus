@@ -110,7 +110,7 @@ class DestinyManifestCommand extends Command
 			"InventoryItem"   => "itemHash",
 			"Place"           => "placeHash",
 			"Progression"     => "progressionHash",
-			"RecordBook"	  => "itemHash",
+			"RecordBook"	  => "progressionHash",
 			"Record"		  => "hash",
 			"Objective"	      => "objectiveHash",
 			"Race"            => "raceHash",

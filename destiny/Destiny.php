@@ -3,6 +3,7 @@
 use Destiny\Character\ActivityCollection;
 use Destiny\Character\Inventory;
 use Destiny\Character\ProgressionCollection;
+use Destiny\Character\RecordBookCollection;
 
 class Destiny
 {
@@ -111,6 +112,7 @@ class Destiny
 			$character->activities   = new ActivityCollection($character, $activityStats, $checklist);
 			$character->inventory    = new Inventory($character, $inventory);
 			$character->progression  = new ProgressionCollection($character, $progression);
+			$character->recordbooks  = new RecordBookCollection($character, $checklist);
 		}
 
 		return $account;

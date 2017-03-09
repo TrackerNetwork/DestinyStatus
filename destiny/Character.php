@@ -3,6 +3,7 @@
 use Destiny\Character\ActivityCollection;
 use Destiny\Character\Inventory;
 use Destiny\Character\ProgressionCollection;
+use Destiny\Character\RecordBookCollection;
 
 /**
  * @property string $membershipId
@@ -51,6 +52,7 @@ use Destiny\Character\ProgressionCollection;
  * @property \Destiny\Character\Inventory $inventory
  * @property \Destiny\Character\ProgressionCollection $progression
  * @property \Destiny\Character\Statistics $statistics
+ * @property \Destiny\Character\RecordBook $recordBooks
  *
  * @property bool $playedAfterWeeklyReset
  * @property \Destiny\Account $account
@@ -105,6 +107,11 @@ class Character extends Model
 	 * @var \Destiny\Character\ProgressionCollection
 	 */
 	protected $progression;
+
+	/**
+	 * @var \Destiny\Character\RecordBookCollection
+	 */
+	protected $recordBooks;
 
 	public function __construct(Account $account, array $properties)
 	{
@@ -278,6 +285,11 @@ class Character extends Model
 		return $this->progression;
 	}
 
+	protected function gRecordBooks()
+	{
+		return $this->recordBooks;
+	}
+
 
 	//
 	// Setters
@@ -296,5 +308,10 @@ class Character extends Model
 	protected function sProgression(ProgressionCollection $progression)
 	{
 		return $this->progression = $progression;
+	}
+
+	protected function sRecordBooks(RecordBookCollection $recordBooks)
+	{
+		return $this->recordBooks = $recordBooks;
 	}
 }
