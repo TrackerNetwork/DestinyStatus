@@ -118,6 +118,24 @@ class Destiny
 		return $account;
 	}
 
+	public function recordBooks(Account $account)
+	{
+		$character = $account->characters->first();
+		$request = $this->platform->checklist($character);
+		$result = $this->client->request($request);
+
+		if (! isset($result['private']))
+		{
+			$checklist = array_get($result, 'data', []);
+		}
+		else
+		{
+			$checklist = [];
+		}
+
+		return new RecordBookCollection($character, $checklist);
+	}
+
 	/**
 	 * @param \Destiny\Player $player
 	 *
