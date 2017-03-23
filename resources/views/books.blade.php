@@ -43,7 +43,7 @@
                                             </div>
                                             <div class="enemy">
                                                 <?= $record['description']; ?>
-                                                <?php if ($record['status'] !== 2): ?>
+                                                <?php if ($record['status'] !== 2 && isset($record['percent'])): ?>
                                                     @include('block/progress', ['progress' => $record['percent'], 'label' => $record['objective']['displayDescription']])
                                                 <?php endif; ?>
                                             </div>
