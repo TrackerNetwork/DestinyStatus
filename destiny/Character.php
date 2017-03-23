@@ -51,10 +51,7 @@ use Destiny\Character\RecordBookCollection;
  * @property \Destiny\Character\Inventory $inventory
  * @property \Destiny\Character\ProgressionCollection $progression
  * @property \Destiny\Character\Statistics $statistics
-<<<<<<< HEAD
-=======
  * @property \Destiny\Character\RecordBook $recordBooks
->>>>>>> recordBooks
  * @property bool $playedAfterWeeklyReset
  * @property \Destiny\Account $account
  */
