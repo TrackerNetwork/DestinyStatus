@@ -1,4 +1,6 @@
-<?php namespace Destiny\AdvisorsTwo;
+<?php
+
+namespace Destiny\AdvisorsTwo;
 
 use Destiny\Definitions\Destination;
 use Destiny\Definitions\Faction;
@@ -17,37 +19,35 @@ use Destiny\Model;
  * @property string $status
  * @property Tip[] $tips
  * @property array $recruitmentIds
- *
  * @property Destination $destination
  * @property Faction $faction
  */
 class Display extends Model
 {
-	public function __construct(array $properties)
-	{
-		parent::__construct($properties);
-	}
+    public function __construct(array $properties)
+    {
+        parent::__construct($properties);
+    }
 
-	public function gDestination()
-	{
-		return manifest()->destination($this->destinationHash);
-	}
+    public function gDestination()
+    {
+        return manifest()->destination($this->destinationHash);
+    }
 
-	public function gFaction()
-	{
-		return manifest()->faction($this->factionHash);
-	}
+    public function gFaction()
+    {
+        return manifest()->faction($this->factionHash);
+    }
 
-	protected function gTips()
-	{
-		$tips = $this->newCollection();
+    protected function gTips()
+    {
+        $tips = $this->newCollection();
 
-		foreach (array_get($this->properties, 'tips') ?: [] as $properties)
-		{
-			$tip = new Tip(['message' => $properties]);
-			$tips->push($tip);
-		}
+        foreach (array_get($this->properties, 'tips') ?: [] as $properties) {
+            $tip = new Tip(['message' => $properties]);
+            $tips->push($tip);
+        }
 
-		return $tips;
-	}
+        return $tips;
+    }
 }

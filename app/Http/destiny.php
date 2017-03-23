@@ -1,28 +1,34 @@
 <?php
 
-class DestinyException extends Exception {}
-class DestinyLegacyPlatformException extends Exception {}
-class UnknownPlayerException extends DestinyException {}
-class FailingTooHardException extends Exception {}
+class DestinyException extends Exception
+{
+}
+class DestinyLegacyPlatformException extends Exception
+{
+}
+class UnknownPlayerException extends DestinyException
+{
+}
+class FailingTooHardException extends Exception
+{
+}
 
 /**
  * @return \Carbon\Carbon
  */
 function next_daily()
 {
-	static $date;
+    static $date;
 
-	if ( ! $date)
-	{
-		$date = carbon('this day 9:00 AM Z');
+    if (!$date) {
+        $date = carbon('this day 9:00 AM Z');
 
-		if ($date->isPast())
-		{
-			$date = carbon('next day 9:00 AM Z');
-		}
-	}
+        if ($date->isPast()) {
+            $date = carbon('next day 9:00 AM Z');
+        }
+    }
 
-	return $date;
+    return $date;
 }
 
 /**
@@ -30,15 +36,14 @@ function next_daily()
  */
 function last_daily()
 {
-	static $date;
+    static $date;
 
-	if ( ! $date)
-	{
-		$date = clone next_daily();
-		$date->subDay();
-	}
+    if (!$date) {
+        $date = clone next_daily();
+        $date->subDay();
+    }
 
-	return $date;
+    return $date;
 }
 
 /**
@@ -46,19 +51,17 @@ function last_daily()
  */
 function next_weekly()
 {
-	static $date;
+    static $date;
 
-	if ( ! $date)
-	{
-		$date = carbon('this tuesday 9:00 AM Z');
+    if (!$date) {
+        $date = carbon('this tuesday 9:00 AM Z');
 
-		if ($date->isPast())
-		{
-			$date = carbon('next tuesday 9:00 AM Z');
-		}
-	}
+        if ($date->isPast()) {
+            $date = carbon('next tuesday 9:00 AM Z');
+        }
+    }
 
-	return $date;
+    return $date;
 }
 
 /**
@@ -66,15 +69,14 @@ function next_weekly()
  */
 function last_weekly()
 {
-	static $date;
+    static $date;
 
-	if ( ! $date)
-	{
-		$date = clone next_weekly();
-		$date->subWeek();
-	}
+    if (!$date) {
+        $date = clone next_weekly();
+        $date->subWeek();
+    }
 
-	return $date;
+    return $date;
 }
 
 /**
@@ -82,7 +84,7 @@ function last_weekly()
  */
 function destiny()
 {
-	return app('destiny');
+    return app('destiny');
 }
 
 /**
@@ -90,7 +92,7 @@ function destiny()
  */
 function client()
 {
-	return app('destiny.client');
+    return app('destiny.client');
 }
 
 /**
@@ -98,7 +100,7 @@ function client()
  */
 function manifest()
 {
-	return app('destiny.manifest');
+    return app('destiny.manifest');
 }
 
 /**
@@ -106,5 +108,5 @@ function manifest()
  */
 function platform()
 {
-	return app('destiny.platform');
+    return app('destiny.platform');
 }

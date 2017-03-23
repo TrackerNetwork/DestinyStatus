@@ -1,4 +1,6 @@
-<?php namespace Destiny\Definitions;
+<?php
+
+namespace Destiny\Definitions;
 
 /**
  * @property string $bundleHash
@@ -11,25 +13,24 @@
  * @property string $placeHash
  * @property string $activityTypeHash
  * @property string[] $activityHashes
- *
  * @property \Destiny\Definitions\ActivityType $activityType
  * @property \Destiny\Definitions\Destination $destination
  * @property \Destiny\Definitions\Place $place
  */
 class ActivityBundle extends Definition
 {
-	protected function gActivityType()
-	{
-		return manifest()->activityType($this->activityTypeHash);
-	}
+    protected function gActivityType()
+    {
+        return manifest()->activityType($this->activityTypeHash);
+    }
 
-	protected function gDestination()
-	{
-		return manifest()->destination($this->destinationHash);
-	}
+    protected function gDestination()
+    {
+        return manifest()->destination($this->destinationHash);
+    }
 
-	protected function gPlace()
-	{
-		return manifest()->place($this->placeHash);
-	}
+    protected function gPlace()
+    {
+        return manifest()->place($this->placeHash);
+    }
 }

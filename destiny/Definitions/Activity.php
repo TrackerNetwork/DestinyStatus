@@ -1,4 +1,6 @@
-<?php namespace Destiny\Definitions;
+<?php
+
+namespace Destiny\Definitions;
 
 use Destiny\Skull;
 
@@ -22,55 +24,53 @@ use Destiny\Skull;
  * @property string $pgcrImage
  * @property array $rewards
  * @property \Destiny\Skull[] $skulls
- *
  * @property \Destiny\Definitions\ActivityType $activityType
  * @property \Destiny\Definitions\Place $place
  * @property \Destiny\Definitions\Destination $destination
  */
 class Activity extends Definition
 {
-	protected $appends = [
-		'activityType',
-		'destination',
-		'place',
-		'skulls',
-	];
+    protected $appends = [
+        'activityType',
+        'destination',
+        'place',
+        'skulls',
+    ];
 
-	protected function gActivityHash($value)
-	{
-		return (string) $value;
-	}
+    protected function gActivityHash($value)
+    {
+        return (string) $value;
+    }
 
-	protected function gActivityName($value)
-	{
-		return trim($value);
-	}
+    protected function gActivityName($value)
+    {
+        return trim($value);
+    }
 
-	protected function gActivityType()
-	{
-		return manifest()->activityType($this->activityTypeHash);
-	}
+    protected function gActivityType()
+    {
+        return manifest()->activityType($this->activityTypeHash);
+    }
 
-	protected function gDestination()
-	{
-		return manifest()->destination($this->destinationHash);
-	}
+    protected function gDestination()
+    {
+        return manifest()->destination($this->destinationHash);
+    }
 
-	protected function gPlace()
-	{
-		return manifest()->place($this->placeHash);
-	}
+    protected function gPlace()
+    {
+        return manifest()->place($this->placeHash);
+    }
 
-	protected function gSkulls()
-	{
-		$skulls = $this->newCollection();
+    protected function gSkulls()
+    {
+        $skulls = $this->newCollection();
 
-		foreach (array_get($this->properties, 'skulls') ?: [] as $properties)
-		{
-			$skull = new Skull($properties);
-			$skulls->put($skull->displayName, $skull);
-		}
+        foreach (array_get($this->properties, 'skulls') ?: [] as $properties) {
+            $skull = new Skull($properties);
+            $skulls->put($skull->displayName, $skull);
+        }
 
-		return $skulls;
-	}
+        return $skulls;
+    }
 }

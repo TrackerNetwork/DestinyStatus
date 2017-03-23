@@ -1,4 +1,6 @@
-<?php namespace Destiny\Grimoire;
+<?php
+
+namespace Destiny\Grimoire;
 
 use Destiny\Grimoire;
 
@@ -8,7 +10,6 @@ use Destiny\Grimoire;
  * @property array $normalResolution
  * @property array $highResolution
  * @property \Destiny\Grimoire\CardCollection $cardBriefs
- *
  * @property string $imagePath
  * @property \Destiny\Grimoire\Image $image
  * @property \Destiny\Grimoire\Image $thumbnail
@@ -17,27 +18,27 @@ use Destiny\Grimoire;
  */
 class Page extends Model
 {
-	protected $theme;
+    protected $theme;
 
-	public function __construct(Theme $theme, array $properties)
-	{
-		parent::__construct($theme->grimoire, $properties);
-		$this->theme = $theme;
-		$this->cardBriefs = new CardCollection($this, $properties['cardBriefs']);
-	}
+    public function __construct(Theme $theme, array $properties)
+    {
+        parent::__construct($theme->grimoire, $properties);
+        $this->theme = $theme;
+        $this->cardBriefs = new CardCollection($this, $properties['cardBriefs']);
+    }
 
-	protected function gImage()
-	{
-		return new Image($this->normalResolution['image']);
-	}
+    protected function gImage()
+    {
+        return new Image($this->normalResolution['image']);
+    }
 
-	protected function gThumbnail()
-	{
-		return new Image($this->highResolution['smallImage']);
-	}
+    protected function gThumbnail()
+    {
+        return new Image($this->highResolution['smallImage']);
+    }
 
-	protected function gTheme()
-	{
-		return $this->theme;
-	}
+    protected function gTheme()
+    {
+        return $this->theme;
+    }
 }

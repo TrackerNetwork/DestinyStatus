@@ -1,4 +1,6 @@
-<?php namespace Destiny\Grimoire;
+<?php
+
+namespace Destiny\Grimoire;
 
 use Destiny\Collection;
 use Destiny\Grimoire;
@@ -8,12 +10,11 @@ use Destiny\Grimoire;
  */
 class ThemeCollection extends Collection
 {
-	public function __construct(Grimoire $grimoire, array $items)
-	{
-		foreach ($items as $properties)
-		{
-			$theme = new Theme($grimoire, $properties);
-			$this->items[$theme->themeId] = $theme;
-		}
-	}
+    public function __construct(Grimoire $grimoire, array $items)
+    {
+        foreach ($items as $properties) {
+            $theme = new Theme($grimoire, $properties);
+            $this->items[$theme->themeId] = $theme;
+        }
+    }
 }
