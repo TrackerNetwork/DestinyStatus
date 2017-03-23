@@ -5,6 +5,7 @@ namespace Destiny;
 use Destiny\Character\ActivityCollection;
 use Destiny\Character\Inventory;
 use Destiny\Character\ProgressionCollection;
+use Destiny\Character\RecordBookCollection;
 
 class Destiny
 {
@@ -108,9 +109,25 @@ class Destiny
             $character->activities = new ActivityCollection($character, $activityStats, $checklist);
             $character->inventory = new Inventory($character, $inventory);
             $character->progression = new ProgressionCollection($character, $progression);
+            $character->recordbooks = new RecordBookCollection($character, $checklist);
         }
 
         return $account;
+    }
+
+    public function recordBooks(Account $account)
+    {
+        $character = $account->characters->first();
+        $request = $this->platform->checklist($character);
+        $result = $this->client->request($request);
+
+        if (!isset($result['private'])) {
+            $checklist = array_get($result, 'data', []);
+        } else {
+            $checklist = [];
+        }
+
+        return new RecordBookCollection($character, $checklist);
     }
 
     /**

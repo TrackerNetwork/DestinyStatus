@@ -106,6 +106,25 @@ class AccountController extends Controller
         ]);
     }
 
+    /**
+     * @param string $platform
+     * @param string $gamertag
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function books($platform, $gamertag)
+    {
+        $player = $this->findPlayer($platform, $gamertag);
+        $account = $player->account;
+        $books = destiny()->recordBooks($account);
+
+        return $this->view->make('books', [
+            'player'      => $player,
+            'platform'    => $platform,
+            'books'       => $books,
+        ]);
+    }
+
     //-------------------------------------------------------
     // Protected Functions
     //-------------------------------------------------------

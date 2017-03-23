@@ -97,6 +97,20 @@
   }
 }
 
+.book-page {
+  .rewards {
+    background-color: $panel-bg;
+    padding: 5px 0;
+
+    .reward {
+      padding: 5px;
+      img {
+        width: 24px;
+      }
+    }
+  }
+}
+
 .advisor-raid {
   padding-bottom: 55px;
   .expires {

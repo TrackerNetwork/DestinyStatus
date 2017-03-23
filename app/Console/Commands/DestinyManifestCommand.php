@@ -109,6 +109,8 @@ class DestinyManifestCommand extends Command
             'InventoryItem'      => 'itemHash',
             'Place'              => 'placeHash',
             'Progression'        => 'progressionHash',
+            'RecordBook'         => 'hash',
+            'Record'             => 'hash',
             'Objective'          => 'objectiveHash',
             'Race'               => 'raceHash',
             'SandboxPerk'        => 'perkHash',
