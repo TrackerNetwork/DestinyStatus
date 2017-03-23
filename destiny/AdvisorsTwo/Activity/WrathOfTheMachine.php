@@ -1,4 +1,6 @@
-<?php namespace Destiny\AdvisorsTwo\Activity;
+<?php
+
+namespace Destiny\AdvisorsTwo\Activity;
 
 use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
@@ -19,15 +21,12 @@ class WrathOfTheMachine extends Activity implements ActivityInterface
         $skullsCategories = $properties['activityTiers']->first()['skullCategories'];
         $properties['definition'] = $properties['activityTiers']->first()['definition'];
 
-        if (is_array($skullsCategories))
-        {
+        if (is_array($skullsCategories)) {
             $skulls = [];
-            foreach ($skullsCategories as $skullCategory)
-            {
-                foreach ($skullCategory['skulls'] as $skull)
-                {
+            foreach ($skullsCategories as $skullCategory) {
+                foreach ($skullCategory['skulls'] as $skull) {
                     $skull = new SkullModifier($skull);
-                    $skull->isModifier = $skullCategory['title'] === "Modifiers";
+                    $skull->isModifier = $skullCategory['title'] === 'Modifiers';
                     $skulls[] = $skull;
                 }
             }

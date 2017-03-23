@@ -1,4 +1,6 @@
-<?php namespace Destiny\Definitions;
+<?php
+
+namespace Destiny\Definitions;
 
 /**
  * @property string $combatantHash
@@ -11,5 +13,4 @@
  */
 class Combatant extends Definition
 {
-
 }

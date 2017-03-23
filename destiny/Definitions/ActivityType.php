@@ -1,4 +1,6 @@
-<?php namespace Destiny\Definitions;
+<?php
+
+namespace Destiny\Definitions;
 
 /**
  * @property string $activityTypeHash
@@ -17,38 +19,38 @@
  */
 class ActivityType extends Definition
 {
-	public function isNightfall()
-	{
-		return $this->identifier == 'ACTIVITY_TYPE_NIGHTFALL';
-	}
+    public function isNightfall()
+    {
+        return $this->identifier == 'ACTIVITY_TYPE_NIGHTFALL';
+    }
 
-	public function isRaid()
-	{
-		return $this->activityTypeName == 'Raid'
-		    || strstr($this->identifier, 'RAID');
-	}
+    public function isRaid()
+    {
+        return $this->activityTypeName == 'Raid'
+            || strstr($this->identifier, 'RAID');
+    }
 
-	public function isArena()
-	{
-		return $this->identifier == 'ARENA_CHALLENGE';
-	}
+    public function isArena()
+    {
+        return $this->identifier == 'ARENA_CHALLENGE';
+    }
 
-	public function isWeeklyHeroic()
-	{
-		return $this->identifier == 'STRIKE_WEEKLY';
-	}
+    public function isWeeklyHeroic()
+    {
+        return $this->identifier == 'STRIKE_WEEKLY';
+    }
 
-	public function isDaily()
-	{
-		// cannot be trusted anymore. Daily PVE Events do not have this ActivityType
-		return $this->identifier == 'ACTIVITY_TYPE_STORY_FEATURED';
-	}
+    public function isDaily()
+    {
+        // cannot be trusted anymore. Daily PVE Events do not have this ActivityType
+        return $this->identifier == 'ACTIVITY_TYPE_STORY_FEATURED';
+    }
 
-	public function isWeekly()
-	{
-		return $this->isWeeklyHeroic()
-		    || $this->isNightfall()
-		    || $this->isRaid()
-		    || $this->isArena();
-	}
+    public function isWeekly()
+    {
+        return $this->isWeeklyHeroic()
+            || $this->isNightfall()
+            || $this->isRaid()
+            || $this->isArena();
+    }
 }

@@ -1,4 +1,6 @@
-<?php namespace Destiny\Advisors;
+<?php
+
+namespace Destiny\Advisors;
 
 use Destiny\Model;
 
@@ -10,58 +12,54 @@ use Destiny\Model;
  * @property array $bossSkulls
  * @property array $activeRewardIndexes
  * @property bool $isCompleted
- *
  * @property string $activityName
  * @property string $bossName
- *
  * @property \Destiny\Definitions\Activity $activity
  */
 class Arena extends Model
 {
-	protected $definition;
-	protected $bossNames = [
-		'2326253031' => 'Skolas',
-	];
+    protected $definition;
+    protected $bossNames = [
+        '2326253031' => 'Skolas',
+    ];
 
-	public function __construct(array $properties)
-	{
-		parent::__construct($properties);
-		$this->definition = manifest()->activity($this->activityHash);
-		$this->rounds = $this->newCollection();
+    public function __construct(array $properties)
+    {
+        parent::__construct($properties);
+        $this->definition = manifest()->activity($this->activityHash);
+        $this->rounds = $this->newCollection();
 
-		foreach ($properties['rounds'] as $k => $round)
-		{
-			$round = new ArenaRound($this, $round);
-			$round->roundNumber = $k + 1;
+        foreach ($properties['rounds'] as $k => $round) {
+            $round = new ArenaRound($this, $round);
+            $round->roundNumber = $k + 1;
 
-			$this->rounds->put($k, $round);
-		}
-	}
+            $this->rounds->put($k, $round);
+        }
+    }
 
-	protected function gActivity()
-	{
-		return $this->definition;
-	}
+    protected function gActivity()
+    {
+        return $this->definition;
+    }
 
-	protected function gActivityName()
-	{
-		return $this->definition->activityName;
-	}
+    protected function gActivityName()
+    {
+        return $this->definition->activityName;
+    }
 
-	protected function gBossName()
-	{
-		return array_get($this->bossNames, $this->activityHash, 'Unknown');
-	}
+    protected function gBossName()
+    {
+        return array_get($this->bossNames, $this->activityHash, 'Unknown');
+    }
 
-	protected function gBossSkulls()
-	{
-		$skulls = [];
+    protected function gBossSkulls()
+    {
+        $skulls = [];
 
-		foreach ($this->properties['bossSkulls'] as $skull)
-		{
-			$skulls[] = manifest()->scriptedSkull($skull);
-		}
+        foreach ($this->properties['bossSkulls'] as $skull) {
+            $skulls[] = manifest()->scriptedSkull($skull);
+        }
 
-		return $skulls;
-	}
+        return $skulls;
+    }
 }

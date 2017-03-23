@@ -1,4 +1,6 @@
-<?php namespace Destiny\Definitions;
+<?php
+
+namespace Destiny\Definitions;
 
 /**
  * @property string $classHash
@@ -10,8 +12,8 @@
  */
 class CharacterClass extends Definition
 {
-	protected function gClassHash($value)
-	{
-		return (string) $value;
-	}
+    protected function gClassHash($value)
+    {
+        return (string) $value;
+    }
 }

@@ -1,11 +1,12 @@
-<?php namespace Destiny\Character;
+<?php
 
-use Destiny\Model;
+namespace Destiny\Character;
+
 use Destiny\Character;
+use Destiny\Model;
 
 /**
  * @property \Destiny\Character\InventoryBucket[] $buckets
- *
  * @property \Destiny\Character\InventoryBucket $subclass
  * @property \Destiny\Character\InventoryBucket $primaryWeapons
  * @property \Destiny\Character\InventoryBucket $specialWeapons
@@ -21,153 +22,148 @@ use Destiny\Character;
  * @property \Destiny\Character\InventoryBucket $emblem
  * @property \Destiny\Character\InventoryBucket $emote
  * @property \Destiny\Character\InventoryBucket $artifact
- *
  * @property \Destiny\Character $character
  * @property \Destiny\Account $account
  */
 class Inventory extends Model
 {
-	const BUCKET_SUBCLASS        = '3284755031';
-	const BUCKET_PRIMARY_WEAPONS = '1498876634';
-	const BUCKET_SPECIAL_WEAPONS = '2465295065';
-	const BUCKET_HEAVY_WEAPONS   = '953998645';
-	const BUCKET_HEAD            = '3448274439';
-	const BUCKET_ARMS            = '3551918588';
-	const BUCKET_CHEST           = '14239492';
-	const BUCKET_LEGS            = '20886954';
-	const BUCKET_CLASS           = '1585787867';
-	const BUCKET_GHOST           = '4023194814';
-	const BUCKET_VEHICLES        = '2025709351';
-	const BUCKET_SHIPS           = '284967655';
-	const BUCKET_SHADERS         = '2973005342';
-	const BUCKET_EMBLEMS         = '4274335291';
-	const BUCKET_EMOTES          = '3054419239';
-	const BUCKET_ARTIFACTS       = '434908299';
-	const BUCKET_SPARROW_HORN    = '3796357825';
+    const BUCKET_SUBCLASS = '3284755031';
+    const BUCKET_PRIMARY_WEAPONS = '1498876634';
+    const BUCKET_SPECIAL_WEAPONS = '2465295065';
+    const BUCKET_HEAVY_WEAPONS = '953998645';
+    const BUCKET_HEAD = '3448274439';
+    const BUCKET_ARMS = '3551918588';
+    const BUCKET_CHEST = '14239492';
+    const BUCKET_LEGS = '20886954';
+    const BUCKET_CLASS = '1585787867';
+    const BUCKET_GHOST = '4023194814';
+    const BUCKET_VEHICLES = '2025709351';
+    const BUCKET_SHIPS = '284967655';
+    const BUCKET_SHADERS = '2973005342';
+    const BUCKET_EMBLEMS = '4274335291';
+    const BUCKET_EMOTES = '3054419239';
+    const BUCKET_ARTIFACTS = '434908299';
+    const BUCKET_SPARROW_HORN = '3796357825';
 
-	/**
-	 * @var \Destiny\Character
-	 */
-	protected $character;
+    /**
+     * @var \Destiny\Character
+     */
+    protected $character;
 
-	public function __construct(Character $character, array $properties)
-	{
-		$items = [];
-		foreach(array_get($properties, 'items', null) as $property)
-		{
-			$hash = (string) $property['itemHash'];
-			$definition = manifest()->inventoryItem($hash);
-			$property = array_merge($property, $definition->getProperties());
+    public function __construct(Character $character, array $properties)
+    {
+        $items = [];
+        foreach (array_get($properties, 'items', null) as $property) {
+            $hash = (string) $property['itemHash'];
+            $definition = manifest()->inventoryItem($hash);
+            $property = array_merge($property, $definition->getProperties());
 
-			$items['buckets'][$property['bucketHash']] = new InventoryItem(new InventoryBucket($this, $properties), $property);
-		}
+            $items['buckets'][$property['bucketHash']] = new InventoryItem(new InventoryBucket($this, $properties), $property);
+        }
 
-		parent::__construct($items);
-		$this->character = $character;
-	}
+        parent::__construct($items);
+        $this->character = $character;
+    }
 
-	protected function gCharacter()
-	{
-		return $this->character;
-	}
+    protected function gCharacter()
+    {
+        return $this->character;
+    }
 
-	protected function gAccount()
-	{
-		return $this->character->account;
-	}
-	
-	protected function gItems($key)
-	{
-		if (array_key_exists($key, $this->properties['buckets']))
-		{
-			return $this->properties['buckets'][$key];
-		}
-		
-		return null;
-	}
+    protected function gAccount()
+    {
+        return $this->character->account;
+    }
 
-	protected function gSubclass()
-	{
-		return $this->gItems(self::BUCKET_SUBCLASS);
-	}
+    protected function gItems($key)
+    {
+        if (array_key_exists($key, $this->properties['buckets'])) {
+            return $this->properties['buckets'][$key];
+        }
+    }
 
-	protected function gPrimaryWeapons()
-	{
-		return $this->gItems(self::BUCKET_PRIMARY_WEAPONS);
-	}
+    protected function gSubclass()
+    {
+        return $this->gItems(self::BUCKET_SUBCLASS);
+    }
 
-	protected function gSpecialWeapons()
-	{
-		return $this->gItems(self::BUCKET_SPECIAL_WEAPONS);
-	}
+    protected function gPrimaryWeapons()
+    {
+        return $this->gItems(self::BUCKET_PRIMARY_WEAPONS);
+    }
 
-	protected function gHeavyWeapons()
-	{
-		return $this->gItems(self::BUCKET_HEAVY_WEAPONS);
-	}
+    protected function gSpecialWeapons()
+    {
+        return $this->gItems(self::BUCKET_SPECIAL_WEAPONS);
+    }
 
-	protected function gHead()
-	{
-		return $this->gItems(self::BUCKET_HEAD);
-	}
+    protected function gHeavyWeapons()
+    {
+        return $this->gItems(self::BUCKET_HEAVY_WEAPONS);
+    }
 
-	protected function gArms()
-	{
-		return $this->gItems(self::BUCKET_ARMS);
-	}
+    protected function gHead()
+    {
+        return $this->gItems(self::BUCKET_HEAD);
+    }
 
-	protected function gChest()
-	{
-		return $this->gItems(self::BUCKET_CHEST);
-	}
+    protected function gArms()
+    {
+        return $this->gItems(self::BUCKET_ARMS);
+    }
 
-	protected function gLegs()
-	{
-		return $this->gItems(self::BUCKET_LEGS);
-	}
+    protected function gChest()
+    {
+        return $this->gItems(self::BUCKET_CHEST);
+    }
 
-	protected function gClass()
-	{
-		return $this->gItems(self::BUCKET_CLASS);
-	}
+    protected function gLegs()
+    {
+        return $this->gItems(self::BUCKET_LEGS);
+    }
 
-	protected function gVehicle()
-	{
-		return $this->gItems(self::BUCKET_VEHICLES);
-	}
+    protected function gClass()
+    {
+        return $this->gItems(self::BUCKET_CLASS);
+    }
 
-	protected function gShip()
-	{
-		return $this->gItems(self::BUCKET_SHIPS);
-	}
+    protected function gVehicle()
+    {
+        return $this->gItems(self::BUCKET_VEHICLES);
+    }
 
-	protected function gGhost()
-	{
-		return $this->gItems(self::BUCKET_GHOST);
-	}
+    protected function gShip()
+    {
+        return $this->gItems(self::BUCKET_SHIPS);
+    }
 
-	protected function gShader()
-	{
-		return $this->gItems(self::BUCKET_SHADERS);
-	}
+    protected function gGhost()
+    {
+        return $this->gItems(self::BUCKET_GHOST);
+    }
 
-	protected function gEmblem()
-	{
-		return $this->gItems(self::BUCKET_EMBLEMS);
-	}
+    protected function gShader()
+    {
+        return $this->gItems(self::BUCKET_SHADERS);
+    }
 
-	protected function gEmote()
-	{
-		return $this->gItems(self::BUCKET_EMOTES);
-	}
+    protected function gEmblem()
+    {
+        return $this->gItems(self::BUCKET_EMBLEMS);
+    }
 
-	protected function gArtifact()
-	{
-		return $this->gItems(self::BUCKET_ARTIFACTS);
-	}
+    protected function gEmote()
+    {
+        return $this->gItems(self::BUCKET_EMOTES);
+    }
 
-	protected function gSparrowHorn()
-	{
-		return $this->gItems(self::BUCKET_SPARROW_HORN);
-	}
+    protected function gArtifact()
+    {
+        return $this->gItems(self::BUCKET_ARTIFACTS);
+    }
+
+    protected function gSparrowHorn()
+    {
+        return $this->gItems(self::BUCKET_SPARROW_HORN);
+    }
 }

@@ -1,10 +1,11 @@
-<?php namespace Destiny\AdvisorsTwo\Activity;
+<?php
+
+namespace Destiny\AdvisorsTwo\Activity;
 
 /**
- * Interface EventInterface
- * @package Destiny\AdvisorsTwo\Activity
+ * Interface EventInterface.
  */
 interface EventInterface
 {
-	public function getTitle();
+    public function getTitle();
 }

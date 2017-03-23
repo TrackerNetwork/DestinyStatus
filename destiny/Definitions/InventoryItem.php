@@ -1,4 +1,6 @@
-<?php namespace Destiny\Definitions;
+<?php
+
+namespace Destiny\Definitions;
 
 /**
  * @property string $itemHash
@@ -38,28 +40,28 @@
  */
 class InventoryItem extends Definition
 {
-	protected function gItemHash($value)
-	{
-		return (string) $value;
-	}
+    protected function gItemHash($value)
+    {
+        return (string) $value;
+    }
 
-	protected function gBucketTypeHash($value)
-	{
-		return (string) $value;
-	}
+    protected function gBucketTypeHash($value)
+    {
+        return (string) $value;
+    }
 
-	protected function gPrimaryBaseStatHash($value)
-	{
-		return (string) $value;
-	}
+    protected function gPrimaryBaseStatHash($value)
+    {
+        return (string) $value;
+    }
 
-	protected function gTalentGridHash($value)
-	{
-		return (string) $value;
-	}
+    protected function gTalentGridHash($value)
+    {
+        return (string) $value;
+    }
 
-	protected function gStatGroupHash($value)
-	{
-		return (string) $value;
-	}
+    protected function gStatGroupHash($value)
+    {
+        return (string) $value;
+    }
 }

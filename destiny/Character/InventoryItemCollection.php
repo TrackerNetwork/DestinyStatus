@@ -1,4 +1,6 @@
-<?php namespace Destiny\Character;
+<?php
+
+namespace Destiny\Character;
 
 use Destiny\Collection;
 

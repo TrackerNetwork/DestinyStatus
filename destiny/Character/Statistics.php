@@ -1,7 +1,9 @@
-<?php namespace Destiny\Character;
+<?php
 
-use Destiny\Model;
+namespace Destiny\Character;
+
 use Destiny\Character;
+use Destiny\Model;
 use Destiny\StatisticsCollection;
 
 /**
@@ -12,31 +14,31 @@ use Destiny\StatisticsCollection;
  */
 class Statistics extends Model
 {
-	protected $character;
+    protected $character;
 
-	public function __construct(Character $character, array $properties)
-	{
-		parent::__construct($properties);
-		$this->character = $character;
-	}
+    public function __construct(Character $character, array $properties)
+    {
+        parent::__construct($properties);
+        $this->character = $character;
+    }
 
-	protected function gCharacter()
-	{
-		return $this->character;
-	}
+    protected function gCharacter()
+    {
+        return $this->character;
+    }
 
-	protected function gTotal()
-	{
-		return new StatisticsCollection(array_get($this->properties, 'merged.allTime', []));
-	}
+    protected function gTotal()
+    {
+        return new StatisticsCollection(array_get($this->properties, 'merged.allTime', []));
+    }
 
-	protected function gPve()
-	{
-		return new StatisticsCollection(array_get($this->properties, 'results.allPvE.allTime', []));
-	}
+    protected function gPve()
+    {
+        return new StatisticsCollection(array_get($this->properties, 'results.allPvE.allTime', []));
+    }
 
-	protected function gPvp()
-	{
-		return new StatisticsCollection(array_get($this->properties, 'results.allPvP.allTime', []));
-	}
+    protected function gPvp()
+    {
+        return new StatisticsCollection(array_get($this->properties, 'results.allPvP.allTime', []));
+    }
 }

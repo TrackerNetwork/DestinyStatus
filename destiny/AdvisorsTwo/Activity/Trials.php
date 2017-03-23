@@ -1,4 +1,6 @@
-<?php namespace Destiny\AdvisorsTwo\Activity;
+<?php
+
+namespace Destiny\AdvisorsTwo\Activity;
 
 use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
@@ -13,27 +15,23 @@ class Trials extends Activity implements ActivityInterface, EventInterface
 {
     public function __construct(Advisors $advisors, array $properties)
     {
-    	$bounties = [];
-        foreach ($properties['bountyHashes'] as $bountyHash)
-        {
+        $bounties = [];
+        foreach ($properties['bountyHashes'] as $bountyHash) {
             $bounties[] = manifest()->inventoryItem($bountyHash);
         }
 
         $properties['bounties'] = $bounties;
 
-		$winDetails = [];
-		if (isset($properties['extended']['winRewardDetails']))
-		{
-			foreach ($properties['extended']['winRewardDetails'] as $winRewardDetail)
-			{
-				foreach ($winRewardDetail['rewardItemHashes'] as $itemHash)
-				{
-					$winDetails[$winRewardDetail['winCount']][] = manifest()->inventoryItem($itemHash);
-				}
-			}
-		}
+        $winDetails = [];
+        if (isset($properties['extended']['winRewardDetails'])) {
+            foreach ($properties['extended']['winRewardDetails'] as $winRewardDetail) {
+                foreach ($winRewardDetail['rewardItemHashes'] as $itemHash) {
+                    $winDetails[$winRewardDetail['winCount']][] = manifest()->inventoryItem($itemHash);
+                }
+            }
+        }
 
-		$properties['winRewards'] = $winDetails;
+        $properties['winRewards'] = $winDetails;
 
         parent::__construct($properties);
     }
@@ -46,11 +44,11 @@ class Trials extends Activity implements ActivityInterface, EventInterface
         return 'trials';
     }
 
-	/**
-	 * @return string
-	 */
-	public function getTitle()
-	{
-		return 'Trials';
-	}
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return 'Trials';
+    }
 }

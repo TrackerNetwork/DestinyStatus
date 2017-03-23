@@ -1,4 +1,6 @@
-<?php namespace Destiny\AdvisorsTwo\Activity;
+<?php
+
+namespace Destiny\AdvisorsTwo\Activity;
 
 use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
@@ -13,35 +15,32 @@ use Destiny\Definitions\SkullModifier;
  */
 class KingsFall extends Activity implements ActivityInterface
 {
-	public function __construct(Advisors $advisors, array $properties)
-	{
-		$properties['activityTiers'] = (new ActivityTierCollection($this, $properties['activityTiers']));
-		$skullsCategories = $properties['activityTiers']->first()['skullCategories'];
-		$properties['definition'] = $properties['activityTiers']->first()['definition'];
+    public function __construct(Advisors $advisors, array $properties)
+    {
+        $properties['activityTiers'] = (new ActivityTierCollection($this, $properties['activityTiers']));
+        $skullsCategories = $properties['activityTiers']->first()['skullCategories'];
+        $properties['definition'] = $properties['activityTiers']->first()['definition'];
 
-		if (is_array($skullsCategories))
-		{
-			$skulls = [];
-			foreach ($skullsCategories as $skullCategory)
-			{
-				foreach ($skullCategory['skulls'] as $skull)
-				{
-					$skull = new SkullModifier($skull);
-					$skull->isModifier = $skullCategory['title'] === "Modifiers";
-					$skulls[] = $skull;
-				}
-			}
-			$properties['skulls'] = $skulls;
-		}
+        if (is_array($skullsCategories)) {
+            $skulls = [];
+            foreach ($skullsCategories as $skullCategory) {
+                foreach ($skullCategory['skulls'] as $skull) {
+                    $skull = new SkullModifier($skull);
+                    $skull->isModifier = $skullCategory['title'] === 'Modifiers';
+                    $skulls[] = $skull;
+                }
+            }
+            $properties['skulls'] = $skulls;
+        }
 
-		parent::__construct($properties);
-	}
+        parent::__construct($properties);
+    }
 
-	/**
-	 * @return string
-	 */
-	public static function getIdentifier()
-	{
-		return 'kingsfall';
-	}
+    /**
+     * @return string
+     */
+    public static function getIdentifier()
+    {
+        return 'kingsfall';
+    }
 }

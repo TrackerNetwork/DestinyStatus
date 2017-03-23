@@ -1,4 +1,6 @@
-<?php namespace Destiny\AdvisorsTwo\Activity;
+<?php
+
+namespace Destiny\AdvisorsTwo\Activity;
 
 use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
@@ -14,43 +16,38 @@ use Destiny\Definitions\SkullModifier;
  */
 class ElderChallenge extends Activity implements ActivityInterface
 {
-	public function __construct(Advisors $advisors, array $properties)
-	{
-		if (isset($properties['extended']['skullCategories']))
-		{
-			$skulls = [];
-			foreach ($properties['extended']['skullCategories'] as $skullCategory)
-			{
-				foreach ($skullCategory['skulls'] as $skull)
-				{
-					$skull = new SkullModifier($skull);
-					$skull->isModifier = $skullCategory['title'] === "Modifiers";
-					$skulls[] = $skull;
-				}
-			}
-			$properties['skulls'] = $skulls;
-		}
+    public function __construct(Advisors $advisors, array $properties)
+    {
+        if (isset($properties['extended']['skullCategories'])) {
+            $skulls = [];
+            foreach ($properties['extended']['skullCategories'] as $skullCategory) {
+                foreach ($skullCategory['skulls'] as $skull) {
+                    $skull = new SkullModifier($skull);
+                    $skull->isModifier = $skullCategory['title'] === 'Modifiers';
+                    $skulls[] = $skull;
+                }
+            }
+            $properties['skulls'] = $skulls;
+        }
 
-		if (isset($properties['extended']['objectives']))
-		{
-			$objectives = [];
-			foreach ($properties['extended']['objectives'] as $objective)
-			{
-				$objective = new Objective($objective);
-				$objectives[] = $objective;
-			}
-			$properties['objectives'] = $objectives;
-		}
+        if (isset($properties['extended']['objectives'])) {
+            $objectives = [];
+            foreach ($properties['extended']['objectives'] as $objective) {
+                $objective = new Objective($objective);
+                $objectives[] = $objective;
+            }
+            $properties['objectives'] = $objectives;
+        }
 
-		$properties['activityTiers'] = (new ActivityTierCollection($this, $properties['activityTiers']));
-		parent::__construct($properties);
-	}
+        $properties['activityTiers'] = (new ActivityTierCollection($this, $properties['activityTiers']));
+        parent::__construct($properties);
+    }
 
-	/**
-	 * @return string
-	 */
-	public static function getIdentifier()
-	{
-		return 'elderchallenge';
-	}
+    /**
+     * @return string
+     */
+    public static function getIdentifier()
+    {
+        return 'elderchallenge';
+    }
 }
