@@ -35,6 +35,19 @@ class RecordBook extends Model
 						$record = array_merge($record, $properties['records'][$record['recordHash']]);
 					}
 
+					if ($record['status'] === 0 && isset($definition->objectives[0])) {
+						$objective = array_merge($record['objectives'][0], manifest()->objective($definition->objectives[0]['objectiveHash'])->getProperties());
+
+						if ($objective['hasProgress'] && $objective['valueStyle'] == 1) {
+							$record['percent'] = ($objective['progress'] / $objective['completionValue']) * 100;
+							$objective['displayDescription'] .= " - " . $objective['progress'] . " / " . $objective['completionValue'];
+						} else {
+							$record['percent'] = 0;
+						}
+
+						$record['objective'] = $objective;
+					}
+
 					$properties['pages'][$pageId]['records'][$recordId] = $record;
 				}
 			}

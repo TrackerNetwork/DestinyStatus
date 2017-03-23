@@ -398,8 +398,15 @@
 .activity[data-completed="true"] .name {
   color: $color-light;
 }
+.round[data-completed="1"] .info {
+  color: $color-light;
+}
 .activity[data-completed="false"] .image img.icon{
   @include opacity(0.1);
+}
+.recordbooks-index .row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 a.select-player {

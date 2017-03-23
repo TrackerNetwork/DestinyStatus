@@ -13,12 +13,12 @@
         <br />
         <?php foreach ($books as $book): ?>
         <div class="arena row">
-            <div class="col-md-2">
+            <div class="col-md-2 col-xs-12 center-block">
                 <img style="width: 125px;" src="<?= bungie($book->icon); ?>" class="img-rounded" />
                 <h2><?= $book->displayName; ?></h2>
                 <h4><?= $book->displayDescription; ?></h4>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-10 col-xs-12">
                 <div role="tabpanel" class="rewards levels">
                     <ul class="nav nav-pills" role="tablist">
 						<?php $i = 1; foreach ($book->pages as $page): ?>
@@ -43,19 +43,28 @@
                                             </div>
                                             <div class="enemy">
                                                 <?= $record['description']; ?>
+                                                <?php if ($record['status'] !== 2): ?>
+                                                    @include('block/progress', ['progress' => $record['percent'], 'label' => $record['objective']['displayDescription']])
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
                         <?php else: ?>
-                            <div class="rewards">
+                            <div class="rounds">
                                 <?php foreach ($page['rewards'] as $reward): ?>
                                     <?php if (isset($reward['icon'])): ?>
-                                        <div class="reward">
-                                            <img src="<?= bungie($reward['icon']); ?>" />
-                                            <span class="name"><?= $reward['itemName']; ?></span>
-                                            <span class="value"> x <?= $reward['quantity']; ?></span>
+                                        <div class="round">
+                                            <div class="round-number">Unlocked at Book Level <?= $reward['requirementProgressionLevel']; ?></div>
+                                            <div class="enemy">
+												<?= $reward['itemName']; ?> x <?= $reward['quantity']; ?>
+                                            </div>
+                                            <div class="skulls">
+                                                <div class="skull">
+                                                    <img src="<?= bungie($reward['icon']); ?>" />
+                                                </div>
+                                            </div>
                                         </div>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
