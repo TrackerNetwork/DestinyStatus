@@ -1,4 +1,6 @@
-<?php namespace Destiny\AdvisorsTwo\Activity;
+<?php
+
+namespace Destiny\AdvisorsTwo\Activity;
 
 use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
@@ -8,16 +10,16 @@ use Destiny\AdvisorsTwo\Activity;
  */
 class Srl extends Activity implements ActivityInterface
 {
-	public function __construct(Advisors $advisors, array $properties)
-	{
-		parent::__construct($properties);
-	}
+    public function __construct(Advisors $advisors, array $properties)
+    {
+        parent::__construct($properties);
+    }
 
-	/**
-	 * @return string
-	 */
-	public static function getIdentifier()
-	{
-		return 'srl';
-	}
+    /**
+     * @return string
+     */
+    public static function getIdentifier()
+    {
+        return 'srl';
+    }
 }

@@ -1,4 +1,6 @@
-<?php namespace Destiny\Definitions;
+<?php
+
+namespace Destiny\Definitions;
 
 /**
  * @property string $objectiveHash
@@ -18,8 +20,8 @@
  */
 class Objective extends Definition
 {
-	protected function gValue()
-	{
-		return number_format($this->completionValue);
-	}
+    protected function gValue()
+    {
+        return number_format($this->completionValue);
+    }
 }

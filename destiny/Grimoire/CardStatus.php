@@ -1,6 +1,6 @@
-<?php namespace Destiny\Grimoire;
+<?php
 
-use Destiny\Grimoire;
+namespace Destiny\Grimoire;
 
 /**
  * @property string $cardId
@@ -11,26 +11,23 @@ use Destiny\Grimoire;
  */
 class CardStatus extends Model
 {
-	protected function gStatisticCollection()
-	{
-		$statisticCollection = $this->newCollection();
+    protected function gStatisticCollection()
+    {
+        $statisticCollection = $this->newCollection();
 
-		if ( ! isset($this->properties['statisticCollection']))
-		{
-			return $statisticCollection;
-		}
+        if (!isset($this->properties['statisticCollection'])) {
+            return $statisticCollection;
+        }
 
-		foreach ($this->properties['statisticCollection'] as $statistic)
-		{
-			$rankCollection = $this->newCollection();
-			foreach (array_get($statistic, 'rankCollection') ?: [] as $rank)
-			{
-				$rankCollection->put($rank['rank'], $rank);
-			}
-			$statistic['rankCollection'] = $rankCollection;
-			$statisticCollection->put($statistic['statNumber'], $statistic);
-		}
+        foreach ($this->properties['statisticCollection'] as $statistic) {
+            $rankCollection = $this->newCollection();
+            foreach (array_get($statistic, 'rankCollection') ?: [] as $rank) {
+                $rankCollection->put($rank['rank'], $rank);
+            }
+            $statistic['rankCollection'] = $rankCollection;
+            $statisticCollection->put($statistic['statNumber'], $statistic);
+        }
 
-		return $statisticCollection;
-	}
+        return $statisticCollection;
+    }
 }

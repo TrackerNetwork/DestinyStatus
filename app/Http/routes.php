@@ -21,9 +21,9 @@ Route::any('/privacy', ['uses' => 'HomeController@privacy', 'as' => 'privacy']);
 Route::get('select/{gamertag}', ['uses' => 'HomeController@select', 'as' => 'select']);
 
 Route::group(['prefix' => '{platform}/{player}'], function () {
-	Route::get('/', ['uses' => 'AccountController@index', 'as' => 'account']);
-	Route::get('grimoire', ['uses' => 'AccountController@grimoire', 'as' => 'grimoire']);
-	Route::get('exotics', ['uses' => 'AccountController@exotics', 'as' => 'exotics']);
-	Route::get('stats', ['uses' => 'AccountController@stats', 'as' => 'stats']);
-	Route::get('books', ['uses' => 'AccountController@books', 'as' => 'books']);
+    Route::get('/', ['uses' => 'AccountController@index', 'as' => 'account']);
+    Route::get('grimoire', ['uses' => 'AccountController@grimoire', 'as' => 'grimoire']);
+    Route::get('exotics', ['uses' => 'AccountController@exotics', 'as' => 'exotics']);
+    Route::get('stats', ['uses' => 'AccountController@stats', 'as' => 'stats']);
+    Route::get('books', ['uses' => 'AccountController@books', 'as' => 'books']);
 });
