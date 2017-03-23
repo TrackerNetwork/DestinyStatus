@@ -1,4 +1,6 @@
-<?php namespace Destiny\AdvisorsTwo;
+<?php
+
+namespace Destiny\AdvisorsTwo;
 
 use Destiny\Definitions\InventoryItem as ItemDefinition;
 
@@ -9,24 +11,23 @@ use Destiny\Definitions\InventoryItem as ItemDefinition;
  */
 class Reward extends ItemDefinition
 {
-	public function __construct($level, array $properties)
-	{
-		$properties['activityLevel'] = $level;
-		parent::__construct($properties);
+    public function __construct($level, array $properties)
+    {
+        $properties['activityLevel'] = $level;
+        parent::__construct($properties);
 
-		$this->extend(manifest()->inventoryItem($this->itemHash));
-	}
+        $this->extend(manifest()->inventoryItem($this->itemHash));
+    }
 
-	protected function gValue($value)
-	{
-		return $value;
-	}
+    protected function gValue($value)
+    {
+        return $value;
+    }
 
-	protected function gQuantity()
-	{
-		if ($this->value > 0)
-		{
-			return sprintf('&times; %s', $this->value);
-		}
-	}
+    protected function gQuantity()
+    {
+        if ($this->value > 0) {
+            return sprintf('&times; %s', $this->value);
+        }
+    }
 }

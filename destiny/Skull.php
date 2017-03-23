@@ -1,4 +1,6 @@
-<?php namespace Destiny;
+<?php
+
+namespace Destiny;
 
 /**
  * @property string $displayName

@@ -1,4 +1,6 @@
-<?php namespace destiny\Definitions;
+<?php
+
+namespace destiny\Definitions;
 
 /**
  * @property string $statId

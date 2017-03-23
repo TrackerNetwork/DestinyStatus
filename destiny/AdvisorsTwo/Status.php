@@ -1,4 +1,6 @@
-<?php namespace Destiny\AdvisorsTwo;
+<?php
+
+namespace Destiny\AdvisorsTwo;
 
 use Carbon\Carbon;
 use Destiny\Model;
@@ -6,7 +8,6 @@ use Destiny\Model;
 /**
  * @property bool $expirationKnown
  * @property bool $active
- *
  * @property Carbon $expirationDate
  * @property Carbon $startDate
  */

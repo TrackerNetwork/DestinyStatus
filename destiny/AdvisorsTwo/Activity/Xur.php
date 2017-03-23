@@ -1,4 +1,6 @@
-<?php namespace Destiny\AdvisorsTwo\Activity;
+<?php
+
+namespace Destiny\AdvisorsTwo\Activity;
 
 use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
@@ -9,41 +11,37 @@ use Destiny\AdvisorsTwo\Activity;
  */
 class Xur extends Activity implements ActivityInterface, EventInterface
 {
-	public function __construct(Advisors $advisors, array $properties)
-	{
-		if ($properties['status']['active'])
-		{
-			try
-			{
-				$vendorXur = destiny()->xur();
-				$properties['xur'] = $vendorXur;
-			}
-			catch (\Exception $e)
-			{
-				$properties['xur'] = new \Destiny\Xur([]);
-			}
-		}
-		parent::__construct($properties);
-	}
+    public function __construct(Advisors $advisors, array $properties)
+    {
+        if ($properties['status']['active']) {
+            try {
+                $vendorXur = destiny()->xur();
+                $properties['xur'] = $vendorXur;
+            } catch (\Exception $e) {
+                $properties['xur'] = new \Destiny\Xur([]);
+            }
+        }
+        parent::__construct($properties);
+    }
 
-	protected function gWeapons()
-	{
-		return $this->xur->weapons;
-	}
+    protected function gWeapons()
+    {
+        return $this->xur->weapons;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getTitle()
-	{
-		return 'Xur';
-	}
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return 'Xur';
+    }
 
-	/**
-	 * @return string
-	 */
-	public static function getIdentifier()
-	{
-		return 'xur';
-	}
+    /**
+     * @return string
+     */
+    public static function getIdentifier()
+    {
+        return 'xur';
+    }
 }

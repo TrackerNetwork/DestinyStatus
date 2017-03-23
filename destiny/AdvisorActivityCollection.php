@@ -1,4 +1,6 @@
-<?php namespace Destiny;
+<?php
+
+namespace Destiny;
 
 use Destiny\AdvisorsTwo\Activity;
 
@@ -7,46 +9,43 @@ use Destiny\AdvisorsTwo\Activity;
  */
 class AdvisorActivityCollection extends Collection
 {
-	protected $lookup = [
-		'prisonofelders' => 'PrisonOfElders',
-		'elderchallenge' => 'ElderChallenge',
-		'trials'         => 'Trials',
-		'armsday'		 => 'ArmsDay',
-		'weeklycrucible' => 'WeeklyCrucible',
-		'kingsfall'		 => 'KingsFall',
-		'vaultofglass'   => 'VaultOfGlass',
-		'crota'			 => 'Crota',
-		'nightfall'		 => 'Nightfall',
-		'heroicstrike'	 => 'HeroicStrike',
-		'dailychapter'   => 'DailyChapter',
-		'dailycrucible'  => 'DailyCrucible',
-		'prisonofelders-playlist' => 'PrisonOfEldersPlaylist',
-		'ironbanner'	 => 'IronBanner',
-		'xur'			 => 'Xur',
-		'srl'			 => 'Srl',
-        'wrathofthemachine' => 'WrathOfTheMachine',
-	];
+    protected $lookup = [
+        'prisonofelders'          => 'PrisonOfElders',
+        'elderchallenge'          => 'ElderChallenge',
+        'trials'                  => 'Trials',
+        'armsday'                 => 'ArmsDay',
+        'weeklycrucible'          => 'WeeklyCrucible',
+        'kingsfall'               => 'KingsFall',
+        'vaultofglass'            => 'VaultOfGlass',
+        'crota'                   => 'Crota',
+        'nightfall'               => 'Nightfall',
+        'heroicstrike'            => 'HeroicStrike',
+        'dailychapter'            => 'DailyChapter',
+        'dailycrucible'           => 'DailyCrucible',
+        'prisonofelders-playlist' => 'PrisonOfEldersPlaylist',
+        'ironbanner'              => 'IronBanner',
+        'xur'                     => 'Xur',
+        'srl'                     => 'Srl',
+        'wrathofthemachine'       => 'WrathOfTheMachine',
+    ];
 
-	public function __construct(Advisors $account, array $items = [])
-	{
-		foreach ($items as $key => $properties)
-		{
-			if (! isset($this->lookup[$key]))
-			{
-				if (\App::isLocal())
-				{
-					throw new \Exception('Unknown identifier - ' . $key);
-				}
-				continue;
-			}
+    public function __construct(Advisors $account, array $items = [])
+    {
+        foreach ($items as $key => $properties) {
+            if (!isset($this->lookup[$key])) {
+                if (\App::isLocal()) {
+                    throw new \Exception('Unknown identifier - '.$key);
+                }
+                continue;
+            }
 
-			$class = "Destiny\\AdvisorsTwo\\Activity\\" . $this->lookup[$key];
+            $class = 'Destiny\\AdvisorsTwo\\Activity\\'.$this->lookup[$key];
 
-			/** @var Activity $activity */
-			$activity = new $class($account, $properties);
-			$items[$activity->identifier] = $activity;
-		}
+            /** @var Activity $activity */
+            $activity = new $class($account, $properties);
+            $items[$activity->identifier] = $activity;
+        }
 
-		parent::__construct($items);
-	}
+        parent::__construct($items);
+    }
 }

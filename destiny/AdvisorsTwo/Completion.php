@@ -1,4 +1,6 @@
-<?php namespace Destiny\AdvisorsTwo;
+<?php
+
+namespace Destiny\AdvisorsTwo;
 
 use Destiny\Model;
 
@@ -8,8 +10,8 @@ use Destiny\Model;
  */
 class Completion extends Model
 {
-	public function __construct(array $properties)
-	{
-		parent::__construct($properties);
-	}
+    public function __construct(array $properties)
+    {
+        parent::__construct($properties);
+    }
 }

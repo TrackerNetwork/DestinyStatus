@@ -1,4 +1,6 @@
-<?php namespace Destiny;
+<?php
+
+namespace Destiny;
 
 /**
  * @property \Destiny\Statistic $activitiesCleared
@@ -72,27 +74,26 @@
  */
 class StatisticsCollection extends Collection
 {
-	public function __construct(array $items = [])
-	{
-		foreach ($items as $item)
-		{
-			$statistic = new Statistic($item);
-			$this->put($statistic->statId, $statistic);
-		}
-	}
+    public function __construct(array $items = [])
+    {
+        foreach ($items as $item) {
+            $statistic = new Statistic($item);
+            $this->put($statistic->statId, $statistic);
+        }
+    }
 
-	/**
-	 * @param string $key
-	 *
-	 * @return \Destiny\Statistic
-	 */
-	public function offsetGet($key)
-	{
-		return array_get($this->items, $key, new Statistic(['statId' => $key]));
-	}
+    /**
+     * @param string $key
+     *
+     * @return \Destiny\Statistic
+     */
+    public function offsetGet($key)
+    {
+        return array_get($this->items, $key, new Statistic(['statId' => $key]));
+    }
 
-	public function __get($key)
-	{
-		return $this->offsetGet($key);
-	}
+    public function __get($key)
+    {
+        return $this->offsetGet($key);
+    }
 }

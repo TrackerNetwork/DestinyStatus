@@ -1,10 +1,11 @@
-<?php namespace Destiny\AdvisorsTwo\Activity;
+<?php
+
+namespace Destiny\AdvisorsTwo\Activity;
 
 /**
- * Interface ActivityInterface
- * @package Destiny\AdvisorsTwo
+ * Interface ActivityInterface.
  */
 interface ActivityInterface
 {
-	public static function getIdentifier();
+    public static function getIdentifier();
 }
