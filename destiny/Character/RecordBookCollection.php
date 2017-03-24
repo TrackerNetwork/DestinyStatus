@@ -21,5 +21,9 @@ class RecordBookCollection extends Collection
             $recordBook = new RecordBook($character, $properties);
             $this->put($recordBook->bookHash, $recordBook);
         }
+
+		$this->items = array_sort($this->items, function ($item) {
+			return $item['itemHash'];
+		});
     }
 }
