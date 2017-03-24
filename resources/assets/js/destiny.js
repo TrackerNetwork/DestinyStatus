@@ -69,13 +69,12 @@ function getCookie(key) {
 }
 
 function allStorage() {
-    var values = [],
-        keys = Object.keys(localStorage),
-        i = keys.length;
-
-    while ( i-- ) {
-        values.push( localStorage.getItem(keys[i]) );
+    var i = 0,
+        oJson = {},
+        sKey;
+    for (; sKey = window.localStorage.key(i); i++) {
+        oJson[sKey] = window.localStorage.getItem(sKey);
     }
 
-    return values;
+    return oJson;
 }
