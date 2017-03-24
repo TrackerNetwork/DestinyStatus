@@ -6,11 +6,11 @@ $(function()
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		var $tab = $(this)
 			, $group = $tab.data('group');
-		if ($group) $.cookie('t'+$group, $tab.attr('href'));
+		if ($group) setCookie($group, $tab.attr('href'));
   	});
 
-	$.each($.cookie(), function(cookie) {
-		$('a[href="'+ $.cookie(cookie)+'"]').tab('show');
+	$.each(getCookie(null), function(cookie) {
+		$('a[href="'+ getCookie(cookie)+'"]').tab('show');
 	});
 
 	$('canvas.sprite').each(function(i, sprite)
@@ -43,3 +43,39 @@ $(function()
 		trigger: 'hover'
 	});
 });
+
+function setCookie(key, value) {
+    if (typeof(Storage) !== "undefined") {
+		localStorage.setItem('t'+key, value);
+    } else {
+        $.cookie('t'+key, value);
+    }
+}
+
+function getCookie(key) {
+	if (key === null) {
+        if (typeof(Storage) !== "undefined") {
+			return allStorage();
+        } else {
+            return $.cookie();
+        }
+	} else {
+		if (typeof(Storage) !== "undefined") {
+			return localStorage.getItem(key);
+		} else {
+            return $.cookie(key);
+		}
+	}
+}
+
+function allStorage() {
+    var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+        values.push( localStorage.getItem(keys[i]) );
+    }
+
+    return values;
+}
