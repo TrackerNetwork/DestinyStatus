@@ -11,6 +11,7 @@
 	<link rel="shortcut icon" href="{{ url('favicon.ico') }}"/>
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500">
 	<link rel="stylesheet" type="text/css" href="<?= elixir('css/destiny.css'); ?>">
+	<link rel="stylesheet" type="text/css" href="//db.destinytracker.com/content/css/tooltip.css">
 	<script src="<?= elixir('js/destiny.js'); ?>"></script>
 	@if (! App::isLocal())
 		<script src="//tags-cdn.deployads.com/a/destinystatus.com.js" async></script>
@@ -112,5 +113,6 @@
   ga('tracker.send', 'pageview');
 </script>
 @endif
+<script src="https://db.destinytracker.com/Scripts/Tooltip.js"></script>
 </body>
 </html>
