@@ -17,6 +17,9 @@
                 <img style="width: 125px;" src="<?= bungie($book->icon); ?>" class="img-rounded" />
                 <h2><?= $book->displayName; ?></h2>
                 <h4><?= $book->displayDescription; ?></h4>
+                <p>
+                    Completed: <?= $book->percentCompleted; ?>%
+                </p>
             </div>
             <div class="col-md-10 col-xs-12">
                 <div role="tabpanel" class="rewards levels">

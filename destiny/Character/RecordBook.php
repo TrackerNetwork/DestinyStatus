@@ -9,9 +9,12 @@ use Destiny\Model;
  * @property string $bookHash
  * @property int $completedCount
  * @property int $redeemedCount
+ * @property int $recordCount
  * @property array $records
  * @property array $progression
  * @property array $spotlights
+ *
+ * @property int $percentCompleted
  */
 class RecordBook extends Model
 {
@@ -64,5 +67,10 @@ class RecordBook extends Model
         }
         parent::__construct($properties);
         $this->character = $character;
+    }
+
+    public function gPercentCompleted()
+    {
+        return ($this->completedCount / $this->recordCount) * 100;
     }
 }
