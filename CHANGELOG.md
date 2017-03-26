@@ -1,3 +1,7 @@
+# v2.4.0 (March 26, 2017)
+ * Record Book tracker initial release - #62
+ * StyleCI added (code style).
+
 # v2.3.0 (January 19, 2017)
  * Leaky Bucket algorithm to prevent going over rate limit - #19
  * Add "Stats" tab.
