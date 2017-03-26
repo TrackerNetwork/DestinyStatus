@@ -46,7 +46,7 @@ class RecordBook extends Model
                             $objective['displayDescription'] .= ' - '.$objective['progress'].' / '.$objective['completionValue'];
                         } else {
                             $record['percent'] = 0;
-                            $objective['displayDescription'] = $objective['progress'] .' / '.$objective['completionValue'];
+                            $objective['displayDescription'] = $objective['progress'].' / '.$objective['completionValue'];
                         }
 
                         $record['objective'] = $objective;
