@@ -13,7 +13,6 @@ use Destiny\Model;
  * @property array $records
  * @property array $progression
  * @property array $spotlights
- *
  * @property int $percentCompleted
  */
 class RecordBook extends Model
