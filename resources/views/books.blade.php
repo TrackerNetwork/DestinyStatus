@@ -11,6 +11,11 @@
 
     <div class="recordbooks-index arenas row">
         <br />
+        @if (count($books) === 0)
+            <div class="alert alert-info">
+                This guardian has made their Destiny profile hidden.
+            </div>
+        @endif
         <?php foreach ($books as $book): ?>
         <div class="arena row">
             <div class="col-md-2 col-xs-12 center-block">

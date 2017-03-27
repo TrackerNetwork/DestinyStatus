@@ -17,6 +17,10 @@ class RecordBookCollection extends Collection
 
     public function __construct(Character $character, array $properties)
     {
+        if (!isset($properties['recordBooks'])) {
+            return;
+        }
+
         foreach ($properties['recordBooks'] as $properties) {
             $recordBook = new RecordBook($character, $properties);
             $this->put($recordBook->bookHash, $recordBook);
