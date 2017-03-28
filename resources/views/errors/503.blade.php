@@ -40,7 +40,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Be right back.</div>
+                <div class="title"><a href="https://twitter.com/DestinyStatus" target="_blank">Be right back.</a></div>
             </div>
         </div>
     </body>
