@@ -3,6 +3,7 @@
  * @var \Destiny\AdvisorsTwo\Activity|\Destiny\AdvisorsTwo\Activity\WeeklyCrucible $activity
  */
 ?>
+<?php if ($activity instanceof \Destiny\AdvisorsTwo\Activity\ActivityInterface): ?>
 <div class="advisor type-activity panel">
     <div class="image">
         <div class="display"><img src="<?= bungie($activity->image) ?>"></div>
@@ -57,3 +58,8 @@
     </div>
     <?php endif; ?>
 </div>
+<?php else: ?>
+    <div class="alert alert-info">
+        This advisor is gone :(
+    </div>
+<?php endif; ?>
