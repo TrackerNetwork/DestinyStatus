@@ -67,9 +67,7 @@ class Advisors extends Model
         $return = [];
 
         foreach ($events as $event) {
-            if ($this->{$event}->minutesUntilExpiration > 0) {
-                $return[] = $this->{$event};
-            }
+            $return[] = $this->{$event};
         }
 
         return array_filter($return);

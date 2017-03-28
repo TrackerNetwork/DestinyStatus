@@ -59,7 +59,9 @@
 	<?php if (Session::has('alert')): ?>
 		<div class="alert alert-danger"><?= e(Session::pull('alert'))?></div>
 	<?php endif; ?>
-
+	<div class="alert alert-warning">
+		Fixes for the removal of Daily PVP/PVE activities and new 390 light raids is coming soon.
+	</div>
 	@yield('content')
 	
 	@if (! App::isLocal())

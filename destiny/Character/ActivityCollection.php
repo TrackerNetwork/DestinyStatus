@@ -40,13 +40,6 @@ class ActivityCollection extends Collection
         $nightfall = $advisors->nightfall->toActivity($character, $statsArray);
         $this->put('NIGHTFALL', $nightfall);
 
-        // Daily PVE/PVP
-        $dailyChapter = $advisors->dailychapter->toActivity($character, $statsArray);
-        $this->put('DAILY_PVE', $dailyChapter);
-
-        $dailyCrucible = $advisors->dailycrucible->toActivity($character, $statsArray);
-        $this->put('DAILY_PVP', $dailyCrucible);
-
         /** @var ActivityTier $activityTier */
         foreach ($advisors->vaultofglass->activityTiers as $activityTier) {
             /** @var ActivityTier $activity */

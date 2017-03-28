@@ -38,7 +38,9 @@
                             <div class="round">
                                 <div class="info">
                                     <div class="round-number"><?= $activityTier->tierDisplayName; ?> Mode</div>
-                                    <div class="enemy">Level <strong><?= $activityTier->activityData->displayLevel; ?></strong> (Light <strong><?= $activityTier->activityData->recommendedLight; ?></strong>)</div>
+                                    <?php if (isset($activityTier->activityData)): ?>
+                                        <div class="enemy">Level <strong><?= $activityTier->activityData->displayLevel; ?></strong> (Light <strong><?= $activityTier->activityData->recommendedLight; ?></strong>)</div>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="skulls">
                                     @foreach($activityTier->skulls as $skull)

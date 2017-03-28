@@ -39,7 +39,9 @@ class ActivityTier extends Model
     public function __construct(array $properties)
     {
         $properties['definition'] = manifest()->activity($properties['activityHash']);
-        $properties['activityData'] = new ActivityData($properties['activityData']);
+        if (isset($properties['activityData'])) {
+            $properties['activityData'] = new ActivityData($properties['activityData']);
+        }
 
         if (isset($properties['extended']['rounds'])) {
             $rounds = [];
@@ -57,7 +59,8 @@ class ActivityTier extends Model
             foreach ($properties['rewards'] as $rewardGroup) {
                 foreach ($rewardGroup['rewardItems'] as $item) {
                     if (!in_array($item['itemHash'], $this->skippedRewards)) {
-                        $rewards[] = new Reward($properties['activityData']->displayLevel, $item);
+                        $level = (isset($properties['activityData']->displayLevel) ? $properties['activityData']->displayLevel : '?');
+                        $rewards[] = new Reward($level, $item);
                     }
                 }
             }
