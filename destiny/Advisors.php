@@ -18,6 +18,8 @@ use Destiny\AdvisorsTwo\Activity\Srl;
 use Destiny\AdvisorsTwo\Activity\Trials;
 use Destiny\AdvisorsTwo\Activity\VaultOfGlass;
 use Destiny\AdvisorsTwo\Activity\WeeklyCrucible;
+use Destiny\AdvisorsTwo\Activity\WeeklyFeaturedRaid;
+use Destiny\AdvisorsTwo\Activity\WeeklyStory;
 use Destiny\AdvisorsTwo\Activity\WrathOfTheMachine;
 use Destiny\AdvisorsTwo\Activity\Xur;
 
@@ -40,6 +42,8 @@ use Destiny\AdvisorsTwo\Activity\Xur;
  * @property Xur $xur
  * @property Srl $srl
  * @property WrathOfTheMachine $wrathofthemachine
+ * @property WeeklyStory $weeklystory
+ * @property WeeklyFeaturedRaid $weeklyfeaturedraid
  * @property Activity[] $events
  * @property Activity[] $activeEvents
  */
@@ -182,6 +186,16 @@ class Advisors extends Model
     protected function gWrathOfTheMachine()
     {
         return $this->getActivity(WrathOfTheMachine::getIdentifier());
+    }
+
+    protected function gWeeklyStory()
+    {
+        return $this->getActivity(WeeklyStory::getIdentifier());
+    }
+
+    protected function gWeeklyFeaturedRaid()
+    {
+        return $this->getActivity(WeeklyFeaturedRaid::getIdentifier());
     }
 
     public function eventsExist()

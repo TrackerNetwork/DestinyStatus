@@ -27,6 +27,8 @@ class AdvisorActivityCollection extends Collection
         'xur'                     => 'Xur',
         'srl'                     => 'Srl',
         'wrathofthemachine'       => 'WrathOfTheMachine',
+        'weeklystory'             => 'WeeklyStory',
+        'weeklyfeaturedraid'      => 'WeeklyFeaturedRaid',
     ];
 
     public function __construct(Advisors $account, array $items = [])
