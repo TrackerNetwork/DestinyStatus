@@ -159,7 +159,7 @@ class DestinyClient extends Client
     {
         self::$bucket = new LeakyBucket('destiny-throttle', new RedisStorage(), [
             'capacity' => 200,
-            'leak'     => 25,
+            'leak'     => 20,
         ]);
     }
 }
