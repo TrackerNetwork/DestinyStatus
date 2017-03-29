@@ -139,6 +139,18 @@ class ActivityTier extends Model
         return $this->definition->icon;
     }
 
+    protected function gTierDisplayName()
+    {
+        $tierDisplayName = $this->getNonMutatedProperty('tierDisplayName');
+
+        if ($tierDisplayName === "Hard") {
+            if ($this->activityData->recommendedLight === 390) {
+                return $this->activityData->recommendedLight . " Light ";
+            }
+        }
+        return $tierDisplayName;
+    }
+
     public function toActivity(Character $character, array $stats)
     {
         $activityHash = $this->definition->activityHash;
