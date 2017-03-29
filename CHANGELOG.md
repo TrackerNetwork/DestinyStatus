@@ -1,3 +1,9 @@
+# v2.5.0 (March 29, 2017)
+ * Support for Age of Triumphs
+ * Add 390 Light support
+ * Remove "DailyCrucible" and "DailyStory"
+ * Add "WeeklyFeaturedRaid" and "WeeklyStory"
+
 # v2.4.0 (March 26, 2017)
  * Record Book tracker initial release - #62
  * StyleCI added (code style).
