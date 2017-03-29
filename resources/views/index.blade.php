@@ -33,8 +33,8 @@
 						@include('block/advisor', ['activity' => $advisors->nightfall])
 					</div>
 					<div class="col-md-4">
-						<h3>Daily Story Mission</h3>
-						@include('block/advisor', ['activity' => $advisors->dailychapter])
+						<h3>Weekly Story Playlist</h3>
+						@include('block/advisor', ['activity' => $advisors->weeklystory])
 					</div>
 					@if( ! App::isLocal())
 						<div class="col-md-4">
@@ -52,10 +52,11 @@
 						@include('block/advisor', ['activity' => $advisors->heroicstrike])
 					</div>
 					<div class="col-md-4">
-
+						<h3>Weekly Raid</h3>
+						@include('block/advisor', ['activity' => $advisors->weeklyfeaturedraid])
 					</div>
 					<div class="col-md-4 arena">
-						<h3>Raid</h3>
+						<h3>Latest Raid</h3>
 						@include('block/raid', ['activity' => $advisors->wrathofthemachine])
 					</div>
 				</div>
@@ -75,12 +76,10 @@
 			<div class="pvp tab-pane" role="tabpanel" id="pvp">
 				<div class="activities row">
 					<div class="col-md-4">
-						<h3>Daily Crucible Playlist</h3>
-						@include('block/advisor', ['activity' => $advisors->dailycrucible])
-					</div>
-					<div class="col-md-4">
 						<h3>Weekly Crucible Playlist</h3>
 						@include('block/advisor', ['activity' => $advisors->weeklycrucible])
+					</div>
+					<div class="col-md-4">
 					</div>
 					@if (! App::isLocal())
 						<div class="col-md-4">

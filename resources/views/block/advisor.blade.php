@@ -17,8 +17,8 @@
         <?php endif; ?>
     </div>
     <h3>
-        <span class="name"><?= e($activity->definition->activityName) ?></span>
-        <span class="destination"><?= e($activity->destination->destinationName) ?></span>
+        <span class="name"><?= e($activity->activityName) ?></span>
+        <span class="destination"><?= e($activity->destinationName) ?></span>
 
         <?php if ($activity->activityTier->data->displayLevel > 0): ?>
             <span class="panel-heading">
@@ -30,14 +30,14 @@
     <p>
         <?= e($activity->definition->activityDescription); ?>
     </p>
-    @if (count($activity->activity->rewards) > 0)
+    @if (count($activity->rewards) > 0)
         <div role="tabpanel" class="rewards levels">
             <ul class="nav nav-pills" role="tablist">
-                <li class="active"><a href="#<?= $activity->activity->activityHash; ?>-rewards" role="tab" data-toggle="tab">Rewards</a></li>
+                <li class="active"><a href="#<?= $activity->activityHash; ?>-rewards" role="tab" data-toggle="tab">Rewards</a></li>
             </ul>
             <div class="tab-content">
-                <div class="rewards tab-pane active" role="tabpanel" id="#<?= $activity->activity->activityHash; ?>-rewards">
-                    <?php foreach($activity->activity->rewards as $reward): ?>
+                <div class="rewards tab-pane active" role="tabpanel" id="#<?= $activity->activityHash; ?>-rewards">
+                    <?php foreach($activity->rewards as $reward): ?>
                     <div class="reward">
                         <img src="<?= bungie($reward->icon) ?>">
                         <span class="name"><?= e($reward->itemName) ?></span>

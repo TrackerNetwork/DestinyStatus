@@ -62,7 +62,20 @@ class Activity extends Model
 
     protected function gDestinationName()
     {
-        return $this->destination->destinationName;
+        return $this->definition->destination->destinationName;
+    }
+
+    protected function gActivityName()
+    {
+        return $this->definition->activityName;
+    }
+
+    protected function gRewards()
+    {
+        if (isset($this->activity->rewards)) {
+            return $this->activity->rewards;
+        }
+        return $this->activityTier->rewards;
     }
 
     public function toActivity(Character $character, array $stats)
