@@ -143,11 +143,12 @@ class ActivityTier extends Model
     {
         $tierDisplayName = $this->getNonMutatedProperty('tierDisplayName');
 
-        if ($tierDisplayName === "Hard") {
+        if ($tierDisplayName === 'Hard') {
             if ($this->activityData->recommendedLight === 390) {
-                return $this->activityData->recommendedLight . " Light ";
+                return $this->activityData->recommendedLight.' Light ';
             }
         }
+
         return $tierDisplayName;
     }
 
