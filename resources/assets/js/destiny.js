@@ -73,7 +73,9 @@ function allStorage() {
         oJson = {},
         sKey;
     for (; sKey = window.localStorage.key(i); i++) {
-        oJson[sKey] = window.localStorage.getItem(sKey);
+    	if (sKey.length < 5) {
+            oJson[sKey] = window.localStorage.getItem(sKey);
+        }
     }
 
     return oJson;
