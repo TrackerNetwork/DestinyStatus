@@ -71,6 +71,6 @@ class RecordBook extends Model
 
     public function gPercentCompleted()
     {
-        return ($this->completedCount / $this->recordCount) * 100;
+        return round(($this->completedCount / $this->recordCount) * 100, 2);
     }
 }
