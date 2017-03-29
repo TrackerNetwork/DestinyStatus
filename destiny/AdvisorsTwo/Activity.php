@@ -75,6 +75,7 @@ class Activity extends Model
         if (isset($this->activity->rewards)) {
             return $this->activity->rewards;
         }
+
         return $this->activityTier->rewards;
     }
 
