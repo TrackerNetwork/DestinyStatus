@@ -84,6 +84,7 @@ class Card extends Model
         '800110' => 'Ghost Fragment: Icarus',
         '800131' => 'Ghost Fragment: Sector 618',
         '800448' => 'Icarus - Languid Sea, Mercury',
+        '801107' => 'Ghost Fragment: Fallen 6',
     ];
 
     public function __construct(Page $page, array $properties)
