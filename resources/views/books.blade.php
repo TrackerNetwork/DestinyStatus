@@ -30,7 +30,11 @@
                 <div role="tabpanel" class="rewards levels">
                     <ul class="nav nav-pills" role="tablist">
 						<?php $i = 1; foreach ($book->pages as $page): ?>
-                            <li class="<?= $i === 1 ? 'active' : null; ?>"><a href="#pages-<?= $i . "-" . $book->hash ?>" role="tab" data-toggle="tab">Page <?= $i; ?></a></li>
+                            <li class="<?= $i === 1 ? 'active' : null; ?>">
+                                <a href="#pages-<?= $i . "-" . $book->hash ?>" role="tab" data-toggle="tab">
+                                    <?= count($book->pages) > 11 ? $i : 'Page ' . $i; ?>
+                                </a>
+                            </li>
 						<?php $i++; endforeach; ?>
                     </ul>
                 </div>
