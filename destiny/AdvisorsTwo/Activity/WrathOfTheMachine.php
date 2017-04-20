@@ -25,7 +25,14 @@ class WrathOfTheMachine extends Activity implements ActivityInterface
             // WoTM is the weekly raid. Lets add the skulls
             if ($items['weeklyfeaturedraid']['activityTiers'][0]['activityHash'] === self::FeaturedWoTM) {
                 $skullCategory = $items['weeklyfeaturedraid']['activityTiers'][0]['skullCategories'];
-                $completion = $items['weeklyfeaturedraid']['activityTiers'][0]['completion'];
+                if (isset($items['weeklyfeaturedraid']['activityTiers'][0]['completion'])) {
+                    $completion = $items['weeklyfeaturedraid']['activityTiers'][0]['completion'];
+                } else {
+                    $completion = [
+                        'complete' => false,
+                        'success' => false
+                    ];
+                }
                 $identifier = self::FeaturedWoTM;
             } else {
                 $skullCategory = [
