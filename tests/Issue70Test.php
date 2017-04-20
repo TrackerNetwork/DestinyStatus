@@ -12,12 +12,12 @@ class Issue70Test extends TestCase
         $items = [
             [
                 'displayName' => 'TestFang',
-                'platform' => 'xbl',
+                'platform'    => 'xbl',
             ],
             [
                 'displayName' => 'Test Fang',
-                'platform' => 'xbl',
-            ]
+                'platform'    => 'xbl',
+            ],
         ];
 
         $playerCollection = new \Destiny\PlayerCollection('testfang', $items);
