@@ -16,6 +16,21 @@ function de($var)
     die;
 }
 
+function array_mesh($a, $b)
+{
+    $c = array();
+    foreach (array_keys($a['values'] + $b['values']) as $key) {
+        $c['values'][$key] = [
+            'statId' => $key,
+            'basic' => [
+                'value' => $a['values'][$key]['basic']['value'] + $b['values'][$key]['basic']['value'],
+                'displayValue' => null
+            ]
+        ];
+    }
+    return $c;
+}
+
 function bool($val)
 {
     return $val ? 'true' : 'false';

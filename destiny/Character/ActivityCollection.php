@@ -20,6 +20,16 @@ class ActivityCollection extends Collection
      */
     protected $character;
 
+    /**
+     * @var array
+     */
+    protected $featuredRaids = [
+        '856898338' => '4038697181',
+        '4000873610' => '2324706853',
+        '3978884648' => '1016659723',
+        '3356249023' => '430160982',
+    ];
+
     public function __construct(Character $character, array $stats, array $checklist)
     {
         $this->character = $character;
@@ -34,6 +44,19 @@ class ActivityCollection extends Collection
         foreach ($stats as $k => $stat) {
             $activityHash = (string) $stat['activityHash'];
             $statsArray[$activityHash] = new StatisticsCollection($stat['values']);
+
+            // temporarily reindex
+            $stats[$activityHash] = $stat;
+            unset($stats[$k]);
+        }
+
+        // Merge non-featured with featured 390LL raids
+        foreach ($this->featuredRaids as $featured => $nonFeatured) {
+            if (isset($stats[$featured]) && isset($stats[$nonFeatured])) {
+                $mergedStats = array_mesh($stats[$featured], $stats[$nonFeatured]);
+                $statsArray[$featured] = new StatisticsCollection($mergedStats['values']);
+                $statsArray[$nonFeatured] = new StatisticsCollection($mergedStats['values']);
+            }
         }
 
         // Weekly Nightfall
