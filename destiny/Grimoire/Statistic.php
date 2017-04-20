@@ -2,8 +2,6 @@
 
 namespace Destiny\Grimoire;
 
-use Destiny\Grimoire;
-
 /**
  * @property int $statNumber
  * @property int $cardId
