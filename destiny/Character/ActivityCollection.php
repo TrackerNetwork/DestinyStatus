@@ -24,7 +24,7 @@ class ActivityCollection extends Collection
      * @var array
      */
     protected $featuredRaids = [
-        '856898338' => '4038697181',
+        '856898338'  => '4038697181',
         '4000873610' => '2324706853',
         '3978884648' => '1016659723',
         '3356249023' => '430160982',

@@ -18,16 +18,17 @@ function de($var)
 
 function array_mesh($a, $b)
 {
-    $c = array();
+    $c = [];
     foreach (array_keys($a['values'] + $b['values']) as $key) {
         $c['values'][$key] = [
             'statId' => $key,
-            'basic' => [
-                'value' => $a['values'][$key]['basic']['value'] + $b['values'][$key]['basic']['value'],
-                'displayValue' => null
-            ]
+            'basic'  => [
+                'value'        => $a['values'][$key]['basic']['value'] + $b['values'][$key]['basic']['value'],
+                'displayValue' => null,
+            ],
         ];
     }
+
     return $c;
 }
 
