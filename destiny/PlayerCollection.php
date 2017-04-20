@@ -7,11 +7,14 @@ namespace Destiny;
  */
 class PlayerCollection extends Collection
 {
-    public function __construct(array $items)
+    public function __construct($gamertag, array $items)
     {
         foreach ($items as $properties) {
             $player = new Player($properties);
-            $this->items[$player->platform] = $player;
+
+            if (slug($player->displayName) == slug($gamertag)) {
+                $this->items[$player->platform] = $player;
+            }
         }
     }
 }
