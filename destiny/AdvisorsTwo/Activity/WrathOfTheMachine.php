@@ -14,7 +14,8 @@ use Destiny\Definitions\SkullModifier;
  */
 class WrathOfTheMachine extends Activity implements ActivityInterface
 {
-    const FeaturedWoTM = 336249023;
+    const FeaturedWoTM = 3356249023;
+    const NonFeaturedWoTM = 430160982;
 
     public function __construct(array $items, array $properties)
     {
@@ -43,7 +44,7 @@ class WrathOfTheMachine extends Activity implements ActivityInterface
                     'complete' => false,
                     'success'  => false,
                 ];
-                $identifier = 430160982;
+                $identifier = self::NonFeaturedWoTM;
             }
             $properties['activityTiers'][] = [
                 'activityHash'    => $identifier,
