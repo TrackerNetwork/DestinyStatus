@@ -1,3 +1,10 @@
+# v2.5.1 (April 20, 2017)
+ * Sum 390LL Raids with Featured & NonFeatured.
+ * Force creation of 390LL WoTM Raid, because API does not return it.
+ * Fix gamertag search for same name with spaces intermixed.
+ * Ghost Fragment Fallen 6 is PSN only.
+ * Don't read localStorage for invalid data.
+
 # v2.5.0 (March 29, 2017)
  * Support for Age of Triumphs
  * Add 390 Light support
