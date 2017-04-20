@@ -13,7 +13,7 @@ use Destiny\Definitions\InventoryItem;
  */
 class Trials extends Activity implements ActivityInterface, EventInterface
 {
-    public function __construct(Advisors $advisors, array $properties)
+    public function __construct(array $items, array $properties)
     {
         $bounties = [];
         foreach ($properties['bountyHashes'] as $bountyHash) {

@@ -44,7 +44,7 @@ class AdvisorActivityCollection extends Collection
             $class = 'Destiny\\AdvisorsTwo\\Activity\\'.$this->lookup[$key];
 
             /** @var Activity $activity */
-            $activity = new $class($account, $properties);
+            $activity = new $class($items, $properties);
             $items[$activity->identifier] = $activity;
         }
 

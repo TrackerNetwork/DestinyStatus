@@ -51,11 +51,21 @@ class ActivityCollection extends Collection
         }
 
         // Merge non-featured with featured 390LL raids
+        // Ugly logic is because a Guardian might have completed the 390LL Featured, but not 390LL NonFeatured
+        // and vice versa
         foreach ($this->featuredRaids as $featured => $nonFeatured) {
             if (isset($stats[$featured]) && isset($stats[$nonFeatured])) {
                 $mergedStats = array_mesh($stats[$featured], $stats[$nonFeatured]);
                 $statsArray[$featured] = new StatisticsCollection($mergedStats['values']);
                 $statsArray[$nonFeatured] = new StatisticsCollection($mergedStats['values']);
+            }
+
+            if (isset($stats[$featured]) && !isset($stats[$nonFeatured])) {
+                $statsArray[$nonFeatured] = new StatisticsCollection($stats[$featured]['values']);
+            }
+
+            if (isset($stats[$nonFeatured]) && !isset($stats[$featured])) {
+                $statsArray[$featured] = new StatisticsCollection($stats[$nonFeatured]['values']);
             }
         }
 

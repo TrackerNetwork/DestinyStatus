@@ -15,7 +15,7 @@ use Destiny\Definitions\SkullModifier;
  */
 class Crota extends Activity implements ActivityInterface
 {
-    public function __construct(Advisors $advisors, array $properties)
+    public function __construct(array $items, array $properties)
     {
         $properties['activityTiers'] = (new ActivityTierCollection($this, $properties['activityTiers']));
         $skullsCategories = $properties['activityTiers']->first()['skullCategories'];

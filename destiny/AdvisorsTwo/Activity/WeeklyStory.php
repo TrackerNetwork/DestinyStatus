@@ -17,7 +17,7 @@ use Destiny\Definitions\SkullModifier;
  */
 class WeeklyStory extends Activity implements ActivityInterface
 {
-    public function __construct(Advisors $advisors, array $properties)
+    public function __construct(array $items, array $properties)
     {
         $properties['activityTier'] = (new ActivityTierCollection($this, $properties['activityTiers']))->first();
 
