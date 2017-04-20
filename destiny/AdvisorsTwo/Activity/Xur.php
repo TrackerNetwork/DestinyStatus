@@ -2,7 +2,6 @@
 
 namespace Destiny\AdvisorsTwo\Activity;
 
-use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
 
 /**
@@ -11,7 +10,7 @@ use Destiny\AdvisorsTwo\Activity;
  */
 class Xur extends Activity implements ActivityInterface, EventInterface
 {
-    public function __construct(Advisors $advisors, array $properties)
+    public function __construct(array $items, array $properties)
     {
         if ($properties['status']['active']) {
             try {

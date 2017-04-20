@@ -2,7 +2,6 @@
 
 namespace Destiny\AdvisorsTwo\Activity;
 
-use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
 use Destiny\Definitions\InventoryItem;
 
@@ -12,7 +11,7 @@ use Destiny\Definitions\InventoryItem;
  */
 class ArmsDay extends Activity implements ActivityInterface, EventInterface
 {
-    public function __construct(Advisors $advisors, array $properties)
+    public function __construct(array $items, array $properties)
     {
         if (isset($properties['extended']['orders'])) {
             $items = [];

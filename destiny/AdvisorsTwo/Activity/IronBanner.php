@@ -2,7 +2,6 @@
 
 namespace Destiny\AdvisorsTwo\Activity;
 
-use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
 
 /**
@@ -10,7 +9,7 @@ use Destiny\AdvisorsTwo\Activity;
  */
 class IronBanner extends Activity implements ActivityInterface, EventInterface
 {
-    public function __construct(Advisors $advisors, array $properties)
+    public function __construct(array $items, array $properties)
     {
         parent::__construct($properties);
     }

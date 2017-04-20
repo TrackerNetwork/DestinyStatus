@@ -2,7 +2,6 @@
 
 namespace Destiny\AdvisorsTwo\Activity;
 
-use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
 use Destiny\AdvisorsTwo\Collections\ActivityTierCollection;
 
@@ -12,7 +11,7 @@ use Destiny\AdvisorsTwo\Collections\ActivityTierCollection;
  */
 class PrisonOfElders extends Activity implements ActivityInterface
 {
-    public function __construct(Advisors $advisors, array $properties)
+    public function __construct(array $items, array $properties)
     {
         $properties['activityTiers'] = (new ActivityTierCollection($this, $properties['activityTiers']));
         parent::__construct($properties);

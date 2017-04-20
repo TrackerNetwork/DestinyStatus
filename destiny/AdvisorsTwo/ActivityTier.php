@@ -90,7 +90,7 @@ class ActivityTier extends Model
             }
 
             // Add heroic skull if HM
-            if ($properties['tierDisplayName'] === 'Hard') {
+            if ($properties['tierDisplayName'] === 'Hard' && count($skulls) == 0) {
                 $skulls[] = $properties['definition']->skulls->first();
             }
 
