@@ -55,7 +55,7 @@ class Destiny
     {
         $result = $this->client->request($this->platform->searchDestinyPlayer($gamertag));
 
-        return new PlayerCollection($result);
+        return new PlayerCollection($gamertag, $result);
     }
 
     /**

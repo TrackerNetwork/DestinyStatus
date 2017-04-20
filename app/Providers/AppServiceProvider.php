@@ -19,10 +19,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        define('CACHE_ENABLED', config('destiny.cache', true));
-        define('CACHE_DEFAULT', config('destiny.cache_default', false));
-        define('CACHE_INDEX', config('destiny.cache_index', 60));
-        define('CACHE_PLAYER', config('destiny.cache_player'));
+        if (!defined('CACHE_ENABLED')) {
+            define('CACHE_ENABLED', config('destiny.cache', true));
+        }
+
+        if (!defined('CACHE_DEFAULT')) {
+            define('CACHE_DEFAULT', config('destiny.cache_default', false));
+        }
+
+        if (!defined('CACHE_INDEX')) {
+            define('CACHE_INDEX', config('destiny.cache_index', 60));
+        }
+
+        if (!defined('CACHE_PLAYER')) {
+            define('CACHE_PLAYER', config('destiny.cache_player'));
+        }
     }
 
     /**
