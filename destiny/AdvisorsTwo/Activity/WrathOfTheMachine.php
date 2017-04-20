@@ -2,7 +2,6 @@
 
 namespace Destiny\AdvisorsTwo\Activity;
 
-use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
 use Destiny\AdvisorsTwo\Collections\ActivityTierCollection;
 use Destiny\Definitions\SkullModifier;
@@ -30,27 +29,27 @@ class WrathOfTheMachine extends Activity implements ActivityInterface
             } else {
                 $skullCategory = [
                     0 => [
-                        'title' => 'Modifiers',
+                        'title'  => 'Modifiers',
                         'skulls' => [
                             0 => [
                                 'displayName' => 'Heroic',
                                 'description' => 'Enemies appear in greater numbers and are more aggressive.',
-                                'icon' => '/common/destiny_content/icons/18a687233d633b1e4c34e0b25e6235cb.png',
-                            ]
-                        ]
-                    ]
+                                'icon'        => '/common/destiny_content/icons/18a687233d633b1e4c34e0b25e6235cb.png',
+                            ],
+                        ],
+                    ],
                 ];
                 $completion = [
                     'complete' => false,
-                    'success' => false
+                    'success'  => false,
                 ];
                 $identifier = 430160982;
             }
             $properties['activityTiers'][] = [
-                'activityHash' => $identifier,
+                'activityHash'    => $identifier,
                 'tierDisplayName' => 'Hard',
-                'completion' => $completion,
-                'steps' => [
+                'completion'      => $completion,
+                'steps'           => [
                     ['complete' => false],
                     ['complete' => false],
                     ['complete' => false],
@@ -58,18 +57,18 @@ class WrathOfTheMachine extends Activity implements ActivityInterface
                     ['complete' => false],
                 ],
                 'skullCategories' => $skullCategory,
-                'rewards' => [],
-                'activityData' => [
-                    'activityHash' => 430160982,
-                    'isNew' => false,
-                    'canLead' => true,
-                    'canJoin' => true,
-                    'isCompleted' => true,
-                    'isVisible' => true,
-                    'displayLevel' => 42,
+                'rewards'         => [],
+                'activityData'    => [
+                    'activityHash'     => 430160982,
+                    'isNew'            => false,
+                    'canLead'          => true,
+                    'canJoin'          => true,
+                    'isCompleted'      => true,
+                    'isVisible'        => true,
+                    'displayLevel'     => 42,
                     'recommendedLight' => 390,
-                    'difficultyTier' => 2
-                ]
+                    'difficultyTier'   => 2,
+                ],
             ];
         }
 
