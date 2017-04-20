@@ -2,7 +2,6 @@
 
 namespace Destiny\AdvisorsTwo\Activity;
 
-use Destiny\Advisors;
 use Destiny\AdvisorsTwo\Activity;
 use Destiny\AdvisorsTwo\Collections\ActivityTierCollection;
 use Destiny\Definitions\Objective;
