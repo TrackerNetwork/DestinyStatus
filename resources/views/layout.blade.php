@@ -56,6 +56,9 @@
 </nav>
 
 <div id="page" class="container">
+	<?php if (CACHE_DEFAULT !== false): ?>
+		<div class="alert alert-warning">Whoa. We are busy or Bungie is slow. Stats will be delayed ~5 minutes.</div>
+	<?php endif; ?>
 	<?php if (Session::has('alert')): ?>
 		<div class="alert alert-danger"><?= e(Session::pull('alert'))?></div>
 	<?php endif; ?>
