@@ -381,7 +381,7 @@
                 <tbody>
                 <?php foreach($activityStats as $activity): ?>
                 <tr>
-                    <td class="header" colspan="2"><?= $activity->activityName . " (" . $activity->name . ")" ?></td>
+                    <td data-identifier="<?= $activity->activityHash; ?>" class="header" colspan="2"><?= $activity->activityName . " (" . $activity->name . ")" ?></td>
                     <td><?= $activity->completions; ?></td>
                 </tr>
                 <?php endforeach; ?>
