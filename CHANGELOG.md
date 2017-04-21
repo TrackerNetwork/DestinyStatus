@@ -1,3 +1,9 @@
+# v2.5.2 (April 21, 2017)
+ * Fix checkmark for WoTM 390LL raid.
+ * Add summed raid completions to stats tab.
+ * Defer to proxy more often to prevent "Slow down" errors.
+ * Force CoE to static identifier to count completions.
+
 # v2.5.1 (April 20, 2017)
  * Sum 390LL Raids with Featured & NonFeatured.
  * Force creation of 390LL WoTM Raid, because API does not return it.
