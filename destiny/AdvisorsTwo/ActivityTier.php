@@ -155,6 +155,9 @@ class ActivityTier extends Model
     public function toActivity(Character $character, array $stats)
     {
         $activityHash = $this->definition->activityHash;
+        if ($this->definition->activityType->isArena() && str_contains($this->activityName, 'Challenge')) {
+            $activityHash = '2201622127'; // CoE
+        }
         $stat = null;
 
         if (isset($stats[$activityHash])) {
