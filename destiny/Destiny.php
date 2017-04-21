@@ -74,6 +74,46 @@ class Destiny
     }
 
     /**
+     * @param Account $account
+     * @return array
+     */
+    public function accountAggregated(Account $account)
+    {
+        $requests = [];
+
+        foreach ($account->characters as $character) {
+            $cid = $character->characterId;
+            $requests["$cid.activitystats"] = $this->platform->statsActivityAggregated($character);
+        }
+
+        $results = $this->client->request($requests);
+
+        $mergedStats = [];
+        foreach ($account->characters as $character) {
+            $cid = $character->characterId;
+            foreach (array_get($results["$cid.activitystats"], 'data.activities', []) as $activity) {
+                $completion = $activity['values']['activityCompletions']['basic']['value'];
+                $activityHash = $this->checkForFeatured($activity['activityHash']);
+                $activity = manifest()->activity($activityHash);
+
+                if ($completion > 0 && $activity->activityType->isRaid()) {
+                    if (! isset($mergedStats[$activityHash])) {
+                        $mergedStats[$activityHash] = $activity;
+                        $mergedStats[$activityHash]['completions'] = $completion;
+                        $mergedStats[$activityHash]['name'] = $this->raidNames($activityHash);
+                    } else {
+                        $mergedStats[$activityHash]['completions'] += $completion;
+                    }
+                }
+            }
+        }
+
+        return array_reverse(array_sort($mergedStats, function ($item) {
+            return $item['completions'];
+        }));
+    }
+
+    /**
      * @param \Destiny\Account $account
      *
      * @return \Destiny\Account
@@ -149,5 +189,53 @@ class Destiny
     public function news()
     {
         return $this->client->request($this->platform->news('content/site/homepage/en/', next_daily()))['blog.Response'];
+    }
+
+    /**
+     * @param $activityHash
+     * @return string
+     */
+    private function raidNames($activityHash)
+    {
+        switch ($activityHash) {
+            case "1836893116":
+            case "2659248068":
+            case "3534581229":
+            case "260765522":
+                return "Normal Mode";
+            case "1836893119":
+            case "2659248071":
+            case "1733556769":
+            case "1387993552":
+                return "Hard Mode";
+            case "4000873610":
+            case "856898338":
+            case "3978884648":
+            case "3356249023":
+                return "390LL Mode";
+            default:
+                return 'UNK - ' . $activityHash;
+
+        }
+    }
+
+    /**
+     * @param $activityHash
+     * @return string
+     */
+    private function checkForFeatured($activityHash)
+    {
+        switch ($activityHash) {
+            case "4038697181": // WOTM
+                return "856898338";
+            case "2324706853": // Crota
+                return "4000873610";
+            case "1016659723": // KF
+                return "3978884648";
+            case "430160982": // VOG
+                return "3356249023";
+            default:
+                return $activityHash;
+        }
     }
 }

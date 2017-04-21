@@ -97,12 +97,14 @@ class AccountController extends Controller
     {
         $player = $this->findPlayer($platform, $gamertag);
         $account = $player->account;
+        $activityStats = destiny()->accountAggregated($account);
         $stats = $account->mergedStats;
 
         return $this->view->make('stats', [
-            'player'   => $player,
-            'platform' => $platform,
-            'stats'    => $stats,
+            'player'        => $player,
+            'platform'      => $platform,
+            'stats'         => $stats,
+            'activityStats' => $activityStats,
         ]);
     }
 

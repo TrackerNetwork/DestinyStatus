@@ -5,6 +5,7 @@
 <?php
 /**
  * @var \Destiny\StatisticsCollection $stats
+ * @var \Destiny\Definitions\Activity[] $activityStats
  */
 ?>
 
@@ -111,6 +112,33 @@
                 <tr>
                     <td class="header" colspan="2">Orbs Gathered</td>
                     <td><?= $stats->orbsGathered->formattedValue; ?></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="stats panel">
+            <table class="table table-condensed table-striped">
+                <thead>
+                <tr>
+                    <th class="header" colspan="3"><i class="fa fa-trophy"></i> Other Stats</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="header" colspan="2">Rez's Performed</td>
+                    <td><?= $stats->resurrectionsPerformed->formattedValue ?></td>
+                </tr>
+                <tr>
+                    <td class="header" colspan="2">Rez's Received</td>
+                    <td><?= $stats->resurrectionsReceived->formattedValue ?></td>
+                </tr>
+                <tr>
+                    <td class="header" colspan="2">Max Character Level</td>
+                    <td><?= $stats->highestCharacterLevel->formattedValue ?></td>
+                </tr>
+                <tr>
+                    <td class="header" colspan="2">Max Light Level</td>
+                    <td><?= $stats->highestLightLevel->formattedValue ?></td>
                 </tr>
                 </tbody>
             </table>
@@ -347,26 +375,16 @@
             <table class="table table-condensed table-striped">
                 <thead>
                 <tr>
-                    <th class="header" colspan="3"><i class="fa fa-trophy"></i> Other Stats</th>
+                    <th class="header" colspan="3"><i class="fa fa-trophy"></i> Raid Completions (Current Chars only)</th>
                 </tr>
                 </thead>
                 <tbody>
+                <?php foreach($activityStats as $activity): ?>
                 <tr>
-                    <td class="header" colspan="2">Rez's Performed</td>
-                    <td><?= $stats->resurrectionsPerformed->formattedValue ?></td>
+                    <td class="header" colspan="2"><?= $activity->activityName . " (" . $activity->name . ")" ?></td>
+                    <td><?= $activity->completions; ?></td>
                 </tr>
-                <tr>
-                    <td class="header" colspan="2">Rez's Received</td>
-                    <td><?= $stats->resurrectionsReceived->formattedValue ?></td>
-                </tr>
-                <tr>
-                    <td class="header" colspan="2">Max Character Level</td>
-                    <td><?= $stats->highestCharacterLevel->formattedValue ?></td>
-                </tr>
-                <tr>
-                    <td class="header" colspan="2">Max Light Level</td>
-                    <td><?= $stats->highestLightLevel->formattedValue ?></td>
-                </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
