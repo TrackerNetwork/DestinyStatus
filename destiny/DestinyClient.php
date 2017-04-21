@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Redis;
 
 class DestinyClient extends Client
 {
-    protected $domain = 'https://www.bungie.net';
+    protected $domain = 'https://bungie.net';
     protected $baseUri = '/platform/';
 
     protected $destinyPrivacyRestriction = 1665;
@@ -84,7 +84,7 @@ class DestinyClient extends Client
                         $this->initBucket();
                     } else {
                         if (!self::$bucket->consume(1)) {
-                            $request->url = config('destiny.proxy_url').$this->domain.$this->baseUri.$request->url;
+                            $request->url = config('destiny.proxy_url').urlencode($this->domain.$this->baseUri.$request->url);
                         }
                     }
                 }
