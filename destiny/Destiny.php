@@ -75,6 +75,7 @@ class Destiny
 
     /**
      * @param Account $account
+     *
      * @return array
      */
     public function accountAggregated(Account $account)
@@ -97,7 +98,7 @@ class Destiny
                 $activity = manifest()->activity($activityHash);
 
                 if ($completion > 0 && $activity->activityType->isRaid()) {
-                    if (! isset($mergedStats[$activityHash])) {
+                    if (!isset($mergedStats[$activityHash])) {
                         $mergedStats[$activityHash] = $activity;
                         $mergedStats[$activityHash]['completions'] = $completion;
                         $mergedStats[$activityHash]['name'] = $this->raidNames($activityHash);
@@ -193,47 +194,49 @@ class Destiny
 
     /**
      * @param $activityHash
+     *
      * @return string
      */
     private function raidNames($activityHash)
     {
         switch ($activityHash) {
-            case "1836893116":
-            case "2659248068":
-            case "3534581229":
-            case "260765522":
-                return "Normal Mode";
-            case "1836893119":
-            case "2659248071":
-            case "1733556769":
-            case "1387993552":
-                return "Hard Mode";
-            case "4000873610":
-            case "856898338":
-            case "3978884648":
-            case "3356249023":
-                return "390LL Mode";
+            case '1836893116':
+            case '2659248068':
+            case '3534581229':
+            case '260765522':
+                return 'Normal Mode';
+            case '1836893119':
+            case '2659248071':
+            case '1733556769':
+            case '1387993552':
+                return 'Hard Mode';
+            case '4000873610':
+            case '856898338':
+            case '3978884648':
+            case '3356249023':
+                return '390LL Mode';
             default:
-                return 'UNK - ' . $activityHash;
+                return 'UNK - '.$activityHash;
 
         }
     }
 
     /**
      * @param $activityHash
+     *
      * @return string
      */
     private function checkForFeatured($activityHash)
     {
         switch ($activityHash) {
-            case "4038697181": // WOTM
-                return "856898338";
-            case "2324706853": // Crota
-                return "4000873610";
-            case "1016659723": // KF
-                return "3978884648";
-            case "430160982": // VOG
-                return "3356249023";
+            case '4038697181': // WOTM
+                return '856898338';
+            case '2324706853': // Crota
+                return '4000873610';
+            case '1016659723': // KF
+                return '3978884648';
+            case '430160982': // VOG
+                return '3356249023';
             default:
                 return $activityHash;
         }
