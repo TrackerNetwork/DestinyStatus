@@ -13,7 +13,7 @@
         "guzzlehttp/guzzle": "~5.0",
         "filp/whoops": " ~1.0",
         "predis/predis": "~1.0",
-        "bandwidth-throttle/token-bucket": "^1.1"
+        "jeroenvisser101/LeakyBucket": "^0.1.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
