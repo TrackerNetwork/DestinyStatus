@@ -30,7 +30,7 @@ class WrathOfTheMachine extends Activity implements ActivityInterface
                 } else {
                     $completion = [
                         'complete' => false,
-                        'success' => false
+                        'success'  => false,
                     ];
                 }
                 $identifier = self::FeaturedWoTM;
