@@ -2,6 +2,9 @@
 
 namespace Destiny;
 
+use bandwidthThrottle\tokenBucket\Rate;
+use bandwidthThrottle\tokenBucket\storage\PredisStorage;
+use bandwidthThrottle\tokenBucket\TokenBucket;
 use Barryvdh\Debugbar\Facade as Debugbar;
 use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
 use Cache;
@@ -11,8 +14,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\FileCookieJar;
 use GuzzleHttp\Message\Response;
 use GuzzleHttp\Pool;
-use LeakyBucket\LeakyBucket;
-use LeakyBucket\Storage\RedisStorage;
+use Illuminate\Support\Facades\Redis;
 
 class DestinyClient extends Client
 {
@@ -24,7 +26,7 @@ class DestinyClient extends Client
 
     protected $proxyUrl = null;
 
-    /** @var LeakyBucket $bucket */
+    /** @var TokenBucket $bucket */
     public static $bucket = null;
 
     public function __construct($apiKey)
@@ -80,11 +82,8 @@ class DestinyClient extends Client
                 if ($this->proxyUrl !== null) {
                     if (self::$bucket === null) {
                         $this->initBucket();
-                        self::$bucket->fill();
                     } else {
-                        self::$bucket->fill();
-
-                        if (self::$bucket->isFull()) {
+                        if (!self::$bucket->consume(1)) {
                             $request->url = config('destiny.proxy_url').$this->domain.$this->baseUri.$request->url;
                         }
                     }
@@ -157,9 +156,9 @@ class DestinyClient extends Client
 
     private function initBucket()
     {
-        self::$bucket = new LeakyBucket('destiny-throttle', new RedisStorage(), [
-            'capacity' => 120,
-            'leak'     => 20,
-        ]);
+        $storage = new PredisStorage('destiny-throttle', Redis::connection());
+        $rate = new Rate(1, Rate::SECOND);
+        self::$bucket = new TokenBucket(45, $rate, $storage);
+        self::$bucket->bootstrap(1);
     }
 }
