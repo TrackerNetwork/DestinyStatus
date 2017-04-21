@@ -1,3 +1,6 @@
+# v2.6.0 (April 21, 2017)
+ * Switch LeakyBucket packages.
+
 # v2.5.2 (April 21, 2017)
  * Fix checkmark for WoTM 390LL raid.
  * Add summed raid completions to stats tab.
