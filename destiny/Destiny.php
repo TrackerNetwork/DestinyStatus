@@ -200,15 +200,15 @@ class Destiny
     private function raidNames($activityHash)
     {
         switch ($activityHash) {
-            case '1836893116':
             case '2659248068':
             case '260765522':
             case '1733556769':
+            case '2659248071':
                 return 'Normal Mode';
             case '1836893119':
-            case '2659248071':
             case '1387993552':
             case '3534581229':
+            case '1836893116':
                 return 'Hard Mode';
             case '4000873610':
             case '856898338':
