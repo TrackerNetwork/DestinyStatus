@@ -200,20 +200,20 @@ class Destiny
     private function raidNames($activityHash)
     {
         switch ($activityHash) {
-            case '2659248068':
-            case '260765522':
-            case '1733556769':
-            case '2659248071':
+            case '260765522': // WoTM Normal
+            case '1733556769': // KF Normal
+            case '2659248071': // VoG Normal
+            case '1836893116': // Crota Normal
                 return 'Normal Mode';
-            case '1836893119':
-            case '1387993552':
-            case '3534581229':
-            case '1836893116':
+            case '1836893119': // Crota Hard
+            case '2659248068': // VoG Hard
+            case '1387993552': // WoTM Hard
+            case '3534581229': // KF Hard
                 return 'Hard Mode';
-            case '4000873610':
-            case '856898338':
-            case '3978884648':
-            case '3356249023':
+            case '4000873610': // Crota 390LL
+            case '856898338': // VoG 390LL
+            case '3978884648': // KF 390LL
+            case '3356249023': // WoTM 390LL
                 return '390LL Mode';
             default:
                 return 'UNK - '.$activityHash;
