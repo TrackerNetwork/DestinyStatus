@@ -29,7 +29,7 @@ Please [read these instructions](https://laravel.com/docs/5.1#server-requirement
 ### Compile CSS/JS
 
 1. Install gulp: `npm install -g gulp`
-2. Install npm dependencies: `npm install`
+2. Install npm dependencies: `yarn install`
 3. Build:
     * Local: `gulp`
     * Production: `gulp --production`
