@@ -42,7 +42,7 @@ class WrathOfTheMachine extends Activity implements ActivityInterface
                             0 => [
                                 'displayName' => 'Heroic',
                                 'description' => 'Enemies appear in greater numbers and are more aggressive.',
-                                'icon'        => '/common/destiny_content/icons/18a687233d633b1e4c34e0b25e6235cb.png',
+                                'icon'        => asset('/img/heroic.png'),
                             ],
                         ],
                     ],
