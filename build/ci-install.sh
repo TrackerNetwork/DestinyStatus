@@ -5,4 +5,5 @@ composer install
 php artisan key:generate
 
 npm install -g gulp
-npm install
+npm install -g yarn
+yarn install
