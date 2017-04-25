@@ -1,3 +1,8 @@
+# v2.6.1 (April 25, 2017)
+ * Cache profiles for 5 minutes (Allows clicking between tabs without murdering server)
+ * Switch to Yarn instead of NPM for dependency resolution
+ * Hardcode Heroic image until Bungie API has 390LL WoTM raid
+
 # v2.6.0 (April 21, 2017)
  * Switch LeakyBucket packages.
 
