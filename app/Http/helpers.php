@@ -42,6 +42,7 @@ function bungie($url)
     if (starts_with($url, 'http')) {
         return $url;
     }
+
     return url('https://www.bungie.net'.$url);
 }
 
