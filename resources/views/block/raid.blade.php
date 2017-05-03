@@ -35,6 +35,7 @@
                 <div class="rewards tab-pane active" role="tabpanel" id="<?= $activity->identifier ?>modes">
                     <div class="rounds">
                         <?php foreach($activity->activityTiers as $activityTier): ?>
+                            <?php if (!isset($activityTier->hidden)): ?>
                             <div class="round">
                                 <div class="info">
                                     <div class="round-number"><?= $activityTier->tierDisplayName; ?> Mode</div>
@@ -51,6 +52,7 @@
                                     @endforeach
                                 </div>
                             </div>
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
                 </div>
