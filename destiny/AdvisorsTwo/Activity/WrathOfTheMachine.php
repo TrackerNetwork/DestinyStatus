@@ -34,50 +34,33 @@ class WrathOfTheMachine extends Activity implements ActivityInterface
                     ];
                 }
                 $identifier = self::FeaturedWoTM;
-            } else {
-                $skullCategory = [
-                    0 => [
-                        'title'  => 'Modifiers',
-                        'skulls' => [
-                            0 => [
-                                'displayName' => 'Heroic',
-                                'description' => 'Enemies appear in greater numbers and are more aggressive.',
-                                'icon'        => asset('/img/heroic.png'),
-                            ],
-                        ],
+
+                $properties['activityTiers'][] = [
+                    'activityHash'    => $identifier,
+                    'tierDisplayName' => 'Hard',
+                    'completion'      => $completion,
+                    'steps'           => [
+                        ['complete' => false],
+                        ['complete' => false],
+                        ['complete' => false],
+                        ['complete' => false],
+                        ['complete' => false],
+                    ],
+                    'skullCategories' => $skullCategory,
+                    'rewards'         => [],
+                    'activityData'    => [
+                        'activityHash'     => 430160982,
+                        'isNew'            => false,
+                        'canLead'          => true,
+                        'canJoin'          => true,
+                        'isCompleted'      => true,
+                        'isVisible'        => true,
+                        'displayLevel'     => 42,
+                        'recommendedLight' => 390,
+                        'difficultyTier'   => 2,
                     ],
                 ];
-                $completion = [
-                    'complete' => false,
-                    'success'  => false,
-                ];
-                $identifier = self::NonFeaturedWoTM;
             }
-            $properties['activityTiers'][] = [
-                'activityHash'    => $identifier,
-                'tierDisplayName' => 'Hard',
-                'completion'      => $completion,
-                'steps'           => [
-                    ['complete' => false],
-                    ['complete' => false],
-                    ['complete' => false],
-                    ['complete' => false],
-                    ['complete' => false],
-                ],
-                'skullCategories' => $skullCategory,
-                'rewards'         => [],
-                'activityData'    => [
-                    'activityHash'     => 430160982,
-                    'isNew'            => false,
-                    'canLead'          => true,
-                    'canJoin'          => true,
-                    'isCompleted'      => true,
-                    'isVisible'        => true,
-                    'displayLevel'     => 42,
-                    'recommendedLight' => 390,
-                    'difficultyTier'   => 2,
-                ],
-            ];
         }
 
         $properties['activityTiers'] = (new ActivityTierCollection($this, $properties['activityTiers']));
