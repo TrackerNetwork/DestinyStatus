@@ -1,3 +1,8 @@
+# v2.7.0 (August 16, 2017)
+ * Switch URLs to Destiny 1 format.
+ * Fix TravisCI
+ * Prepare for fork for Destiny2
+
 # v2.6.1 (April 25, 2017)
  * Cache profiles for 5 minutes (Allows clicking between tabs without murdering server)
  * Switch to Yarn instead of NPM for dependency resolution
