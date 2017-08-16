@@ -7,10 +7,7 @@ php:
   - '7.0'
   - '5.6'
 before_install:
-  - npm cache clean
-  - npm install -g npm@latest
-  - npm install -g gulp
-  - npm install -g yarn
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
   - yarn install
 install:
   - composer install
