@@ -113,6 +113,7 @@ class DestinyClient extends Client
                         $responses[$key] = null;
                     } else {
                         Cache::store('file')->forget($request->key);
+
                         throw new DestinyException($result->getMessage(), $result->getCode(), $result);
                     }
                 }
