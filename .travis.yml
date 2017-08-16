@@ -7,7 +7,7 @@ php:
   - '7.1'
   - '7.0'
   - '5.6'
-before_script:
+before_install:
   - npm install -g gulp
   - npm install -g yarn
   - yarn install
