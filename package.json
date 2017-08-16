@@ -18,6 +18,7 @@
     "font-awesome": "^4.6.3",
     "jquery": "^3.1.0",
     "jquery.cookie": "^1.4.1",
-    "laravel-elixir": "^4.0.0"
+    "laravel-elixir": "^4.0.0",
+    "require-dir":"^0.3.2"
   }
 }
