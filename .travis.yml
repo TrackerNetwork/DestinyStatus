@@ -10,7 +10,7 @@ before_install:
   - . $HOME/.nvm/nvm.sh
   - nvm install stable
   - nvm use stable
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - npm install -g yarn
   - yarn install
 install:
   - composer install
