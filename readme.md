@@ -8,6 +8,13 @@ This project is based on the Laravel framework [v5.1].
 
 Please [read these instructions](https://laravel.com/docs/5.1#server-requirements) on how to configure your server to get started.
 
+### Understanding Branches
+
+* `master` 	- developer branch of production destinystatus.com
+* `destiny` 	- legacy version of d1.destinystatus.com
+* `legacy` 	- original Laravel 4.2 version of d1 destinystatus
+* `production`  - production destinystatus.com (follows `master`)
+
 ### Project dependecies:
 
 * PHP >= 5.5
