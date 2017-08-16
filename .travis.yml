@@ -7,6 +7,9 @@ php:
   - '7.0'
   - '5.6'
 before_install:
+  - . $HOME/.nvm/nvm.sh
+  - nvm install stable
+  - nvm use stable
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - yarn install
 install:
