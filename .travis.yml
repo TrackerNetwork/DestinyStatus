@@ -12,7 +12,7 @@ before_install:
   - . $HOME/.nvm/nvm.sh
   - nvm install stable
   - nvm use stable
-  - npm install -g yarn
+  - npm install -g yarn gulp
   - yarn install
 install:
   - composer install
