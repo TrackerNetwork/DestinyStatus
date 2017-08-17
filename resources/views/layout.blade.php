@@ -33,7 +33,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">Destiny Status</a>
+			<a class="navbar-brand" href="/">Destiny(1) Status</a>
 		</div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -87,7 +87,7 @@
 				@if (App::isLocal())
 					[<?= App::environment() ?>]
 				@endif
-				<a class="" href="https://github.com/TrackerNetwork/DestinyStatus/blob/master/CHANGELOG.md" target="_blank">Changelog</a><a class="privacy" href="/privacy">Privacy Policy</a>
+				<a class="" href="https://github.com/TrackerNetwork/DestinyStatus/blob/destiny1/CHANGELOG.md" target="_blank">Changelog</a><a class="privacy" href="/privacy">Privacy Policy</a>
 			</p>
 			<p>
 				Ads support server costs and all information used on this site is the property of Bungie<br>
