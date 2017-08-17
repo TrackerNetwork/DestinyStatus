@@ -1,5 +1,12 @@
 {
     "private": true,
+    "name": "destinystatus",
+    "version": "1.0.0",
+    "description": "Destiny Status",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/TrackerNetwork/DestinyStatus.git"
+    },
     "scripts": {
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -17,5 +24,11 @@
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
         "vue": "^2.1.10"
+    },
+    "author": "Frode Knutsen",
+    "dependencies": {
+        "compass-sass-mixins": "^0.12.7",
+        "font-awesome": "^4.6.3",
+        "jquery.cookie": "^1.4.1"
     }
 }

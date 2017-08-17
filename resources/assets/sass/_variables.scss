@@ -1,38 +1,41 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 
-// Body
-$body-bg: #f5f8fa;
+$page-width: 960px;
 
-// Borders
-$laravel-border-color: darken($body-bg, 10%);
-$list-group-border: $laravel-border-color;
-$navbar-default-border: $laravel-border-color;
-$panel-default-border: $laravel-border-color;
-$panel-inner-border: $laravel-border-color;
+$color-light: rgb(255, 206, 31);
+$color-moteoflight: #00b3ee;
+$color-arc: darken(#85c5ec, 10%);
+$color-solar: darken(#f2721b, 10%);
+$color-void: darken(#b184c5, 10%);
+$color-crucible: #a8342c;
+$color-vanguard: #e76f24;
+$color-title: #fff;
 
-// Brands
-$brand-primary: #3097D1;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
+$background-color-from: #445c60;
+$background-color-to: #b5bea9;
 
-// Typography
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 14px;
-$line-height-base: 1.6;
-$text-color: #636b6f;
+$character-header-heigth: 53px;
+$progress-bar-height: 16px;
+$progress-bar-bg: #556A6E;
+$progress-bar-active: $background-color-from;
+$progress-bar-complete: darken($background-color-from, 5%);
 
-// Navbar
-$navbar-default-bg: #fff;
+$navbar-border-radius: 0;
+$navbar-inverse-brand-color: $background-color-to;
+$navbar-inverse-border: transparent;
+$navbar-inverse-bg: #2d3137;
 
-// Buttons
-$btn-default-color: $text-color;
+$panel-bg: rgba(245,245,245,0.1);
+$panel-border-radius: 0;
 
-// Inputs
-$input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($brand-primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
+$table-cell-padding:            5px;
+$table-condensed-cell-padding:  5px;
+$table-bg:                      transparent;
+$table-bg-accent:               $panel-bg;
+$table-bg-hover:                $panel-bg;
+$table-bg-active:               $table-bg-hover;
+$table-border-color:            $panel-bg;
 
-// Panels
-$panel-default-heading-bg: #fff;
+$popover-bg: rgba(0,0,0,0.9);
+$popover-title-bg: $panel-bg;
+$popover-arrow-color: $popover-bg;

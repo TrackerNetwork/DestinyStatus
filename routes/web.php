@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::pattern('platform', 'psn|xbl');
+Route::any('/', ['uses' => 'HomeController@index', 'as' => 'home']);

@@ -1,0 +1,115 @@
+
+.block-label {
+  display: inline-block;
+  padding: 0 5px;
+  background-color: $background-color-from;
+}
+
+$grid-gutter-width: 4px;
+
+.grimoire {
+  padding-left: 16px;
+  background: url(https://www.bungie.net/img/theme/destiny/icons/icon_grimoire_lightgray.png) 0 50% no-repeat;
+  background-size: 11px;
+  font-size: 12px;
+
+  .total {
+    color: rgba(245,245,245,0.5);
+    font-size: 70%;
+    font-weight: normal;
+  }
+}
+
+h1.grimoire {
+  font-size: 15px;
+}
+
+.grimoire-index
+{
+  .card {
+    &.first {
+      clear: left;
+    }
+
+    .unobtainable, .bugged {
+      color: $color-light;
+    }
+    .title {
+      margin-bottom: 4px;
+
+      h3 { 
+        margin: 0 0 2px 0;
+
+        a {
+          color: $color-title;
+        }
+      }
+
+      .block-label {
+        font-size: 12px;
+        display: block;
+        margin-bottom: 5px;
+        color: $background-color-to;
+        i { padding: 0 5px; }
+      }
+      .grimoire {
+        font-size: 15px;
+        float: right;
+        font-weight: bold;
+      }
+    }
+    .score {
+      img { width: 24px; }
+      font-size: 11px;
+      display: inline-block;
+    }
+    .images {
+      font-size: 0;
+      margin-bottom: 5px;
+
+      canvas {
+        width: (100% / 3);
+        height: auto;
+      }
+    }
+    .stats {
+      margin-top: 10px;
+      border-top: 1px solid $panel-bg;
+
+      h4 {
+        font-size: 12px;
+        margin: 0 0 4px 2px;
+        color: $background-color-to;
+
+        .label {
+          font-size: 11px;
+          color: white;
+          background-color: transparent;
+        }
+        small {
+          display: block;
+          float: right;
+          font-size: 12px;
+          color: white;
+          background-color: $background-color-from;
+        }
+      }
+      .ranks {
+        @include make-row();
+        @include make-grid-columns();
+        .rank {
+          font-size: 11px !important;
+        }
+      }
+
+      .stat {
+        margin-top: 10px;
+
+        .block-label {
+          float: right;
+          padding: 0 3px;
+        }
+      }
+    }
+  }
+}
