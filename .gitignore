@@ -13,6 +13,8 @@ yarn-error.log
 /_ide_helper.php
 public/css/*
 public/js/*
-public/images/*
+public/img/*
 public/fonts/*
 public/mix-manifest.json
+/.version.php
+storage/cookies

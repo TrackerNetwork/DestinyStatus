@@ -1,10 +1,8 @@
 <?php
 
-namespace App;
-
 use Carbon\Carbon;
 
-require 'destiny.php';
+require 'instance.php';
 
 function d($var)
 {
@@ -171,20 +169,6 @@ function timespan($remote, $local = null, $output = 'years,months,weeks,days,hou
     return $output;
 }
 
-function retry($retries, callable $fn)
-{
-    beginning:
-    try {
-        return $fn();
-    } catch (\Exception $e) {
-        if (!$retries) {
-            throw new FailingTooHardException($e->getMessage(), 0, $e);
-        }
-        $retries--;
-        goto beginning;
-    }
-}
-
 function carbon($date)
 {
     return new Carbon($date);
@@ -194,7 +178,7 @@ function version($update = false)
 {
     static $version;
 
-    if (!App::isLocal()) {
+    if (!\App::isLocal()) {
         $update = true;
     }
 

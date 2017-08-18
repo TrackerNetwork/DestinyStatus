@@ -34,5 +34,7 @@ class EventServiceProvider extends ServiceProvider
                 'ttl' => "{$event->minutes}mins",
             ]);
         });
+
+        \Bugsnag::setAppVersion(version());
     }
 }

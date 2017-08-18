@@ -13,7 +13,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \Bugsnag\BugsnagLaravel\Commands\DeployCommand::class
+        \Bugsnag\BugsnagLaravel\Commands\DeployCommand::class,
+        \App\Console\Commands\DestinyManifestCommand::class,
+        \App\Console\Commands\DestinyVersionCommand::class,
     ];
 
     /**

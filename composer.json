@@ -6,12 +6,15 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "bandwidth-throttle/token-bucket": "^1.1",
         "barryvdh/laravel-debugbar": "^2.4",
         "barryvdh/laravel-ide-helper": "^2.4",
         "bugsnag/bugsnag-laravel": "^2.0",
         "fideloper/proxy": "~3.3",
+        "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "5.5.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -28,7 +31,7 @@
             "Destiny\\": "destiny"
         },
         "files": [
-            "app/helpers.php"
+            "helpers/destiny.php"
         ]
     },
     "autoload-dev": {

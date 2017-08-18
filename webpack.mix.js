@@ -14,4 +14,9 @@ let mix = require('laravel-mix');
 mix
     .js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/destiny.js', 'public/js')
-    .sass('resources/assets/sass/destiny.scss', 'public/css');
+    .sass('resources/assets/sass/destiny.scss', 'public/css')
+    .copyDirectory('resources/assets/img', 'public/img');
+
+if (mix.inProduction()) {
+    mix.version();
+}
