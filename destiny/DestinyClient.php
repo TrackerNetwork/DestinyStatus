@@ -15,18 +15,13 @@ use GuzzleHttp\Cookie\FileCookieJar;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Message\Response;
-use GuzzleHttp\Pool;
-use GuzzleHttp\Promise\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
-use function GuzzleHttp\Promise\settle;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Redis;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
+use function GuzzleHttp\Promise\settle;
 
 /**
- * Class DestinyClient
- * @package Destiny
+ * Class DestinyClient.
  */
 class DestinyClient extends Client
 {
@@ -43,14 +38,15 @@ class DestinyClient extends Client
 
     /**
      * DestinyClient constructor.
+     *
      * @param array $apiKey
      */
     public function __construct($apiKey)
     {
         $config = [
             'base_uri' => $this->domain.$this->baseUri,
-            'cookies' => new FileCookieJar(storage_path('cookies')),
-            'headers' => [
+            'cookies'  => new FileCookieJar(storage_path('cookies')),
+            'headers'  => [
                 'User-Agent' => 'DestinyStatus.com',
                 'X-API-Key'  => $apiKey,
             ],
@@ -185,6 +181,7 @@ class DestinyClient extends Client
         return function (callable $handler) use ($url) {
             return function (Request $request, array $options) use ($handler, $url) {
                 Debugbar::startMeasure($url);
+
                 return $handler($request, $options);
             };
         };
@@ -198,8 +195,9 @@ class DestinyClient extends Client
                 /** @var PromiseInterface $promise */
                 $promise = $handler($request, $options);
 
-                return $promise->then(function($response) use ($url) {
+                return $promise->then(function ($response) use ($url) {
                     Debugbar::stopMeasure($url);
+
                     return $response;
                 });
             };

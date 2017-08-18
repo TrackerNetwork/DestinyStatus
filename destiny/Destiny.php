@@ -3,8 +3,7 @@
 namespace Destiny;
 
 /**
- * Class Destiny
- * @package Destiny
+ * Class Destiny.
  */
 class Destiny
 {

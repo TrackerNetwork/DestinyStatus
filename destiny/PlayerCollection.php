@@ -11,8 +11,9 @@ class PlayerCollection extends Collection
 {
     /**
      * PlayerCollection constructor.
+     *
      * @param array|mixed $gamertag
-     * @param array $items
+     * @param array       $items
      */
     public function __construct($gamertag, array $items)
     {

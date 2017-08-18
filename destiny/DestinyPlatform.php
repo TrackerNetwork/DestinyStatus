@@ -3,16 +3,16 @@
 namespace Destiny;
 
 /**
- * Class DestinyPlatform
- * @package Destiny
+ * Class DestinyPlatform.
  */
 class DestinyPlatform
 {
     /**
      * @param $uri
      * @param array $params
-     * @param null $cacheMinutes
-     * @param bool $salvageable
+     * @param null  $cacheMinutes
+     * @param bool  $salvageable
+     *
      * @return DestinyRequest
      */
     protected function destinyRequest($uri, $params = [], $cacheMinutes = null, $salvageable = true)
@@ -30,6 +30,7 @@ class DestinyPlatform
 
     /**
      * @param $gamertag
+     *
      * @return DestinyRequest
      */
     public function searchDestinyPlayer($gamertag)

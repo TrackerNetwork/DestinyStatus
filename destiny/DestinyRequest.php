@@ -2,11 +2,7 @@
 
 namespace Destiny;
 
-use Barryvdh\Debugbar\Facade as Debugbar;
-use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\Request;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
 
 class DestinyRequest extends Request
 {

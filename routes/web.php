@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::pattern('platform', 'psn|xbl');
 
 Route::any('/', ['uses' => 'HomeController@index', 'as' => 'home']);

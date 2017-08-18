@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -29,9 +29,9 @@ class EventServiceProvider extends ServiceProvider
 
         Event::listen('Illuminate\Cache\Events\KeyWritten', function ($event) {
             \Bugsnag::leaveBreadcrumb('Cache written', 'process', [
-                'key' => $event->key,
+                'key'   => $event->key,
                 'value' => $event->value,
-                'ttl' => "{$event->minutes}mins",
+                'ttl'   => "{$event->minutes}mins",
             ]);
         });
 
