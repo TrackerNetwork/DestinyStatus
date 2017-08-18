@@ -27,6 +27,12 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+        Event::listen('Illuminate\Cache\Events\KeyWritten', function ($event) {
+            \Bugsnag::leaveBreadcrumb('Cache written', 'process', [
+                'key' => $event->key,
+                'value' => $event->value,
+                'ttl' => "{$event->minutes}mins",
+            ]);
+        });
     }
 }
