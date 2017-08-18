@@ -1,5 +1,9 @@
 let mix = require('laravel-mix');
 
+var config = {
+    node: "node_modules/"
+};
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,12 +15,14 @@ let mix = require('laravel-mix');
  |
  */
 
+
 mix
-    .js('resources/assets/js/app.js', 'public/js')
+   // .js('resources/assets/js/app.js', 'public/js')
+    .scripts([
+        config.node + 'jquery.cookie/jquery.cookie.js'
+    ], 'public/js/vendor.js')
+    .js('resources/assets/js/bootstrap.js', 'public/js')
     .js('resources/assets/js/destiny.js', 'public/js')
     .sass('resources/assets/sass/destiny.scss', 'public/css')
-    .copyDirectory('resources/assets/img', 'public/img');
-
-if (mix.inProduction()) {
-    mix.version();
-}
+    .copyDirectory('resources/assets/img', 'public/img')
+    .version();

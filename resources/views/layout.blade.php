@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500">
     <link rel="stylesheet" type="text/css" href="<?= elixir('css/destiny.css'); ?>">
     <link rel="stylesheet" type="text/css" href="//db.destinytracker.com/content/css/tooltip.css">
-    <script src="<?= elixir('js/destiny.js'); ?>"></script>
+    <script src="<?= mix('js/bootstrap.js'); ?>"></script>
+    <script src="<?= mix('js/vendor.js'); ?>"></script>
+    <script src="<?= mix('js/destiny.js'); ?>"></script>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
@@ -55,7 +57,7 @@
     <div class="footer row">
         <div class="col-md-12 about">
             <p class="version">
-                <?= date('Y') ?> &copy; DestinyStatus v??
+                <?= date('Y') ?> &copy; DestinyStatus v<?= version(); ?>
                 @if (App::isLocal())
                     [<?= App::environment() ?>]
                 @endif
