@@ -16,6 +16,7 @@ before_install:
   - yarn install
 install:
   - composer install
+  - cp .env.example .env
   - php artisan key:generate
   - yarn run dev
 script:

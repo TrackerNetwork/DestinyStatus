@@ -11,7 +11,7 @@ Please [read these instructions](https://laravel.com/docs/5.1#server-requirement
 ### Understanding Branches
 
 * `master` 	- developer branch of production destinystatus.com
-* `destiny` 	- legacy version of d1.destinystatus.com
+* `destiny1` 	- legacy version of d1.destinystatus.com
 * `legacy` 	- original Laravel 4.2 version of d1 destinystatus
 * `production`  - production destinystatus.com (follows `master`)
 
