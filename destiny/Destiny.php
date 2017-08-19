@@ -193,7 +193,6 @@ class Destiny
             $totalKills = 0;
         }
 
-
         return [
             'raid_completions' => $raidCompletions,
             'playtime'         => $account->statistics->mergedAllCharacters->merged['allTime']['secondsPlayed']['basic']['value'] ?? 0,
