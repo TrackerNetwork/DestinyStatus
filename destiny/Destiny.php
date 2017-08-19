@@ -183,15 +183,15 @@ class Destiny
             return $item['completions'];
         }, $activityStats));
 
-        $kdRatio = $account->statistics->mergedAllCharacters->results['allPvP']['allTime']['killsDeathsRatio']['basic']['value'];
+        $kdRatio = $account->statistics->mergedAllCharacters->results['allPvP']['allTime']['killsDeathsRatio']['basic']['value'] ?? 0;
 
         return [
             'raid_completions' => $raidCompletions,
-            'playtime'         => $account->statistics->mergedAllCharacters->merged['allTime']['secondsPlayed']['basic']['value'],
+            'playtime'         => $account->statistics->mergedAllCharacters->merged['allTime']['secondsPlayed']['basic']['value'] ?? 0,
             'kd'               => $kdRatio,
             'grimoire'         => $account->grimoireScore,
-            'total_games'      => $account->statistics->mergedAllCharacters->results['allPvP']['allTime']['activitiesEntered']['basic']['value'],
-            'total_kills'      => $account->statistics->mergedAllCharacters->results['allPvP']['allTime']['kills']['basic']['value'],
+            'total_games'      => $account->statistics->mergedAllCharacters->results['allPvP']['allTime']['activitiesEntered']['basic']['value'] ?? 0,
+            'total_kills'      => $account->statistics->mergedAllCharacters->results['allPvP']['allTime']['kills']['basic']['value'] ?? 0,
         ];
     }
 
