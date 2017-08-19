@@ -64,9 +64,8 @@
                 <a class="" href="https://github.com/TrackerNetwork/DestinyStatus/blob/master/CHANGELOG.md" target="_blank">Changelog</a><a class="privacy" href="/privacy">Privacy Policy</a>
             </p>
             <p>
-                Ads support server costs and all information used on this site is the property of Bungie<br>
-                Originally Developed by <a href="/psn/HermanGatevold">HermanGatevold</a>, currently maintained by <a href="https://github.com/iBotPeaches" target="_blank">iBotPeaches</a>
-                and the Tracker Network and is not financed by or associated with Bungie.<br>
+                Ads support server costs and all information used on this site is the property of Bungie. Looking for <a href="https://d1.destinystatus.com">Destiny 1 stats</a>?<br>
+                Developed by <a href="https://github.com/iBotPeaches" target="_blank">iBotPeaches</a> and the Tracker Network and is not financed by or associated with Bungie.<br>
             </p>
             <p>
                 Contact us on <a href="https://github.com/TrackerNetwork/DestinyStatus" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
