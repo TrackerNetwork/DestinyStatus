@@ -18,3 +18,4 @@ public/fonts/*
 public/mix-manifest.json
 /.version.php
 storage/cookies
+database/manifest/*

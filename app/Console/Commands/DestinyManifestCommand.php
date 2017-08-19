@@ -156,7 +156,7 @@ class DestinyManifestCommand extends Command
         $path = base_path("database/manifest/$folder");
 
         if (!\File::isDirectory($path)) {
-            \File::makeDirectory($path, 0755);
+            \File::makeDirectory($path, 0755, true);
         }
 
         return $path;
