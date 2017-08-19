@@ -1,6 +1,9 @@
 <?php
+declare(strict_types=1);
 
 namespace Destiny;
+
+use App\Enums\Console;
 
 /**
  * @property string $iconPath
@@ -15,22 +18,40 @@ namespace Destiny;
  */
 class Player extends Model
 {
-    protected function gPlatform()
+    protected function gPlatform() : string
     {
-        return $this->membershipType == 2 ? 'psn' : 'xbl';
+        switch ($this->membershipType) {
+            case Console::Xbox:
+                return 'xbl';
+            case Console::Playstation:
+                return 'psn';
+            case Console::Blizzard:
+                return 'pc';
+            default:
+                return 'Unknown: ' . $this->membershipType;
+        }
     }
 
-    protected function gPlatformName()
+    protected function gPlatformName() : string
     {
-        return $this->membershipType == 2 ? 'PlayStation' : 'Xbox';
+        switch ($this->membershipType) {
+            case Console::Xbox:
+                return 'Xbox';
+            case Console::Playstation:
+                return 'PlayStation';
+            case Console::Blizzard:
+                return 'PC';
+            default:
+                return 'Unknown: ' . $this->membershipType;
+        }
     }
 
-    protected function gPlatformIcon()
+    protected function gPlatformIcon() : string
     {
-        return $this->membershipType == 2 ? '/img/psn.png' : '/img/xbl.png';
+        return '/img/' . $this->platform . '.png';
     }
 
-    protected function gUrl()
+    protected function gUrl() : string
     {
         return route('account', ['platform' => $this->platform, 'player' => $this->displayName]);
     }
