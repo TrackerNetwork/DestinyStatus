@@ -56,5 +56,4 @@ class Account extends Model
     {
         return $this->hasOne(Stats::class, 'account_id', 'id');
     }
-
 }

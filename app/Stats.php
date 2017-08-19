@@ -59,5 +59,4 @@ class Stats extends Model
     {
         return $this->belongsTo(Account::class, 'id', 'account_id');
     }
-
 }
