@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $raid_completions
  * @property int $playtime
  * @property float $kd
+ * @property int $total_games
+ * @property int $total_kills
  * @property int $grimoire
  * @property Carbon $created_at
  * @property Carbon $updated_at
@@ -35,7 +37,7 @@ class Stats extends Model
      *
      * @var array
      */
-    protected $fillable = ['raid_completions', 'playtime', 'kd', 'grimoire'];
+    protected $fillable = ['raid_completions', 'playtime', 'kd', 'total_games', 'total_kills', 'grimoire'];
 
     public static function boot()
     {

@@ -190,6 +190,8 @@ class Destiny
             'playtime'         => $account->statistics->mergedAllCharacters->merged['allTime']['secondsPlayed']['basic']['value'],
             'kd'               => $kdRatio,
             'grimoire'         => $account->grimoireScore,
+            'total_games'      => $account->statistics->mergedAllCharacters->results['allPvP']['allTime']['activitiesEntered']['basic']['value'],
+            'total_kills'      => $account->statistics->mergedAllCharacters->results['allPvP']['allTime']['kills']['basic']['value'],
         ];
     }
 
