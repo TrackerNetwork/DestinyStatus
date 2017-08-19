@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Destiny;
 
@@ -26,7 +27,7 @@ class Destiny
     /**
      * @return array
      */
-    public function manifest()
+    public function manifest() : array
     {
         return $this->client->r($this->platform->manifest());
     }
@@ -36,7 +37,7 @@ class Destiny
      *
      * @return \Destiny\PlayerCollection
      */
-    public function player($gamertag)
+    public function player($gamertag) : PlayerCollection
     {
         $result = $this->client->r($this->platform->searchDestinyPlayer($gamertag));
 

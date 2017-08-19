@@ -14,14 +14,13 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\FileCookieJar;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Message\Response;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Support\Facades\Redis;
-use function GuzzleHttp\Promise\settle;
 
 /**
- * Class DestinyClient.
+ *
  */
 class DestinyClient extends Client
 {
@@ -39,9 +38,9 @@ class DestinyClient extends Client
     /**
      * DestinyClient constructor.
      *
-     * @param array $apiKey
+     * @param string $apiKey
      */
-    public function __construct($apiKey)
+    public function __construct(string $apiKey)
     {
         $config = [
             'base_uri' => $this->domain.$this->baseUri,
@@ -87,59 +86,44 @@ class DestinyClient extends Client
             if ($request->cache && Cache::store('file')->has($request->key)) {
                 $responses[$key] = Cache::store('file')->get($request->key);
             } else {
-                if ($this->proxyUrl !== null) {
-                    if (self::$bucket === null) {
-                        $this->initBucket();
-                    } else {
-                        if (!self::$bucket->consume(1)) {
-                            $request->url = config('destiny.proxy_url').urlencode($this->domain.$this->baseUri.$request->url);
-                        }
-                    }
-                }
-
-                $stack = new HandlerStack();
-                $stack->setHandler(new CurlHandler());
-                $stack->push($this->onEnd($request->url));
-                $stack->push($this->onStart($request->url));
-
-                $req = $this->getAsync($request->url, ['handler' => $stack]);
-
-                $batch[$key] = $req;
+                $request = $this->applyProxyIfNeeded($request);
+                $batch[$key] = $this->applyMiddleware($request);
             }
         }
 
         if (count($batch)) {
             $keys = array_keys($batch);
 
-            foreach (settle($batch)->wait() as $i => $result) {
+            foreach (\GuzzleHttp\Promise\settle($batch)->wait() as $i => $result) {
                 $key = $keys[$i];
                 $request = $requests[$key];
+                $state = $result['state'];
+
+                /** @var Response $result */
+                $result = $result['value'] ?? null;
 
                 if ($request instanceof DestinyRequest && $request->raw) {
                     $responses[$key] = $result;
                     continue;
                 }
 
-                if ($result['state'] !== 'fulfilled') {
+                if ($state !== 'fulfilled') {
                     if ($request->salvageable) {
                         $responses[$key] = null;
                     } else {
                         Cache::store('file')->forget($request->key);
-
-                        throw new DestinyException($result->getMessage(), $result->getCode(), $result);
+                        throw new DestinyException($result->getReasonPhrase(), $result->getStatusCode(), $result);
                     }
                 }
 
-                if (isset($result['value'])) {
-                    $response = json_decode($result['value']->getBody()->getContents(), true);
+                if ($result !== null) {
+                    $response = json_decode($result->getBody()->getContents(), true);
 
                     if (array_get($response, 'ErrorStatus') !== 'Success') {
                         Cache::store('file')->forget($request->key);
                         Bugsnag::setMetaData(['bungie' => $response]);
 
-                        if (array_get($response, 'ErrorCode') === $this->destinyLegacyPlatformErrorCode) {
-                            throw new \DestinyLegacyPlatformException(array_get($response, 'Message'), array_get($response, 'ErrorCode'));
-                        } elseif (array_get($response, 'ErrorCode') === $this->destinyPrivacyRestriction) {
+                        if (array_get($response, 'ErrorCode') === $this->destinyPrivacyRestriction) {
                             $response = ['private' => true];
                         } else {
                             if ($request->salvageable) {
@@ -170,11 +154,48 @@ class DestinyClient extends Client
 
     private function initBucket()
     {
-        $storage = new PredisStorage('destiny-throttle', Redis::connection()->client());
+        $storage = new PredisStorage('destiny-throttle', Redis::connection()->client(''));
         $rate = new Rate(1, Rate::SECOND);
         self::$bucket = new TokenBucket(25, $rate, $storage);
         self::$bucket->bootstrap(1);
     }
+
+    /**
+     * @param DestinyRequest $request
+     * @return DestinyRequest
+     */
+    private function applyProxyIfNeeded(DestinyRequest $request) : DestinyRequest
+    {
+        if ($this->proxyUrl !== null) {
+            if (self::$bucket === null) {
+                $this->initBucket();
+            } else {
+                if (!self::$bucket->consume(1)) {
+                    $request->url = config('destiny.proxy_url') . urlencode($this->domain . $this->baseUri . $request->url);
+                }
+            }
+        }
+
+        return $request;
+    }
+
+    /**
+     * @param $request
+     * @return PromiseInterface
+     */
+    private function applyMiddleware(DestinyRequest $request): PromiseInterface
+    {
+        $stack = new HandlerStack();
+        $stack->setHandler(new CurlHandler());
+        $stack->push($this->onEnd($request->url));
+        $stack->push($this->onStart($request->url));
+
+        return $this->getAsync($request->url, ['handler' => $stack]);
+    }
+
+    //---------------------------------------------------------------------------------------
+    // Middleware Events (Guzzle 6)
+    //---------------------------------------------------------------------------------------
 
     public function onStart(string $url)
     {

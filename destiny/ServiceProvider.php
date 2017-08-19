@@ -11,17 +11,17 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('destiny.client', function ($app) {
+        $this->app->singleton('destiny.client', function () {
             $apiKey = config('destiny.key');
 
             return new DestinyClient($apiKey);
         });
 
-        $this->app->singleton('destiny.manifest', function ($app) {
+        $this->app->singleton('destiny.manifest', function () {
             return new DestinyManifest();
         });
 
-        $this->app->singleton('destiny.platform', function ($app) {
+        $this->app->singleton('destiny.platform', function () {
             return new DestinyPlatform();
         });
 

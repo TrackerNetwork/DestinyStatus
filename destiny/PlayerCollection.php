@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Destiny;
 
@@ -15,7 +16,7 @@ class PlayerCollection extends Collection
      * @param array|mixed $gamertag
      * @param array       $items
      */
-    public function __construct($gamertag, array $items)
+    public function __construct(string $gamertag, array $items)
     {
         $players = [];
         foreach ($items as $properties) {
