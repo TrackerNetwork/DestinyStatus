@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Models\Badge
+ * App\Models\Badge.
  *
  * @property int $account_id
  * @property int $badge_id
@@ -50,5 +50,4 @@ class AssignedBadge extends Model
     //---------------------------------------------------------------------------------
     // Public Methods
     //---------------------------------------------------------------------------------
-
 }

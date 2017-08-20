@@ -45,6 +45,7 @@ class AppServiceProvider extends ServiceProvider
         $socialite = $this->app->make(\Laravel\Socialite\Contracts\Factory::class);
         $socialite->extend('bungie', function ($app) use ($socialite) {
             $config = $app['config']['services.bungie'];
+
             return $socialite->buildProvider(BungieSocialiteProvider::class, $config);
         });
     }

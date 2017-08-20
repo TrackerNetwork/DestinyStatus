@@ -5,7 +5,6 @@ namespace Tests\Feature;
 use App\Enums\Console;
 use App\Helpers\ConsoleHelper;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ConsoleHelperTest extends TestCase
 {

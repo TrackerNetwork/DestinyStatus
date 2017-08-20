@@ -36,9 +36,9 @@ return [
     ],
 
     'bungie' => [
-        'client_id' => env('BUNGIE_CLIENT'),
+        'client_id'     => env('BUNGIE_CLIENT'),
         'client_secret' => env('BUNGIE_SECRET'),
-        'redirect' => env('APP_URL') . '/oauth/callback'
-    ]
+        'redirect'      => env('APP_URL').'/oauth/callback',
+    ],
 
 ];

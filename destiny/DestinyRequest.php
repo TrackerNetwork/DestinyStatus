@@ -5,8 +5,8 @@ namespace Destiny;
 use GuzzleHttp\Psr7\Request;
 
 /**
- * Class DestinyRequest
- * @package Destiny
+ * Class DestinyRequest.
+ *
  * @property string $key
  * @property string $uri
  * @property string $url

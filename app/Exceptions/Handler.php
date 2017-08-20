@@ -45,7 +45,8 @@ class Handler extends ExceptionHandler
 
     /**
      * @param \Illuminate\Http\Request $request
-     * @param Exception $exception
+     * @param Exception                $exception
+     *
      * @return \Illuminate\Http\Response|\Symfony\Component\HttpFoundation\Response
      */
     public function render($request, Exception $exception)
@@ -55,6 +56,7 @@ class Handler extends ExceptionHandler
         }
         if ($exception instanceof \DestinyException) {
             Bugsnag::notifyException($exception);
+
             return response()->view('error', ['error' => $exception->getMessage(), 'bungie' => true]);
         }
 

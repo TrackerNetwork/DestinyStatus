@@ -23,7 +23,8 @@ class AuthController extends Controller
         $bungie = Socialite::with('bungie')->user();
         \Auth::login($bungie, true);
 
-        \Session::flash('success', 'You have logged in as - <strong>' . $bungie->account->name . '</strong>');
+        \Session::flash('success', 'You have logged in as - <strong>'.$bungie->account->name.'</strong>');
+
         return redirect('/');
     }
 
@@ -32,6 +33,7 @@ class AuthController extends Controller
         \Auth::logout();
 
         \Session::flash('success', 'You have logged out.');
+
         return redirect('/');
     }
 }

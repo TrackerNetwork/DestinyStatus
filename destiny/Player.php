@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Destiny;
@@ -34,7 +35,7 @@ class Player extends Model
             case Console::Blizzard:
                 return 'PC';
             default:
-                return 'Unknown: ' . $this->membershipType;
+                return 'Unknown: '.$this->membershipType;
         }
     }
 

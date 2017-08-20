@@ -43,8 +43,8 @@ class DestinyMedalCommand extends Command
         $type = $this->argument('type');
         $badge = $this->argument('medal');
 
-        if (! in_array($action, ['give', 'take'])) {
-            throw new \Exception('action must be give|take. "' . $action . '" given.');
+        if (!in_array($action, ['give', 'take'])) {
+            throw new \Exception('action must be give|take. "'.$action.'" given.');
         }
 
         $membershipType = ConsoleHelper::getIdFromConsoleString($type);
@@ -53,7 +53,7 @@ class DestinyMedalCommand extends Command
             $badge = Badge::where('slug', slug($badge))
                 ->firstOrFail();
         } catch (ModelNotFoundException $ex) {
-            throw new \Exception($badge . ' was not a medal in our system.');
+            throw new \Exception($badge.' was not a medal in our system.');
         }
 
         try {
@@ -61,15 +61,14 @@ class DestinyMedalCommand extends Command
                 ->where('membership_type', $membershipType)
                 ->firstOrFail();
         } catch (ModelNotFoundException $ex) {
-            throw new \Exception($name . ' was not found in system on console: ' . $type . '. Try loading on DS first.');
+            throw new \Exception($name.' was not found in system on console: '.$type.'. Try loading on DS first.');
         }
 
-        if (! AssignedBadge::where('account_id', $account->id)->where('badge_id', $badge->id)->exists()) {
-
+        if (!AssignedBadge::where('account_id', $account->id)->where('badge_id', $badge->id)->exists()) {
             if ($action === 'give') {
                 $assignedBadge = new AssignedBadge([
                     'account_id' => $account->id,
-                    'badge_id' => $badge->id
+                    'badge_id'   => $badge->id,
                 ]);
 
                 if ($assignedBadge->save()) {

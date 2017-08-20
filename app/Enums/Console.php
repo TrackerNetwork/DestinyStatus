@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class Console
- * @package App\Enums
+ * Class Console.
  */
 abstract class Console
 {

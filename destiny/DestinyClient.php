@@ -10,7 +10,6 @@ use bandwidthThrottle\tokenBucket\TokenBucket;
 use Barryvdh\Debugbar\Facade as Debugbar;
 use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
 use Cache;
-use Carbon\Carbon;
 use DestinyException;
 use Exception;
 use GuzzleHttp\Client;
@@ -22,9 +21,6 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Support\Facades\Redis;
 
-/**
- *
- */
 class DestinyClient extends Client
 {
     protected $domain = 'https://www.bungie.net';
@@ -54,12 +50,12 @@ class DestinyClient extends Client
             /** @var Bungie $bungie */
             $bungie = \Auth::user();
 
-            if (! $bungie->isActive()) {
+            if (!$bungie->isActive()) {
                 app(AuthController::class)->handleRefreshProvider();
                 $bungie->refresh();
             }
 
-            $headers['Authorization'] = 'Bearer ' . $bungie->access_token;
+            $headers['Authorization'] = 'Bearer '.$bungie->access_token;
         }
 
         $config = [
@@ -129,6 +125,7 @@ class DestinyClient extends Client
                         $responses[$key] = null;
                     } else {
                         Cache::store('file')->forget($request->key);
+
                         throw new DestinyException($result->getReasonPhrase(), $result->getStatusCode(), $result);
                     }
                 }
@@ -179,6 +176,7 @@ class DestinyClient extends Client
 
     /**
      * @param DestinyRequest $request
+     *
      * @return DestinyRequest
      */
     private function applyProxyIfNeeded(DestinyRequest $request) : DestinyRequest
@@ -188,7 +186,7 @@ class DestinyClient extends Client
                 $this->initBucket();
             } else {
                 if (!self::$bucket->consume(1)) {
-                    $request->url = config('destiny.proxy_url') . urlencode($this->domain . $this->baseUri . $request->url);
+                    $request->url = config('destiny.proxy_url').urlencode($this->domain.$this->baseUri.$request->url);
                 }
             }
         }
@@ -198,6 +196,7 @@ class DestinyClient extends Client
 
     /**
      * @param $request
+     *
      * @return PromiseInterface
      */
     private function applyMiddleware(DestinyRequest $request): PromiseInterface

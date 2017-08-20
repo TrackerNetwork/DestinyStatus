@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Models\Badge
+ * App\Models\Badge.
  *
  * @property int $badge
  * @property string $name
@@ -55,5 +55,4 @@ class Badge extends Model
     //---------------------------------------------------------------------------------
     // Public Methods
     //---------------------------------------------------------------------------------
-
 }

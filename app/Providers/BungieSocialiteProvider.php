@@ -10,13 +10,12 @@ use Laravel\Socialite\Two\InvalidStateException;
 use Laravel\Socialite\Two\ProviderInterface;
 
 /**
- * Class BungieSocialiteProvider
- * @package App\Providers
+ * Class BungieSocialiteProvider.
  */
 class BungieSocialiteProvider extends AbstractProvider implements ProviderInterface
 {
     /**
-     * Flag to determine difference between Access Token refresh or creation
+     * Flag to determine difference between Access Token refresh or creation.
      *
      * @var bool
      */
@@ -28,7 +27,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
     public $baseUrl = 'https://www.bungie.net/';
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     protected function getAuthUrl($state)
     {
@@ -36,7 +35,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     protected function getTokenUrl() : string
     {
@@ -45,6 +44,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
 
     /**
      * @param string $bungieId
+     *
      * @return string
      */
     protected function getUserUrl(string $bungieId) : string
@@ -54,8 +54,10 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
 
     /**
      * @param Bungie $bungie
-     * @return Bungie
+     *
      * @throws \Exception
+     *
+     * @return Bungie
      */
     public function refreshToken(Bungie $bungie)
     {
@@ -95,9 +97,9 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
         if ($model === null) {
             $response = json_decode($this->getHttpClient()->get($this->getUserUrl($bungieId), [
                 'headers' => [
-                    'Authorization' => 'Bearer ' . $token,
-                    'X-API-Key' => config('destiny.key'),
-                    'Accept' => 'application/json',
+                    'Authorization' => 'Bearer '.$token,
+                    'X-API-Key'     => config('destiny.key'),
+                    'Accept'        => 'application/json',
                 ],
             ])->getBody(), true);
 
@@ -121,8 +123,10 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
     /**
      * @param array $tokenResponse
      * @param array $destinyResponse
-     * @return Bungie
+     *
      * @throws \Exception
+     *
+     * @return Bungie
      */
     public function mapResponsesToNewBungieObject(array $tokenResponse, array $destinyResponse)
     {
@@ -160,13 +164,14 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
      * Get the GET parameters for the code request. Removing "scopes" as they are defined
      * during application creation.
      *
-     * @param  string|null  $state
+     * @param string|null $state
+     *
      * @return array
      */
     protected function getCodeFields($state = null)
     {
         $fields = [
-            'client_id' => $this->clientId,
+            'client_id'     => $this->clientId,
             'response_type' => 'code',
         ];
 
@@ -179,29 +184,30 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
 
     /**
      * @param string $code
+     *
      * @return array
      */
     protected function getTokenFields($code)
     {
         if ($this->isRefresh) {
             return [
-                'grant_type' => 'refresh_token',
+                'grant_type'    => 'refresh_token',
                 'refresh_token' => $code,
-                'client_id' => $this->clientId,
+                'client_id'     => $this->clientId,
                 'client_secret' => $this->clientSecret,
             ];
         }
 
         return [
-            'code' => $code,
-            'client_id' => $this->clientId,
+            'code'          => $code,
+            'client_id'     => $this->clientId,
             'client_secret' => $this->clientSecret,
-            'grant_type' => 'authorization_code',
+            'grant_type'    => 'authorization_code',
         ];
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     protected function getUserByToken($token)
     {
@@ -209,7 +215,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     protected function mapUserToObject(array $user)
     {

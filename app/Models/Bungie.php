@@ -9,8 +9,8 @@ use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Bungie
- * @package App\Models
+ * Class Bungie.
+ *
  * @property int $id
  * @property int $account_id
  * @property int $membership_id
@@ -42,7 +42,7 @@ class Bungie extends Model implements Authenticatable, UserProvider
      */
     protected $fillable = [
         'membership_id', 'first_access', 'last_update', 'unique_name', 'display_name',
-        'refresh_token', 'refresh_expires', 'access_token', 'expires'
+        'refresh_token', 'refresh_expires', 'access_token', 'expires',
     ];
 
     /**
@@ -103,7 +103,7 @@ class Bungie extends Model implements Authenticatable, UserProvider
     //---------------------------------------------------------------------------------
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getAuthIdentifierName()
     {
@@ -111,7 +111,7 @@ class Bungie extends Model implements Authenticatable, UserProvider
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getAuthIdentifier()
     {
@@ -119,15 +119,14 @@ class Bungie extends Model implements Authenticatable, UserProvider
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getAuthPassword()
     {
-        return null;
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getRememberToken()
     {
@@ -135,7 +134,7 @@ class Bungie extends Model implements Authenticatable, UserProvider
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function setRememberToken($value)
     {
@@ -143,7 +142,7 @@ class Bungie extends Model implements Authenticatable, UserProvider
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getRememberTokenName()
     {
@@ -151,7 +150,7 @@ class Bungie extends Model implements Authenticatable, UserProvider
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function retrieveById($identifier)
     {
@@ -159,7 +158,7 @@ class Bungie extends Model implements Authenticatable, UserProvider
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function retrieveByToken($identifier, $token)
     {
@@ -167,7 +166,7 @@ class Bungie extends Model implements Authenticatable, UserProvider
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function updateRememberToken(Authenticatable $user, $token)
     {
@@ -175,15 +174,15 @@ class Bungie extends Model implements Authenticatable, UserProvider
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function retrieveByCredentials(array $credentials)
     {
-        return null; // no auth
+        // no auth
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validateCredentials(Authenticatable $user, array $credentials)
     {

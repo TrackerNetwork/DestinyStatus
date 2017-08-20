@@ -61,6 +61,7 @@ class Account extends Model
     public function platformImage()
     {
         $platform = ConsoleHelper::getConsoleStringFromId($this->membership_type);
+
         return ConsoleHelper::getPlatformImage($platform);
     }
 
