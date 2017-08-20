@@ -17,6 +17,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Stats $stats
+ * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereMembershipId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereMembershipType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereUpdatedAt($value)
  */
 class Account extends Model
 {

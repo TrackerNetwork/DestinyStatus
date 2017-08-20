@@ -18,6 +18,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $grimoire
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ * @property-read \App\Account $account
+ * @mixin \Eloquent
  */
 class Stats extends Model
 {
