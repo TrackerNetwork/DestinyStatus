@@ -8,6 +8,7 @@ use Destiny\Character\ActivityCollection;
 use Destiny\Character\Inventory;
 use Destiny\Character\ProgressionCollection;
 use Destiny\Character\RecordBookCollection;
+use Illuminate\Support\Facades\DB;
 
 class Destiny
 {
@@ -155,23 +156,25 @@ class Destiny
         }
 
         // Lets update this record in DB, if we have it.
-        /** @var \App\Account $model */
-        $model = \App\Account::updateOrCreate([
-            'membership_id'   => $account->player->membershipId,
-            'membership_type' => $account->player->membershipType,
-        ], [
-            'name' => $account->player->displayName,
-        ]);
+        DB::transaction(function() use ($account) {
+            /** @var \App\Account $model */
+            $model = \App\Account::updateOrCreate([
+                'membership_id'   => $account->player->membershipId,
+                'membership_type' => $account->player->membershipType,
+            ], [
+                'name' => $account->player->displayName,
+            ]);
 
-        // Insert our D1 stats into a table, so we can use it on the D2 site.
-        // This code was added very quickly and hackily.
-        if ($model->stats === null) {
-            $stats = new Stats($this->returnStatsBlock($account));
-            $model->stats()->save($stats);
-        } elseif ($model->stats !== null && $model->stats->updated_at <= Carbon::now()->subDays(7)) {
-            $stats = $model->stats;
-            $stats->update($this->returnStatsBlock($account));
-        }
+            // Insert our D1 stats into a table, so we can use it on the D2 site.
+            // This code was added very quickly and hackily.
+            if ($model->stats === null) {
+                $stats = new Stats($this->returnStatsBlock($account));
+                $model->stats()->save($stats);
+            } elseif ($model->stats !== null && $model->stats->updated_at <= Carbon::now()->subDays(7)) {
+                $stats = $model->stats;
+                $stats->update($this->returnStatsBlock($account));
+            }
+        });
 
         return $account;
     }
