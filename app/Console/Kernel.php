@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         \Bugsnag\BugsnagLaravel\Commands\DeployCommand::class,
         \App\Console\Commands\DestinyManifestCommand::class,
         \App\Console\Commands\DestinyVersionCommand::class,
+        \App\Console\Commands\DestinyMedalCommand::class,
     ];
 
     /**
