@@ -10,6 +10,7 @@ $color-void: darken(#b184c5, 10%);
 $color-crucible: #a8342c;
 $color-vanguard: #e76f24;
 $color-title: #fff;
+$color-dark: #343434;
 
 $background-color-from: #445c60;
 $background-color-to: #b5bea9;
@@ -39,3 +40,19 @@ $table-border-color:            $panel-bg;
 $popover-bg: rgba(0,0,0,0.9);
 $popover-title-bg: $panel-bg;
 $popover-arrow-color: $popover-bg;
+
+$line-color: 1px solid rgba(246,246,246,0.25);
+
+//== Modals
+$modal-content-bg:                             $background-color-from;
+$modal-content-border-color:                   rgba(0,0,0,.2);
+$modal-content-fallback-border-color:          #999;
+$modal-backdrop-img: "../img/modal_bg.jpg";
+
+$modal-backdrop-bg:           #000;
+$modal-backdrop-opacity:      .5;
+$modal-header-border-color:   $line-color;
+$modal-footer-border-color:   $modal-header-border-color;
+
+$btn-primary-bg: $color-light;
+$btn-primary-color: $color-dark;

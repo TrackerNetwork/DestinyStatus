@@ -22,3 +22,7 @@ Route::get('select/{gamertag}', ['uses' => 'HomeController@select', 'as' => 'sel
 Route::group(['prefix' => '{platform}/{player}'], function () {
     Route::get('/', ['uses' => 'AccountController@index', 'as' => 'account']);
 });
+
+Route::get('/logout', ['uses' => 'AuthController@logout', 'as' => 'logout']);
+Route::get('/oauth/login', ['uses' => 'AuthController@redirectToProvider', 'as' => 'login']);
+Route::get('/oauth/callback', ['uses' => 'AuthController@handleProviderCallback', 'as' => 'callback']);

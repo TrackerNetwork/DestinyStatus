@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Helpers\ConsoleHelper;
+use App\Models\Bungie;
 use App\Models\Destiny1\Stats;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -17,14 +19,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Stats $stats
+ * @property Bungie $bungie
  * @mixin \Eloquent
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereMembershipId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereMembershipType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereSlug($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Account whereUpdatedAt($value)
+ * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class Account extends Model
 {
@@ -61,8 +58,24 @@ class Account extends Model
     // Public Methods
     //---------------------------------------------------------------------------------
 
+    public function platformImage()
+    {
+        $platform = ConsoleHelper::getConsoleStringFromId($this->membership_type);
+        return ConsoleHelper::getPlatformImage($platform);
+    }
+
+    public function url()
+    {
+        return route('account', [ConsoleHelper::getConsoleStringFromId($this->membership_type), $this->slug]);
+    }
+
     public function stats()
     {
         return $this->hasOne(Stats::class, 'account_id', 'id');
+    }
+
+    public function bungie()
+    {
+        return $this->hasOne(Bungie::class, 'account_id', 'id');
     }
 }

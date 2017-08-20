@@ -26,4 +26,31 @@ class ConsoleHelper
                 throw new \Exception('Unknown console: ' . $console);
         }
     }
+
+    /**
+     * @param int $id
+     * @return string
+     */
+    public static function getConsoleStringFromId(int $id) : string
+    {
+        switch ($id) {
+            case Console::Xbox:
+                return 'xbl';
+            case Console::Playstation:
+                return 'psn';
+            case Console::Blizzard:
+                return 'pc';
+            default:
+                return 'Unknown: ' . $id;
+        }
+    }
+
+    /**
+     * @param string $console
+     * @return string
+     */
+    public static function getPlatformImage(string $console) : string
+    {
+        return asset('/img/' . $console . '.png');
+    }
 }

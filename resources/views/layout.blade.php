@@ -11,7 +11,6 @@
     <link rel="shortcut icon" href="{{ url('favicon.ico') }}"/>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500">
     <link rel="stylesheet" type="text/css" href="<?= elixir('css/destiny.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="//db.destinytracker.com/content/css/tooltip.css">
     <script src="<?= mix('js/bootstrap.js'); ?>"></script>
     <script src="<?= mix('js/vendor.js'); ?>"></script>
     <script src="<?= mix('js/destiny.js'); ?>"></script>
@@ -42,7 +41,7 @@
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://github.com/TrackerNetwork/DestinyStatus"><i class="fa fa-github"></i> Source Code</a></li>
+                @include('partials.user-nav')
             </ul>
         </div>
     </div>
@@ -52,6 +51,10 @@
     <?php if (Session::has('alert')): ?>
         <div class="alert alert-danger"><?= e(Session::pull('alert'))?></div>
     <?php endif; ?>
+    <?php if (Session::has('success')): ?>
+        <div class="alert alert-success"><?= Session::pull('success')?></div>
+    <?php endif; ?>
+    @include('partials.auth')
     @yield('content')
 
     <div class="footer row">

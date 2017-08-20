@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'bungie' => [
+        'client_id' => env('BUNGIE_CLIENT'),
+        'client_secret' => env('BUNGIE_SECRET'),
+        'redirect' => env('APP_URL') . '/oauth/callback'
+    ]
+
 ];

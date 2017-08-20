@@ -2,12 +2,15 @@
 
 namespace Destiny;
 
+use App\Http\Controllers\AuthController;
+use App\Models\Bungie;
 use bandwidthThrottle\tokenBucket\Rate;
 use bandwidthThrottle\tokenBucket\storage\PredisStorage;
 use bandwidthThrottle\tokenBucket\TokenBucket;
 use Barryvdh\Debugbar\Facade as Debugbar;
 use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
 use Cache;
+use Carbon\Carbon;
 use DestinyException;
 use Exception;
 use GuzzleHttp\Client;
@@ -42,13 +45,27 @@ class DestinyClient extends Client
      */
     public function __construct(string $apiKey)
     {
+        $headers = [
+            'User-Agent' => 'DestinyStatus.com',
+            'X-API-Key'  => $apiKey,
+        ];
+
+        if (\Auth::check()) {
+            /** @var Bungie $bungie */
+            $bungie = \Auth::user();
+
+            if (! $bungie->isActive()) {
+                app(AuthController::class)->handleRefreshProvider();
+                $bungie->refresh();
+            }
+
+            $headers['Authorization'] = 'Bearer ' . $bungie->access_token;
+        }
+
         $config = [
             'base_uri' => $this->domain.$this->baseUri,
             'cookies'  => new FileCookieJar(storage_path('cookies')),
-            'headers'  => [
-                'User-Agent' => 'DestinyStatus.com',
-                'X-API-Key'  => $apiKey,
-            ],
+            'headers'  => $headers,
         ];
 
         parent::__construct($config);

@@ -13,7 +13,7 @@
   > .footer {
     margin: 50px 0;
     padding-top: 10px;
-    border-top: 1px solid rgba(246,246,246,0.25);
+    border-top: $line-color;
     font-size: 12px;
 
     .twitter-follow-button {

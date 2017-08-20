@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Destiny;
 
 use App\Enums\Console;
+use App\Helpers\ConsoleHelper;
 
 /**
  * @property string $iconPath
@@ -20,16 +21,7 @@ class Player extends Model
 {
     protected function gPlatform() : string
     {
-        switch ($this->membershipType) {
-            case Console::Xbox:
-                return 'xbl';
-            case Console::Playstation:
-                return 'psn';
-            case Console::Blizzard:
-                return 'pc';
-            default:
-                return 'Unknown: ' . $this->membershipType;
-        }
+        return ConsoleHelper::getConsoleStringFromId((int) $this->membershipType);
     }
 
     protected function gPlatformName() : string
@@ -48,7 +40,7 @@ class Player extends Model
 
     protected function gPlatformIcon() : string
     {
-        return '/img/' . $this->platform . '.png';
+        return ConsoleHelper::getPlatformImage($this->platform);
     }
 
     protected function gUrl() : string

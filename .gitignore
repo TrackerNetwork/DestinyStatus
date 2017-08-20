@@ -15,6 +15,7 @@ yarn-error.log
 public/css/*
 public/js/*
 public/img/*
+public/images/*
 public/fonts/*
 public/mix-manifest.json
 /.version.php
