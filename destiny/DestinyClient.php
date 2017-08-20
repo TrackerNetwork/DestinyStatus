@@ -159,7 +159,7 @@ class DestinyClient extends Client
     {
         $storage = new PredisStorage('destiny-throttle', Redis::connection());
         $rate = new Rate(1, Rate::SECOND);
-        self::$bucket = new TokenBucket(25, $rate, $storage);
+        self::$bucket = new TokenBucket(19, $rate, $storage);
         self::$bucket->bootstrap(1);
     }
 }
