@@ -156,7 +156,7 @@ class Destiny
         }
 
         // Lets update this record in DB, if we have it.
-        DB::transaction(function() use ($account) {
+        DB::transaction(function () use ($account) {
             /** @var \App\Account $model */
             $model = \App\Account::updateOrCreate([
                 'membership_id'   => $account->player->membershipId,
