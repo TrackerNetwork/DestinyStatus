@@ -8,7 +8,7 @@
 
 .progress {
   margin: 0;
-  border-radius: 0px;
+  border-radius: 0;
   @include box-shadow(none);
 
   height: $progress-bar-height;

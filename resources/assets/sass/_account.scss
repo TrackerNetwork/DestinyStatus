@@ -52,7 +52,7 @@
     position: relative;
     display: block;
 
-    height: ($character-header-heigth + $progress-bar-height * 2);
+    height: ($character-header-height + $progress-bar-height * 2);
     padding: 0 0 0 55px;
     margin: 5px auto;
 
@@ -61,7 +61,7 @@
     text-decoration: none;
     background-size: 100%;
     background-color: rgba(30, 36, 43, 0.5);
-    background-repeat: none;
+    background-repeat: no-repeat;
 
     transition: 0.25s ease;
 
@@ -194,7 +194,7 @@
 
     > .name { 
       position: absolute; 
-      top: 0px; 
+      top: 0;
 
       a {
         color: $color-title;
@@ -378,7 +378,7 @@
     position: absolute;
     top: 5px;
     left: 55px;
-    right: 0px;
+    right: 0;
     font-size: 11px;
 
     .name {
