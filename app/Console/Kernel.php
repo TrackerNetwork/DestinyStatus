@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\DestinyManifestCommand::class,
         \App\Console\Commands\DestinyVersionCommand::class,
         \App\Console\Commands\DestinyMedalCommand::class,
+        \App\Console\Commands\DestinyGrantVeteranMedalCommand::class,
     ];
 
     /**

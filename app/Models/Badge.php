@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Models\Badge.
  *
- * @property int $badge
+ * @property int id
  * @property string $name
  * @property string $slug
  * @property string $description

@@ -34,7 +34,7 @@ class AddBadges extends Migration
             ],
             [
                 'name'             => 'Confirmed',
-                'slug'             => 'donator',
+                'slug'             => 'confirmed',
                 'description'      => 'Has signed into DestinyStatus and verified account.',
                 'text_color'       => '000000',
                 'background_color' => 'fdff96',
@@ -51,7 +51,7 @@ class AddBadges extends Migration
             [
                 'name'             => 'Veteran',
                 'slug'             => 'veteran',
-                'description'      => 'Had a least a 0.5kd or 100 raid completions in Destiny 1',
+                'description'      => 'Has one of the following in Destiny1: 100 raid completions, at least 0.5kd or 3000+ grimoire.',
                 'text_color'       => 'FFFFFF',
                 'background_color' => 'a5a5a5',
                 'border_color'     => 'e5e5e5',
