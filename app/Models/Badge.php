@@ -55,4 +55,10 @@ class Badge extends Model
     //---------------------------------------------------------------------------------
     // Public Methods
     //---------------------------------------------------------------------------------
+
+    public function ui()
+    {
+        return '<span class="badge" style="color: #' . $this->text_color . '; background-color: #'
+            . $this->background_color . '; border: 1px solid #' . $this->border_color . ';">' . $this->name . '</span>';
+    }
 }
