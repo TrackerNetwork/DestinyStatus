@@ -103,8 +103,8 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
                 ],
             ])->getBody(), true);
 
-            if (!isset($response['Response'])) {
-                dd($response);
+            if (isset($response['ErrorCode']) && $response['ErrorCode'] != 1) {
+                throw new \Exception('Could not reach Bungie API');
             }
 
             return $this->mapResponsesToNewBungieObject($tokenResponse, $response['Response']);
