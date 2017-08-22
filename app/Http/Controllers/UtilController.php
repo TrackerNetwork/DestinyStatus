@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Account;
 
 /**
- * Class UtilController
- * @package App\Http\Controllers
+ * Class UtilController.
  */
 class UtilController extends Controller
 {

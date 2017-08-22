@@ -58,7 +58,7 @@ class Badge extends Model
 
     public function ui()
     {
-        return '<span class="badge" style="color: #' . $this->text_color . '; background-color: #'
-            . $this->background_color . '; border: 1px solid #' . $this->border_color . ';">' . $this->name . '</span>';
+        return '<span class="badge" style="color: #'.$this->text_color.'; background-color: #'
+            .$this->background_color.'; border: 1px solid #'.$this->border_color.';">'.$this->name.'</span>';
     }
 }

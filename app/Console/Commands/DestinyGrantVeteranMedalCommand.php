@@ -9,8 +9,7 @@ use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Builder;
 
 /**
- * Class DestinyGrantVeteranMedalCommand
- * @package App\Console\Commands
+ * Class DestinyGrantVeteranMedalCommand.
  */
 class DestinyGrantVeteranMedalCommand extends Command
 {
@@ -51,7 +50,7 @@ class DestinyGrantVeteranMedalCommand extends Command
             ->toArray();
 
         $pending = Stats::whereNotIn('account_id', $obtainedAccountIds)
-            ->where(function(Builder $query) {
+            ->where(function (Builder $query) {
                 $query->where('raid_completions', '>=', 100);
                 $query->orWhere('kd', '>=', 0.5);
                 $query->orWhere('grimoire', '>=', 3000);
@@ -61,10 +60,10 @@ class DestinyGrantVeteranMedalCommand extends Command
             ->toArray();
 
         foreach ($pending as $item) {
-            $this->info('Assigning to ID: ' . $item['account_id']);
+            $this->info('Assigning to ID: '.$item['account_id']);
             AssignedBadge::create([
                 'account_id' => $item['account_id'],
-                'badge_id' => $veteran->id
+                'badge_id'   => $veteran->id,
             ]);
         }
     }
