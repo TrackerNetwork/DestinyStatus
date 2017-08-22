@@ -15,9 +15,9 @@
             <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
 		</span>
         <ul v-show="hasItems" class="dropdown-menu-list dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-            <li v-for="(item , index) in items" :class="{active:activeClass(index)}"
-                @mousedown="hit" @mousemove="setActive(index)">
-                <a v-html="highlighting(item, vue)"></a>
+            <li v-for="(item , index) in items" :class="{active: current === index}"
+                @mousedown="hit" @mousemove="current = index">
+                <a v-html="highlighting(item, query)"></a>
             </li>
         </ul>
     </div>
@@ -29,74 +29,41 @@
     }
 </style>
 <script>
-    import axios from 'axios'
+    import api from '../api'
 
     export default {
         name: 'Autocomplete',
+        filters: {
+
+        },
         props: {
             selectFirst: {
                 require: false,
                 type: Boolean,
                 default: false
             },
-            queryParamName: {
-                require: false,
-                type: String,
-                default: ':keyword'
-            },
             minChars: {
                 require: false,
                 type: Number,
                 default: 2
             },
-            src: {
-                require: true,
-                type: String,
-                default: "/search/autocomplete?query=:keyword"
-            },
-            delayTime: {
-                require: false,
-                default: 500,
-                type: Number
-            },
             value: {
-                require: true,
-                type: String
-            },
-            fetch: {
-                require: false,
-                type: Function,
-                default: function (url) {
-                    return axios.get(url)
-                }
+              default: null
             }
         },
         data() {
             return {
-                items: [],
-                query: '',
                 current: -1,
-                loading: false,
+                delayTime: 500,
+                items: [],
                 lastTime: 0,
+                loading: false,
+                query: ''
             }
         },
         methods: {
-            getResponse: function (response) {
-                return response.data;
-            },
-            onHit: function (item, vue) {
+            onHit(item, vue) {
                 vue.query = item
-
-            },
-            highlighting: function (item, vue) {
-                return item.toString().replace(vue.query, `<b>${vue.query}</b>`)
-            },
-            render: function (items, vue) {
-                if (_.includes(_.mapValues(items, _.method('toLowerCase')), vue.query)) {
-                    return [...items];
-                } else {
-                    return [vue.query, ...items];
-                }
             },
             update(event) {
                 this.lastTime = event.timeStamp;
@@ -104,37 +71,28 @@
                     return this.reset()
                 }
 
-                if (this.minChars && this.query.length < this.minChars) {
+                if (this.query.length < this.minChars) {
                     return
                 }
                 setTimeout(() => {
                     if (this.lastTime - event.timeStamp === 0) {
                         this.loading = true;
 
-                        this.fetch(this.src.replace(this.queryParamName, this.query)).then((response) => {
-                            if (this.query) {
-                                let data = this.getResponse(response);
-                                this.items = this.render(data);
-
-                                this.current = -1;
-                                this.loading = false;
-
-                                if (this.selectFirst) {
-                                    this.down()
-                                }
+                        api.search.search(this.query)
+                          .then((items) => {
+                            this.items = items
+                            this.current = -1
+                            this.loading = false
+                            if (this.selectFirst) {
+                              this.down()
                             }
-                        })
+                          })
                     }
                 }, this.delayTime)
             },
-
-            setActive(index) {
-                this.current = index
-            },
-
-            activeClass(index) {
-                return this.current === index
-            },
+              highlighting(item, query) {
+                return item.toString().replace(query, `<b>${query}</b>`)
+              },
 
             hit() {
                 if (this.current !== -1) {
@@ -167,24 +125,13 @@
                 }
             },
 
-            reset: function () {
+            reset() {
                 this.items = [];
                 this.loading = false
             }
 
         },
-        watch: {
-            value: function (value) {
-                this.query = this.query !== value ? value : this.query
-            },
-            query: function (value) {
-                this.$emit('input', value)
-            }
-        },
         computed: {
-            vue: function () {
-                return this
-            },
             hasItems() {
                 return this.items.length > 0
             },
