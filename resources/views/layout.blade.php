@@ -14,8 +14,10 @@
     <script src="<?= mix('js/bootstrap.js'); ?>"></script>
     <script src="<?= mix('js/vendor.js'); ?>"></script>
     <script src="<?= mix('js/destiny.js'); ?>"></script>
+    <script src="<?= mix('js/app.js'); ?>" defer></script>
 </head>
 <body>
+<div id="app">
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -31,14 +33,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <form action="/" class="navbar-form navbar-left" role="search" method="post">
                 {!! csrf_field() !!}
-                <div class="form-group input-group">
-                    <input type="text" class="form-control" placeholder="Gamertag"
-                           name="gamertag" value="<?= e(Request::get('gamertag')) ?>" maxlength="16"
-                           pattern="[A-Za-z][A-Za-z0-9_- ]{0,15}" title="Please enter a valid gamertag or PSN Id">
-                    <span class="input-group-btn">
-						<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-					</span>
-                </div>
+                <autocomplete></autocomplete>
             </form>
             <ul class="nav navbar-nav navbar-right">
                 @include('partials.user-nav')
@@ -91,5 +86,6 @@
         ga('tracker.send', 'pageview');
     </script>
 @endif
+</div>
 </body>
 </html>

@@ -19,8 +19,10 @@ var config = {
 mix
    // .js('resources/assets/js/app.js', 'public/js')
     .scripts([
+        config.node + 'bootstrap-3-typeahead/bootstrap3-typeahead.js',
         config.node + 'jquery.cookie/jquery.cookie.js'
     ], 'public/js/vendor.js')
+    .js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/bootstrap.js', 'public/js')
     .js('resources/assets/js/destiny.js', 'public/js')
     .sass('resources/assets/sass/destiny.scss', 'public/css')
