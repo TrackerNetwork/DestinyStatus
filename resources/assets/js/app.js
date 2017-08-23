@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('autocomplete', require('./components/Autocomplete.vue'));
+Vue.component('countdown', require('./components/Countdown.vue'));
 
 const app = new Vue({
     el: '#app'

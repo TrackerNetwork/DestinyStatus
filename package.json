@@ -29,6 +29,7 @@
     "dependencies": {
         "compass-sass-mixins": "^0.12.7",
         "font-awesome": "^4.6.3",
-        "jquery.cookie": "^1.4.1"
+        "jquery.cookie": "^1.4.1",
+        "vuejs-countdown": "^0.0.4"
     }
 }
