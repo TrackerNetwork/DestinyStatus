@@ -112,6 +112,8 @@ return [
             'host'     => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', null),
             'port'     => env('REDIS_PORT', 6379),
+            'scheme'   => env('REDIS_SCHEME', 'tcp'),
+            'path'     => env('REDIS_SOCK', '/var/run/redis/redis.sock'),
             'database' => 0,
         ],
 
