@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Account;
 use App\Models\AssignedBadge;
 use App\Models\Badge;
 use App\Models\Destiny1\Stats;
@@ -49,7 +48,7 @@ class DestinyGrantVeteranMedalCommand extends Command
 
         $neededAccountIds = \DB::query()
             ->from('accounts')
-            ->join('badge_assignment', function(JoinClause $join) {
+            ->join('badge_assignment', function (JoinClause $join) {
                 $join->on('accounts.id', '=', 'badge_assignment.account_id');
             }, null, null, 'LEFT OUTER')
             ->whereNull('badge_assignment.account_id')

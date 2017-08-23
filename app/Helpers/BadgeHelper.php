@@ -9,21 +9,21 @@ use App\Models\AssignedBadge;
 use App\Models\Badge;
 
 /**
- * Class BadgeHelper
- * @package App\Helpers
+ * Class BadgeHelper.
  */
 class BadgeHelper
 {
     /**
-     * @param Badge $badge
+     * @param Badge   $badge
      * @param Account $account
+     *
      * @return bool
      */
     public static function grantBadge(Badge $badge, Account $account) : bool
     {
         $badge = new AssignedBadge([
-            'badge_id' => $badge->id,
-            'account_id' => $account->id
+            'badge_id'   => $badge->id,
+            'account_id' => $account->id,
         ]);
 
         return $badge->save();

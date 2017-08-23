@@ -14,8 +14,8 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         \App\Events\BungieSignedIn::class => [
-            \App\Listeners\SignedInBadgeCheck::class
-        ]
+            \App\Listeners\SignedInBadgeCheck::class,
+        ],
     ];
 
     /**

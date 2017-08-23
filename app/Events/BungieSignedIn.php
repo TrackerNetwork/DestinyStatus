@@ -3,14 +3,13 @@
 namespace App\Events;
 
 use App\Models\Bungie;
-use Illuminate\Queue\SerializesModels;
+use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
-use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Queue\SerializesModels;
 
 /**
- * Class BungieSignedIn
- * @package App\Events
+ * Class BungieSignedIn.
  */
 class BungieSignedIn
 {
@@ -23,6 +22,7 @@ class BungieSignedIn
 
     /**
      * BungieSignedIn constructor.
+     *
      * @param Bungie $bungie
      */
     public function __construct(Bungie $bungie)

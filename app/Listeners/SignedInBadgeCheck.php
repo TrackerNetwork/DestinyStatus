@@ -7,7 +7,6 @@ use App\Helpers\BadgeHelper;
 use App\Models\AssignedBadge;
 use App\Models\Badge;
 
-
 class SignedInBadgeCheck
 {
     /**
@@ -35,11 +34,10 @@ class SignedInBadgeCheck
         /** @var Badge $confirmed */
         $confirmed = Badge::query()->where('slug', 'confirmed')->first();
 
-        if (! AssignedBadge::query()
+        if (!AssignedBadge::query()
             ->where('account_id', $event->bungie->account_id)
             ->where('badge_id', $confirmed->id)
-            ->exists())
-        {
+            ->exists()) {
             BadgeHelper::grantBadge($confirmed, $event->bungie->account);
         }
     }
