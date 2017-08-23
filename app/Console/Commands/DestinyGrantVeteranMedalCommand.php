@@ -2,11 +2,13 @@
 
 namespace App\Console\Commands;
 
+use App\Account;
 use App\Models\AssignedBadge;
 use App\Models\Badge;
 use App\Models\Destiny1\Stats;
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Query\JoinClause;
 
 /**
  * Class DestinyGrantVeteranMedalCommand.
@@ -45,11 +47,17 @@ class DestinyGrantVeteranMedalCommand extends Command
         /** @var Badge $veteran */
         $veteran = Badge::where('slug', 'veteran')->first();
 
-        $obtainedAccountIds = AssignedBadge::where('badge_id', $veteran->id)
-            ->pluck('account_id')
+        $neededAccountIds = \DB::query()
+            ->from('accounts')
+            ->join('badge_assignment', function(JoinClause $join) {
+                $join->on('accounts.id', '=', 'badge_assignment.account_id');
+            }, null, null, 'LEFT OUTER')
+            ->whereNull('badge_assignment.account_id')
+            ->orderBy('accounts.id', 'DESC')
+            ->pluck('accounts.id')
             ->toArray();
 
-        $pending = Stats::whereNotIn('account_id', $obtainedAccountIds)
+        $pending = Stats::whereIn('account_id', $neededAccountIds)
             ->where(function (Builder $query) {
                 $query->where('raid_completions', '>=', 100);
                 $query->orWhere('kd', '>=', 0.5);
