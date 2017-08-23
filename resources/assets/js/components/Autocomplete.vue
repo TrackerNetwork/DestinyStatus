@@ -33,9 +33,7 @@
 
     export default {
         name: 'Autocomplete',
-        filters: {
-
-        },
+        filters: {},
         props: {
             selectFirst: {
                 require: false,
@@ -48,7 +46,7 @@
                 default: 2
             },
             value: {
-              default: null
+                default: null
             }
         },
         data() {
@@ -79,20 +77,20 @@
                         this.loading = true;
 
                         api.search.search(this.query)
-                          .then((items) => {
-                            this.items = items
-                            this.current = -1
-                            this.loading = false
-                            if (this.selectFirst) {
-                              this.down()
-                            }
-                          })
+                            .then((items) => {
+                                this.items = items
+                                this.current = -1
+                                this.loading = false
+                                if (this.selectFirst) {
+                                    this.down()
+                                }
+                            })
                     }
                 }, this.delayTime)
             },
-              highlighting(item, query) {
+            highlighting(item, query) {
                 return item.toString().replace(query, `<b>${query}</b>`)
-              },
+            },
 
             hit() {
                 if (this.current !== -1) {
