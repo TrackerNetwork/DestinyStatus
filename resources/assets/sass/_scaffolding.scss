@@ -170,3 +170,6 @@ input, select, textarea, button { color: black; }
   border-bottom-width: 0;
   border-radius: 0;
 }
+.input-group-btn .btn {
+  border-radius: 0 4px 4px 0;
+}
