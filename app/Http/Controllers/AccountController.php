@@ -41,6 +41,9 @@ class AccountController extends Controller
     {
         $player = $this->findPlayer($platform, $gamertag);
         $account = $player->account;
+        if ($account->characters->count() === 0) {
+            \App::abort(404, "The player '$gamertag' on '$platform' has no guardians anymore :(");
+        }
         $account->load();
 
         return $this->view->make('account', [

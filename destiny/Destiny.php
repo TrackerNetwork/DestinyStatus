@@ -186,7 +186,8 @@ class Destiny
             return $item['completions'];
         }, $activityStats));
 
-        if (count($account->statistics->mergedAllCharacters->results['allPvP']) > 0) {
+        if (isset($account->statistics->mergedAllCharacters->results['allPvP']) &&
+            count($account->statistics->mergedAllCharacters->results['allPvP']) > 0) {
             $kdRatio = $account->statistics->mergedAllCharacters->results['allPvP']['allTime']['killsDeathsRatio']['basic']['value'];
             $totalGames = $account->statistics->mergedAllCharacters->results['allPvP']['allTime']['activitiesEntered']['basic']['value'];
             $totalKills = $account->statistics->mergedAllCharacters->results['allPvP']['allTime']['kills']['basic']['value'];
