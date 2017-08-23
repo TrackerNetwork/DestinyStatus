@@ -105,6 +105,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
 
             if (isset($response['ErrorCode']) && $response['ErrorCode'] != 1) {
                 \Log::info(print_r($response, true));
+
                 throw new \Exception('Could not reach Bungie API');
             }
 
