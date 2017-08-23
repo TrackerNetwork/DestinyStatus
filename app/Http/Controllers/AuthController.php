@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\BungieSignedIn;
 use App\Models\Bungie;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -22,6 +23,8 @@ class AuthController extends Controller
         /** @var Bungie $user */
         $bungie = Socialite::with('bungie')->user();
         \Auth::login($bungie, true);
+
+        event(new BungieSignedIn($bungie));
 
         \Session::flash('success', 'You have logged in as - <strong>'.$bungie->account->name.'</strong>');
 
