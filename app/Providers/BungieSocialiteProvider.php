@@ -43,13 +43,11 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
     }
 
     /**
-     * @param string $bungieId
-     *
      * @return string
      */
-    protected function getUserUrl(string $bungieId) : string
+    protected function getUserUrl() : string
     {
-        return $this->baseUrl.'platform/user/getmembershipsbyid/'.$bungieId.'/0/';
+        return $this->baseUrl.'Platform/User/GetMembershipsForCurrentUser/';
     }
 
     /**
@@ -95,7 +93,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
         $model = Bungie::where('membership_id', $bungieId)->first();
 
         if ($model === null) {
-            $response = json_decode($this->getHttpClient()->get($this->getUserUrl($bungieId), [
+            $response = json_decode($this->getHttpClient()->get($this->getUserUrl(), [
                 'headers' => [
                     'Authorization' => 'Bearer '.$token,
                     'X-API-Key'     => config('destiny.key'),
