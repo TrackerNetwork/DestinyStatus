@@ -11,10 +11,6 @@
     <link rel="shortcut icon" href="{{ url('favicon.ico') }}"/>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500">
     <link rel="stylesheet" type="text/css" href="<?= elixir('css/destiny.css'); ?>">
-    <script src="<?= mix('js/bootstrap.js'); ?>"></script>
-    <script src="<?= mix('js/vendor.js'); ?>"></script>
-    <script src="<?= mix('js/destiny.js'); ?>"></script>
-    <script src="<?= mix('js/app.js'); ?>" defer></script>
 </head>
 <body>
 <div id="app">
@@ -73,6 +69,10 @@
     </div>
 </div>
 </div>
+<script src="<?= mix('js/bootstrap.js'); ?>"></script>
+<script src="<?= mix('js/vendor.js'); ?>"></script>
+<script src="<?= mix('js/destiny.js'); ?>"></script>
+<script src="<?= mix('js/app.js'); ?>" defer></script>
 @if (! App::isLocal())
     @include('vendor.analytics')
 @endif
