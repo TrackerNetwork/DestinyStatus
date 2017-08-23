@@ -49,7 +49,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
      */
     protected function getUserUrl(string $bungieId) : string
     {
-        return $this->baseUrl.'platform/user/getmembershipsbyid/'.$bungieId.'/-1/';
+        return $this->baseUrl.'platform/user/getmembershipsbyid/'.$bungieId.'/0/';
     }
 
     /**
@@ -104,6 +104,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
             ])->getBody(), true);
 
             if (isset($response['ErrorCode']) && $response['ErrorCode'] != 1) {
+                \Log::info(print_r($response, true));
                 throw new \Exception('Could not reach Bungie API');
             }
 
