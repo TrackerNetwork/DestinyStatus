@@ -25,7 +25,7 @@ class DestinyPlatform
      */
     public function manifest()
     {
-        return $this->destinyRequest('destiny/manifest/', false);
+        return $this->destinyRequest('destiny2/manifest/', false);
     }
 
     /**
