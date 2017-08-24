@@ -26,11 +26,13 @@ class Destiny
     }
 
     /**
-     * @return array
+     * @return Manifest
      */
-    public function manifest() : array
+    public function manifest() : Manifest
     {
-        return $this->client->r($this->platform->manifest());
+        $result = $this->client->r($this->platform->manifest());
+
+        return new Manifest($result);
     }
 
     /**

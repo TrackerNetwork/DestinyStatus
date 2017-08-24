@@ -2,6 +2,8 @@
 
 namespace Destiny;
 
+use App\Account;
+
 /**
  * Class DestinyPlatform.
  */
@@ -38,5 +40,14 @@ class DestinyPlatform
         $gamertag = rawurlencode(trim($gamertag));
 
         return $this->destinyRequest("destiny/searchdestinyplayer/all/$gamertag/", CACHE_PLAYER, false);
+    }
+
+    /**
+     * @param Account $account
+     * @return DestinyRequest
+     */
+    public function getDestinyProfile(Account $account)
+    {
+        return $this->destinyRequest("Destiny2/$account->membership_type/Profile/$account->membership_id/", CACHE_DEFAULT, 5);
     }
 }

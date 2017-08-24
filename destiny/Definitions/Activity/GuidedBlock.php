@@ -1,6 +1,8 @@
 <?php
 
-namespace Destiny\Definitions;
+namespace Destiny\Definitions\Activity;
+
+use Destiny\Definitions\Definition;
 
 /**
  * Class GuidedBlock

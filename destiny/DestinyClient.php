@@ -24,10 +24,9 @@ use Illuminate\Support\Facades\Redis;
 class DestinyClient extends Client
 {
     protected $domain = 'https://www.bungie.net';
-    protected $baseUri = '/d1/platform/';
+    protected $baseUri = '/platform/';
 
     protected $destinyPrivacyRestriction = 1665;
-    protected $destinyLegacyPlatformErrorCode = 1670;
 
     protected $proxyUrl = null;
 

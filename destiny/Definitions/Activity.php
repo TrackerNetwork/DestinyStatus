@@ -17,7 +17,7 @@ use Destiny\Definitions\Common\DisplayProperties;
  * @property string $activityTypeHash (ActivityType)
  * @property int $tier
  * @property string $pgcrImage
- * @property array $rewards (@todo - Destiny.Definitions.DestinyActivityRewardDefinition)
+ * @property array $rewards (Reward)
  * @property array $modifiers (@todo - Destiny.Definitions.DestinyActivityModifierReferenceDefinition)
  * @property bool $isPlaylist
  * @property array $challenges (@todo - Destiny.Definitions.DestinyActivityChallengeDefinition)

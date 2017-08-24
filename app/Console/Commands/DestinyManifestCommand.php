@@ -34,8 +34,8 @@ class DestinyManifestCommand extends Command
 
         $manifest = destiny()->manifest();
 
+        $this->version = $manifest->version;
         $this->url = bungie(array_get($manifest, 'mobileWorldContentPaths.en'));
-        $this->version = array_get($manifest, 'version');
         $this->versionFile = base_path('database/manifest/.version');
         $this->versionDb = base_path("database/manifest/$this->version.sqlite");
 
@@ -87,41 +87,38 @@ class DestinyManifestCommand extends Command
 
         $db = new \SQLite3($this->versionDb);
 
-        // extract Grimoire definition
-        $grimoire = $db->prepare('SELECT json FROM DestinyGrimoireDefinition WHERE id = 0')->execute()->fetchArray(SQLITE3_ASSOC);
-        $this->export('Grimoire', 0, json_decode($grimoire['json'], true));
-
-        // extract all the other definitions
+        // extract all the definitions
         $map = [
-            'ActivityBundle'     => 'bundleHash',
-            'Activity'           => 'activityHash',
-            'ActivityType'       => 'activityTypeHash',
-            'Class'              => 'classHash',
-            'Combatant'          => 'combatantHash',
-            'Destination'        => 'destinationHash',
-            'DirectorBook'       => 'bookHash',
-            'EnemyRace'          => 'raceHash',
-            'Faction'            => 'factionHash',
-            'Gender'             => 'genderHash',
-            'GrimoireCard'       => 'cardId',
-            'HistoricalStats'    => 'statId',
-            'InventoryBucket'    => 'bucketHash',
-            'InventoryItem'      => 'itemHash',
-            'Place'              => 'placeHash',
-            'Progression'        => 'progressionHash',
-            'RecordBook'         => 'hash',
-            'Record'             => 'hash',
-            'Objective'          => 'objectiveHash',
-            'Race'               => 'raceHash',
-            'SandboxPerk'        => 'perkHash',
-            'ScriptedSkull'      => 'skullHash',
-            'SpecialEvent'       => 'eventHash',
-            'Stat'               => 'statHash',
-            'StatGroup'          => 'statGroupHash',
-            'TalentGrid'         => 'gridHash',
-            'UnlockFlag'         => 'flagHash',
-            'VendorCategory'     => 'categoryHash',
-            'Vendor'             => 'summary.vendorHash',
+            'Activities' => 'hash',
+            'ActivityGraphs' => 'hash',
+            'ActivityModes' => 'hash',
+            'ActivityModifiers' => 'hash',
+            'ActivityTypes' => 'hash',
+            'Classes' => 'hash',
+            'DamageTypes' => 'hash',
+            'Destinations' => 'hash',
+            'Factions' => 'hash',
+            'Genders' => 'hash',
+            'HistoricalStats' => 'statId',
+            'InventoryBuckets' => 'hash',
+            'ItemCategories' => 'hash',
+            'ItemTierTypes' => 'hash',
+            'Items' => 'hash',
+            'Locations' => 'hash',
+            'Lore' => 'hash',
+            'Milestones' => 'hash',
+            'Objectives' => 'hash',
+            'Places' => 'hash',
+            'Progressions' => 'hash',
+            'Races' => 'hash',
+            'RewardSources' => 'hash',
+            'SandboxPerks' => 'hash',
+            'SocketTypes' => 'hash',
+            'StatGroups' => 'hash',
+            'Stats' => 'hash',
+            'Talents' => 'hash',
+            'Unlocks' => 'hash',
+            'Vendors' => 'hash',
         ];
 
         foreach ($map as $folder => $key) {
