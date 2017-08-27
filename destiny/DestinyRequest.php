@@ -52,8 +52,14 @@ class DestinyRequest extends Request
      */
     public $salvageable = true;
 
-    protected $time;
-
+    /**
+     * DestinyRequest constructor.
+     *
+     * @param string $uri
+     * @param array  $params
+     * @param null   $cache
+     * @param bool   $salvageable
+     */
     public function __construct($uri, $params = [], $cache = null, $salvageable = true)
     {
         $this->uri = $uri;
