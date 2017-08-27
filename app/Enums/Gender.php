@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class Gender
- * @package App\Enums
+ * Class Gender.
  */
 abstract class Gender
 {

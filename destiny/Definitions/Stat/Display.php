@@ -6,8 +6,8 @@ use Destiny\Definitions\Definition;
 use Destiny\Definitions\InterpolationPoint;
 
 /**
- * Class Display
- * @package Destiny\Definitions
+ * Class Display.
+ *
  * @property string $statHash
  * @property int $maximumValue
  * @property bool $displayAsNumeric
@@ -17,7 +17,7 @@ use Destiny\Definitions\InterpolationPoint;
 class Display extends Definition
 {
     protected $appends = [
-        'interpolationPoint'
+        'interpolationPoint',
     ];
 
     protected function gInterpolationPoint()

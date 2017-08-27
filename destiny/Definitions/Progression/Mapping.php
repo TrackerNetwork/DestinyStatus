@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Mapping
- * @package Destiny\Definitions\Progression
+ * Class Mapping.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $displayUnits
  * @property string $hash
@@ -17,6 +17,6 @@ use Destiny\Definitions\Definition;
 class Mapping extends Definition
 {
     protected $appends = [
-        'displayProperties'
+        'displayProperties',
     ];
 }

@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Config;
 use Destiny\Definitions\Definition;
 
 /**
- * Class GearAsset
- * @package Destiny\Definitions\Config
+ * Class GearAsset.
+ *
  * @property int $version
  * @property string $path
  */

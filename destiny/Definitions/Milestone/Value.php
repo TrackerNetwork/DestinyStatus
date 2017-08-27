@@ -6,14 +6,14 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Value
- * @package Destiny\Definitions\Milestone
+ * Class Value.
+ *
  * @property string $key
  * @property DisplayProperties $displayProperties
  */
 class Value extends Definition
 {
     protected $appends = [
-        'displayProperties'
+        'displayProperties',
     ];
 }

@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Activity;
 use Destiny\Definitions\Definition;
 
 /**
- * Class MatchmakingBlock
- * @package Destiny\Definitions
+ * Class MatchmakingBlock.
+ *
  * @property bool $isMatchmade
  * @property int $minParty
  * @property int $maxParty

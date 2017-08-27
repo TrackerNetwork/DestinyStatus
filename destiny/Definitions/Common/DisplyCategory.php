@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Common;
 use Destiny\Definitions\Definition;
 
 /**
- * Class DisplyCategory
- * @package Destiny\Definitions\Common
+ * Class DisplyCategory.
+ *
  * @property string $identifier
  * @property DisplayProperties $displayProperties
  */

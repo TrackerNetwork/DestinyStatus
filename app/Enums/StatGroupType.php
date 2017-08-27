@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class StatGroupType
- * @package App\Enums
+ * Class StatGroupType.
  */
 abstract class StatGroupType
 {

@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class DamageType
- * @package App\Enums
+ * Class DamageType.
  */
 abstract class DamageType
 {

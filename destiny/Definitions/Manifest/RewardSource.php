@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class RewardSource
- * @package Destiny\Definitions\Manifest
+ * Class RewardSource.
+ *
  * @property DisplayProperties $displayProperties
  * @property int $category
  * @property string $hash

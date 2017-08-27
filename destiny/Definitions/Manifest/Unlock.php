@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Unlock
- * @package Destiny\Definitions\Manifest
+ * Class Unlock.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $hash
  * @property int $index
@@ -16,6 +16,6 @@ use Destiny\Definitions\Definition;
 class Unlock extends Definition
 {
     protected $appends = [
-        'displayProperties'
+        'displayProperties',
     ];
 }

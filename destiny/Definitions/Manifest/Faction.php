@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Faction
- * @package Destiny\Definitions\Manifest
+ * Class Faction.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $progressionHash
  * @property string $hash

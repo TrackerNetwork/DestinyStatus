@@ -3,8 +3,8 @@
 namespace Destiny\Definitions;
 
 /**
- * Class InterpolationPoint
- * @package Destiny\Definitions
+ * Class InterpolationPoint.
+ *
  * @property int $value
  * @property int $weight
  */

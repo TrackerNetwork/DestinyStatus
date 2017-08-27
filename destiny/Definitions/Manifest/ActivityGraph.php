@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Manifest;
 use Destiny\Definitions\Definition;
 
 /**
- * Class ActivityGraph
- * @package Destiny\Definitions\Manifest
+ * Class ActivityGraph.
+ *
  * @property array $nodes (@todo - https://bungie-net.github.io/multi/schema_Destiny-Definitions-Director-DestinyActivityGraphNodeDefinition.html#schema_Destiny-Definitions-Director-DestinyActivityGraphNodeDefinition)
  * @property array $artElements (@todo - https://bungie-net.github.io/multi/schema_Destiny-Definitions-Director-DestinyActivityGraphArtElementDefinition.html#schema_Destiny-Definitions-Director-DestinyActivityGraphArtElementDefinition)
  * @property array $connections (@todo - https://bungie-net.github.io/multi/schema_Destiny-Definitions-Director-DestinyActivityGraphConnectionDefinition.html#schema_Destiny-Definitions-Director-DestinyActivityGraphConnectionDefinition)

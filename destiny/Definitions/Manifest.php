@@ -3,8 +3,8 @@
 namespace Destiny\Definitions;
 
 /**
- * Class Manifest
- * @package Destiny\Definitions
+ * Class Manifest.
+ *
  * @property string $version
  * @property string $mobileAssetContentPath
  * @property array $mobileGearAssetDataBases (GearAsset)

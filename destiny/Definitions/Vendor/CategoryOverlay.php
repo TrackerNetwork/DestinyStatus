@@ -5,8 +5,8 @@ namespace Destiny\Definition\Vendor;
 use Destiny\Definitions\Definition;
 
 /**
- * Class CategoryOverlay
- * @package Destiny\Definition\Vendor
+ * Class CategoryOverlay.
+ *
  * @property string $choiceDescription
  * @property string $description
  * @property string $icon

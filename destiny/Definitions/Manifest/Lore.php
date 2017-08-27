@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Lore
- * @package Destiny\Definitions\Manifest
+ * Class Lore.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $subtitle
  * @property string $hash

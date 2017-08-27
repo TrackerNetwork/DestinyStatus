@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class Race
- * @package App\Enums
+ * Class Race.
  */
 abstract class Race
 {

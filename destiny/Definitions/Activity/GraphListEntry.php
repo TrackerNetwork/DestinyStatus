@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Activity;
 use Destiny\Definitions\Definition;
 
 /**
- * Class GraphListEntry
- * @package Destiny\Definitions
+ * Class GraphListEntry.
+ *
  * @property string $activityGraphHash (Activity/Graph)
  */
 class GraphListEntry extends Definition

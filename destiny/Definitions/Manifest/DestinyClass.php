@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class DestinyClass
- * @package Destiny\Definitions\Manifest
+ * Class DestinyClass.
+ *
  * @property int $classType
  * @property DisplayProperties $displayProperties
  * @property array $genderedClassNames

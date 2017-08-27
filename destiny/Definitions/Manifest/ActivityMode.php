@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class ActivityMode
- * @package Destiny\Definitions\Manifest
+ * Class ActivityMode.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $pgcrImage
  * @property int $modeType
@@ -24,6 +24,6 @@ use Destiny\Definitions\Definition;
 class ActivityMode extends Definition
 {
     protected $appends = [
-        'displayProperties'
+        'displayProperties',
     ];
 }

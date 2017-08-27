@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Milestone
- * @package Destiny\Definitions\Milestone
+ * Class Milestone.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $image
  * @property int $milestoneType (DestinyMilestoneType)
@@ -23,11 +23,10 @@ use Destiny\Definitions\Definition;
  * @property string $hash
  * @property int $index
  * @property bool $redacted
- *
  */
 class Milestone extends Definition
 {
     protected $appends = [
-        'displayProperties'
+        'displayProperties',
     ];
 }

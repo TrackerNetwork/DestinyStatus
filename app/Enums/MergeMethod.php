@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class MergeMethod
- * @package App\Enums
+ * Class MergeMethod.
  */
 abstract class MergeMethod
 {

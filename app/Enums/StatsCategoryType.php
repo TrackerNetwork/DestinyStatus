@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class StatsCategoryType
- * @package App\Enums
+ * Class StatsCategoryType.
  */
 abstract class StatsCategoryType
 {

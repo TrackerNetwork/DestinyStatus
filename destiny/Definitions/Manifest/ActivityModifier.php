@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class ActivityModifier
- * @package Destiny\Definitions\Manifest
+ * Class ActivityModifier.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $hash
  * @property int $index
@@ -16,6 +16,6 @@ use Destiny\Definitions\Definition;
 class ActivityModifier extends Definition
 {
     protected $appends = [
-        'displayProperties'
+        'displayProperties',
     ];
 }

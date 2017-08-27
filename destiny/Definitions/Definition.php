@@ -5,8 +5,8 @@ namespace Destiny\Definitions;
 use Destiny\Model;
 
 /**
- * Class Definition
- * @package Destiny\Definitions
+ * Class Definition.
+ *
  * @property array $properties
  * @property array $cached
  */
@@ -14,6 +14,7 @@ class Definition extends Model
 {
     /**
      * Definition constructor.
+     *
      * @param array|null $definition
      */
     public function __construct(array $definition = null)

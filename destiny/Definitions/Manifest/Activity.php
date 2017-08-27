@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Activity
- * @package Destiny\Definitions\Manifest
+ * Class Activity.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $releaseIcon
  * @property int $releaseTime (epoch)

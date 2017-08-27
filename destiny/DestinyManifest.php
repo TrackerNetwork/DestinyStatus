@@ -43,6 +43,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Activity
      */
     public function activity(string $hash) : Activity
@@ -52,6 +53,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return ActivityGraph
      */
     public function activityGraph(string $hash) : ActivityGraph
@@ -61,6 +63,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return ActivityMode
      */
     public function activityMode(string $hash) : ActivityMode
@@ -70,6 +73,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return ActivityModifier
      */
     public function activityModifier(string $hash) : ActivityModifier
@@ -79,6 +83,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return ActivityType
      */
     public function activityType(string $hash) : ActivityType
@@ -88,6 +93,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return DestinyClass
      */
     public function destinyClass(string $hash) : DestinyClass
@@ -97,6 +103,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return DamageType
      */
     public function damageTypes(string $hash) : DamageType
@@ -106,6 +113,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Destination
      */
     public function destination(string $hash) : Destination
@@ -115,6 +123,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Faction
      */
     public function faction(string $hash) : Faction
@@ -124,6 +133,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Gender
      */
     public function gender(string $hash) : Gender
@@ -133,6 +143,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return HistoricalStat
      */
     public function historicalStat(string $hash) : HistoricalStat
@@ -142,6 +153,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Location
      */
     public function location(string $hash) : Location
@@ -151,6 +163,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Lore
      */
     public function lore(string $hash) : Lore
@@ -160,6 +173,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Milestone
      */
     public function milestone(string $hash) : Milestone
@@ -169,6 +183,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Objective
      */
     public function objective(string $hash) : Objective
@@ -178,6 +193,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Place
      */
     public function place(string $hash) : Place
@@ -187,6 +203,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Progression
      */
     public function progression(string $hash) : Progression
@@ -196,6 +213,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return InventoryBucket
      */
     public function inventoryBucket(string $hash) : InventoryBucket
@@ -205,6 +223,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return InventoryItem
      */
     public function inventoryItem(string $hash) : InventoryItem
@@ -214,6 +233,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return ItemCategory
      */
     public function itemCategory(string $hash) : ItemCategory
@@ -223,6 +243,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return ItemTierType
      */
     public function itemTierType(string $hash) : ItemTierType
@@ -232,6 +253,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Race
      */
     public function race(string $hash) : Race
@@ -241,6 +263,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return SandboxPerk
      */
     public function sandboxPerk(string $hash) : SandboxPerk
@@ -250,6 +273,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return SocketType
      */
     public function socketType(string $hash) : SocketType
@@ -259,6 +283,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Stat
      */
     public function stat(string $hash) : Stat
@@ -268,6 +293,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return StatGroup
      */
     public function statGroup(string $hash) : StatGroup
@@ -277,6 +303,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return TalentGrid
      */
     public function talentGrid(string $hash) : TalentGrid
@@ -286,6 +313,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return RewardSource
      */
     public function rewardSource(string $hash) : RewardSource
@@ -295,6 +323,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Unlock
      */
     public function unlock(string $hash) : Unlock
@@ -304,6 +333,7 @@ class DestinyManifest
 
     /**
      * @param string $hash
+     *
      * @return Vendor
      */
     public function vendor(string $hash) : Vendor
@@ -339,6 +369,7 @@ class DestinyManifest
     /**
      * @param string $type
      * @param string $key
+     *
      * @return mixed
      */
     protected function instance(string $type, string $key)

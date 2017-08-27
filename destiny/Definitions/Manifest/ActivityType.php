@@ -5,10 +5,9 @@ namespace Destiny\Definitions\Manifest;
 use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
-
 /**
- * Class ActivityType
- * @package Destiny\Definitions
+ * Class ActivityType.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $hash
  * @property int $index
@@ -17,6 +16,6 @@ use Destiny\Definitions\Definition;
 class ActivityType extends Definition
 {
     protected $appends = [
-        'displayProperties'
+        'displayProperties',
     ];
 }

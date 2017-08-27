@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class InventoryBucket
- * @package Destiny\Definitions\Manifest
+ * Class InventoryBucket.
+ *
  * @property DisplayProperties $displayProperties
  * @property int $scope
  * @property int $category

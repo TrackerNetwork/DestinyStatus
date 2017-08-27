@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Vendor
- * @package Destiny\Definitions\Manifest
+ * Class Vendor.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $buyString
  * @property string $sellString

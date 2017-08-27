@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Race
- * @package Destiny\Definitions\Manifest
+ * Class Race.
+ *
  * @property DisplayProperties $displayProperties
  * @property int $raceType
  * @property array $genderedRaceNames

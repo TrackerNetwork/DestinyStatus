@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Gender
- * @package Destiny\Definitions\Manifest
+ * Class Gender.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $hash
  * @property int $index

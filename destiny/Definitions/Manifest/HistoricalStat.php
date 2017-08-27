@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class HistoricalStat
- * @package Destiny\Definitions\Manifest
+ * Class HistoricalStat.
+ *
  * @property string $statId
  * @property int $group
  * @property array $periodTypes

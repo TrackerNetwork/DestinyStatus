@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class ItemTierType
- * @package Destiny\Definitions\Manifest
+ * Class ItemTierType.
+ *
  * @property DisplayProperties $displayProperties
  * @property array $infusionProcess (TierTypeInfusionBlock)
  * @property string $hash

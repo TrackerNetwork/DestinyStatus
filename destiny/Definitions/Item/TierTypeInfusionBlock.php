@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Item;
 use Destiny\Definitions\Definition;
 
 /**
- * Class TierTypeInfusionBlock
- * @package Destiny\Definitions\Item
+ * Class TierTypeInfusionBlock.
+ *
  * @property float $baseQualityTransferRatio
  * @property int $minimumQualityIncrement
  */

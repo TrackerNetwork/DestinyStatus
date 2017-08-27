@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class DestinyClass
- * @package App\Enums
+ * Class DestinyClass.
  */
 abstract class DestinyClass
 {

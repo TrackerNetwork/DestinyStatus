@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Item;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Quantity
- * @package Destiny\Definitions\Item
+ * Class Quantity.
+ *
  * @property string $itemHash
  * @property int $itemInstanceId
  * @property int $quantity
@@ -14,6 +14,6 @@ use Destiny\Definitions\Definition;
 class Quantity extends Definition
 {
     protected $appends = [
-        'item'
+        'item',
     ];
 }

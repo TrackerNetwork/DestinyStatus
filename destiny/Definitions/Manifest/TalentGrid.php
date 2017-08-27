@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Manifest;
 use Destiny\Definitions\Definition;
 
 /**
- * Class TalentGrid
- * @package Destiny\Definitions\Manifest
+ * Class TalentGrid.
+ *
  * @property int $maxGridLevel
  * @property int $gridLevelPerColumn
  * @property string $progressionHash
@@ -22,6 +22,6 @@ use Destiny\Definitions\Definition;
 class TalentGrid extends Definition
 {
     protected $appends = [
-        'displayProperties'
+        'displayProperties',
     ];
 }

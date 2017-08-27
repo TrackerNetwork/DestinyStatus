@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Common;
 use Destiny\Definitions\Definition;
 
 /**
- * Class DisplayProperties
- * @package Destiny\Definitions\Common
+ * Class DisplayProperties.
+ *
  * @property string $description
  * @property string $name
  * @property string $icon

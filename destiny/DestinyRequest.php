@@ -54,10 +54,11 @@ class DestinyRequest extends Request
 
     /**
      * DestinyRequest constructor.
+     *
      * @param string $uri
-     * @param array $params
-     * @param null $cache
-     * @param bool $salvageable
+     * @param array  $params
+     * @param null   $cache
+     * @param bool   $salvageable
      */
     public function __construct($uri, $params = [], $cache = null, $salvageable = true)
     {

@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class DamageType
- * @package Destiny\Definitions\Manifest
+ * Class DamageType.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $transparentIconPath
  * @property bool $showIcon

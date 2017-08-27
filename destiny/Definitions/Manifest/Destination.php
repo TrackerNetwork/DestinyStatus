@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Destination
- * @package Destiny\Definitions\Manifest
+ * Class Destination.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $placeHash (Manifest/Place)
  * @property string $defaultFreeroamActivityHash (Manifest/Activity)

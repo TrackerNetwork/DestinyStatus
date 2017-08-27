@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Manifest;
 use Destiny\Definitions\Definition;
 
 /**
- * Class StatGroup
- * @package Destiny\Definitions\Manifest
+ * Class StatGroup.
+ *
  * @property int $maximumValue
  * @property int $uiPosition
  * @property array $scaledStats (Stat\Display)

@@ -5,8 +5,8 @@ namespace Destiny\Definition\Vendor;
 use Destiny\Definitions\Definition;
 
 /**
- * Class CategoryEntry
- * @package Destiny\Definition\Vendor
+ * Class CategoryEntry.
+ *
  * @property int $categoryIndex
  * @property string $categoryId
  * @property string $categoryHash
@@ -18,7 +18,6 @@ use Destiny\Definitions\Definition;
  * @property string $disabledDescription
  * @property string $displayTitle
  * @property array $overlay (CategoryOverlay)
- *
  */
 class CategoryEntry extends Definition
 {

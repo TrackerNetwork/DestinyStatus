@@ -3,13 +3,13 @@
 namespace Destiny;
 
 /**
- * Class Collection
- * @package Destiny
+ * Class Collection.
  */
 class Collection extends \Illuminate\Support\Collection
 {
     /**
      * @param string $key
+     *
      * @return mixed
      */
     public function __get($key)

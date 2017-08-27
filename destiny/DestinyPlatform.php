@@ -44,6 +44,7 @@ class DestinyPlatform
 
     /**
      * @param Account $account
+     *
      * @return DestinyRequest
      */
     public function getDestinyProfile(Account $account)

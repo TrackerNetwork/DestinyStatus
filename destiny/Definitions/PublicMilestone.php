@@ -5,8 +5,7 @@ namespace Destiny\Definitions;
 use Carbon\Carbon;
 
 /**
- * Class PublicMilestone
- * @package Destiny\Definitions
+ * Class PublicMilestone.
  *
  * @property string $milestoneHash
  * @property array $availableQuests

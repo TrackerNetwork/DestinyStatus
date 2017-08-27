@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Place
- * @package Destiny\Definitions
+ * Class Place.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $hash
  * @property int $index

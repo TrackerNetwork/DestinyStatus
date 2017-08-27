@@ -5,10 +5,9 @@ namespace Destiny\Definitions\Manifest;
 use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
-
 /**
- * Class ItemCategory
- * @package Destiny\Definitions\Manifest
+ * Class ItemCategory.
+ *
  * @property DisplayProperties $displayProperties
  * @property bool $visible
  * @property string $shortTitle
@@ -26,6 +25,6 @@ use Destiny\Definitions\Definition;
 class ItemCategory extends Definition
 {
     protected $appends = [
-        'displayProperties'
+        'displayProperties',
     ];
 }

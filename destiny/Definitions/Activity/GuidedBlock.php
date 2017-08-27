@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Activity;
 use Destiny\Definitions\Definition;
 
 /**
- * Class GuidedBlock
- * @package Destiny\Definitions
+ * Class GuidedBlock.
+ *
  * @property int $guidedMaxLobbySize
  * @property int $guidedMinLobbySize
  * @property int $guidedDisbandCount

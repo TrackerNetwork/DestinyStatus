@@ -6,8 +6,8 @@ use Destiny\Definitions\Definition;
 use Destiny\Definitions\Manifest\InventoryItem;
 
 /**
- * Class RequiredItem
- * @package Destiny\Definitions\Item
+ * Class RequiredItem.
+ *
  * @property int $count
  * @property string $itemHash
  * @property bool $deleteOnAction
@@ -16,7 +16,7 @@ use Destiny\Definitions\Manifest\InventoryItem;
 class RequiredItem extends Definition
 {
     protected $appends = [
-        'item'
+        'item',
     ];
 
     /**

@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Progression;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Reward
- * @package Destiny\Definitions\Progression
+ * Class Reward.
+ *
  * @property string $progressionMappingHash
  * @property int $amount
  * @property bool $applyThrottles
@@ -15,7 +15,7 @@ use Destiny\Definitions\Definition;
 class Reward extends Definition
 {
     protected $appends = [
-        'progressionMapping'
+        'progressionMapping',
     ];
 
     protected function gProgressionMapping()

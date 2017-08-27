@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class ActivityModeCategory
- * @package App\Enums
+ * Class ActivityModeCategory.
  */
 abstract class ActivityModeCategory
 {

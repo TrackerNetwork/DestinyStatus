@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class PeriodType
- * @package App\Enums
+ * Class PeriodType.
  */
 abstract class PeriodType
 {

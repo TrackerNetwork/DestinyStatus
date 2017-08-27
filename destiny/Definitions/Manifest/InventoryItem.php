@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class InventoryItem
- * @package Destiny\Definitions\Manifest
+ * Class InventoryItem.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $secondaryIcon
  * @property string $secondaryOverlay

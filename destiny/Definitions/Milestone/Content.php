@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Milestone;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Content
- * @package Destiny\Definitions\Milestone
+ * Class Content.
+ *
  * @property string $about
  * @property string $status
  * @property array $tips

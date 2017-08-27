@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Item;
 use Destiny\Definitions\Definition;
 
 /**
- * Class ActionBlock
- * @package Destiny\Definitions\Item
+ * Class ActionBlock.
+ *
  * @property string $verbName
  * @property string $verbDescription
  * @property bool $isPositive
@@ -25,6 +25,6 @@ use Destiny\Definitions\Definition;
 class ActionBlock extends Definition
 {
     protected $appends = [
-        'item'
+        'item',
     ];
 }

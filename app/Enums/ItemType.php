@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class ItemType
- * @package App\Enums
+ * Class ItemType.
  */
 abstract class ItemType
 {

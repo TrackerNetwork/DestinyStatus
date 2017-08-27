@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Objective
- * @package Destiny\Definitions\Manifest
+ * Class Objective.
+ *
  * @property DisplayProperties $displayProperties
  * @property int $completionValue
  * @property string $locationHash

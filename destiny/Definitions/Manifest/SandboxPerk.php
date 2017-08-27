@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class SandboxPerk
- * @package Destiny\Definitions\Manifest
+ * Class SandboxPerk.
+ *
  * @property DisplayProperties $displayProperties
  * @property string $perkIdentifier
  * @property bool $isDisplayable

@@ -3,8 +3,8 @@
 namespace Destiny\Definitions;
 
 /**
- * Class Reward
- * @package Destiny\Definitions
+ * Class Reward.
+ *
  * @property string $rewardText
  * @property array $rewardItems (ItemQuantity)
  */

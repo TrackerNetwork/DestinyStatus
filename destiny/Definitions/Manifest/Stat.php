@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Stat
- * @package Destiny\Definitions\Manifest
+ * Class Stat.
+ *
  * @property DisplayProperties $displayProperties
  * @property int $aggregationType
  * @property bool $hasComputedBlock

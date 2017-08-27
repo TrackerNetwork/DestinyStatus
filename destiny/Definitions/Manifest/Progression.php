@@ -6,8 +6,8 @@ use Destiny\Definitions\Common\ProgressionDisplayProperties;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Progression
- * @package Destiny\Definitions\Manifest
+ * Class Progression.
+ *
  * @property ProgressionDisplayProperties $displayProperties
  * @property int $scope
  * @property bool $repeatLastStep

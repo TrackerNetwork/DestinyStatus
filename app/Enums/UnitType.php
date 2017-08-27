@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class UnitType
- * @package App\Enums
+ * Class UnitType.
  */
 abstract class UnitType
 {
