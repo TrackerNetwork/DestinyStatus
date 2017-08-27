@@ -1,21 +1,22 @@
 <?php
 
-namespace Destiny\Definitions;
+namespace Destiny\Definitions\Manifest;
 
 use Destiny\Definitions\Common\DisplayProperties;
-
+use Destiny\Definitions\Definition;
 
 /**
- * Class ActivityType
- * @package Destiny\Definitions
+ * Class Lore
+ * @package Destiny\Definitions\Manifest
  * @property DisplayProperties $displayProperties
+ * @property string $subtitle
  * @property string $hash
  * @property int $index
  * @property bool $redacted
  */
-class ActivityType extends Definition
+class Lore extends Definition
 {
     protected $appends = [
-        'displayProperties'
+        'displayProperties',
     ];
 }

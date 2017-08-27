@@ -1,6 +1,6 @@
 <?php
 
-namespace Destiny\Definitions\Milestone;
+namespace Destiny\Definitions\Manifest;
 
 use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;

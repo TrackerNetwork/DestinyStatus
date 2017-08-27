@@ -1,15 +1,16 @@
 <?php
 
-namespace Destiny\Definitions;
+namespace Destiny\Definitions\Manifest;
 
 use Destiny\Definitions\Common\DisplayProperties;
+use Destiny\Definitions\Definition;
 
 /**
  * Class Activity
- * @package Destiny\Definitions
+ * @package Destiny\Definitions\Manifest
  * @property DisplayProperties $displayProperties
  * @property string $releaseIcon
- * @property int $releaseTime
+ * @property int $releaseTime (epoch)
  * @property int $activityLevel
  * @property int $activityLightLevel
  * @property string $destinationHash (Destination)
@@ -18,13 +19,13 @@ use Destiny\Definitions\Common\DisplayProperties;
  * @property int $tier
  * @property string $pgcrImage
  * @property array $rewards (Reward)
- * @property array $modifiers (@todo - Destiny.Definitions.DestinyActivityModifierReferenceDefinition)
+ * @property array $modifiers (Modifier)
  * @property bool $isPlaylist
- * @property array $challenges (@todo - Destiny.Definitions.DestinyActivityChallengeDefinition)
- * @property array $optionalUnlockStrings (@todo - Destiny.Definitions.DestinyActivityUnlockStringDefinition)
- * @property array $activityGraphList (GraphListEntry)
- * @property array $matchmaking (MatchmakingBlock)
- * @property array $guidedGame (GuidedBlock)
+ * @property array $challenges (Objective)
+ * @property array $optionalUnlockStrings
+ * @property array $activityGraphList (ActivityGraph)
+ * @property array $matchmaking (Activity/MatchmakingBlock)
+ * @property array $guidedGame (Activity/GuidedBlock)
  * @property string $activityModeHash
  * @property bool $isPvP
  * @property string $hash
@@ -34,9 +35,5 @@ use Destiny\Definitions\Common\DisplayProperties;
 class Activity extends Definition
 {
     protected $appends = [
-        'displayProperties',
-        'destination',
-        'place',
-        'activityType'
     ];
 }
