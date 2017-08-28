@@ -49,6 +49,14 @@ class DestinyPlatform
      */
     public function getDestinyProfile(Account $account)
     {
-        return $this->destinyRequest("Destiny2/$account->membership_type/Profile/$account->membership_id/", CACHE_DEFAULT, 5);
+        $profileUrl = (new DestinyComponentUrlBuilder("Destiny2/$account->membership_type/Profile/$account->membership_id/"))
+            ->addProfiles()
+            ->addProfileCurrencies()
+            ->addCharacters()
+            ->addCharacterProgressions()
+            ->addCharacterEquipment()
+            ->buildUrl();
+
+        return $this->destinyRequest($profileUrl, CACHE_DEFAULT, 5);
     }
 }
