@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class ComponentTypes
- * @package App\Enums
+ * Class ComponentTypes.
  */
 abstract class ComponentTypes
 {

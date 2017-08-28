@@ -5,8 +5,7 @@ namespace Destiny;
 use App\Enums\ComponentTypes;
 
 /**
- * Class DestinyComponentUrlBuilder
- * @package Destiny
+ * Class DestinyComponentUrlBuilder.
  */
 class DestinyComponentUrlBuilder
 {
@@ -27,11 +26,13 @@ class DestinyComponentUrlBuilder
 
     /**
      * DestinyComponentUrlBuilder constructor.
+     *
      * @param $uri
      */
     public function __construct($uri)
     {
         $this->uri = $uri;
+
         return $this;
     }
 
@@ -40,7 +41,7 @@ class DestinyComponentUrlBuilder
      */
     public function buildUrl() : string
     {
-        return $this->url . http_build_query($this->components);
+        return $this->url.http_build_query($this->components);
     }
 
     /**
@@ -53,6 +54,7 @@ class DestinyComponentUrlBuilder
     public function addProfiles() : self
     {
         $this->components[] = ComponentTypes::Profiles;
+
         return $this;
     }
 
@@ -64,18 +66,20 @@ class DestinyComponentUrlBuilder
     public function addVendorReceipts() : self
     {
         $this->components[] = ComponentTypes::VendorReceipts;
+
         return $this;
     }
 
     /**
      * Asking for this will get you the profile-level inventories, such as your Vault buckets
-     * (yeah, the Vault is really inventory buckets located on your Profile)
+     * (yeah, the Vault is really inventory buckets located on your Profile).
      *
      * @return $this
      */
     public function addProfileInventories() : self
     {
         $this->components[] = ComponentTypes::ProfileInventories;
+
         return $this;
     }
 
@@ -88,6 +92,7 @@ class DestinyComponentUrlBuilder
     public function addProfileCurrencies() : self
     {
         $this->components[] = ComponentTypes::ProfileCurrencies;
+
         return $this;
     }
 
@@ -99,6 +104,7 @@ class DestinyComponentUrlBuilder
     public function addCharacters() : self
     {
         $this->components[] = ComponentTypes::Characters;
+
         return $this;
     }
 
@@ -113,6 +119,7 @@ class DestinyComponentUrlBuilder
     public function addCharacterInventories() : self
     {
         $this->components[] = ComponentTypes::CharacterInventories;
+
         return $this;
     }
 
@@ -126,19 +133,21 @@ class DestinyComponentUrlBuilder
     public function addCharacterProgressions() : self
     {
         $this->components[] = ComponentTypes::CharacterProgressions;
+
         return $this;
     }
 
     /**
      * This will get you just enough information to be able to render the character in 3D if you have written a
      * 3D rendering library for Destiny Characters, or "borrowed" ours. It's okay, I won't tell anyone if you're using
-     * it. I'm no snitch. (actually, we don't care if you use it - go to town)
+     * it. I'm no snitch. (actually, we don't care if you use it - go to town).
      *
      * @return $this
      */
     public function addCharacterRenderData() : self
     {
         $this->components[] = ComponentTypes::CharacterRenderData;
+
         return $this;
     }
 
@@ -152,29 +161,32 @@ class DestinyComponentUrlBuilder
     public function addCharacterActivities() : self
     {
         $this->components[] = ComponentTypes::CharacterActivities;
+
         return $this;
     }
 
     /**
      * This will return info about the equipped items on the character(s). Everyone can see this.
-
+     *
      * @return $this
      */
     public function addCharacterEquipment() : self
     {
         $this->components[] = ComponentTypes::CharacterEquipment;
+
         return $this;
     }
 
     /**
      * This will return basic info about instanced items - whether they can be equipped, their tracked status,
-     * and some info commonly needed in many places (current damage type, primary stat value, etc)
+     * and some info commonly needed in many places (current damage type, primary stat value, etc).
      *
      * @return $this
      */
     public function addItemInstances() : self
     {
         $this->components[] = ComponentTypes::ItemInstances;
+
         return $this;
     }
 
@@ -187,17 +199,19 @@ class DestinyComponentUrlBuilder
     public function addItemPerks() : self
     {
         $this->components[] = ComponentTypes::ItemPerks;
+
         return $this;
     }
 
     /**
      * If you just want to render the weapon, this is just enough info to do that rendering.
-
+     *
      * @return $this
      */
     public function addItemRenderData() : self
     {
         $this->components[] = ComponentTypes::ItemRenderData;
+
         return $this;
     }
 
@@ -210,6 +224,7 @@ class DestinyComponentUrlBuilder
     public function addStats() : self
     {
         $this->components[] = ComponentTypes::ItemStats;
+
         return $this;
     }
 
@@ -222,6 +237,7 @@ class DestinyComponentUrlBuilder
     public function addSockets() : self
     {
         $this->components[] = ComponentTypes::ItemSockets;
+
         return $this;
     }
 
@@ -234,6 +250,7 @@ class DestinyComponentUrlBuilder
     public function addTalentGrids() : self
     {
         $this->components[] = ComponentTypes::ItemTalentGrids;
+
         return $this;
     }
 
@@ -247,6 +264,7 @@ class DestinyComponentUrlBuilder
     public function addCommonData() : self
     {
         $this->components[] = ComponentTypes::ItemCommonData;
+
         return $this;
     }
 
@@ -260,6 +278,7 @@ class DestinyComponentUrlBuilder
     public function addItemPlugStates() : self
     {
         $this->components[] = ComponentTypes::ItemPlugStates;
+
         return $this;
     }
 
@@ -269,6 +288,7 @@ class DestinyComponentUrlBuilder
     public function addVendors() : self
     {
         $this->components[] = ComponentTypes::Vendors;
+
         return $this;
     }
 
@@ -278,6 +298,7 @@ class DestinyComponentUrlBuilder
     public function addVendorCategories() : self
     {
         $this->components[] = ComponentTypes::VendorCategories;
+
         return $this;
     }
 
@@ -287,6 +308,7 @@ class DestinyComponentUrlBuilder
     public function addVendorSales() : self
     {
         $this->components[] = ComponentTypes::VendorSales;
+
         return $this;
     }
 
@@ -296,6 +318,7 @@ class DestinyComponentUrlBuilder
     public function addKiosks() : self
     {
         $this->components[] = ComponentTypes::Kiosks;
+
         return $this;
     }
 }
