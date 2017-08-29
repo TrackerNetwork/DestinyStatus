@@ -90,7 +90,7 @@
 				<a class="" href="https://github.com/TrackerNetwork/DestinyStatus/blob/destiny1/CHANGELOG.md" target="_blank">Changelog</a><a class="privacy" href="/privacy">Privacy Policy</a>
 			</p>
 			<p>
-				Ads support server costs and all information used on this site is the property of Bungie<br>
+				Ads support server costs and all information used on this site is the property of Bungie<br>Looking for <a href="https://destinystatus.com">Destiny 2 stats</a>?<br>
 				Originally Developed by <a href="/psn/HermanGatevold">HermanGatevold</a>, currently maintained by <a href="https://github.com/iBotPeaches" target="_blank">iBotPeaches</a>
 				and the Tracker Network and is not financed by or associated with Bungie.<br>
 			</p>
