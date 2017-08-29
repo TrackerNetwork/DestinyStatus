@@ -8,15 +8,16 @@ use App\Enums\Console;
 use App\Helpers\ConsoleHelper;
 
 /**
+ * @property string $supplementalDisplayName
  * @property string $iconPath
  * @property string $membershipType
  * @property string $membershipId
  * @property string $displayName
- * @property string $platform
- * @property string $platformName
- * @property string $platformIcon
- * @property string $clanName
- * @property string $url
+ *
+ * @property-read string $platform
+ * @property-read string $platformName
+ * @property-read string $platformIcon
+ * @property-read string $url
  */
 class Player extends Model
 {

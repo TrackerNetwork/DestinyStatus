@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Destiny\Player;
+
 class AccountController extends Controller
 {
     /**
@@ -12,6 +14,28 @@ class AccountController extends Controller
      */
     public function index(string $platform, string $name)
     {
+        $player = $this->findPlayer($platform, $name);
+
         \App::abort(404, 'This page is not yet ready.');
+    }
+
+    //-------------------------------------------------------
+    // Protected Functions
+    //-------------------------------------------------------
+    /**
+     * @param $platform
+     * @param $gamertag
+     *
+     * @return \Destiny\Player
+     */
+    protected function findPlayer(string $platform, string $gamertag) : Player
+    {
+        $players = destiny()->player($gamertag);
+        $player = $players->get($platform);
+
+        if (!($player instanceof Player)) {
+            \App::abort(404, "The player '$gamertag' on '$platform' could not be found.");
+        }
+        return $player;
     }
 }
