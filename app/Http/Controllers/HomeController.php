@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Badge;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector as Redirect;
 use Illuminate\View\Factory as View;
@@ -83,5 +84,17 @@ class HomeController extends Controller
     public function privacy()
     {
         return $this->view->make('privacy');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function faq()
+    {
+        return $this->view->make('faq', [
+            'badges' => Badge::all()->mapWithKeys(function (Badge $badge) {
+                return [$badge->slug => $badge->ui()];
+            })
+        ]);
     }
 }

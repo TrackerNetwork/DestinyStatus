@@ -63,7 +63,7 @@
             </p>
             <p>
                 Contact us on <a href="https://github.com/TrackerNetwork/DestinyStatus" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
-                or <a href="https://twitter.com/DestinyStatus" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>.
+                or <a href="https://twitter.com/DestinyStatus" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>. Check our <a href="/faq">FAQs</a> if you have any questions.
             </p>
         </div>
     </div>

@@ -33,9 +33,8 @@ class AccountController extends Controller
         $players = destiny()->player($gamertag);
         $player = $players->get($platform);
 
-        if (!($player instanceof Player)) {
-            \App::abort(404, "The player '$gamertag' on '$platform' could not be found.");
-        }
+        abort_if(!($player instanceof Player), "The player '$gamertag' on '$platform' could not be found.");
+
         return $player;
     }
 }

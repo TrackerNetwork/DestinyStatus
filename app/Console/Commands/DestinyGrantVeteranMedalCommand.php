@@ -59,8 +59,8 @@ class DestinyGrantVeteranMedalCommand extends Command
         $pending = Stats::whereIn('account_id', $neededAccountIds)
             ->where(function (Builder $query) {
                 $query->where('raid_completions', '>=', 100);
-                $query->orWhere('kd', '>=', 0.5);
-                $query->orWhere('grimoire', '>=', 3000);
+                $query->orWhere('kd', '>=', 0.8);
+                $query->orWhere('grimoire', '>=', 3500);
             })
             ->select('account_id')
             ->get()

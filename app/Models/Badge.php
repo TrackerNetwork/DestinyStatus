@@ -58,7 +58,11 @@ class Badge extends Model
 
     public function ui()
     {
+        // This is some shitty code, but no fancy HTML package like Yii2 and neither of
+        // the Laravel packages have nested attribute support.
+
         return '<span class="badge" style="color: #'.$this->text_color.'; background-color: #'
-            .$this->background_color.'; border: 1px solid #'.$this->border_color.';">'.$this->name.'</span>';
+            .$this->background_color.'; border: 1px solid #'.$this->border_color.';" data-toggle="popover" 
+            data-title="'.$this->name.'" data-content="'.$this->description.'">'.$this->name.'</span>';
     }
 }

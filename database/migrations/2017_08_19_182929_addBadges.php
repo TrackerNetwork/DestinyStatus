@@ -30,7 +30,7 @@ class AddBadges extends Migration
                 'description'      => 'Wonderful supporter of DestinyStatus',
                 'text_color'       => 'FFFFFF',
                 'background_color' => '4286f4',
-                'border_color'     => '333333',
+                'border_color'     => 'FFFFFF',
             ],
             [
                 'name'             => 'Confirmed',
@@ -38,7 +38,7 @@ class AddBadges extends Migration
                 'description'      => 'Has signed into DestinyStatus and verified account.',
                 'text_color'       => '000000',
                 'background_color' => 'fdff96',
-                'border_color'     => 'b9bc12',
+                'border_color'     => '000000',
             ],
             [
                 'name'             => 'Developer',
@@ -46,14 +46,14 @@ class AddBadges extends Migration
                 'description'      => 'Has supported the project via code.',
                 'text_color'       => '333333',
                 'background_color' => 'ff834f',
-                'border_color'     => '333333',
+                'border_color'     => '000000',
             ],
             [
                 'name'             => 'Veteran',
                 'slug'             => 'veteran',
-                'description'      => 'Has one of the following in Destiny1: 100 raid completions, at least 0.5kd or 3000+ grimoire.',
-                'text_color'       => 'FFFFFF',
-                'background_color' => 'a5a5a5',
+                'description'      => 'Has one of the following in Destiny1: 100 raid completions, at least 0.8kd or 3500+ grimoire.',
+                'text_color'       => 'e5e5e5',
+                'background_color' => '000000',
                 'border_color'     => 'e5e5e5',
             ],
         ];
