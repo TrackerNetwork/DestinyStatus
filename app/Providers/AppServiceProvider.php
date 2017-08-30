@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $this->bootBungieSocialite();
+        $this->bootBladeChanges();
     }
 
     /**
@@ -47,6 +49,13 @@ class AppServiceProvider extends ServiceProvider
             $config = $app['config']['services.bungie'];
 
             return $socialite->buildProvider(BungieSocialiteProvider::class, $config);
+        });
+    }
+
+    private function bootBladeChanges()
+    {
+        Blade::if('env', function ($environment) {
+            return app()->environment($environment);
         });
     }
 }

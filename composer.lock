@@ -1046,16 +1046,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "dev-master",
+            "version": "v5.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a1e126b2b22d86186d4a6482e07cf701358972c8"
+                "reference": "bd352a0d2ca93775fce8ef02365b03fc4fb8cbb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a1e126b2b22d86186d4a6482e07cf701358972c8",
-                "reference": "a1e126b2b22d86186d4a6482e07cf701358972c8",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/bd352a0d2ca93775fce8ef02365b03fc4fb8cbb0",
+                "reference": "bd352a0d2ca93775fce8ef02365b03fc4fb8cbb0",
                 "shasum": ""
             },
             "require": {
@@ -1174,7 +1174,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-08-28T21:35:02+00:00"
+            "time": "2017-08-30T09:25:30+00:00"
         },
         {
             "name": "laravel/socialite",
