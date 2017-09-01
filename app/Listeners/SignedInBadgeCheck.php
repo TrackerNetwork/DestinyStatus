@@ -34,11 +34,14 @@ class SignedInBadgeCheck
         /** @var Badge $confirmed */
         $confirmed = Badge::query()->where('slug', 'confirmed')->first();
 
-        if (!AssignedBadge::query()
-            ->where('account_id', $event->bungie->account_id)
-            ->where('badge_id', $confirmed->id)
-            ->exists()) {
-            BadgeHelper::grantBadge($confirmed, $event->bungie->account);
+        foreach ($event->bungie->accounts as $account) {
+            if (!AssignedBadge::query()
+                ->where('account_id', $account->id)
+                ->where('badge_id', $confirmed->id)
+                ->exists()) {
+
+                BadgeHelper::grantBadge($confirmed, $account);
+            }
         }
     }
 }

@@ -26,6 +26,10 @@ Route::group(['prefix' => '{platform}/{player}'], function () {
 
 Route::get('/search/autocomplete', ['uses' => 'UtilController@searchAutocomplete', 'as' => 'autocomplete']);
 
-Route::get('/logout', ['uses' => 'AuthController@logout', 'as' => 'logout']);
 Route::get('/oauth/login', ['uses' => 'AuthController@redirectToProvider', 'as' => 'login']);
 Route::get('/oauth/callback', ['uses' => 'AuthController@handleProviderCallback', 'as' => 'callback']);
+
+Route::middleware(['auth'])->group(function() {
+    Route::any('/preferred-account/{id?}', ['uses' => 'AuthedController@preferredSwitch', 'as' => 'switch']);
+    Route::get('/logout', ['uses' => 'AuthedController@logout', 'as' => 'logout']);
+});

@@ -29,6 +29,13 @@
             <p>
                 A: Either sign in or disable <a href="https://www.bungie.net/en/Profile/Settings?category=Privacy" target="_blank">privacy settings</a> on your account. If you are viewing someone else, that is their wish and cannot be changed.
             </p>
+            @if (\Auth::check())
+                <br />
+                <strong>Q: How do I change my signed in account to a different platform (psn/xbl/pc)?</strong>
+                <p>
+                    A: Head <a href="<?= route('switch'); ?>">here</a> to select a different platform.
+                </p>
+            @endif
         </div>
     </div>
 @stop

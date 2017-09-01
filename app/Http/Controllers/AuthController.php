@@ -20,22 +20,22 @@ class AuthController extends Controller
 
     public function handleProviderCallback()
     {
-        /** @var Bungie $user */
+        /** @var Bungie $bungie */
         $bungie = Socialite::with('bungie')->user();
         \Auth::login($bungie, true);
 
         event(new BungieSignedIn($bungie));
 
-        \Session::flash('success', 'You have logged in as - <strong>'.$bungie->account->name.'</strong>');
+        if (! empty($bungie->preferred_account_id)) {
+            \Session::flash('success', 'You have logged in as - <strong>'.$bungie->account->name.'</strong>');
+            return redirect('/');
+        }
 
-        return redirect('/');
-    }
-
-    public function logout()
-    {
-        \Auth::logout();
-
-        \Session::flash('success', 'You have logged out.');
+        if ($bungie->accounts->count() == 1) {
+            \Session::flash('success', 'You have logged in as - <strong>'.$bungie->accounts->first()->name.'</strong>');
+        } else {
+            return redirect('/preferred-account');
+        }
 
         return redirect('/');
     }

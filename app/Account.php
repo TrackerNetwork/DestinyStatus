@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $membership_type
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ * @property int $bungie_id
  * @property Stats $stats
  * @property Bungie $bungie
  * @mixin \Eloquent
@@ -37,7 +38,7 @@ class Account extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'membership_id', 'membership_type'];
+    protected $fillable = ['name', 'membership_id', 'membership_type', 'bungie_id'];
 
     public static function boot()
     {
@@ -77,6 +78,6 @@ class Account extends Model
 
     public function bungie()
     {
-        return $this->hasOne(Bungie::class, 'account_id', 'id');
+        return $this->belongsTo(Bungie::class, 'id', 'bungie_id');
     }
 }

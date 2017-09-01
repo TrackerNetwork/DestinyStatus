@@ -12,7 +12,6 @@ use Illuminate\Database\Eloquent\Model;
  * Class Bungie.
  *
  * @property int $id
- * @property int $account_id
  * @property int $membership_id
  * @property Carbon $first_access
  * @property Carbon $last_update
@@ -23,7 +22,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $access_token
  * @property Carbon $expires
  * @property string $remember_token
+ * @property int $preferred_account_id
  * @property-read Account $account
+ * @property-read Account[] $accounts
  * @mixin \Eloquent
  */
 class Bungie extends Model implements Authenticatable, UserProvider
@@ -83,9 +84,14 @@ class Bungie extends Model implements Authenticatable, UserProvider
     // Public Methods
     //---------------------------------------------------------------------------------
 
+    public function accounts()
+    {
+        return $this->hasMany(Account::class, 'bungie_id', 'id');
+    }
+
     public function account()
     {
-        return $this->belongsTo(Account::class, 'account_id', 'id');
+        return $this->hasOne(Account::class, 'id', 'preferred_account_id');
     }
 
     public function url() : string

@@ -89,10 +89,10 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
         $bungieId = Arr::get($tokenResponse, 'membership_id');
 
         // if we have this membershipId, just update and move on
-        /** @var Bungie $model */
-        $model = Bungie::where('membership_id', $bungieId)->first();
+        /** @var Bungie $bungie */
+        $bungie = Bungie::where('membership_id', $bungieId)->first();
 
-        if ($model === null) {
+        if ($bungie === null) {
             $response = json_decode($this->getHttpClient()->get($this->getUserUrl(), [
                 'headers' => [
                     'Authorization' => 'Bearer '.$token,
@@ -109,13 +109,13 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
 
             return $this->mapResponsesToNewBungieObject($tokenResponse, $response['Response']);
         } else {
-            $model->access_token = $tokenResponse['access_token'];
-            $model->expires = $tokenResponse['expires_in'];
-            $model->refresh_token = $tokenResponse['refresh_token'];
-            $model->refresh_expires = $tokenResponse['refresh_expires_in'];
+            $bungie->access_token = $tokenResponse['access_token'];
+            $bungie->expires = $tokenResponse['expires_in'];
+            $bungie->refresh_token = $tokenResponse['refresh_token'];
+            $bungie->refresh_expires = $tokenResponse['refresh_expires_in'];
 
-            if ($model->save()) {
-                return $model;
+            if ($bungie->save()) {
+                return $bungie;
             }
         }
     }
@@ -130,6 +130,20 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
      */
     public function mapResponsesToNewBungieObject(array $tokenResponse, array $destinyResponse)
     {
+        $bungie = new Bungie([
+            'membership_id'   => $tokenResponse['membership_id'],
+            'first_access'    => Arr::get($destinyResponse, 'bungieNetUser.firstAccess'),
+            'last_update'     => Arr::get($destinyResponse, 'bungieNetUser.lastUpdate'),
+            'unique_name'     => Arr::get($destinyResponse, 'bungieNetUser.uniqueName'),
+            'display_name'    => Arr::get($destinyResponse, 'bungieNetUser.displayName'),
+            'refresh_token'   => $tokenResponse['refresh_token'],
+            'refresh_expires' => $tokenResponse['refresh_expires_in'],
+            'access_token'    => $tokenResponse['access_token'],
+            'expires'         => $tokenResponse['expires_in'],
+        ]);
+
+        $bungie->saveOrFail();
+
         foreach ($destinyResponse['destinyMemberships'] as $destinyMembership) {
 
             /** @var Account $model */
@@ -140,24 +154,14 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
                 'name' => $destinyMembership['displayName'],
             ]);
 
-            $bungie = new Bungie([
-                'membership_id'   => $tokenResponse['membership_id'],
-                'first_access'    => Arr::get($destinyResponse, 'bungieNetUser.firstAccess'),
-                'last_update'     => Arr::get($destinyResponse, 'bungieNetUser.lastUpdate'),
-                'unique_name'     => Arr::get($destinyResponse, 'bungieNetUser.uniqueName'),
-                'display_name'    => Arr::get($destinyResponse, 'bungieNetUser.displayName'),
-                'refresh_token'   => $tokenResponse['refresh_token'],
-                'refresh_expires' => $tokenResponse['refresh_expires_in'],
-                'access_token'    => $tokenResponse['access_token'],
-                'expires'         => $tokenResponse['expires_in'],
-            ]);
+            $model->bungie_id = $bungie->id;
 
-            if ($model->bungie()->save($bungie)) {
-                return $bungie;
+            if (! $model->save()) {
+                throw new \Exception('Object could not be saved.');
             }
-
-            throw new \Exception('Saved failed.');
         }
+
+        return $bungie;
     }
 
     /**
