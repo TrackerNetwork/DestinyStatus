@@ -22,6 +22,7 @@ class AccountController extends Controller
     //-------------------------------------------------------
     // Protected Functions
     //-------------------------------------------------------
+
     /**
      * @param $platform
      * @param $gamertag

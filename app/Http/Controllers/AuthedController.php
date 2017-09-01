@@ -8,8 +8,7 @@ use Illuminate\Routing\Redirector as Redirect;
 use Illuminate\View\Factory as View;
 
 /**
- * Class AuthedController
- * @package App\Http\Controllers
+ * Class AuthedController.
  */
 class AuthedController extends Controller
 {
@@ -44,18 +43,19 @@ class AuthedController extends Controller
 
     public function preferredSwitch($id = null)
     {
-        if (! empty($id)) {
+        if (!empty($id)) {
             /** @var Bungie $bungie */
             $bungie = \Auth::user();
             $bungie->preferred_account_id = $id;
             $bungie->saveOrFail();
 
             \Session::flash('success', 'Active account has been set as - <strong>'.$bungie->account->name.'</strong>');
+
             return $this->redirect->to('/');
         }
 
         return $this->view->make('preferred-account', [
-            'bungie' => \Auth::user()
+            'bungie' => \Auth::user(),
         ]);
     }
 

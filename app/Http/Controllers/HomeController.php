@@ -94,7 +94,7 @@ class HomeController extends Controller
         return $this->view->make('faq', [
             'badges' => Badge::all()->mapWithKeys(function (Badge $badge) {
                 return [$badge->slug => $badge->ui()];
-            })
+            }),
         ]);
     }
 }

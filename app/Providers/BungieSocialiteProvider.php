@@ -156,7 +156,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
 
             $model->bungie_id = $bungie->id;
 
-            if (! $model->save()) {
+            if (!$model->save()) {
                 throw new \Exception('Object could not be saved.');
             }
         }

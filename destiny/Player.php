@@ -13,7 +13,6 @@ use App\Helpers\ConsoleHelper;
  * @property string $membershipType
  * @property string $membershipId
  * @property string $displayName
- *
  * @property-read string $platform
  * @property-read string $platformName
  * @property-read string $platformIcon

@@ -39,7 +39,6 @@ class SignedInBadgeCheck
                 ->where('account_id', $account->id)
                 ->where('badge_id', $confirmed->id)
                 ->exists()) {
-
                 BadgeHelper::grantBadge($confirmed, $account);
             }
         }

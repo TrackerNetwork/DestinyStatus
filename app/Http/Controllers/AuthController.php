@@ -26,8 +26,9 @@ class AuthController extends Controller
 
         event(new BungieSignedIn($bungie));
 
-        if (! empty($bungie->preferred_account_id)) {
+        if (!empty($bungie->preferred_account_id)) {
             \Session::flash('success', 'You have logged in as - <strong>'.$bungie->account->name.'</strong>');
+
             return redirect('/');
         }
 
