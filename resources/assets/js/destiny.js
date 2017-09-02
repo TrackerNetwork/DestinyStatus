@@ -37,6 +37,15 @@ $(function()
     });
 });
 
+$(document).click(function (event) {
+    const clickover = $(event.target);
+    let $navbar = $(".navbar-collapse");
+    let _opened = $navbar.hasClass("in");
+    if (_opened === true && !clickover.hasClass("form-control")) {
+        $navbar.collapse('hide');
+    }
+});
+
 function setCookie(key, value) {
     if (typeof(Storage) !== "undefined") {
         localStorage.setItem('t'+key, value);

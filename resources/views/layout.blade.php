@@ -72,7 +72,7 @@
 <script src="<?= mix('js/bootstrap.js'); ?>"></script>
 <script src="<?= mix('js/vendor.js'); ?>"></script>
 <script src="<?= mix('js/destiny.js'); ?>"></script>
-<script src="<?= mix('js/app.js'); ?>" defer></script>
+<script src="<?= mix('js/app.js'); ?>"></script>
 @if (! App::isLocal())
     @include('vendor.analytics')
 @endif

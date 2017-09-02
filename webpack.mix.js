@@ -17,7 +17,6 @@ var config = {
 
 
 mix
-   // .js('resources/assets/js/app.js', 'public/js')
     .scripts([
         config.node + 'bootstrap-3-typeahead/bootstrap3-typeahead.js',
         config.node + 'jquery.cookie/jquery.cookie.js'
