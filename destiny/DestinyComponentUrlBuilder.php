@@ -20,11 +20,6 @@ class DestinyComponentUrlBuilder
     public $uri;
 
     /**
-     * @var string
-     */
-    public $url;
-
-    /**
      * DestinyComponentUrlBuilder constructor.
      *
      * @param $uri
@@ -41,7 +36,17 @@ class DestinyComponentUrlBuilder
      */
     public function buildUrl() : string
     {
-        return $this->url.http_build_query($this->components);
+        return $this->uri;
+    }
+
+    /**
+     * @return array
+     */
+    public function getComponentArray() : array
+    {
+        return [
+            'components' => implode(',', $this->components)
+        ];
     }
 
     /**

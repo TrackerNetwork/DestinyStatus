@@ -99,7 +99,7 @@ abstract class Model implements JsonSerializable, Arrayable, ArrayAccess
         }
 
         $value = (isset($this->properties[$key]) ? $this->properties[$key] : null);
-        $mutator = 'g'.$key;
+        $mutator = 'g'.ucfirst($key);
 
         if (is_callable([$this, $mutator])) {
             $this->cached[$key] = $value = $this->$mutator($value);

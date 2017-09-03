@@ -15,8 +15,15 @@ class AccountController extends Controller
     public function index(string $platform, string $name)
     {
         $player = $this->findPlayer($platform, $name);
+        $profile = destiny()->profile($player);
 
-        \App::abort(404, 'This page is not yet ready.');
+        $profile->account->badges;
+        //dd($profile->account->badges);
+        return view('profile', [
+            'account' => $profile->account,
+            'player' => $player,
+            'profile' => $profile
+        ]);
     }
 
     //-------------------------------------------------------

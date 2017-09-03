@@ -51,7 +51,7 @@ class AddBadges extends Migration
             [
                 'name'             => 'Veteran',
                 'slug'             => 'veteran',
-                'description'      => 'Has one of the following in Destiny1: 100 raid completions, at least 0.8kd or 3500+ grimoire.',
+                'description'      => 'Destiny 1: 100 raid completions, at least 0.8kd or 3500+ grimoire.',
                 'text_color'       => 'e5e5e5',
                 'background_color' => '000000',
                 'border_color'     => 'e5e5e5',

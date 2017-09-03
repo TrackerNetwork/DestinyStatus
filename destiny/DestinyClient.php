@@ -23,8 +23,8 @@ use Illuminate\Support\Facades\Redis;
 
 class DestinyClient extends Client
 {
-    protected $domain = 'https://www.bungie.net';
-    protected $baseUri = '/platform/';
+    protected $domain = 'http://localhost:8111';
+    protected $baseUri = '/Platform/';
 
     protected $destinyPrivacyRestriction = 1665;
 
@@ -95,7 +95,7 @@ class DestinyClient extends Client
                 Cache::store('file')->forget($request->key);
             }
 
-            if ($request->cache && Cache::store('file')->has($request->key)) {
+            if ($request->cache && Cache::store('file')->has($request->key) && ! \App::isLocal()) {
                 $responses[$key] = Cache::store('file')->get($request->key);
             } else {
                 $request = $this->applyProxyIfNeeded($request);

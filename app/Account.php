@@ -3,6 +3,8 @@
 namespace App;
 
 use App\Helpers\ConsoleHelper;
+use App\Models\AssignedBadge;
+use App\Models\Badge;
 use App\Models\Bungie;
 use App\Models\Destiny1\Stats;
 use Carbon\Carbon;
@@ -21,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $bungie_id
  * @property Stats $stats
  * @property Bungie $bungie
+ * @property Badge[] $badges
  * @mixin \Eloquent
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -71,9 +74,25 @@ class Account extends Model
         return route('account', [ConsoleHelper::getConsoleStringFromId($this->membership_type), $this->slug]);
     }
 
+    public function renderBadges()
+    {
+        $contents = '';
+
+        foreach ($this->badges as $badge) {
+            $contents .= $badge->ui() . '&nbsp;';
+        }
+
+        return $contents;
+    }
+
     public function stats()
     {
         return $this->hasOne(Stats::class, 'account_id', 'id');
+    }
+
+    public function badges()
+    {
+        return $this->hasManyThrough(Badge::class, AssignedBadge::class, 'account_id', 'id', null, 'badge_id');
     }
 
     public function bungie()

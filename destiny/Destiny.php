@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Destiny;
+use App\Account;
 
 /**
  * Class Destiny.
@@ -45,5 +46,27 @@ class Destiny
         $result = $this->client->r($this->platform->searchDestinyPlayer($gamertag));
 
         return new PlayerCollection($gamertag, $result);
+    }
+
+    /**
+     * @param Player $player
+     * @return Profile
+     */
+    public function profile(Player $player) : Profile
+    {
+        return \DB::transaction(function() use ($player) {
+
+            /** @var Account $account */
+            $account = Account::updateOrCreate([
+                'membership_id' => $player->membershipId,
+                'membership_type' => $player->membershipType
+            ], [
+                'name' => $player->displayName
+            ]);
+
+            $result = $this->client->r($this->platform->getDestinyProfile($account));
+
+            return new Profile($account, $result);
+        });
     }
 }
