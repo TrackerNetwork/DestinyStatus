@@ -5,24 +5,24 @@ declare(strict_types=1);
 namespace Destiny\Profile;
 
 use Destiny\Collection;
-use Destiny\Definitions\Components\ProfileInventory as ProfileInventoryDefinition;
+use Destiny\Definitions\Components\Inventory as InventoryComponent;
 
 /**
- * Class ProfileInventory
+ * Class CurrencyCollection
  * @package Destiny\Profile
  */
-class ProfileInventory extends Collection
+class CurrencyCollection extends Collection
 {
     public function __construct(array $properties)
     {
-        $items = [];
+        $currencies = [];
 
         if (isset($properties['data']['items'])) {
             foreach ($properties['data']['items'] as $item) {
-                $items[$item['itemHash']] = new ProfileInventoryDefinition($item);
+                $currencies[$item['itemHash']] = new InventoryComponent($item);
             }
         }
 
-        parent::__construct($items);
+        parent::__construct($currencies);
     }
 }

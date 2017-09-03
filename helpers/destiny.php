@@ -204,7 +204,7 @@ function version($update = false)
 function n($number, $decimals = 0)
 {
     if (is_numeric($number)) {
-        return number_format($number, $decimals, '.', '');
+        return number_format($number, $decimals, '.', ',');
     }
 
     return $number;

@@ -5,9 +5,8 @@ namespace Destiny\Definitions\Components;
 use Destiny\Definitions\Definition;
 
 /**
- * Class ProfileInventory.
+ * Class Inventory.
  *
- * @package Destiny\Definitions\Components
  * @property string $itemHash
  * @property string $itemInstanceId
  * @property int $quantity
@@ -18,7 +17,7 @@ use Destiny\Definitions\Definition;
  * @property bool $lockable
  * @property int $state
  */
-class ProfileInventory extends Definition
+class Inventory extends Definition
 {
     protected $appends = [
     ];

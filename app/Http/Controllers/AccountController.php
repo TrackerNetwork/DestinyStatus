@@ -17,8 +17,6 @@ class AccountController extends Controller
         $player = $this->findPlayer($platform, $name);
         $profile = destiny()->profile($player);
 
-        $profile->account->badges;
-        //dd($profile->account->badges);
         return view('profile', [
             'account' => $profile->account,
             'player' => $player,

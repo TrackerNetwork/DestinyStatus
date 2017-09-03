@@ -56,6 +56,26 @@ class Stats extends Model
         $this->attributes['playtime'] = $value;
     }
 
+    public function getKdAttribute($value)
+    {
+        return n($value, 2);
+    }
+
+    public function getTotalGamesAttribute($value)
+    {
+        return n($value, 0);
+    }
+
+    public function getRaidCompletionsAttribute($value)
+    {
+        return n($value);
+    }
+
+    public function getGrimoireAttribute($value)
+    {
+        return n($value);
+    }
+
     //---------------------------------------------------------------------------------
     // Public Methods
     //---------------------------------------------------------------------------------

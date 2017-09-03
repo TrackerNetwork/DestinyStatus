@@ -8,10 +8,10 @@ use Destiny\Collection;
 use Destiny\Definitions\Components\VendorReceipt as VendorReceiptDefinition;
 
 /**
- * Class VendorReceipt
+ * Class VendorReceiptCollection
  * @package Destiny\Profile
  */
-class VendorReceipt extends Collection
+class VendorReceiptCollection extends Collection
 {
     public function __construct(array $properties)
     {
