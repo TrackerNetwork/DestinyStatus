@@ -52,7 +52,7 @@
         data() {
             return {
                 current: -1,
-                delayTime: 500,
+                delayTime: 250,
                 items: [],
                 lastTime: 0,
                 loading: false,
