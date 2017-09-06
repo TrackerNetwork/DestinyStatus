@@ -114,7 +114,7 @@ return [
             'port'     => env('REDIS_PORT', 6379),
             'scheme'   => env('REDIS_SCHEME', 'tcp'),
             'path'     => env('REDIS_SOCK', '/var/run/redis/redis.sock'),
-            'database' => 0,
+            'database' => 1,
         ],
 
     ],
