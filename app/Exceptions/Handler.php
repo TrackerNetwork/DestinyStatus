@@ -60,7 +60,7 @@ class Handler extends ExceptionHandler
             return response()->view('error', ['error' => $exception->getMessage(), 'bungie' => true]);
         }
 
-        if (\Config::get('app.debug')) {
+        if (\App::isLocal()) {
             \Session::flash('alert', sprintf('%s (Line %d): %s', $exception->getFile(), $exception->getLine(), $exception->getMessage()));
         } else {
             if (strlen($exception->getMessage()) > 1) {
