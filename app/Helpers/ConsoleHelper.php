@@ -56,6 +56,6 @@ class ConsoleHelper
      */
     public static function getPlatformImage(string $console) : string
     {
-        return asset('/img/'.$console.'.png');
+        return asset('/img/'.$console.'.png', true);
     }
 }
