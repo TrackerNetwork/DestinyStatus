@@ -57,6 +57,6 @@ class DestinyPlatform
             ->addCharacterInventories()
             ->addCharacterEquipment();
 
-        return $this->destinyRequest($profileBuilder->buildUrl(), $profileBuilder->getComponentArray(), CACHE_DEFAULT, 5);
+        return $this->destinyRequest($profileBuilder->buildUrl(), $profileBuilder->getComponentArray(), CACHE_DEFAULT, false);
     }
 }
