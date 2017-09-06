@@ -14,8 +14,6 @@ use Destiny\Profile\Progression\UninstancedItemObjectiveCollection;
 
 /**
  * Class CharacterProgressionCollection.
- *
- * @package Destiny\Profile
  */
 class CharacterProgressionCollection extends Collection
 {
@@ -23,11 +21,8 @@ class CharacterProgressionCollection extends Collection
     {
         $characters = [];
 
-        if ($properties['privacy'] != PrivacySetting::Private)
-        {
-
-            foreach ($properties['data'] as $characterId => $progressions)
-            {
+        if ($properties['privacy'] != PrivacySetting::Private) {
+            foreach ($properties['data'] as $characterId => $progressions) {
                 $character['progression'] = new ProgressionCollection($progressions['progressions']);
                 $character['faction'] = new FactionCollection($progressions['factions']);
                 $character['milestone'] = new MilestoneCollection($progressions['milestones']);

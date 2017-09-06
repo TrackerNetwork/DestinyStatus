@@ -8,8 +8,7 @@ use Destiny\Collection;
 use Destiny\Definitions\Progression\Progression;
 
 /**
- * Class ProgressionCollection
- * @package Destiny\Profile
+ * Class ProgressionCollection.
  */
 class ProgressionCollection extends Collection
 {

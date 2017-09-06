@@ -9,7 +9,6 @@ use Destiny\Definitions\Progression\Milestone;
 
 /**
  * Class MilestoneCollection.
- *
  */
 class MilestoneCollection extends Collection
 {

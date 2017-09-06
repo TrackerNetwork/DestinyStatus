@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Progression;
 use Destiny\Definitions\Definition;
 
 /**
- * Class ItemObjective
- * @package Destiny\Definitions\Progression
+ * Class ItemObjective.
+ *
  * @property string $objectiveHash
  * @property string $destinationHash
  * @property string $activityHash

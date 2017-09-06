@@ -8,8 +8,7 @@ use Destiny\Collection;
 use Destiny\Definitions\Components\VendorReceipt as VendorReceiptDefinition;
 
 /**
- * Class VendorReceiptCollection
- * @package Destiny\Profile
+ * Class VendorReceiptCollection.
  */
 class VendorReceiptCollection extends Collection
 {

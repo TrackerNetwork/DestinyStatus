@@ -7,8 +7,7 @@ namespace Destiny\Profile;
 use Destiny\Definitions\Components\Profile as ProfileDefinition;
 
 /**
- * Class Profile
- * @package Destiny\Profile
+ * Class Profile.
  */
 class Profile extends ProfileDefinition
 {

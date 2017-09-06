@@ -40,7 +40,7 @@ use Destiny\Definitions\Progression\Progression;
 class Character extends Definition
 {
     protected $appends = [
-        'progression'
+        'progression',
     ];
 
     protected function gProgression()

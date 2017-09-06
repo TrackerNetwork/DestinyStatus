@@ -45,7 +45,7 @@ class DestinyComponentUrlBuilder
     public function getComponentArray() : array
     {
         return [
-            'components' => implode(',', $this->components)
+            'components' => implode(',', $this->components),
         ];
     }
 

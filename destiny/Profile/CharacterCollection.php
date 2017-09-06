@@ -8,8 +8,7 @@ use Destiny\Collection;
 use Destiny\Definitions\Components\Character as CharacterDefinition;
 
 /**
- * Class CharacterCollection
- * @package Destiny\Profile
+ * Class CharacterCollection.
  */
 class CharacterCollection extends Collection
 {

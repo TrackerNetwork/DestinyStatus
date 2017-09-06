@@ -12,13 +12,12 @@ use Destiny\Player;
  * @property string $dateLastPlayed
  * @property int $versionsOwned
  * @property array $characterIds
- *
  * @property-read Player $player
  */
 class Profile extends Definition
 {
     protected $appends = [
-        'player'
+        'player',
     ];
 
     protected function gPlayer()

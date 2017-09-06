@@ -19,8 +19,8 @@ class AccountController extends Controller
 
         return view('profile', [
             'account' => $profile->account,
-            'player' => $player,
-            'profile' => $profile
+            'player'  => $player,
+            'profile' => $profile,
         ]);
     }
 

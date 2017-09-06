@@ -8,8 +8,7 @@ use Destiny\Collection;
 use Destiny\Definitions\Components\Inventory as InventoryComponent;
 
 /**
- * Class InventoryCollection
- * @package Destiny\Profile
+ * Class InventoryCollection.
  */
 class InventoryCollection extends Collection
 {

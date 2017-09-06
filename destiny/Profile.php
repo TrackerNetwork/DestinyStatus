@@ -9,9 +9,9 @@ use Destiny\Profile\CharacterActivityCollection;
 use Destiny\Profile\CharacterCollection;
 use Destiny\Profile\CharacterInventoryCollection;
 use Destiny\Profile\CharacterProgressionCollection;
-use Destiny\Profile\KioskItemCollection;
 use Destiny\Profile\CurrencyCollection;
 use Destiny\Profile\InventoryCollection;
+use Destiny\Profile\KioskItemCollection;
 use Destiny\Profile\VendorReceiptCollection;
 
 /**

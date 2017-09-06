@@ -79,7 +79,7 @@ class Account extends Model
         $contents = '';
 
         foreach ($this->badges as $badge) {
-            $contents .= $badge->ui() . '&nbsp;';
+            $contents .= $badge->ui().'&nbsp;';
         }
 
         return $contents;

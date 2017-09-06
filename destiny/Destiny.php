@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Destiny;
+
 use App\Account;
 
 /**
@@ -50,18 +51,19 @@ class Destiny
 
     /**
      * @param Player $player
+     *
      * @return Profile
      */
     public function profile(Player $player) : Profile
     {
-        return \DB::transaction(function() use ($player) {
+        return \DB::transaction(function () use ($player) {
 
             /** @var Account $account */
             $account = Account::updateOrCreate([
-                'membership_id' => $player->membershipId,
-                'membership_type' => $player->membershipType
+                'membership_id'   => $player->membershipId,
+                'membership_type' => $player->membershipType,
             ], [
-                'name' => $player->displayName
+                'name' => $player->displayName,
             ]);
 
             $result = $this->client->r($this->platform->getDestinyProfile($account));

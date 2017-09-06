@@ -8,8 +8,7 @@ use Destiny\Collection;
 use Destiny\Definitions\Components\KioskItem as KioskItemDefinition;
 
 /**
- * Class KioskItemCollection
- * @package Destiny\Profile
+ * Class KioskItemCollection.
  */
 class KioskItemCollection extends Collection
 {

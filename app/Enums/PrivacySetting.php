@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class PrivacySetting
- * @package App\Enums
+ * Class PrivacySetting.
  */
 abstract class PrivacySetting
 {

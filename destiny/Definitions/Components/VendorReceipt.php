@@ -8,7 +8,6 @@ use Destiny\Definitions\Item\Quantity;
 /**
  * Class VendorReceipt.
  *
- * @package Destiny\Definitions\Components
  * @property array $currencyPaid
  * @property array $itemReceived
  * @property string $licenseUnlockHash

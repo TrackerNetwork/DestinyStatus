@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Components;
 use Destiny\Definitions\Definition;
 
 /**
- * Class Activity
- * @package Destiny\Definitions\Components
+ * Class Activity.
+ *
  * @property string $dateActivityStarted
  * @property array $availableActivities
  * @property string $currentActivityHash
@@ -16,6 +16,6 @@ use Destiny\Definitions\Definition;
 class Activity extends Definition
 {
     protected $appends = [
-        ''
+        '',
     ];
 }

@@ -9,8 +9,7 @@ use Destiny\Collection;
 use Destiny\Definitions\Components\Inventory as InventoryComponent;
 
 /**
- * Class CurrencyCollection
- * @package Destiny\Profile
+ * Class CurrencyCollection.
  */
 class CurrencyCollection extends Collection
 {
