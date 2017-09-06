@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Destiny\Profile;
 
+use App\Enums\PrivacySetting;
 use Destiny\Collection;
 use Destiny\Profile\Progression\FactionCollection;
 use Destiny\Profile\Progression\MilestoneCollection;
@@ -22,14 +23,19 @@ class CharacterProgressionCollection extends Collection
     {
         $characters = [];
 
-        foreach ($properties['data'] as $characterId => $progressions) {
-            $character['progression'] = new ProgressionCollection($progressions['progressions']);
-            $character['faction'] = new FactionCollection($progressions['factions']);
-            $character['milestone'] = new MilestoneCollection($progressions['milestones']);
-            $character['quest'] = new QuestCollection($progressions['quests']);
-            $character['objective'] = new UninstancedItemObjectiveCollection($progressions['uninstancedItemObjectives']);
+        if ($properties['privacy'] != PrivacySetting::Private)
+        {
 
-            $characters[$characterId] = $character;
+            foreach ($properties['data'] as $characterId => $progressions)
+            {
+                $character['progression'] = new ProgressionCollection($progressions['progressions']);
+                $character['faction'] = new FactionCollection($progressions['factions']);
+                $character['milestone'] = new MilestoneCollection($progressions['milestones']);
+                $character['quest'] = new QuestCollection($progressions['quests']);
+                $character['objective'] = new UninstancedItemObjectiveCollection($progressions['uninstancedItemObjectives']);
+
+                $characters[$characterId] = $character;
+            }
         }
 
         parent::__construct($characters);

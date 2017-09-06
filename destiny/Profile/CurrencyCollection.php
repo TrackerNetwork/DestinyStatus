@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Destiny\Profile;
 
+use App\Enums\PrivacySetting;
 use Destiny\Collection;
 use Destiny\Definitions\Components\Inventory as InventoryComponent;
 
@@ -17,9 +18,11 @@ class CurrencyCollection extends Collection
     {
         $currencies = [];
 
-        if (isset($properties['data']['items'])) {
-            foreach ($properties['data']['items'] as $item) {
-                $currencies[$item['itemHash']] = new InventoryComponent($item);
+        if ($properties['privacy'] != PrivacySetting::Private) {
+            if (isset($properties['data']['items'])) {
+                foreach ($properties['data']['items'] as $item) {
+                    $currencies[$item['itemHash']] = new InventoryComponent($item);
+                }
             }
         }
 

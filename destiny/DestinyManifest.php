@@ -98,7 +98,7 @@ class DestinyManifest
      */
     public function destinyClass(string $hash) : DestinyClass
     {
-        return $this->instance('Classes', $hash);
+        return $this->instance('Class', $hash);
     }
 
     /**
@@ -138,7 +138,7 @@ class DestinyManifest
      */
     public function gender(string $hash) : Gender
     {
-        return $this->instance('Genders', $hash);
+        return $this->instance('Gender', $hash);
     }
 
     /**
@@ -258,7 +258,7 @@ class DestinyManifest
      */
     public function race(string $hash) : Race
     {
-        return $this->instance('Races', $hash);
+        return $this->instance('Race', $hash);
     }
 
     /**
@@ -378,8 +378,8 @@ class DestinyManifest
         $instance = array_get(static::$instances, "$type.$key");
 
         if (!$instance) {
-            $namespace = '\\Destiny\\Definitions\\';
-            $class = array_get(['Class' => 'CharacterClass'], $type, $type);
+            $namespace = '\\Destiny\\Definitions\\Manifest\\';
+            $class = array_get(['Class' => 'DestinyClass'], $type, $type);
 
             $className = $namespace.$class;
             $instance = new $className($this->load($type, $key));

@@ -25,6 +25,11 @@ function bungie($url)
     return url('https://www.bungie.net'.$url);
 }
 
+function v($object, string $key = 'name')
+{
+    return e($object->display->$key);
+}
+
 function slug($name)
 {
     /*

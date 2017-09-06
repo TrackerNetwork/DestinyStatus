@@ -35,15 +35,11 @@ use Destiny\Profile\VendorReceiptCollection;
 class Profile extends Model
 {
     protected $appends = [
-        'vendorReceipts',
-        'profileInventory',
         'profileCurrencies',
         'profile',
-        'profileKiosks',
         'characters',
         'characterInventories',
         'characterProgressions',
-        'characterActivities',
     ];
 
     public function __construct(Account $account, array $properties)

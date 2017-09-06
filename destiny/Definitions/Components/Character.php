@@ -3,6 +3,9 @@
 namespace Destiny\Definitions\Components;
 
 use Destiny\Definitions\Definition;
+use Destiny\Definitions\Manifest\DestinyClass;
+use Destiny\Definitions\Manifest\Gender;
+use Destiny\Definitions\Manifest\Race;
 use Destiny\Definitions\Progression\Progression;
 
 /**
@@ -29,6 +32,10 @@ use Destiny\Definitions\Progression\Progression;
  * @property int $baseCharacterLevel
  * @property float $percentToNextLevel
  * @property-read Progression $progression
+ * @property-read DestinyClass $class
+ * @property-read Race $race
+ * @property-read Gender $gender
+ * @property-read string $raceGender
  */
 class Character extends Definition
 {
@@ -39,5 +46,31 @@ class Character extends Definition
     protected function gProgression()
     {
         return new Progression($this->properties['levelProgression']);
+    }
+
+    protected function gClass()
+    {
+        $class = manifest()->destinyClass($this->classHash);
+
+        return $class->display->name;
+    }
+
+    protected function gRace()
+    {
+        $race = manifest()->race($this->raceHash);
+
+        return $race->display->name;
+    }
+
+    protected function gGender()
+    {
+        $gender = manifest()->gender($this->genderHash);
+
+        return $gender->display->name;
+    }
+
+    protected function gRaceGender()
+    {
+        return $this->race.' '.$this->gender;
     }
 }
