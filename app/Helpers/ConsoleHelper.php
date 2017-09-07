@@ -56,6 +56,6 @@ class ConsoleHelper
      */
     public static function getPlatformImage(string $console) : string
     {
-        return asset('/img/'.$console.'.png', true);
+        return asset('/img/'.$console.'.png', !\App::isLocal());
     }
 }

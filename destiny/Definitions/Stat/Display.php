@@ -1,6 +1,6 @@
 <?php
 
-namespace Destiny\Definition\Stat;
+namespace Destiny\Definitions\Stat;
 
 use Destiny\Definitions\Definition;
 use Destiny\Definitions\InterpolationPoint;

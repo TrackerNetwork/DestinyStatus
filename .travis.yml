@@ -7,7 +7,7 @@ cache:
 php:
   - '7.2'
   - '7.1'
-  - '7.0'
+  - '7.0.23'
 before_install:
   - . $HOME/.nvm/nvm.sh
   - nvm install 6

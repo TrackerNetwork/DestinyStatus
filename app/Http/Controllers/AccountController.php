@@ -17,6 +17,8 @@ class AccountController extends Controller
         $player = $this->findPlayer($platform, $name);
         $profile = destiny()->profile($player);
 
+        $profile->loadCharacters();
+
         return view('profile', [
             'account' => $profile->account,
             'player'  => $player,

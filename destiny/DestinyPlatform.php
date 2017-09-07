@@ -55,7 +55,8 @@ class DestinyPlatform
             ->addCharacters()
             ->addCharacterProgressions()
             ->addCharacterInventories()
-            ->addCharacterEquipment();
+            ->addCharacterEquipment()
+            ->addItemInstances();
 
         return $this->destinyRequest($profileBuilder->buildUrl(), $profileBuilder->getComponentArray(), CACHE_DEFAULT, false);
     }

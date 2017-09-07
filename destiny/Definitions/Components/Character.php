@@ -7,6 +7,8 @@ use Destiny\Definitions\Manifest\DestinyClass;
 use Destiny\Definitions\Manifest\Gender;
 use Destiny\Definitions\Manifest\Race;
 use Destiny\Definitions\Progression\Progression;
+use Destiny\Profile\CharacterEquipmentCollection;
+use Destiny\Profile\StatCollection;
 
 /**
  * Class Character.
@@ -36,16 +38,24 @@ use Destiny\Definitions\Progression\Progression;
  * @property-read Race $race
  * @property-read Gender $gender
  * @property-read string $raceGender
+ * @property-read StatCollection $combinedStats
+ * @property-read \Destiny\Character\Inventory $inventory
  */
 class Character extends Definition
 {
     protected $appends = [
         'progression',
+        'combinedStats'
     ];
 
     protected function gProgression()
     {
         return new Progression($this->properties['levelProgression']);
+    }
+
+    protected function gCombinedStats()
+    {
+        return new StatCollection($this->properties['stats']);
     }
 
     protected function gClass()

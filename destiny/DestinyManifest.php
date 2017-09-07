@@ -108,7 +108,7 @@ class DestinyManifest
      */
     public function damageTypes(string $hash) : DamageType
     {
-        return $this->instance('DamageTypes', $hash);
+        return $this->instance('DamageType', $hash);
     }
 
     /**
@@ -228,7 +228,7 @@ class DestinyManifest
      */
     public function inventoryItem(string $hash) : InventoryItem
     {
-        return $this->instance('Items', $hash);
+        return $this->instance('InventoryItem', $hash);
     }
 
     /**
@@ -288,7 +288,7 @@ class DestinyManifest
      */
     public function stat(string $hash) : Stat
     {
-        return $this->instance('Stats', $hash);
+        return $this->instance('Stat', $hash);
     }
 
     /**
