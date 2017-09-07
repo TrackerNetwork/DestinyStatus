@@ -20,7 +20,7 @@ use Destiny\Definitions\Definition;
 class DamageType extends Definition
 {
     protected $appends = [
-        'display'
+        'display',
     ];
 
     protected function gDisplay()

@@ -9,8 +9,7 @@ use Destiny\Definitions\Components\InstancedItem;
 use Destiny\Definitions\Components\Inventory as InventoryDefinition;
 
 /**
- * Class CharacterEquipmentCollection
- * @package Destiny\Profile
+ * Class CharacterEquipmentCollection.
  */
 class CharacterEquipmentCollection extends Collection
 {

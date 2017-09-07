@@ -8,8 +8,7 @@ use Destiny\Collection;
 use Destiny\Definitions\Stat\Entry;
 
 /**
- * Class StatCollection
- * @package Destiny\Profile
+ * Class StatCollection.
  */
 class StatCollection extends Collection
 {
@@ -18,7 +17,7 @@ class StatCollection extends Collection
         $items = [];
         foreach ($properties as $statHash => $value) {
             $item = manifest()->stat((string) $statHash)->toArray();
-            $items[$statHash] = new Entry($item, (string)$value);
+            $items[$statHash] = new Entry($item, (string) $value);
         }
 
         parent::__construct($items);

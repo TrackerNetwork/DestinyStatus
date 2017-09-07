@@ -9,6 +9,7 @@ use Destiny\Definitions\Components\Character as CharacterDefinition;
 
 /**
  * Class CharacterCollection.
+ *
  * @method CharacterDefinition offsetGet($key)
  */
 class CharacterCollection extends Collection

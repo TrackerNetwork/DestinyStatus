@@ -24,7 +24,6 @@ use Destiny\Model;
  * @property \Destiny\Definitions\Components\Inventory $sparrow
  * @property \Destiny\Definitions\Components\Inventory $ship
  * @property \Destiny\Definitions\Components\Inventory $emote
- *
  */
 class Inventory extends Model
 {

@@ -5,8 +5,8 @@ namespace Destiny\Definitions\Stat;
 use Destiny\Definitions\Manifest\Stat as StatDefinition;
 
 /**
- * Class Entry
- * @package Destiny\Definition\Stat
+ * Class Entry.
+ *
  * @property string $value
  */
 class Entry extends StatDefinition

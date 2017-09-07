@@ -51,7 +51,7 @@ class InventoryItem extends Definition
 {
     protected $appends = [
         'display',
-        'tierInfo'
+        'tierInfo',
     ];
 
     protected function gLore()
@@ -79,6 +79,7 @@ class InventoryItem extends Definition
         if (empty($this->loreHash)) {
             return $this->display->description;
         }
+
         return $this->lore->subtitle;
     }
 

@@ -7,7 +7,6 @@ use Destiny\Definitions\Manifest\DestinyClass;
 use Destiny\Definitions\Manifest\Gender;
 use Destiny\Definitions\Manifest\Race;
 use Destiny\Definitions\Progression\Progression;
-use Destiny\Profile\CharacterEquipmentCollection;
 use Destiny\Profile\StatCollection;
 
 /**
@@ -45,7 +44,7 @@ class Character extends Definition
 {
     protected $appends = [
         'progression',
-        'combinedStats'
+        'combinedStats',
     ];
 
     protected function gProgression()
