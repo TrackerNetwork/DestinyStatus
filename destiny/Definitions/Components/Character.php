@@ -41,6 +41,7 @@ use Destiny\Profile\StatCollection;
  * @property-read StatCollection $combinedStats
  * @property-read \Destiny\Character\Inventory $inventory
  * @property-read Carbon $lastPlayed
+ * @property-read float $percentToNextLevel
  */
 class Character extends Definition
 {
@@ -88,5 +89,19 @@ class Character extends Definition
     protected function gRaceGender()
     {
         return $this->race.' '.$this->gender;
+    }
+
+    protected function gPercentToNextLevel()
+    {
+        $fraction = $this->progression->level / $this->progression->levelCap;
+        return $fraction * 100;
+    }
+
+    protected function gPercentLabel()
+    {
+        if ($this->progression->levelCap === $this->progression->level) {
+            return 'MAX';
+        }
+        return $this->progression->level.'/'.$this->progression->levelCap;
     }
 }
