@@ -3,6 +3,7 @@
 namespace Destiny\Definitions;
 
 use Carbon\Carbon;
+use Destiny\Activity\ModifierCollection;
 use Destiny\Definitions\Manifest\Milestone;
 use Destiny\Milestones\MilestoneActivity;
 use Destiny\Milestones\MilestonePublicQuest;
@@ -24,6 +25,7 @@ use Destiny\Milestones\PublicQuestCollection;
  * @property-read string $image
  * @property-read string $activityName
  * @property-read string $destinationName
+ * @property-read ModifierCollection $skulls
  */
 class PublicMilestone extends Definition
 {
@@ -97,6 +99,17 @@ class PublicMilestone extends Definition
         }
 
         return $activity->definition->destination->display->name;
+    }
+
+    protected function gSkulls()
+    {
+        $quest = $this->getFirstQuest();
+        $activity = $quest->milestoneActivity;
+
+        if (empty($activity)) {
+            return [];
+        }
+        return $activity->modifiers;
     }
 
     private function getFirstQuest() : MilestonePublicQuest

@@ -14,6 +14,12 @@ use Destiny\Definitions\Definition;
  */
 class DisplayProperties extends Definition
 {
-    protected $appends = [
-    ];
+    protected function gIcon()
+    {
+        if ($this->hasIcon) {
+            return $this->getNonMutatedProperty('icon');
+        }
+
+        return '/img/misc/missing_icon.png';
+    }
 }

@@ -8,14 +8,20 @@ use Destiny\Definitions\Definition;
 /**
  * Class ActivityModifier.
  *
- * @property DisplayProperties $displayProperties
+ * @property array $displayProperties
  * @property string $hash
  * @property int $index
  * @property bool $redacted
+ * @property-read DisplayProperties $display
  */
 class ActivityModifier extends Definition
 {
     protected $appends = [
-        'displayProperties',
+        'display',
     ];
+
+    protected function gDisplay()
+    {
+        return new DisplayProperties($this->displayProperties);
+    }
 }
