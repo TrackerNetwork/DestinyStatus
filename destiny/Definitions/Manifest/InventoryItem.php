@@ -44,6 +44,7 @@ use Destiny\Definitions\Item\Inventory;
  * @property-read DisplayProperties $display
  * @property-read string $itemName
  * @property-read string $tierName
+ * @property-read string $itemIcon
  * @property-read string $loreSubtitle
  * @property-read Inventory $tierInfo
  */
@@ -81,6 +82,14 @@ class InventoryItem extends Definition
         }
 
         return $this->lore->subtitle;
+    }
+
+    protected function gItemIcon()
+    {
+        if ($this->redacted) {
+            return '/img/misc/missing_icon.png';
+        }
+        return $this->display->icon;
     }
 
     protected function gTierInfo()
