@@ -9,8 +9,8 @@ use Destiny\Definitions\PublicMilestone;
 use Destiny\Model;
 
 /**
- * Class Player
- * @package Destiny
+ * Class Player.
+ *
  * @property MilestoneCollection $milestones
  * @property-read PublicMilestone $weeklys
  */
@@ -27,7 +27,7 @@ class MilestoneHandler extends Model
         $weeklys = [];
         foreach ($this->milestones as $milestone) {
             if ($milestone->milestone->milestoneType == MilestoneType::Weekly) {
-                if (! str_contains($milestone->milestone->friendlyName, 'Clan')) {
+                if (!str_contains($milestone->milestone->friendlyName, 'Clan')) {
                     $weeklys[] = $milestone;
                 }
             }

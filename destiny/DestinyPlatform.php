@@ -65,6 +65,6 @@ class DestinyPlatform
      */
     public function getMilestones() : DestinyRequest
     {
-        return $this->destinyRequest("Destiny2/Milestones/", null,CACHE_INDEX, false);
+        return $this->destinyRequest('Destiny2/Milestones/', null, CACHE_INDEX, false);
     }
 }

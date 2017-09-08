@@ -36,7 +36,7 @@ use Destiny\Definitions\Definition;
 class Activity extends Definition
 {
     protected $appends = [
-        'display'
+        'display',
     ];
 
     protected function gDisplay()

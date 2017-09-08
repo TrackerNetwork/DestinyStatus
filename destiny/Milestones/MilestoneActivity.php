@@ -8,8 +8,8 @@ use Destiny\Definitions\Manifest\Activity;
 use Destiny\Model;
 
 /**
- * Class MilestoneActivity
- * @package Destiny\Milestones
+ * Class MilestoneActivity.
+ *
  * @property string $activityHash
  * @property array $modifierHashes
  * @property array $variants

@@ -99,6 +99,7 @@ class Character extends Definition
     protected function gPercentToNextLevel()
     {
         $fraction = $this->progression->level / $this->progression->levelCap;
+
         return $fraction * 100;
     }
 
@@ -107,6 +108,7 @@ class Character extends Definition
         if ($this->progression->levelCap === $this->progression->level) {
             return 'MAX';
         }
+
         return $this->progression->level.'/'.$this->progression->levelCap;
     }
 
@@ -119,6 +121,6 @@ class Character extends Definition
 
     protected function gLightPercentLabel()
     {
-        return sprintf("%d / %d", $this->light, self::MAX_LIGHT);
+        return sprintf('%d / %d', $this->light, self::MAX_LIGHT);
     }
 }

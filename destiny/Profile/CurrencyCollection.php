@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Destiny\Profile;
 
-use App\Enums\PrivacySetting;
 use Destiny\Collection;
 use Destiny\Definitions\Components\Inventory as InventoryComponent;
 

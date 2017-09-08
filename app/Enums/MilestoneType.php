@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class MilestoneType
- * @package App\Enums
+ * Class MilestoneType.
  */
 abstract class MilestoneType
 {

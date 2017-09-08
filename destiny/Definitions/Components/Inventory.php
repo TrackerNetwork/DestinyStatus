@@ -68,6 +68,7 @@ class Inventory extends Definition
     protected function gDamageTypeName()
     {
         $damage = $this->instance->damage;
+
         return ($damage !== null) ? $damage->display->name : null;
     }
 

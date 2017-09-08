@@ -86,7 +86,6 @@ class PublicMilestone extends Definition
         return $activity->definition->display->name;
     }
 
-
     private function getFirstQuest() : MilestonePublicQuest
     {
         return $this->quests->first();

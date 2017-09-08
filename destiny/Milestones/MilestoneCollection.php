@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Destiny\Milestones;
 
-use Illuminate\Support\Collection;
 use Destiny\Definitions\PublicMilestone;
+use Illuminate\Support\Collection;
 
 /**
  * @method PublicMilestone offsetGet($key)
@@ -14,6 +14,7 @@ class MilestoneCollection extends Collection
 {
     /**
      * MilestoneCollection constructor.
+     *
      * @param array $items
      */
     public function __construct(array $items)

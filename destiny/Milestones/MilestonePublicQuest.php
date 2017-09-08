@@ -8,8 +8,8 @@ use Destiny\Definitions\Manifest\Milestone;
 use Destiny\Model;
 
 /**
- * Class MilestonePublicQuest
- * @package Destiny\Milestones
+ * Class MilestonePublicQuest.
+ *
  * @property string $questItemHash
  * @property array $activity
  * @property array $challenges
