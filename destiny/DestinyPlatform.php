@@ -60,4 +60,12 @@ class DestinyPlatform
 
         return $this->destinyRequest($profileBuilder->buildUrl(), $profileBuilder->getComponentArray(), CACHE_DEFAULT, false);
     }
+
+    /**
+     * @return DestinyRequest
+     */
+    public function getMilestones() : DestinyRequest
+    {
+        return $this->destinyRequest("Destiny2/Milestones/", null,CACHE_INDEX, false);
+    }
 }

@@ -8,7 +8,7 @@ use Destiny\Definitions\Definition;
 /**
  * Class Milestone.
  *
- * @property DisplayProperties $displayProperties
+ * @property array $displayProperties
  * @property string $image
  * @property int $milestoneType (DestinyMilestoneType)
  * @property bool $recruitable
@@ -23,10 +23,16 @@ use Destiny\Definitions\Definition;
  * @property string $hash
  * @property int $index
  * @property bool $redacted
+ * @property-read DisplayProperties $display
  */
 class Milestone extends Definition
 {
     protected $appends = [
-        'displayProperties',
+        'display',
     ];
+
+    protected function gDisplay()
+    {
+        return new DisplayProperties($this->displayProperties);
+    }
 }

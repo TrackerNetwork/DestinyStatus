@@ -48,7 +48,7 @@ class DestinyManifest
      */
     public function activity(string $hash) : Activity
     {
-        return $this->instance('Activities', $hash);
+        return $this->instance('Activity', $hash);
     }
 
     /**
@@ -178,7 +178,7 @@ class DestinyManifest
      */
     public function milestone(string $hash) : Milestone
     {
-        return $this->instance('Milestones', $hash);
+        return $this->instance('Milestone', $hash);
     }
 
     /**

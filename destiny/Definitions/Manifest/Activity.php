@@ -8,7 +8,7 @@ use Destiny\Definitions\Definition;
 /**
  * Class Activity.
  *
- * @property DisplayProperties $displayProperties
+ * @property array $displayProperties
  * @property string $releaseIcon
  * @property int $releaseTime (epoch)
  * @property int $activityLevel
@@ -31,9 +31,16 @@ use Destiny\Definitions\Definition;
  * @property string $hash
  * @property int $index
  * @property bool $redacted
+ * @property-read DisplayProperties $display
  */
 class Activity extends Definition
 {
     protected $appends = [
+        'display'
     ];
+
+    protected function gDisplay()
+    {
+        return new DisplayProperties($this->displayProperties);
+    }
 }

@@ -58,7 +58,7 @@ class HomeController extends Controller
         }
 
         return $this->view->make('index', [
-            //'advisors' => destiny()->advisors(),
+            'milestoneHandler' => destiny()->publicMilestones(),
         ]);
     }
 

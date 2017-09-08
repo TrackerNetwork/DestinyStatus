@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Destiny;
 
 use App\Account;
+use Destiny\Milestones\MilestoneHandler;
 
 /**
  * Class Destiny.
@@ -70,5 +71,15 @@ class Destiny
 
             return new Profile($account, $result);
         });
+    }
+
+    /**
+     * @return MilestoneHandler
+     */
+    public function publicMilestones() : MilestoneHandler
+    {
+        $milestones = $this->client->r($this->platform->getMilestones());
+
+        return new MilestoneHandler(['milestones' => $milestones]);
     }
 }
