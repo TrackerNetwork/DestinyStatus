@@ -23,6 +23,7 @@ use Destiny\Milestones\PublicQuestCollection;
  * @property-read string $icon
  * @property-read string $image
  * @property-read string $activityName
+ * @property-read string $destinationName
  */
 class PublicMilestone extends Definition
 {

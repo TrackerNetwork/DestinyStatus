@@ -52,6 +52,22 @@ class Destiny
 
     /**
      * @param Player $player
+     * @return Group
+     * @throws \DestinyException
+     */
+    public function groups(Player $player) : Group
+    {
+        $result = $this->client->r($this->platform->getGroups($player));
+
+        if (isset($result['totalResults'])) {
+            return new Group($result['results'][0]['group']);
+        }
+
+        throw new \DestinyException('Could not locate clan for user: ' . $player->displayName);
+    }
+
+    /**
+     * @param Player $player
      *
      * @return Profile
      */

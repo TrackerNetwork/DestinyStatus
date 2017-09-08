@@ -26,6 +26,21 @@ class AccountController extends Controller
         ]);
     }
 
+    /**
+     * @param string $platform
+     * @param string $name
+     * @return string
+     */
+    public function clan(string $platform, string $name)
+    {
+        $player = $this->findPlayer($platform, $name);
+
+        return view('clan', [
+            'player' => $player,
+            'group' => destiny()->groups($player)
+        ]);
+    }
+
     //-------------------------------------------------------
     // Protected Functions
     //-------------------------------------------------------

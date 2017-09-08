@@ -22,6 +22,7 @@ Route::get('select/{gamertag}', ['uses' => 'HomeController@select', 'as' => 'sel
 
 Route::group(['prefix' => '{platform}/{player}'], function () {
     Route::get('/', ['uses' => 'AccountController@index', 'as' => 'account']);
+    Route::get('/clan', ['uses' => 'AccountController@clan', 'as' => 'clan']);
 });
 
 Route::get('/search/autocomplete', ['uses' => 'UtilController@searchAutocomplete', 'as' => 'autocomplete']);

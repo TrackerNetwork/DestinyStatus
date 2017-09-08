@@ -61,6 +61,16 @@ class DestinyPlatform
     }
 
     /**
+     * @param Player $player
+     * @return DestinyRequest
+     */
+    public function getGroups(Player $player) : DestinyRequest
+    {
+        // 0/1 = no filters & groupType = clan. Thanks vpzed
+        return $this->destinyRequest('GroupV2/User/'.$player->membershipType.'/'.$player->membershipId.'/0/1/', null, CACHE_DEFAULT, false);
+    }
+
+    /**
      * @return DestinyRequest
      */
     public function getMilestones() : DestinyRequest
