@@ -32,6 +32,10 @@ use Destiny\Definitions\Definition;
  * @property int $index
  * @property bool $redacted
  * @property-read DisplayProperties $display
+ * @property-read Destination $destination
+ * @property-read Place $place
+ * @property-read ActivityType $activityType
+ * @property-read ActivityMode $activityMode
  */
 class Activity extends Definition
 {
@@ -42,5 +46,25 @@ class Activity extends Definition
     protected function gDisplay()
     {
         return new DisplayProperties($this->displayProperties);
+    }
+
+    protected function gDestination()
+    {
+        return manifest()->destination($this->destinationHash);
+    }
+
+    protected function gPlace()
+    {
+        return manifest()->place($this->placeHash);
+    }
+
+    protected function gActivityType()
+    {
+        return manifest()->activityType($this->activityTypeHash);
+    }
+
+    protected function gActivityMode()
+    {
+        return manifest()->activityMode($this->activityModeHash);
     }
 }

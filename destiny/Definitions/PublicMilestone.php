@@ -86,6 +86,18 @@ class PublicMilestone extends Definition
         return $activity->definition->display->name;
     }
 
+    protected function gDestinationName()
+    {
+        $quest = $this->getFirstQuest();
+        $activity = $quest->milestoneActivity;
+
+        if (empty($activity)) {
+            return '';
+        }
+
+        return $activity->definition->destination->display->name;
+    }
+
     private function getFirstQuest() : MilestonePublicQuest
     {
         return $this->quests->first();

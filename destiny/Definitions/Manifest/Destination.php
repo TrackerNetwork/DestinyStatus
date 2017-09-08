@@ -8,7 +8,7 @@ use Destiny\Definitions\Definition;
 /**
  * Class Destination.
  *
- * @property DisplayProperties $displayProperties
+ * @property array $displayProperties
  * @property string $placeHash (Manifest/Place)
  * @property string $defaultFreeroamActivityHash (Manifest/Activity)
  * @property array $activityGraphEntries (@todo - https://bungie-net.github.io/multi/schema_Destiny-Definitions-DestinyActivityGraphListEntryDefinition.html#schema_Destiny-Definitions-DestinyActivityGraphListEntryDefinition)
@@ -17,9 +17,12 @@ use Destiny\Definitions\Definition;
  * @property string $hash
  * @property int $index
  * @property bool $redacted
+ * @property DisplayProperties $display
  */
 class Destination extends Definition
 {
-    protected $appends = [
-    ];
+    protected function gDisplay()
+    {
+        return new DisplayProperties($this->displayProperties);
+    }
 }

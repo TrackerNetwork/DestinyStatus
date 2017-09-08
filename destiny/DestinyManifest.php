@@ -58,7 +58,7 @@ class DestinyManifest
      */
     public function activityGraph(string $hash) : ActivityGraph
     {
-        return $this->instance('ActivityGraphs', $hash);
+        return $this->instance('ActivityGraph', $hash);
     }
 
     /**
@@ -68,7 +68,7 @@ class DestinyManifest
      */
     public function activityMode(string $hash) : ActivityMode
     {
-        return $this->instance('ActivityModes', $hash);
+        return $this->instance('ActivityMode', $hash);
     }
 
     /**
@@ -88,7 +88,7 @@ class DestinyManifest
      */
     public function activityType(string $hash) : ActivityType
     {
-        return $this->instance('ActivityTypes', $hash);
+        return $this->instance('ActivityType', $hash);
     }
 
     /**
@@ -118,7 +118,7 @@ class DestinyManifest
      */
     public function destination(string $hash) : Destination
     {
-        return $this->instance('Destinations', $hash);
+        return $this->instance('Destination', $hash);
     }
 
     /**
@@ -128,7 +128,7 @@ class DestinyManifest
      */
     public function faction(string $hash) : Faction
     {
-        return $this->instance('Factions', $hash);
+        return $this->instance('Faction', $hash);
     }
 
     /**
@@ -148,7 +148,7 @@ class DestinyManifest
      */
     public function historicalStat(string $hash) : HistoricalStat
     {
-        return $this->instance('HistoricalStats', $hash);
+        return $this->instance('HistoricalStat', $hash);
     }
 
     /**
@@ -158,7 +158,7 @@ class DestinyManifest
      */
     public function location(string $hash) : Location
     {
-        return $this->instance('Locations', $hash);
+        return $this->instance('Location', $hash);
     }
 
     /**
@@ -188,7 +188,7 @@ class DestinyManifest
      */
     public function objective(string $hash) : Objective
     {
-        return $this->instance('Objectives', $hash);
+        return $this->instance('Objective', $hash);
     }
 
     /**
@@ -198,7 +198,7 @@ class DestinyManifest
      */
     public function place(string $hash) : Place
     {
-        return $this->instance('Places', $hash);
+        return $this->instance('Place', $hash);
     }
 
     /**
@@ -208,7 +208,7 @@ class DestinyManifest
      */
     public function progression(string $hash) : Progression
     {
-        return $this->instance('Progressions', $hash);
+        return $this->instance('Progression', $hash);
     }
 
     /**
@@ -218,7 +218,7 @@ class DestinyManifest
      */
     public function inventoryBucket(string $hash) : InventoryBucket
     {
-        return $this->instance('InventoryBuckets', $hash);
+        return $this->instance('InventoryBucket', $hash);
     }
 
     /**
