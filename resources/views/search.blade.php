@@ -3,7 +3,8 @@
 <?php
 /**
 * @var string $gamertag
-* @var \destiny\Player $player
+* @var \Destiny\Player $player
+* @var \Destiny\PlayerCollection $result
 */
 ?>
 @if ($result->isEmpty())
@@ -13,14 +14,17 @@
 @else
     <h4>Search results for "<?= e($gamertag) ?>"</h4>
     <div class="row">
-        @foreach($result as $player)
+        <?php $i = 0; foreach($result as $player): ?>
             <div class="panel col-md-4">
                 <a href="<?= $player->url ?>">
                     <img src="<?= bungie($player->iconPath) ?>">
                     <span><?= e($player->displayName) ?></span>
                 </a>
             </div>
-        @endforeach
+        <?php endforeach; ?>
+        <?php if ($i == 2): ?>
+            @include('vendor.ad_box')
+        <?php endif; ?>
     </div>
 @endif
 @stop

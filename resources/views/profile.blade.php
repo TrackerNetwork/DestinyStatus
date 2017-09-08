@@ -26,6 +26,9 @@
         <?php $i = 0; foreach($profile->characters as $character): $i++; ?>
             @include('partials.character', ['character' => $character, 'profile' => $profile, 'i' => $i, 'player' => $player])
         <?php endforeach; ?>
+        <?php if ($i == 2): ?>
+            @include('vendor.ad_box')
+        <?php endif; ?>
     </div>
 
     @if ($account->stats)

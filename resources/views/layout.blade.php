@@ -47,7 +47,7 @@
     <?php endif; ?>
     @include('partials.auth')
     @yield('content')
-
+    @include('vendor.ad_leaderboard')
     <div class="footer row">
         <div class="col-md-12 about">
             <p class="version">
@@ -73,8 +73,7 @@
 <script src="<?= mix('js/vendor.js'); ?>"></script>
 <script src="<?= mix('js/destiny.js'); ?>"></script>
 <script src="<?= mix('js/app.js'); ?>"></script>
-@if (! App::isLocal())
-    @include('vendor.analytics')
-@endif
+@include('vendor.analytics')
+@include('vendor.ads_js')
 </body>
 </html>
