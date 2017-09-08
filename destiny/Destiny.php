@@ -52,8 +52,10 @@ class Destiny
 
     /**
      * @param Player $player
-     * @return Group
+     *
      * @throws \DestinyException
+     *
+     * @return Group
      */
     public function groups(Player $player) : Group
     {
@@ -63,7 +65,7 @@ class Destiny
             return new Group($result['results'][0]['group']);
         }
 
-        throw new \DestinyException('Could not locate clan for user: ' . $player->displayName);
+        throw new \DestinyException('Could not locate clan for user: '.$player->displayName);
     }
 
     /**

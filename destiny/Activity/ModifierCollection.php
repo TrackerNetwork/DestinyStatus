@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Destiny\Activity;
 
-use Illuminate\Support\Collection;
 use Destiny\Definitions\Manifest\ActivityModifier;
+use Illuminate\Support\Collection;
 
 /**
  * @method ActivityModifier offsetGet($key)
@@ -21,7 +21,7 @@ class ModifierCollection extends Collection
     {
         $modifiers = [];
         foreach ($items as $item) {
-            $modifiers[$item] = manifest()->activityModifier((string)$item);
+            $modifiers[$item] = manifest()->activityModifier((string) $item);
         }
 
         parent::__construct($modifiers);

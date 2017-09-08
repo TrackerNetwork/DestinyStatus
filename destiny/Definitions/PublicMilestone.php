@@ -109,6 +109,7 @@ class PublicMilestone extends Definition
         if (empty($activity)) {
             return [];
         }
+
         return $activity->modifiers;
     }
 

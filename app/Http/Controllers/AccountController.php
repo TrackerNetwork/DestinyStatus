@@ -29,6 +29,7 @@ class AccountController extends Controller
     /**
      * @param string $platform
      * @param string $name
+     *
      * @return string
      */
     public function clan(string $platform, string $name)
@@ -37,7 +38,7 @@ class AccountController extends Controller
 
         return view('clan', [
             'player' => $player,
-            'group' => destiny()->groups($player)
+            'group'  => destiny()->groups($player),
         ]);
     }
 

@@ -6,6 +6,7 @@ namespace Destiny;
 
 /**
  * Class Group.
+ *
  * @property int $groupId
  * @property string $name
  * @property int $groupType

@@ -89,6 +89,7 @@ class InventoryItem extends Definition
         if ($this->redacted) {
             return '/img/misc/missing_icon.png';
         }
+
         return $this->display->icon;
     }
 

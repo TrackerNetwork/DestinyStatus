@@ -62,6 +62,7 @@ class DestinyPlatform
 
     /**
      * @param Player $player
+     *
      * @return DestinyRequest
      */
     public function getGroups(Player $player) : DestinyRequest
