@@ -10,7 +10,7 @@
     <title>@yield('title', 'Destiny Status - Character Progress & Checklist')</title>
     <link rel="shortcut icon" href="{{ url('favicon.ico') }}"/>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500">
-    <link rel="stylesheet" type="text/css" href="<?= elixir('css/destiny.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= mix('css/destiny.css'); ?>">
 </head>
 <body>
 <div id="app">
