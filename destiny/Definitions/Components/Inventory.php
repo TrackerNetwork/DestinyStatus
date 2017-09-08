@@ -19,6 +19,12 @@ use Destiny\Definitions\Manifest\InventoryItem;
  * @property int $state
  * @property InventoryItem $definition
  * @property InstancedItem $instance
+ * @property-read array $primaryStat
+ * @property-read int $damage
+ * @property-read int $damageType
+ * @property-read string $damageTypeHash
+ * @property-read string $damageTypeName
+ * @property-read string $damageTypeIcon
  */
 class Inventory extends Definition
 {
@@ -26,10 +32,10 @@ class Inventory extends Definition
      * @var array
      */
     protected $damageTypes = [
-        1 => ['name' => 'Kinetic', 'icon' => '/img/kinetic.png'],
-        2 => ['name' => 'Arc',     'icon' => '/img/arc.png'],
-        3 => ['name' => 'Solar',   'icon' => '/img/solar.png'],
-        4 => ['name' => 'Void',    'icon' => '/img/void.png'],
+        1 => ['name' => 'Kinetic', 'icon' => '/img/damage/kinetic.png'],
+        2 => ['name' => 'Arc',     'icon' => '/img/damage/arc.png'],
+        3 => ['name' => 'Solar',   'icon' => '/img/damage/solar.png'],
+        4 => ['name' => 'Void',    'icon' => '/img/damage/void.png'],
     ];
 
     public function __construct($properties = null)
@@ -61,11 +67,14 @@ class Inventory extends Definition
 
     protected function gDamageTypeName()
     {
-        return $this->instance->damage->name ?? null;
+        $damage = $this->instance->damage;
+        return ($damage !== null) ? $damage->display->name : null;
     }
 
     protected function gDamageTypeIcon()
     {
-        return $this->instance->damage->display->icon ?? null;
+        if (isset($this->damageTypes[$this->damageType])) {
+            return asset($this->damageTypes[$this->damageType]['icon'], !\App::isLocal());
+        }
     }
 }

@@ -54,8 +54,8 @@ $inventory = $character->inventory;
         </div>
 
         <div class="tab-pane" role="tabpanel" id="weekly-<?=$i?>">
-            <div class="progressions panel">
-                <i>under construction</i>
+            <div class="panel-heading">
+                <?= duration_human(next_weekly()->diffInMinutes()) ?> until reset
             </div>
         </div>
 
