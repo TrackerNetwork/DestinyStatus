@@ -1,14 +1,14 @@
 $.cookie.json = true;
 $.cookie.defaults.path = '/';
 
+$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+    let $tab = $(this)
+        , $group = $tab.data('group');
+    if ($group) setCookie($group, $tab.attr('href'));
+});
+
 $(function()
 {
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        let $tab = $(this)
-            , $group = $tab.data('group');
-        if ($group) setCookie($group, $tab.attr('href'));
-    });
-
     $.each(getCookie(null), function(cookie) {
         $('a[href="'+ getCookie(cookie)+'"]').tab('show');
     });
