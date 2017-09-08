@@ -8,7 +8,7 @@
 
 <div class="clan">
     <h1 class="gamertag">
-        <?= e($group->name) ?>&nbsp;<small>(<?= e($group->motto); ?>)</small>
+        <?= e($player->displayName) ?>&nbsp;<small>(<?= e($player->platformName); ?>)</small>
     </h1>
 </div>
 
