@@ -2,6 +2,7 @@
 
 namespace Destiny\Definitions\Components;
 
+use Carbon\Carbon;
 use Destiny\Definitions\Definition;
 use Destiny\Definitions\Manifest\DestinyClass;
 use Destiny\Definitions\Manifest\Gender;
@@ -39,6 +40,7 @@ use Destiny\Profile\StatCollection;
  * @property-read string $raceGender
  * @property-read StatCollection $combinedStats
  * @property-read \Destiny\Character\Inventory $inventory
+ * @property-read Carbon $lastPlayed
  */
 class Character extends Definition
 {
@@ -55,6 +57,11 @@ class Character extends Definition
     protected function gCombinedStats()
     {
         return new StatCollection($this->properties['stats']);
+    }
+
+    protected function gLastPlayed()
+    {
+        return carbon($this->dateLastPlayed);
     }
 
     protected function gClass()

@@ -24,6 +24,10 @@ class CharacterCollection extends Collection
             }
         }
 
+        $characters = array_sort($characters, function ($value) {
+            return $value['characterId'];
+        });
+
         parent::__construct($characters);
     }
 }
