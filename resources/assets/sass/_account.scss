@@ -340,19 +340,6 @@
         width: 35px;
       }
     }
-
-    .grimoire-icon {
-      display: inline-block;
-      width: 35px;
-      height: 35px;
-      background: url(https://www.bungie.net/img/theme/destiny/icons/icon_grimoire_lightgray.png) 50% 50% no-repeat;
-      background-size: 24px;
-    }
-
-    &[data-identifier="ITEM_CRUCIBLE_MARKS"] .icon { background-position: 0 0; }
-    &[data-identifier="ITEM_VANGUARD_MARKS"] .icon { background-position: -43px 0; }
-    &[data-identifier="ITEM_GLIMMER"] .icon { background-position: -87px 0; }
-    &[data-identifier="ITEM_LEGENDARY_MARKS"] .icon { background-position: -134px 0; }
   }
 }
 
