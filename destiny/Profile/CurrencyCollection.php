@@ -17,11 +17,9 @@ class CurrencyCollection extends Collection
     {
         $currencies = [];
 
-        if ($properties['privacy'] != PrivacySetting::Private) {
-            if (isset($properties['data']['items'])) {
-                foreach ($properties['data']['items'] as $item) {
-                    $currencies[$item['itemHash']] = new InventoryComponent($item);
-                }
+        if (isset($properties['data']['items'])) {
+            foreach ($properties['data']['items'] as $item) {
+                $currencies[$item['itemHash']] = new InventoryComponent($item);
             }
         }
 

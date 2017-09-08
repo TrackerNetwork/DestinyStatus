@@ -25,44 +25,18 @@ $inventory = $character->inventory;
     </div>
     <div class="tab-content">
         <div class="inventory tab-pane active" role="tabpanel" id="inventory-<?=$i?>">
-            <div class="equipment panel">
-                @include('partials.profile.bucket', ['item' => $inventory->subclass])
-                @include('partials.profile.bucket', ['item' => $inventory->primaryWeapon])
-                @include('partials.profile.bucket', ['item' => $inventory->secondaryWeapon])
-                @include('partials.profile.bucket', ['item' => $inventory->heavyWeapon])
-                @include('partials.profile.bucket', ['item' => $inventory->ghost])
-            </div>
-            <div class="equipment panel">
-                @include('partials.profile.bucket', ['item' => $inventory->helmet])
-                @include('partials.profile.bucket', ['item' => $inventory->arms])
-                @include('partials.profile.bucket', ['item' => $inventory->chest])
-                @include('partials.profile.bucket', ['item' => $inventory->boots])
-                @include('partials.profile.bucket', ['item' => $inventory->classItem])
-            </div>
-            <div class="equipment panel">
-                @include('partials.profile.bucket', ['item' => $inventory->emblem])
-                @include('partials.profile.bucket', ['item' => $inventory->aura])
-                @include('partials.profile.bucket', ['item' => $inventory->sparrow])
-                @include('partials.profile.bucket', ['item' => $inventory->ship])
-                @include('partials.profile.bucket', ['item' => $inventory->emote])
-            </div>
+            @include('partials.profile.tab.items')
         </div>
         <div class="tab-pane" role="tabpanel" id="progressions-<?=$i?>">
-            <div class="progressions panel">
-                <i>under construction</i>
-            </div>
+            @include('partials.profile.tab.reputation')
         </div>
 
         <div class="tab-pane" role="tabpanel" id="weekly-<?=$i?>">
-            <div class="panel-heading">
-                <?= duration_human(next_weekly()->diffInMinutes()) ?> until reset
-            </div>
+            @include('partials.profile.tab.checklist')
         </div>
 
         <div class="statistics tab-pane" role="tabpanel" id="stats-<?=$i?>">
-            <div class="progressions panel">
-                <i>under construction</i>
-            </div>
+            @include('partials.profile.tab.stats')
         </div>
     </div>
 </div>

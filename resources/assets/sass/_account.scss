@@ -336,7 +336,9 @@
       width: 35px;
       height: 35px;
 
-      background-image: url(https://www.bungie.net/img/theme/destiny/icons/sprite_destiny_currencies_2.png);
+      img {
+        width: 35px;
+      }
     }
 
     .grimoire-icon {

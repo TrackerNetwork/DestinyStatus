@@ -15,8 +15,8 @@
     <div class="stats">
         <div class="stats">
             <div class="level" title="Level">@include('partials.progress', ['progress' => $character->percentToNextLevel, 'label' => $character->percentLabel])</div>
-            <div class="level prestige" title="Next Mote of Light">
-                @include('partials.progress', ['progress' => 100, 'label' => ''])
+            <div class="level prestige" title="Light">
+                @include('partials.progress', ['progress' => $character->lightPercentToNextLevel, 'label' => $character->lightPercentLabel])
             </div>
         </div>
     </div>

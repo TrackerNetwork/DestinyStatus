@@ -42,6 +42,9 @@ class Profile extends Model
         'characters',
     ];
 
+    // bucket hashes
+    const GLIMMER_HASH = '3159615086';
+
     public function __construct(Account $account, array $properties)
     {
         $properties['account'] = $account;
@@ -106,6 +109,11 @@ class Profile extends Model
     protected function gAccount()
     {
         return $this->properties['account'];
+    }
+
+    public function gGlimmer()
+    {
+        return $this->profileCurrencies->get(self::GLIMMER_HASH);
     }
 
     public function loadCharacters()

@@ -42,6 +42,9 @@ use Destiny\Profile\StatCollection;
  * @property-read \Destiny\Character\Inventory $inventory
  * @property-read Carbon $lastPlayed
  * @property-read float $percentToNextLevel
+ * @property-read string $percentLabel
+ * @property-read float $lightPercentToNextLevel
+ * @property-read string $lightPercentLabel
  */
 class Character extends Definition
 {
@@ -49,6 +52,8 @@ class Character extends Definition
         'progression',
         'combinedStats',
     ];
+
+    const MAX_LIGHT = 300;
 
     protected function gProgression()
     {
@@ -103,5 +108,17 @@ class Character extends Definition
             return 'MAX';
         }
         return $this->progression->level.'/'.$this->progression->levelCap;
+    }
+
+    protected function gLightPercentToNextLevel()
+    {
+        $fraction = $this->light / self::MAX_LIGHT;
+
+        return $fraction * 100;
+    }
+
+    protected function gLightPercentLabel()
+    {
+        return sprintf("%d / %d", $this->light, self::MAX_LIGHT);
     }
 }

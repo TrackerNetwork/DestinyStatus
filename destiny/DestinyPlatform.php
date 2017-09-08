@@ -54,7 +54,6 @@ class DestinyPlatform
             ->addProfileCurrencies()
             ->addCharacters()
             ->addCharacterProgressions()
-            ->addCharacterInventories()
             ->addCharacterEquipment()
             ->addItemInstances();
 
