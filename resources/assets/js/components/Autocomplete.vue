@@ -43,7 +43,7 @@
             minChars: {
                 require: false,
                 type: Number,
-                default: 2
+                default: 3
             },
             value: {
                 default: null
@@ -54,7 +54,7 @@
                 current: -1,
                 delayTime: 250,
                 items: [],
-                lastTime: 0,
+                lastTime: 50,
                 loading: false,
                 query: ''
             }
