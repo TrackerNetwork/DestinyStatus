@@ -1,4 +1,15 @@
-# v3.0.0 (xx)
+# v3.0.2 (September 8, 2017)
+ * Added initial work for clans
+ * Added skulls for weekly activities (nightfall)
+ * Added support for redacted items
+
+# v3.0.1 (September 7, 2017)
+ * Added damage types
+ * Added initial stats tab to profile
+ * Added initial homepage of weekly activities
+ * Added Level/Light progression tracking
+
+# v3.0.0 (September 6, 2017)
  * Rewrite to Laravel 5.5
  * Rewrite to Destiny2
 
