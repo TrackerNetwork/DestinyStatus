@@ -1,3 +1,9 @@
+# v3.0.3 (September 9, 2017)
+ * Hurricane Irma Release
+ * Added Variants/Challenges to weekly index events
+ * Added support for faction rep tracking (must be signed in)
+ * Added support for basic milestone tracking
+
 # v3.0.2 (September 8, 2017)
  * Added initial work for clans
  * Added skulls for weekly activities (nightfall)

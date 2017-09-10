@@ -16,6 +16,11 @@ function de($var)
     die;
 }
 
+function bool($var)
+{
+    return boolval($var) ? 'true' : 'false';
+}
+
 function bungie($url)
 {
     if (starts_with($url, 'http')) {

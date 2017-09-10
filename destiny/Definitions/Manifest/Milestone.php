@@ -24,6 +24,8 @@ use Destiny\Definitions\Definition;
  * @property int $index
  * @property bool $redacted
  * @property-read DisplayProperties $display
+ * @property-read string $name
+ * @property-read string $icon
  */
 class Milestone extends Definition
 {
@@ -34,5 +36,15 @@ class Milestone extends Definition
     protected function gDisplay()
     {
         return new DisplayProperties($this->displayProperties);
+    }
+
+    protected function gName()
+    {
+        return $this->display->name;
+    }
+
+    protected function gIcon()
+    {
+        return $this->display->icon;
     }
 }

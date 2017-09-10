@@ -6,8 +6,6 @@
  * @var int $i
  */
 
-$inventory = $character->inventory;
-
 ?>
 <div class="character col-sm-4"
      data-membership-type="<?= $player->membershipType ?>"
@@ -25,14 +23,14 @@ $inventory = $character->inventory;
     </div>
     <div class="tab-content">
         <div class="inventory tab-pane active" role="tabpanel" id="inventory-<?=$i?>">
-            @include('partials.profile.tab.items')
+            @include('partials.profile.tab.items', ['inventory' => $character->inventory])
         </div>
         <div class="tab-pane" role="tabpanel" id="progressions-<?=$i?>">
             @include('partials.profile.tab.reputation', ['progressions' => $character->factions])
         </div>
 
         <div class="tab-pane" role="tabpanel" id="weekly-<?=$i?>">
-            @include('partials.profile.tab.checklist')
+            @include('partials.profile.tab.checklist', ['milestones' => $character->milestones])
         </div>
 
         <div class="statistics tab-pane" role="tabpanel" id="stats-<?=$i?>">

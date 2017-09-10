@@ -3,12 +3,14 @@
 namespace Destiny\Definitions\Components;
 
 use Carbon\Carbon;
+use Destiny\Collection;
 use Destiny\Definitions\Definition;
 use Destiny\Definitions\Manifest\DestinyClass;
 use Destiny\Definitions\Manifest\Gender;
 use Destiny\Definitions\Manifest\Race;
 use Destiny\Definitions\Progression\Progression;
 use Destiny\Profile\Progression\FactionCollection;
+use Destiny\Profile\Progression\MilestoneCollection;
 use Destiny\Profile\Progression\ProgressionCollection;
 use Destiny\Profile\StatCollection;
 
@@ -44,6 +46,7 @@ use Destiny\Profile\StatCollection;
  * @property-read \Destiny\Character\Inventory $inventory
  * @property-read ProgressionCollection $progressions
  * @property-read FactionCollection $factions
+ * @property-read MilestoneCollection $milestones
  * @property-read Carbon $lastPlayed
  * @property-read string $percentLabel
  * @property-read float $lightPercentToNextLevel
@@ -57,6 +60,13 @@ class Character extends Definition
     ];
 
     const MAX_LIGHT = 300;
+
+    const MILESTONE_NIGHTFALL = '2171429505';
+    const MILESTONE_NIGHTFALL2 = '1478219986';
+    const MILESTONE_STRIKES = '1142551194';
+    const MILESTONE_WEEKLYCLAN = '4253138191';
+    const MILESTONE_XPCLAN = '3603098564';
+    const MILESTONE_PVP = '342166397';
 
     protected function gProgression()
     {
@@ -125,5 +135,21 @@ class Character extends Definition
     protected function gLightPercentLabel()
     {
         return sprintf('%d / %d', $this->light, self::MAX_LIGHT);
+    }
+
+    protected function gMilestones()
+    {
+        /** @var Collection $originalMilestones */
+        $originalMilestones = $this->getNonMutatedProperty('milestones');
+        $milestones = [];
+
+        $milestones[] = $originalMilestones->get(self::MILESTONE_NIGHTFALL);
+        $milestones[] = $originalMilestones->get(self::MILESTONE_NIGHTFALL2);
+        $milestones[] = $originalMilestones->get(self::MILESTONE_STRIKES);
+        $milestones[] = $originalMilestones->get(self::MILESTONE_PVP);
+        $milestones[] = $originalMilestones->get(self::MILESTONE_WEEKLYCLAN);
+        $milestones[] = $originalMilestones->get(self::MILESTONE_XPCLAN);
+
+        return $milestones;
     }
 }

@@ -21,6 +21,7 @@ use Destiny\Definitions\Definition;
  * @property-read \Destiny\Definitions\Manifest\Progression $definition
  * @property-read string $icon
  * @property-read string $name
+ * @property-read string $description
  */
 class Progression extends Definition
 {
@@ -41,5 +42,10 @@ class Progression extends Definition
     protected function gName()
     {
         return $this->definition->display->name;
+    }
+
+    protected function gDescription()
+    {
+        return $this->definition->display->description;
     }
 }

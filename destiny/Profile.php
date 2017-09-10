@@ -139,6 +139,9 @@ class Profile extends Model
             $character->inventory = new Inventory($this->getEquipmentByCharId($character->characterId));
             $character->progressions = $this->getProgressionByCharId($character->characterId);
             $character->factions = $this->getFactionByCharId($character->characterId);
+            $character->milestones = $this->getMilestonesByCharId($character->characterId);
         }
+
+        return true;
     }
 }
