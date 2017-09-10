@@ -2,6 +2,7 @@
 
 namespace Destiny\Definitions\Manifest;
 
+use App\Enums\Difficulty;
 use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
 
@@ -36,6 +37,7 @@ use Destiny\Definitions\Definition;
  * @property-read Place $place
  * @property-read ActivityType $activityType
  * @property-read ActivityMode $activityMode
+ * @property-read string $humanMode
  */
 class Activity extends Definition
 {
@@ -66,5 +68,18 @@ class Activity extends Definition
     protected function gActivityMode()
     {
         return manifest()->activityMode($this->activityModeHash);
+    }
+
+    protected function gHumanMode()
+    {
+        switch ($this->tier) {
+            case Difficulty::Trivial:
+                return 'Normal';
+
+            case Difficulty::Normal:
+                return 'Prestige';
+            default:
+                return 'Tier: ' . $this->tier;
+        }
     }
 }

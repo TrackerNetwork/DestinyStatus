@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Destiny\Milestones;
 
+use Destiny\Activity\ActivityCollection;
 use Destiny\Activity\ModifierCollection;
 use Destiny\Definitions\Manifest\Activity;
 use Destiny\Model;
@@ -16,6 +17,7 @@ use Destiny\Model;
  * @property array $variants
  * @property-read Activity $definition
  * @property-read ModifierCollection $modifiers
+ * @property-read ActivityCollection $activities
  */
 class MilestoneActivity extends Model
 {
@@ -30,5 +32,10 @@ class MilestoneActivity extends Model
     protected function gModifiers()
     {
         return new ModifierCollection($this->modifierHashes ?? []);
+    }
+
+    protected function gActivities()
+    {
+        return new ActivityCollection($this->variants);
     }
 }

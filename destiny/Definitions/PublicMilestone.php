@@ -3,6 +3,8 @@
 namespace Destiny\Definitions;
 
 use Carbon\Carbon;
+use Destiny\Activity\ActivityCollection;
+use Destiny\Activity\ChallengeCollection;
 use Destiny\Activity\ModifierCollection;
 use Destiny\Definitions\Manifest\Milestone;
 use Destiny\Milestones\MilestoneActivity;
@@ -17,15 +19,18 @@ use Destiny\Milestones\PublicQuestCollection;
  * @property array $vendorHashes
  * @property string $startDate
  * @property string $endDate
- * @property-read Milestone $milestone
+ * @property-read Milestone $definition
  * @property-read PublicQuestCollection $quests
  * @property-read Carbon $start
  * @property-read Carbon $end
  * @property-read string $icon
  * @property-read string $image
  * @property-read string $activityName
+ * @property-read string $activityDescription
  * @property-read string $destinationName
  * @property-read ModifierCollection $skulls
+ * @property-read ActivityCollection $activities
+ * @property-read ChallengeCollection $challenges
  */
 class PublicMilestone extends Definition
 {
@@ -34,7 +39,7 @@ class PublicMilestone extends Definition
 
     public function __construct($properties = null)
     {
-        $properties['milestone'] = manifest()->milestone($properties['milestoneHash']);
+        $properties['definition'] = manifest()->milestone($properties['milestoneHash']);
         parent::__construct($properties);
     }
 
@@ -55,7 +60,7 @@ class PublicMilestone extends Definition
 
     protected function gIcon()
     {
-        return $this->milestone->display->icon;
+        return $this->definition->display->icon;
     }
 
     protected function gImage()
@@ -71,7 +76,7 @@ class PublicMilestone extends Definition
         }
 
         if (empty($image)) {
-            $image = $this->milestone->quests[$quest->questItemHash]['overrideImage'];
+            $image = $this->definition->quests[$quest->questItemHash]['overrideImage'];
         }
 
         return $image ?? null;
@@ -79,20 +84,29 @@ class PublicMilestone extends Definition
 
     protected function gActivityName()
     {
-        $quest = $this->getFirstQuest();
-        $activity = $quest->milestoneActivity;
+        $activity = $this->getMilestoneActivity();
 
         if (empty($activity)) {
-            return $this->milestone->display->name;
+            return $this->definition->display->name;
         }
 
         return $activity->definition->display->name;
     }
 
+    protected function gActivityDescription()
+    {
+        $activity = $this->getMilestoneActivity();
+
+        if (empty($activity)) {
+            return $this->definition->display->description;
+        }
+
+        return $activity->definition->display->description;
+    }
+
     protected function gDestinationName()
     {
-        $quest = $this->getFirstQuest();
-        $activity = $quest->milestoneActivity;
+        $activity = $this->getMilestoneActivity();
 
         if (empty($activity)) {
             return '';
@@ -103,8 +117,7 @@ class PublicMilestone extends Definition
 
     protected function gSkulls()
     {
-        $quest = $this->getFirstQuest();
-        $activity = $quest->milestoneActivity;
+        $activity = $this->getMilestoneActivity();
 
         if (empty($activity)) {
             return [];
@@ -113,8 +126,40 @@ class PublicMilestone extends Definition
         return $activity->modifiers;
     }
 
+    protected function gVariants()
+    {
+        $activity = $this->getMilestoneActivity();
+
+        if (empty($activity)) {
+            return new ActivityCollection([]);
+        }
+
+        return $activity->activities;
+    }
+
+    protected function gChallenges()
+    {
+        $quest = $this->getFirstQuest();
+
+        if (empty($quest)) {
+            return new ChallengeCollection([]);
+        }
+
+        return $quest->milestoneChallenges;
+    }
+
     private function getFirstQuest() : MilestonePublicQuest
     {
         return $this->quests->first();
+    }
+
+    /**
+     * @return MilestoneActivity
+     */
+    private function getMilestoneActivity()
+    {
+        $quest = $this->getFirstQuest();
+
+        return $quest->milestoneActivity;
     }
 }

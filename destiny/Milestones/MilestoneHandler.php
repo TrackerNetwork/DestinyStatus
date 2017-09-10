@@ -26,8 +26,8 @@ class MilestoneHandler extends Model
     {
         $weeklys = [];
         foreach ($this->milestones as $milestone) {
-            if ($milestone->milestone->milestoneType == MilestoneType::Weekly) {
-                if (!str_contains($milestone->milestone->friendlyName, 'Clan')) {
+            if ($milestone->definition->milestoneType == MilestoneType::Weekly) {
+                if (!str_contains($milestone->definition->friendlyName, 'Clan')) {
                     $weeklys[] = $milestone;
                 }
             }

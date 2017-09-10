@@ -8,7 +8,7 @@ use Destiny\Definitions\Definition;
 /**
  * Class Objective.
  *
- * @property DisplayProperties $displayProperties
+ * @property array $displayProperties
  * @property int $completionValue
  * @property string $locationHash
  * @property bool $allowNegativeValue
@@ -21,10 +21,16 @@ use Destiny\Definitions\Definition;
  * @property string $hash
  * @property int $index
  * @property bool $redacted
+ * @property DisplayProperties $display
  */
 class Objective extends Definition
 {
     protected $appends = [
-        'displayProperties',
+        'display',
     ];
+
+    protected function gDisplay()
+    {
+        return new DisplayProperties($this->displayProperties);
+    }
 }

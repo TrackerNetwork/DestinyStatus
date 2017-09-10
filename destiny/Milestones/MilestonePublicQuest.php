@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Destiny\Milestones;
 
+use Destiny\Activity\ChallengeCollection;
 use Destiny\Definitions\Manifest\Milestone;
 use Destiny\Model;
 
@@ -15,6 +16,7 @@ use Destiny\Model;
  * @property array $challenges
  * @property-read Milestone $questItem
  * @property-read MilestoneActivity $milestoneActivity
+ * @property-read ChallengeCollection $milestoneChallenges
  */
 class MilestonePublicQuest extends Model
 {
@@ -29,8 +31,14 @@ class MilestonePublicQuest extends Model
 
     protected function gMilestoneActivity()
     {
-        if (!empty($this->activity)) {
-            return new MilestoneActivity($this->activity);
+        if (empty($this->activity)) {
+            return null;
         }
+        return new MilestoneActivity($this->activity);
+    }
+
+    protected function gMilestoneChallenges()
+    {
+        return new ChallengeCollection($this->challenges ?? []);
     }
 }
