@@ -18,17 +18,17 @@ $definition = $item->definition ?? null;
         <div class="tier"><?= e($definition->tierName) ?></div>
         <div class="type opaque"><?= e($definition->itemTypeDisplayName) ?></div>
 
-        <?php if($item->primaryStat): ?>
-        <?php if($item->damage): ?>
+        <?php if($item->damage > 1): ?>
+        <?php if($item->damageType > App\Enums\DamageType::None): ?>
         <div class="damage" data-type-id="<?= e($item->damageType) ?>" data-type="<?= e($item->damageTypeName) ?>">
-            <div class="icon"><img src="<?= asset($item->damageTypeIcon) ?>" alt="<?= e($item->damageTypeName) ?>">
+            <div class="icon"><img src="<?= asset($item->damageTypeIcon, !\App::isLocal()) ?>" alt="<?= e($item->damageTypeName) ?>">
             </div>
             <div class="name"><?= e($item->damage) ?></div>
         </div>
-        <?php elseif ($item->defense): ?>
+        <?php else: ?>
         <div class="defense">
             <i class="fa fa-shield"></i>
-            <div class="name"><?= e($item->defense) ?></div>
+            <div class="name"><?= e($item->damage) ?></div>
         </div>
         <?php endif; ?>
         <?php endif; ?>

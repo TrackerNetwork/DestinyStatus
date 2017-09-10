@@ -25,6 +25,7 @@ use Destiny\Definitions\Manifest\InventoryItem;
  * @property-read string $damageTypeHash
  * @property-read string $damageTypeName
  * @property-read string $damageTypeIcon
+ * @property-read bool $defense
  */
 class Inventory extends Definition
 {
@@ -45,9 +46,9 @@ class Inventory extends Definition
         parent::__construct($properties);
     }
 
-    protected function gPrimaryStat()
+    protected function gDefense()
     {
-        return $this->instance->primaryStat ?? null;
+        return $this->instance->damageType == 0 && $this->instance->primaryStat['value'] > 1;
     }
 
     protected function gDamage()
