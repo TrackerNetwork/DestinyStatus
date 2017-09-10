@@ -29,7 +29,7 @@ class AuthController extends Controller
         if (!empty($bungie->preferred_account_id)) {
             \Session::flash('success', 'You have logged in as - <strong>'.$bungie->account->name.'</strong>');
 
-            return redirect('/');
+            return redirect()->intended('/');
         }
 
         if ($bungie->accounts->count() == 1) {
@@ -38,6 +38,6 @@ class AuthController extends Controller
             return redirect('/preferred-account');
         }
 
-        return redirect('/');
+        return redirect()->intended('/');
     }
 }
