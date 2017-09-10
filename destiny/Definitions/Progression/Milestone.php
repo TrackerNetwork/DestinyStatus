@@ -26,7 +26,7 @@ class Milestone extends Definition
 
     protected function gDefinition()
     {
-        return manifest()->milestone((string)$this->milestoneHash);
+        return manifest()->milestone((string) $this->milestoneHash);
     }
 
     protected function gName()
@@ -60,7 +60,7 @@ class Milestone extends Definition
         $quest = $this->getLastQuest();
 
         if (empty($quest)) {
-            return null;
+            return;
         }
 
         return $quest->activityLevel;

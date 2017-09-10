@@ -26,7 +26,7 @@ use Destiny\Definitions\Definition;
 class Progression extends Definition
 {
     protected $appends = [
-        'definition'
+        'definition',
     ];
 
     protected function gDefinition()
