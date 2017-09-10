@@ -82,7 +82,7 @@ class DestinyRequest extends Request
         $query = array_merge(['lc' => 'en'], $this->params);
 
         $this->url = $this->uri.'?'.http_build_query($query);
-        $this->key = 'bungie:platform:'.sha1($this->url);
+        $this->key = 'bungie:platform:'.sha1($this->url).\Auth::check();
         $this->salvageable = $salvageable;
     }
 
