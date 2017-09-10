@@ -3,8 +3,7 @@
 namespace App\Enums;
 
 /**
- * Class ActivityModeType
- * @package App\Enums
+ * Class ActivityModeType.
  */
 abstract class Difficulty
 {

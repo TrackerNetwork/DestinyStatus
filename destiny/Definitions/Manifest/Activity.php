@@ -79,7 +79,7 @@ class Activity extends Definition
             case Difficulty::Normal:
                 return 'Prestige';
             default:
-                return 'Tier: ' . $this->tier;
+                return 'Tier: '.$this->tier;
         }
     }
 }
