@@ -8,20 +8,26 @@ use Destiny\Definitions\Definition;
 /**
  * Class Faction.
  *
- * @property DisplayProperties $displayProperties
+ * @property array $displayProperties
  * @property string $progressionHash
  * @property string $hash
  * @property int $index
  * @property bool $redacted
+ * @property DisplayProperties $display
  * @property-read Progression $progression
  */
 class Faction extends Definition
 {
     protected $appends = [
-        'displayProperties',
+        'display',
     ];
 
-    public function gProgression()
+    protected function gDisplay()
+    {
+        return new DisplayProperties($this->displayProperties);
+    }
+
+    protected function gProgression()
     {
         return manifest()->progression($this->progressionHash);
     }

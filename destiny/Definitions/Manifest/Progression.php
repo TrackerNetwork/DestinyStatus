@@ -8,7 +8,7 @@ use Destiny\Definitions\Definition;
 /**
  * Class Progression.
  *
- * @property ProgressionDisplayProperties $displayProperties
+ * @property array $displayProperties
  * @property int $scope
  * @property bool $repeatLastStep
  * @property string $source
@@ -18,10 +18,16 @@ use Destiny\Definitions\Definition;
  * @property string $hash
  * @property int $index
  * @property bool $redacted
+ * @property ProgressionDisplayProperties $display
  */
 class Progression extends Definition
 {
     protected $appends = [
-        'displayProperties',
+        'display',
     ];
+
+    protected function gDisplay()
+    {
+        return new ProgressionDisplayProperties($this->displayProperties);
+    }
 }

@@ -55,7 +55,27 @@ class Profile extends Model
 
     public function getProgressionByCharId(string $characterId)
     {
-        return $this->characterProgressions->get($characterId);
+        return $this->characterProgressions->get($characterId)['progression'];
+    }
+
+    public function getFactionByCharId(string $characterId)
+    {
+        return $this->characterProgressions->get($characterId)['faction'];
+    }
+
+    public function getMilestonesByCharId(string $characterId)
+    {
+        return $this->characterProgressions->get($characterId)['milestone'];
+    }
+
+    public function getQuestByCharId(string $characterId)
+    {
+        return $this->characterProgressions->get($characterId)['quest'];
+    }
+
+    public function getObjectivesByCharId(string $characterId)
+    {
+        return $this->characterProgressions->get($characterId)['objectives'];
     }
 
     protected function gVendorReceipts()
@@ -117,6 +137,8 @@ class Profile extends Model
     {
         foreach ($this->characters as $character) {
             $character->inventory = new Inventory($this->getEquipmentByCharId($character->characterId));
+            $character->progressions = $this->getProgressionByCharId($character->characterId);
+            $character->factions = $this->getFactionByCharId($character->characterId);
         }
     }
 }

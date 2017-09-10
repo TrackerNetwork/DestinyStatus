@@ -19,9 +19,45 @@ use Destiny\Definitions\Definition;
  * @property int $stepIndex
  * @property int $progressToNextLevel
  * @property int $nextLevelAt
+ * @property-read \Destiny\Definitions\Manifest\Faction $faction
+ * @property-read \Destiny\Definitions\Manifest\Progression $progression
+ * @property-read string $percentToNextLevel
+ * @property-read string $percentLabel
  */
 class Faction extends Definition
 {
     protected $appends = [
+        'faction',
+        'progression',
     ];
+
+    protected function gFaction()
+    {
+        return manifest()->faction((string)$this->factionHash);
+    }
+
+    protected function gProgression()
+    {
+        return manifest()->progression((string)$this->progressionHash);
+    }
+
+    protected function gName()
+    {
+        return $this->faction->display->name;
+    }
+
+    protected function gIcon()
+    {
+        return $this->faction->display->icon;
+    }
+
+    protected function gPercentToNextLevel()
+    {
+        return ($this->progressToNextLevel / $this->nextLevelAt) * 100;
+    }
+
+    protected function gPercentLabel()
+    {
+        return $this->progressToNextLevel.'/'.$this->nextLevelAt;
+    }
 }

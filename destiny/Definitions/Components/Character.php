@@ -8,6 +8,8 @@ use Destiny\Definitions\Manifest\DestinyClass;
 use Destiny\Definitions\Manifest\Gender;
 use Destiny\Definitions\Manifest\Race;
 use Destiny\Definitions\Progression\Progression;
+use Destiny\Profile\Progression\FactionCollection;
+use Destiny\Profile\Progression\ProgressionCollection;
 use Destiny\Profile\StatCollection;
 
 /**
@@ -40,6 +42,8 @@ use Destiny\Profile\StatCollection;
  * @property-read string $raceGender
  * @property-read StatCollection $combinedStats
  * @property-read \Destiny\Character\Inventory $inventory
+ * @property-read ProgressionCollection $progressions
+ * @property-read FactionCollection $factions
  * @property-read Carbon $lastPlayed
  * @property-read string $percentLabel
  * @property-read float $lightPercentToNextLevel

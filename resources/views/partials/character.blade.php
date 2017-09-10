@@ -28,7 +28,7 @@ $inventory = $character->inventory;
             @include('partials.profile.tab.items')
         </div>
         <div class="tab-pane" role="tabpanel" id="progressions-<?=$i?>">
-            @include('partials.profile.tab.reputation')
+            @include('partials.profile.tab.reputation', ['progressions' => $character->factions])
         </div>
 
         <div class="tab-pane" role="tabpanel" id="weekly-<?=$i?>">
