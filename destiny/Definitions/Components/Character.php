@@ -41,7 +41,6 @@ use Destiny\Profile\StatCollection;
  * @property-read StatCollection $combinedStats
  * @property-read \Destiny\Character\Inventory $inventory
  * @property-read Carbon $lastPlayed
- * @property-read float $percentToNextLevel
  * @property-read string $percentLabel
  * @property-read float $lightPercentToNextLevel
  * @property-read string $lightPercentLabel

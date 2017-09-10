@@ -53,6 +53,11 @@ class Profile extends Model
         return $this->characterEquipment->get($characterId);
     }
 
+    public function getProgressionByCharId(string $characterId)
+    {
+        return $this->characterProgressions->get($characterId);
+    }
+
     protected function gVendorReceipts()
     {
         return new VendorReceiptCollection($this->properties['vendorReceipts']);

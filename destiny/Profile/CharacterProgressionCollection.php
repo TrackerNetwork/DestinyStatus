@@ -21,7 +21,7 @@ class CharacterProgressionCollection extends Collection
     {
         $characters = [];
 
-        if ($properties['privacy'] != PrivacySetting::Private) {
+        if (isset($properties['data'])) {
             foreach ($properties['data'] as $characterId => $progressions) {
                 $character['progression'] = new ProgressionCollection($progressions['progressions']);
                 $character['faction'] = new FactionCollection($progressions['factions']);
