@@ -12,6 +12,9 @@ class UnknownPlayerException extends DestinyException
 class FailingTooHardException extends \Exception
 {
 }
+class DestinyNoClanException extends \Exception
+{
+}
 
 /**
  * @return \Carbon\Carbon

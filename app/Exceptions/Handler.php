@@ -54,6 +54,9 @@ class Handler extends ExceptionHandler
         if ($exception instanceof \UnknownPlayerException) {
             return response()->view('error', ['error' => $exception->getMessage()]);
         }
+        if ($exception instanceof \DestinyNoClanException) {
+            return response()->view('error', ['error' => $exception->getMessage()]);
+        }
         if ($exception instanceof \DestinyException) {
             Bugsnag::notifyException($exception);
 
