@@ -2,7 +2,8 @@
  * Hurricane Irma Release
  * Added Variants/Challenges to weekly index events
  * Added support for faction rep tracking (must be signed in)
- * Added support for basic milestone tracking
+ * Added support for basic milestone tracking (must be signed in)
+ * Fixed issue viewing profiles with no clan
 
 # v3.0.2 (September 8, 2017)
  * Added initial work for clans

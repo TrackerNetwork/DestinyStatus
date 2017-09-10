@@ -13,5 +13,4 @@
 
         @include('partials.progress', ['progress' => $progression->percentToNextLevel, 'label' => $progression->percentLabel])
     </div>
-
 @endif

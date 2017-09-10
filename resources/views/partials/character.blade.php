@@ -26,11 +26,11 @@
             @include('partials.profile.tab.items', ['inventory' => $character->inventory])
         </div>
         <div class="tab-pane" role="tabpanel" id="progressions-<?=$i?>">
-            @include('partials.profile.tab.reputation', ['progressions' => $character->factions])
+            @include('partials.profile.tab.reputation', ['progressions' => $character->factions ?? []])
         </div>
 
         <div class="tab-pane" role="tabpanel" id="weekly-<?=$i?>">
-            @include('partials.profile.tab.checklist', ['milestones' => $character->milestones])
+            @include('partials.profile.tab.checklist', ['milestones' => $character->milestones ?? []])
         </div>
 
         <div class="statistics tab-pane" role="tabpanel" id="stats-<?=$i?>">

@@ -61,7 +61,7 @@ class Destiny
     {
         $result = $this->client->r($this->platform->getGroups($player));
 
-        if (isset($result['totalResults'])) {
+        if (isset($result['totalResults']) && $result['totalResults'] > 0) {
             return new Group($result['results'][0]['group']);
         }
 
