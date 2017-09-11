@@ -56,6 +56,13 @@ function slug($name)
     return $name;
 }
 
+function bungie_slug($name)
+{
+    $name = strtolower(iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $name));
+
+    return rawurlencode($name);
+}
+
 function duration($minutes, $output = 'days,hours,minutes')
 {
     return timespan(time() + ($minutes * 60), time(), $output);
