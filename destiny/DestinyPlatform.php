@@ -72,6 +72,15 @@ class DestinyPlatform
     }
 
     /**
+     * @param Group $group
+     * @return DestinyRequest
+     */
+    public function getClanMembers(Group $group) : DestinyRequest
+    {
+        return $this->destinyRequest('GroupV2/'.$group->groupId.'/Members/', ['currentPage' => 1], CACHE_DEFAULT, false);
+    }
+
+    /**
      * @return DestinyRequest
      */
     public function getMilestones() : DestinyRequest

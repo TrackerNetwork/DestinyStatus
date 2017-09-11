@@ -35,10 +35,12 @@ class AccountController extends Controller
     public function clan(string $platform, string $name)
     {
         $player = $this->findPlayer($platform, $name);
+        $group = destiny()->groups($player);
+        //$group->loadMembers();
 
         return view('clan', [
             'player' => $player,
-            'group'  => destiny()->groups($player),
+            'group'  => $group,
         ]);
     }
 

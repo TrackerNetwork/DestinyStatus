@@ -44,4 +44,9 @@ class Group extends Model
     {
         parent::__construct($properties);
     }
+
+    public function loadMembers()
+    {
+        destiny()->clanMembers($this);
+    }
 }

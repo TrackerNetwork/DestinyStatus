@@ -100,4 +100,13 @@ class Destiny
 
         return new MilestoneHandler(['milestones' => $milestones]);
     }
+
+    /**
+     * @param Group $group
+     */
+    public function clanMembers(Group $group)
+    {
+        $result = $this->client->r($this->platform->getClanMembers($group));
+        dd($result);
+    }
 }
