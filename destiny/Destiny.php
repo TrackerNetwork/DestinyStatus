@@ -65,7 +65,7 @@ class Destiny
             return new Group($result['results'][0]['group']);
         }
 
-        throw new \DestinyNoClanException('Could not locate clan for user: '.$player->displayName);
+        throw new \DestinyNoClanException('Could not locate clan for user');
     }
 
     /**
