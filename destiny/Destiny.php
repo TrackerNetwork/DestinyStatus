@@ -107,6 +107,8 @@ class Destiny
     public function clanMembers(Group $group)
     {
         $result = $this->client->r($this->platform->getClanMembers($group));
+
+        // paginated, unsure if active clan or group members
         dd($result);
     }
 }
