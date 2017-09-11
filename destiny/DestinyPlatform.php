@@ -64,7 +64,8 @@ class DestinyPlatform
 
     /**
      * @param Account $account
-     * @param array $modes
+     * @param array   $modes
+     *
      * @return DestinyRequest
      */
     public function getDestinyStats(Account $account, $modes = [StatGroupType::General, StatGroupType::Activity, StatGroupType::Weapons]) : DestinyRequest
@@ -85,6 +86,7 @@ class DestinyPlatform
 
     /**
      * @param Group $group
+     *
      * @return DestinyRequest
      */
     public function getClanMembers(Group $group) : DestinyRequest
@@ -95,6 +97,7 @@ class DestinyPlatform
     /**
      * @param Group $group
      * @param array $modes
+     *
      * @return DestinyRequest
      */
     public function getClanStats(Group $group, array $modes = [ActivityModeType::AllPvE, ActivityModeType::AllPvp]) : DestinyRequest
