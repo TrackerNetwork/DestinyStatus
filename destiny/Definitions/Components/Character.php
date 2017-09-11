@@ -59,14 +59,15 @@ class Character extends Definition
         'combinedStats',
     ];
 
-    const MAX_LIGHT = 300;
+    const MAX_LIGHT = 350;
 
     const MILESTONE_NIGHTFALL = '2171429505';
-    const MILESTONE_NIGHTFALL2 = '1478219986';
     const MILESTONE_STRIKES = '1142551194';
     const MILESTONE_WEEKLYCLAN = '4253138191';
     const MILESTONE_XPCLAN = '3603098564';
     const MILESTONE_PVP = '342166397';
+    const MILESTONE_CALLTOARMS = '202035466';
+    const MILESTONE_MEDITATE = '3245985898';
 
     protected function gProgression()
     {
@@ -144,11 +145,12 @@ class Character extends Definition
         $milestones = [];
 
         $milestones[] = $originalMilestones->get(self::MILESTONE_NIGHTFALL);
-        $milestones[] = $originalMilestones->get(self::MILESTONE_NIGHTFALL2);
         $milestones[] = $originalMilestones->get(self::MILESTONE_STRIKES);
         $milestones[] = $originalMilestones->get(self::MILESTONE_PVP);
         $milestones[] = $originalMilestones->get(self::MILESTONE_WEEKLYCLAN);
         $milestones[] = $originalMilestones->get(self::MILESTONE_XPCLAN);
+        $milestones[] = $originalMilestones->get(self::MILESTONE_CALLTOARMS);
+        $milestones[] = $originalMilestones->get(self::MILESTONE_MEDITATE);
 
         return $milestones;
     }
