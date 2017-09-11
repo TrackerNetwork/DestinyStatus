@@ -3,6 +3,8 @@
 namespace Destiny;
 
 use App\Account;
+use App\Enums\ActivityModeType;
+use App\Enums\StatGroupType;
 
 /**
  * Class DestinyPlatform.
@@ -61,6 +63,16 @@ class DestinyPlatform
     }
 
     /**
+     * @param Account $account
+     * @param array $modes
+     * @return DestinyRequest
+     */
+    public function getDestinyStats(Account $account, $modes = [StatGroupType::General, StatGroupType::Activity, StatGroupType::Weapons]) : DestinyRequest
+    {
+        return $this->destinyRequest("Destiny2/$account->membership_type/Account/$account->membership_id/Stats/", ['groups' => $modes], CACHE_DEFAULT, true);
+    }
+
+    /**
      * @param Player $player
      *
      * @return DestinyRequest
@@ -78,6 +90,16 @@ class DestinyPlatform
     public function getClanMembers(Group $group) : DestinyRequest
     {
         return $this->destinyRequest('GroupV2/'.$group->groupId.'/Members/', ['currentPage' => 1], CACHE_DEFAULT, false);
+    }
+
+    /**
+     * @param Group $group
+     * @param array $modes
+     * @return DestinyRequest
+     */
+    public function getClanStats(Group $group, array $modes = [ActivityModeType::AllPvE, ActivityModeType::AllPvp]) : DestinyRequest
+    {
+        return $this->destinyRequest('Destiny2/Stats/AggregateClanStats/'.$group->groupId.'/', ['modes' => $modes], CACHE_DEFAULT, false);
     }
 
     /**
