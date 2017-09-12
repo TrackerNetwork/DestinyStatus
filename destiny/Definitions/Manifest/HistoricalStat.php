@@ -24,7 +24,4 @@ use Destiny\Definitions\Definition;
  */
 class HistoricalStat extends Definition
 {
-    protected $appends = [
-        'displayProperties',
-    ];
 }

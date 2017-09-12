@@ -9,10 +9,12 @@ use Destiny\Definitions\Manifest\DestinyClass;
 use Destiny\Definitions\Manifest\Gender;
 use Destiny\Definitions\Manifest\Race;
 use Destiny\Definitions\Progression\Progression;
+use Destiny\Definitions\Statistic;
 use Destiny\Profile\Progression\FactionCollection;
 use Destiny\Profile\Progression\MilestoneCollection;
 use Destiny\Profile\Progression\ProgressionCollection;
 use Destiny\Profile\StatCollection;
+use Destiny\StatisticsCollection;
 
 /**
  * Class Character.
@@ -47,10 +49,14 @@ use Destiny\Profile\StatCollection;
  * @property-read ProgressionCollection $progressions
  * @property-read FactionCollection $factions
  * @property-read MilestoneCollection $milestones
+ * @property-read StatisticsCollection $statsAll
+ * @property-read StatisticsCollection $statsPvP
+ * @property-read StatisticsCollection $statsPvE
  * @property-read Carbon $lastPlayed
  * @property-read string $percentLabel
  * @property-read float $lightPercentToNextLevel
  * @property-read string $lightPercentLabel
+ * @property-read int $minutesPlayedActive
  */
 class Character extends Definition
 {
@@ -82,6 +88,17 @@ class Character extends Definition
     protected function gLastPlayed()
     {
         return carbon($this->dateLastPlayed);
+    }
+
+    protected function gMinutesPlayedActive()
+    {
+        /** @var Statistic $result */
+        $stat = $this->statsAll->get('totalActivityDurationSeconds');
+
+        if ($stat === null) {
+            return 0;
+        }
+        return ($stat->value / 60);
     }
 
     protected function gClass()

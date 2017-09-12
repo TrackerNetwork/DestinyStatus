@@ -135,11 +135,20 @@ class Profile extends Model
 
     public function loadCharacters()
     {
+        $stats = destiny()->stats($this->account);
+
         foreach ($this->characters as $character) {
-            $character->inventory = new Inventory($this->getEquipmentByCharId($character->characterId));
-            $character->progressions = $this->getProgressionByCharId($character->characterId);
-            $character->factions = $this->getFactionByCharId($character->characterId);
-            $character->milestones = $this->getMilestonesByCharId($character->characterId);
+            $charId = $character->characterId;
+
+            $character->inventory = new Inventory($this->getEquipmentByCharId($charId));
+            $character->progressions = $this->getProgressionByCharId($charId);
+            $character->factions = $this->getFactionByCharId($charId);
+            $character->milestones = $this->getMilestonesByCharId($charId);
+
+            // stats
+            $character->statsAll = $stats->getCharacterStats($charId);
+            $character->statsPvP = $stats->getCharacterStats($charId, 'allPvP');
+            $character->statsPvE = $stats->getCharacterStats($charId, 'allPvE');
         }
 
         return true;

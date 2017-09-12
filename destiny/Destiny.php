@@ -92,6 +92,18 @@ class Destiny
     }
 
     /**
+     * @param Account $account
+     *
+     * @return StatHandler
+     */
+    public function stats(Account $account) : StatHandler
+    {
+        $results = $this->client->r($this->platform->getDestinyStats($account));
+
+        return new StatHandler($results);
+    }
+
+    /**
      * @return MilestoneHandler
      */
     public function publicMilestones() : MilestoneHandler

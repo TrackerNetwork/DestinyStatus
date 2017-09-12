@@ -41,9 +41,16 @@ use Destiny\Definitions\Definition;
  */
 class Activity extends Definition
 {
+    const NIGHTFALL_TYPE_HASH = '575572995';
+
     protected $appends = [
         'display',
     ];
+
+    public function isNightfall()
+    {
+        return $this->activityTypeHash === self::NIGHTFALL_TYPE_HASH;
+    }
 
     protected function gDisplay()
     {
