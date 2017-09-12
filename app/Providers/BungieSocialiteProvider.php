@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Account;
 use App\Models\Bungie;
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Support\Arr;
 use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\InvalidStateException;
@@ -61,7 +62,12 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
     {
         $this->isRefresh = true;
 
-        $tokenResponse = $this->getAccessTokenResponse($bungie->refresh_token);
+        try {
+            $tokenResponse = $this->getAccessTokenResponse($bungie->refresh_token);
+        } catch (ClientException $ex) {
+            \Session::flash('warning', 'Bungie seems to be offline. So we have logged you out.');
+            return $bungie;
+        }
 
         $bungie->access_token = $tokenResponse['access_token'];
         $bungie->expires = $tokenResponse['expires_in'];
