@@ -98,7 +98,8 @@ class Character extends Definition
         if ($stat === null) {
             return 0;
         }
-        return ($stat->value / 60);
+
+        return $stat->value / 60;
     }
 
     protected function gClass()

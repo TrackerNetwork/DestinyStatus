@@ -71,6 +71,7 @@ class StatisticsCollection extends Collection
 {
     /**
      * StatisticsCollection constructor.
+     *
      * @param array $items
      */
     public function __construct(array $items = [])
@@ -93,6 +94,7 @@ class StatisticsCollection extends Collection
 
     /**
      * @param string $key
+     *
      * @return Statistic
      */
     public function __get($key)

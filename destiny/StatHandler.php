@@ -22,6 +22,7 @@ class StatHandler extends StatDefinition
     /**
      * @param string $characterId
      * @param string $mode
+     *
      * @return StatisticsCollection
      */
     public function getCharacterStats(string $characterId, string $mode = 'allTime') : StatisticsCollection
@@ -31,7 +32,6 @@ class StatHandler extends StatDefinition
         } else {
             $mode = "results.$mode.allTime";
         }
-
 
         $stats = [];
         foreach ($this->characters as $character) {
