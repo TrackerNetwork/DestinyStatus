@@ -142,7 +142,11 @@ class DestinyClient extends Client
                             if ($request->salvageable) {
                                 $response = null;
                             } else {
-                                throw new DestinyException($result->getReasonPhrase(), $result->getStatusCode());
+                                if ($response !== null) {
+                                    throw new DestinyException(array_get($response, 'Message'), $result->getStatusCode());
+                                } else {
+                                    throw new DestinyException($result->getReasonPhrase(), $result->getStatusCode());
+                                }
                             }
                         }
                     } else {
