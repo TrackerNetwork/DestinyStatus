@@ -1,3 +1,8 @@
+# v3.0.4 (September 12, 2017)
+ * Added Stats for each character.
+ * Fixed issue with spaces/hyphens in oauth navigation
+ * Added tooltips on currencies
+
 # v3.0.3 (September 9, 2017)
  * Hurricane Irma Release
  * Added Variants/Challenges to weekly index events
