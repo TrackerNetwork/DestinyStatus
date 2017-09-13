@@ -139,6 +139,7 @@ class Destiny
 
     /**
      * @param Group $group
+     *
      * @return LeaderboardHandler
      */
     public function clanLeaderboards(Group $group) : LeaderboardHandler

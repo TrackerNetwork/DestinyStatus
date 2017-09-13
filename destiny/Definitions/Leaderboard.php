@@ -3,7 +3,6 @@
 namespace Destiny\Definitions;
 
 use Destiny\Definitions\Manifest\HistoricalStat;
-use Destiny\LeaderboardCollection;
 use Destiny\LeaderboardEntryCollection;
 
 /**

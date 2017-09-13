@@ -26,7 +26,7 @@ class LeaderboardCollection extends Collection
     {
         $rankings = [];
 
-        foreach($items as $item) {
+        foreach ($items as $item) {
             $rankings[$item['statId']] = new Leaderboard($item);
         }
 

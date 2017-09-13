@@ -1,3 +1,6 @@
+# v3.0.5 (September 12, 2017)
+ * Added Clan PvE/PvP stats.
+
 # v3.0.4 (September 12, 2017)
  * Added Stats for each character.
  * Fixed issue with spaces/hyphens in oauth navigation

@@ -66,6 +66,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
             $tokenResponse = $this->getAccessTokenResponse($bungie->refresh_token);
         } catch (ClientException $ex) {
             \Session::flash('warning', 'Bungie seems to be offline. So we have logged you out.');
+
             return $bungie;
         }
 

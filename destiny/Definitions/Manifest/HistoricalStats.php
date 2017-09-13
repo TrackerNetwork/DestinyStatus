@@ -7,5 +7,4 @@ namespace Destiny\Definitions\Manifest;
  */
 class HistoricalStats extends HistoricalStat
 {
-
 }

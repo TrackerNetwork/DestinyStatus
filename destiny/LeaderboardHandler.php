@@ -7,6 +7,7 @@ use Destiny\Definitions\Leaderboard;
 
 /**
  * Class LeaderboardHandler.
+ *
  * @property Leaderboard $allPvP
  * @property Leaderboard $allPvE
  */

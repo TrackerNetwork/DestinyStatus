@@ -106,16 +106,17 @@ class DestinyPlatform
     }
 
     /**
-     * @param Group $group
-     * @param array $modes
+     * @param Group  $group
+     * @param array  $modes
      * @param string $statId
+     *
      * @return DestinyRequest
      */
     public function getClanLeaderboard(Group $group, array $modes = [ActivityModeType::AllPvP, ActivityModeType::AllPvE], string $statId = '') : DestinyRequest
     {
         $params = ['modes' => implode(',', $modes), 'maxtop' => 10];
 
-        if (! empty($statId)) {
+        if (!empty($statId)) {
             $params = array_add($params, 'statId', $statId);
         }
 
