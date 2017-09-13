@@ -100,9 +100,26 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getClanStats(Group $group, array $modes = [ActivityModeType::AllPvE, ActivityModeType::AllPvp]) : DestinyRequest
+    public function getClanStats(Group $group, array $modes = [ActivityModeType::AllPvE, ActivityModeType::AllPvP, ActivityModeType::Nightfall]) : DestinyRequest
     {
         return $this->destinyRequest('Destiny2/Stats/AggregateClanStats/'.$group->groupId.'/', ['modes' => $modes], CACHE_DEFAULT, false);
+    }
+
+    /**
+     * @param Group $group
+     * @param array $modes
+     * @param string $statId
+     * @return DestinyRequest
+     */
+    public function getClanLeaderboard(Group $group, array $modes = [ActivityModeType::AllPvP, ActivityModeType::AllPvE], string $statId = '') : DestinyRequest
+    {
+        $params = ['modes' => implode(',', $modes), 'maxtop' => 10];
+
+        if (! empty($statId)) {
+            $params = array_add($params, 'statId', $statId);
+        }
+
+        return $this->destinyRequest("Destiny2/Stats/Leaderboards/Clans/$group->groupId/", $params, 60 * 24, true);
     }
 
     /**

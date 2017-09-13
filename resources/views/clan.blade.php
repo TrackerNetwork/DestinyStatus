@@ -20,8 +20,25 @@
                     <small><?= e($group->memberCount).' clan members.' ?></small>
                 </h3>
             </div>
-            <div class="panel">
-                <i>This area is under construction. Soon to hold clan leaderboards, stats towards weekly progress and more.</i>
+            <div role="tabpanel">
+                <ul class="nav nav-pills nav-justified" role="tablist">
+                    <li class="active"><a href="#overview" role="tab" data-toggle="tab" data-group="<?= $group->groupId ?>">Overview</a></li>
+                    <li class=""><a href="#leaderboard-pvp" role="tab" data-toggle="tab" data-group="<?= $group->groupId ?>">PvP</a></li>
+                    <li class=""><a href="#leaderboard-pve" role="tab" data-toggle="tab" data-group="<?= $group->groupId ?>">PvE</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" role="tabpanel" id="overview">
+                    <div class="panel">
+                        This tab is still under construction.
+                    </div>
+                </div>
+                <div class="tab-pane" role="tabpanel" id="leaderboard-pvp">
+                    @include('partials.clan.pvp', ['stats' => $group->leaderboards->allPvP])
+                </div>
+                <div class="tab-pane" role="tabpanel" id="leaderboard-pve">
+                    @include('partials.clan.pve', ['stats' => $group->leaderboards->allPvE])
+                </div>
             </div>
         </div>
     </div>

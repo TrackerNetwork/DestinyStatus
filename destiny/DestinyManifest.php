@@ -148,7 +148,7 @@ class DestinyManifest
      */
     public function historicalStat(string $hash) : HistoricalStat
     {
-        return $this->instance('HistoricalStat', $hash);
+        return $this->instance('HistoricalStats', $hash);
     }
 
     /**

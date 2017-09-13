@@ -37,6 +37,8 @@ namespace Destiny;
  * @property string $banExpireDate
  * @property array $features
  * @property array $clanInfo
+ * @property StatisticsCollection $stats
+ * @property LeaderboardHandler $leaderboards
  */
 class Group extends Model
 {
@@ -48,5 +50,15 @@ class Group extends Model
     public function loadMembers()
     {
         destiny()->clanMembers($this);
+    }
+
+    public function loadStats()
+    {
+        $this->stats = destiny()->clanStats($this);
+    }
+
+    public function loadLeaderboards()
+    {
+        $this->leaderboards = destiny()->clanLeaderboards($this);
     }
 }

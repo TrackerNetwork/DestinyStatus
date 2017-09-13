@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Destiny;
 
 use App\Account;
+use App\Enums\ActivityModeType;
 use Destiny\Milestones\MilestoneHandler;
 
 /**
@@ -122,5 +123,28 @@ class Destiny
 
         // paginated, unsure if active clan or group members
         dd($result);
+    }
+
+    /**
+     * @param Group $group
+     *
+     * @return StatisticsCollection
+     */
+    public function clanStats(Group $group) : StatisticsCollection
+    {
+        $result = $this->client->r($this->platform->getClanStats($group));
+
+        return new StatisticsCollection($result ?? []);
+    }
+
+    /**
+     * @param Group $group
+     * @return LeaderboardHandler
+     */
+    public function clanLeaderboards(Group $group) : LeaderboardHandler
+    {
+        $result = $this->client->r($this->platform->getClanLeaderboard($group, [ActivityModeType::AllPvP, ActivityModeType::AllPvE]));
+
+        return new LeaderboardHandler($result);
     }
 }

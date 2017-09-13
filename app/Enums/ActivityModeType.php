@@ -15,7 +15,7 @@ abstract class ActivityModeType
 
     const Reserved4 = 4;
 
-    const AllPvp = 5;
+    const AllPvP = 5;
 
     const Patrol = 6;
 
