@@ -12,12 +12,16 @@ use Illuminate\Support\Collection;
  */
 class LeaderboardEntryCollection extends Collection
 {
-    public function __construct(array $items)
+    /**
+     * LeaderboardEntryCollection constructor.
+     * @param array|mixed $items
+     */
+    public function __construct($items)
     {
         $rankings = [];
 
         foreach ($items as $item) {
-            $rankings[$item['rank']] = new LeaderboardEntry($item);
+            $rankings[$item['rank']] = is_array($item) ? new LeaderboardEntry($item) : $item;
         }
 
         parent::__construct(array_slice($rankings, 0, 10));

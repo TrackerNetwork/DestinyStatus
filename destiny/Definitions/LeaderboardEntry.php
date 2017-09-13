@@ -11,7 +11,7 @@ namespace Destiny\Definitions;
  * @property mixed $value
  * @property-read string $displayValue
  * @property-read string $formattedValue
- * @property-read string $name
+ * @property string $name
  */
 class LeaderboardEntry extends Definition
 {

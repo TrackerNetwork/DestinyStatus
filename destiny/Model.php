@@ -124,7 +124,7 @@ abstract class Model implements JsonSerializable, Arrayable, ArrayAccess
         $this->properties[$key] = $value;
     }
 
-    protected function setCachedProperty($key, $value)
+    public function setCachedProperty($key, $value)
     {
         return $this->cached[$key] = $value;
     }

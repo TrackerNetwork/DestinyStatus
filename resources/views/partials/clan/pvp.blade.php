@@ -33,17 +33,27 @@
     </div>
     <div class="col-sm-4">
         <div class="stats panel">
-            @include('partials.clan.leaderboard', ['category' => $stats->lbLongestSingleLife])
+            @include('partials.clan.leaderboard', ['category' => $stats->lbDeaths])
+        </div>
+    </div>
+    <div class="col-sm-4">
+        @include('vendor.ad_box')
+    </div>
+</div>
+<div class="stats row">
+    <div class="col-sm-4">
+        <div class="stats panel">
+            @include('partials.clan.leaderboard', ['category' => $stats->getKd()])
         </div>
     </div>
     <div class="col-sm-4">
         <div class="stats panel">
-            @include('partials.clan.leaderboard', ['category' => $stats->lbDeaths])
+            @include('partials.clan.leaderboard', ['category' => $stats->getKad()])
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="stats panel">
+            @include('partials.clan.leaderboard', ['category' => $stats->lbLongestSingleLife])
         </div>
     </div>
 </div>
-<!--
-@foreach($stats as $stat)
-    <stat name="<?= $stat->name; ?>" ?>
-@endforeach
--->
