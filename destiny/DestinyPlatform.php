@@ -139,4 +139,13 @@ class DestinyPlatform
     {
         return $this->destinyRequest('Destiny2/Milestones/', null, CACHE_INDEX, false);
     }
+
+    /**
+     * @param string $milestoneHash
+     * @return DestinyRequest
+     */
+    public function getMilestoneContent(string $milestoneHash) : DestinyRequest
+    {
+        return $this->destinyRequest("Destiny2/Milestones/$milestoneHash/Content/", null, CACHE_INDEX, false);
+    }
 }

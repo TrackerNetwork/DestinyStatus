@@ -115,6 +115,16 @@ class Destiny
     }
 
     /**
+     * @param string $milestoneHash
+     */
+    public function milestoneContent(string $milestoneHash)
+    {
+        $milestone = $this->client->r($this->platform->getMilestoneContent($milestoneHash));
+
+        dd($milestone);
+    }
+
+    /**
      * @param Group $group
      */
     public function clanMembers(Group $group)
