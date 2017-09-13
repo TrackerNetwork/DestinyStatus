@@ -42,3 +42,8 @@
         </div>
     </div>
 </div>
+<!--
+@foreach($stats as $stat)
+    <stat name="<?= $stat->name; ?>" ?>
+@endforeach
+-->

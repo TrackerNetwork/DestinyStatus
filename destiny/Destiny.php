@@ -128,6 +128,18 @@ class Destiny
     /**
      * @param Group $group
      *
+     * @return Definitions\Group
+     */
+    public function clanOverview(Group $group) : \Destiny\Definitions\Group
+    {
+        $result = $this->client->r($this->platform->getClan($group));
+
+        return new \Destiny\Definitions\Group($result);
+    }
+
+    /**
+     * @param Group $group
+     *
      * @return StatisticsCollection
      */
     public function clanStats(Group $group) : StatisticsCollection

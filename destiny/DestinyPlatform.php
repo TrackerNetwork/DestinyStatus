@@ -86,6 +86,15 @@ class DestinyPlatform
 
     /**
      * @param Group $group
+     * @return DestinyRequest
+     */
+    public function getClan(Group $group) : DestinyRequest
+    {
+        return $this->destinyRequest("GroupV2/$group->groupId/", null, CACHE_DEFAULT, true);
+    }
+
+    /**
+     * @param Group $group
      *
      * @return DestinyRequest
      */

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Destiny;
+use Destiny\Profile\Progression\ProgressionCollection;
 
 /**
  * Class Group.
@@ -39,6 +40,8 @@ namespace Destiny;
  * @property array $clanInfo
  * @property StatisticsCollection $stats
  * @property LeaderboardHandler $leaderboards
+ * @property-read ProgressionCollection $progressions
+ * @property-read string $callsign
  */
 class Group extends Model
 {
@@ -60,5 +63,22 @@ class Group extends Model
     public function loadLeaderboards()
     {
         $this->leaderboards = destiny()->clanLeaderboards($this);
+    }
+
+    protected function gProgressions()
+    {
+        $progressions = array_get($this->clanInfo, 'd2ClanProgressions', []);
+
+        return new ProgressionCollection($progressions);
+    }
+
+    protected function gCallsign()
+    {
+        return array_get($this->clanInfo, 'clanCallsign');
+    }
+
+    protected function gCreated()
+    {
+        return carbon($this->creationDate);
     }
 }

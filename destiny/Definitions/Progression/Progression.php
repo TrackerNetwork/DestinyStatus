@@ -22,6 +22,8 @@ use Destiny\Definitions\Definition;
  * @property-read string $icon
  * @property-read string $name
  * @property-read string $description
+ * @property-read string $percentLabel
+ * @property-read float $percentToNextLevel
  */
 class Progression extends Definition
 {
@@ -47,5 +49,15 @@ class Progression extends Definition
     protected function gDescription()
     {
         return $this->definition->display->description;
+    }
+
+    protected function gPercentToNextLevel()
+    {
+        return ($this->progressToNextLevel / $this->nextLevelAt) * 100;
+    }
+
+    protected function gPercentLabel()
+    {
+        return n($this->progressToNextLevel).'/'.n($this->nextLevelAt);
     }
 }

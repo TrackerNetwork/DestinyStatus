@@ -16,8 +16,14 @@
                 <img class="background" src="<?= bungie($group->bannerPath) ?>" />
                 <img class="icon" src="<?= bungie($group->avatarPath) ?>" alt="" align="left" />
                 <h3>
-                    <?= e($group->name) ?>
-                    <small><?= e($group->memberCount).' clan members.' ?></small>
+                    <div class="pull-left">
+                        <?= e($group->name) ?>
+                        <small><?= e($group->memberCount).' clan members.' ?></small>
+                    </div>
+                    <span class="pull-right">
+                        <?= e($group->callsign); ?>
+                        <small>Created on <?= e($group->created->toFormattedDateString()); ?></small>
+                    </span>
                 </h3>
             </div>
             <div role="tabpanel">
@@ -28,10 +34,8 @@
                 </ul>
             </div>
             <div class="tab-content">
-                <div class="tab-pane active" role="tabpanel" id="overview">
-                    <div class="panel">
-                        This tab is still under construction.
-                    </div>
+                <div class="tab-pane active character" role="tabpanel" id="overview">
+                    @include('partials.clan.overview', ['clan' => $group])
                 </div>
                 <div class="tab-pane" role="tabpanel" id="leaderboard-pvp">
                     @include('partials.clan.pvp', ['stats' => $group->leaderboards->allPvP])
