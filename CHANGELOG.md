@@ -1,3 +1,7 @@
+# v3.0.6 (September 14, 2017)
+ * Added Clan overview page.
+ * Added ability for stats endpoint to go down and still live on.
+
 # v3.0.5 (September 12, 2017)
  * Added Clan PvE/PvP stats.
 
