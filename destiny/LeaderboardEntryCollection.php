@@ -14,6 +14,7 @@ class LeaderboardEntryCollection extends Collection
 {
     /**
      * LeaderboardEntryCollection constructor.
+     *
      * @param array|mixed $items
      */
     public function __construct($items)

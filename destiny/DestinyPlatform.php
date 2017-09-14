@@ -70,7 +70,7 @@ class DestinyPlatform
      */
     public function getDestinyStats(Account $account, $modes = [StatGroupType::General, StatGroupType::Activity, StatGroupType::Weapons]) : DestinyRequest
     {
-        return $this->destinyRequest("Destiny2/$account->membership_type/Account/$account->membership_id/Stats/", ['groups' => $modes], CACHE_DEFAULT, true);
+        return $this->destinyRequest("Destiny2/$account->membership_type/Account/$account->membership_id/Stats/", ['groups' => implode(',', $modes)], CACHE_DEFAULT, true);
     }
 
     /**
@@ -86,6 +86,7 @@ class DestinyPlatform
 
     /**
      * @param Group $group
+     *
      * @return DestinyRequest
      */
     public function getClan(Group $group) : DestinyRequest
@@ -142,6 +143,7 @@ class DestinyPlatform
 
     /**
      * @param string $milestoneHash
+     *
      * @return DestinyRequest
      */
     public function getMilestoneContent(string $milestoneHash) : DestinyRequest

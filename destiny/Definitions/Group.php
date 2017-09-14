@@ -2,10 +2,9 @@
 
 namespace Destiny\Definitions;
 
-use Destiny\Definitions\Common\DisplayProperties;
-
 /**
  * Class Group.
+ *
  * @property array $detail
  * @property array $founder
  * @property array $alliedIds

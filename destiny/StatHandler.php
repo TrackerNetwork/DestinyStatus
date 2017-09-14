@@ -34,6 +34,9 @@ class StatHandler extends StatDefinition
         }
 
         $stats = [];
+        if (empty($this->characters)) {
+            return new StatisticsCollection([]);
+        }
         foreach ($this->characters as $character) {
             $stats[$character['characterId']] = array_get($character, $mode);
         }

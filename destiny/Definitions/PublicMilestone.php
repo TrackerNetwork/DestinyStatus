@@ -72,7 +72,7 @@ class PublicMilestone extends Definition
 
         if (!empty($activity)) {
             $image = $activity->definition->pgcrImage;
-            if (!str_contains($image,'destiny_content')) {
+            if (!str_contains($image, 'destiny_content')) {
                 $image = '/img/destiny_content/pgcr/'.$image;
             }
         }

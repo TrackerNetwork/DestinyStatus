@@ -85,7 +85,7 @@ class LeaderboardCollection extends Collection
             $tmp_kd[] = $entry;
         }
 
-        $tmp_kd = collect($tmp_kd)->sortByDesc(function(LeaderboardEntry $item) {
+        $tmp_kd = collect($tmp_kd)->sortByDesc(function (LeaderboardEntry $item) {
             return $item->value;
         });
 
@@ -128,7 +128,7 @@ class LeaderboardCollection extends Collection
             $tmp_kad[] = $entry;
         }
 
-        $tmp_kad = collect($tmp_kad)->sortByDesc(function(LeaderboardEntry $item) {
+        $tmp_kad = collect($tmp_kad)->sortByDesc(function (LeaderboardEntry $item) {
             return $item->value;
         });
 

@@ -9,6 +9,11 @@ $pvp = $character->statsPvP;
 $pve = $character->statsPvE;
 $all = $character->statsAll;
 ?>
+<?php if ($pvp->isEmpty() && $pve->isEmpty() && $all->isEmpty()): ?>
+    <div class="panel">
+        Stats seem to be having some problems.
+    </div>
+<?php else: ?>
 <div class="time panel"
      <?php if($character->minutesPlayedThisSession): ?>
      title="Played <?= e($character->lastPlayed->diffForHumans()) ?> for <?= strip_tags(duration_human($character->minutesPlayedThisSession)) ?>" data-toggle="tooltip"
@@ -38,3 +43,4 @@ $all = $character->statsAll;
 <div class="stats panel">
     @include('partials.profile.stats.power', ['pve' => $pve, 'pvp' => $pvp, 'key' => 'stats-power-'.$character->characterId])
 </div>
+<?php endif; ?>
