@@ -1,6 +1,7 @@
 <?php
 
 namespace Destiny\Definitions;
+
 use App\Helpers\ConsoleHelper;
 
 /**
