@@ -1,6 +1,7 @@
 <?php
 
 namespace Destiny\Definitions;
+use App\Helpers\ConsoleHelper;
 
 /**
  * Class LeaderboardEntry.
@@ -12,6 +13,7 @@ namespace Destiny\Definitions;
  * @property-read string $displayValue
  * @property-read string $formattedValue
  * @property string $name
+ * @property string $url
  */
 class LeaderboardEntry extends Definition
 {
@@ -33,5 +35,13 @@ class LeaderboardEntry extends Definition
     protected function gName()
     {
         return array_get($this->properties, 'player.destinyUserInfo.displayName');
+    }
+
+    protected function gUrl()
+    {
+        $platform = ConsoleHelper::getConsoleStringFromId(array_get($this->properties, 'player.destinyUserInfo.membershipType'));
+        $name = bungie_slug($this->name);
+
+        return route('account', [$platform, $name]);
     }
 }

@@ -15,7 +15,7 @@ $key = 'clan-'.$category->statId;
         <?php $i = 1; foreach ($category->rankings as $place): ?>
             <tr>
                 <td class="header"><?= $i++ ?></td>
-                <td><?= $place->name; ?></td>
+                <td><a href="<?= $place->url; ?>"><?= $place->name; ?></a></td>
                 <td><?= $place->displayValue; ?></td>
             </tr>
         <?php endforeach; ?>
