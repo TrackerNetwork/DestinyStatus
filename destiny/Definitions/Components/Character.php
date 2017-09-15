@@ -197,6 +197,10 @@ class Character extends Definition
         $originalMilestones = $this->getNonMutatedProperty('milestones');
         $milestones = [];
 
+        if (empty($originalMilestones)) {
+            return [];
+        }
+
         foreach ($originalMilestones as $milestone) {
             if (in_array($milestone->milestoneHash, $hashes)) {
                 $milestones[] = $milestone;
