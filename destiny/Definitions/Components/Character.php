@@ -67,13 +67,23 @@ class Character extends Definition
 
     const MAX_LIGHT = 350;
 
+    // activities
     const MILESTONE_NIGHTFALL = '2171429505';
     const MILESTONE_STRIKES = '1142551194';
+
+    // clan
     const MILESTONE_WEEKLYCLAN = '4253138191';
     const MILESTONE_XPCLAN = '3603098564';
+
+    // pvp
     const MILESTONE_PVP = '342166397';
     const MILESTONE_CALLTOARMS = '202035466';
+
+    // pve
     const MILESTONE_MEDITATE = '3245985898';
+
+    // raids
+    const MILESTONE_LEVITHIAN_27 = '3660836525';
 
     protected function gProgression()
     {
@@ -156,19 +166,42 @@ class Character extends Definition
         return sprintf('%d / %d', $this->light, self::MAX_LIGHT);
     }
 
-    protected function gMilestones()
+    protected function gMilestoneActivities()
+    {
+        return $this->getMilestones([self::MILESTONE_NIGHTFALL, self::MILESTONE_STRIKES]);
+    }
+
+    protected function gMilestoneClan()
+    {
+        return $this->getMilestones([self::MILESTONE_XPCLAN, self::MILESTONE_WEEKLYCLAN]);
+    }
+
+    protected function gMilestonePve()
+    {
+        return $this->getMilestones([self::MILESTONE_MEDITATE]);
+    }
+
+    protected function gMilestonePvp()
+    {
+        return $this->getMilestones([self::MILESTONE_PVP, self::MILESTONE_CALLTOARMS]);
+    }
+
+    protected function gMilestoneRaids()
+    {
+        return $this->getMilestones([self::MILESTONE_LEVITHIAN_27]);
+    }
+
+    private function getMilestones(array $hashes) : array
     {
         /** @var Collection $originalMilestones */
         $originalMilestones = $this->getNonMutatedProperty('milestones');
         $milestones = [];
 
-        $milestones[] = $originalMilestones->get(self::MILESTONE_NIGHTFALL);
-        $milestones[] = $originalMilestones->get(self::MILESTONE_STRIKES);
-        $milestones[] = $originalMilestones->get(self::MILESTONE_PVP);
-        $milestones[] = $originalMilestones->get(self::MILESTONE_WEEKLYCLAN);
-        $milestones[] = $originalMilestones->get(self::MILESTONE_XPCLAN);
-        $milestones[] = $originalMilestones->get(self::MILESTONE_CALLTOARMS);
-        $milestones[] = $originalMilestones->get(self::MILESTONE_MEDITATE);
+        foreach ($originalMilestones as $milestone) {
+            if (in_array($milestone->milestoneHash, $hashes)) {
+                $milestones[] = $milestone;
+            }
+        }
 
         return $milestones;
     }
