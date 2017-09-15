@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Destiny\Milestones;
 
-use App\Enums\MilestoneType;
 use Destiny\Definitions\PublicMilestone;
 use Destiny\Model;
 
