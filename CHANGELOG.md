@@ -1,3 +1,7 @@
+# v3.0.7 (September 14, 2017)
+ * Cleaned up checklist (added raid)
+ * Removed "Arms" from index in favor of raid
+
 # v3.0.6 (September 14, 2017)
  * Added Clan overview page.
  * Added ability for stats endpoint to go down and still live on.
@@ -54,7 +58,7 @@
 # v2.5.1 (April 20, 2017)
  * Sum 390LL Raids with Featured & NonFeatured.
  * Force creation of 390LL WoTM Raid, because API does not return it.
- * Fix gamertag search for same name with spaces intermixed.
+ *** Fix gamertag search for same name with spaces intermixed.**
  * Ghost Fragment Fallen 6 is PSN only.
  * Don't read localStorage for invalid data.
 
