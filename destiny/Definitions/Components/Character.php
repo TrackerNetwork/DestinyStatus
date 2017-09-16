@@ -78,7 +78,7 @@ class Character extends Definition
     // pvp
     const MILESTONE_PVP = '342166397';
     const MILESTONE_CALLTOARMS = '202035466';
-    const MILESTONE_TRIALS = '2311040624';
+    const MILESTONE_TRIALS = '3551755444';
 
     // pve
     const MILESTONE_MEDITATE = '3245985898';
