@@ -53,11 +53,22 @@ class Progression extends Definition
 
     protected function gPercentToNextLevel()
     {
+        if ($this->isMax()) {
+            return 100;
+        }
         return ($this->progressToNextLevel / $this->nextLevelAt) * 100;
     }
 
     protected function gPercentLabel()
     {
+        if ($this->isMax()) {
+            return 'MAX';
+        }
         return n($this->progressToNextLevel).'/'.n($this->nextLevelAt);
+    }
+
+    private function isMax()
+    {
+        return $this->level === $this->levelCap;
     }
 }
