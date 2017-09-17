@@ -56,6 +56,7 @@ class Progression extends Definition
         if ($this->isMax()) {
             return 100;
         }
+
         return ($this->progressToNextLevel / $this->nextLevelAt) * 100;
     }
 
@@ -64,6 +65,7 @@ class Progression extends Definition
         if ($this->isMax()) {
             return 'MAX';
         }
+
         return n($this->progressToNextLevel).'/'.n($this->nextLevelAt);
     }
 
