@@ -1,3 +1,7 @@
+# v3.0.8 (September 18, 2017)
+ * Bug fixes with clans failing to load
+ * Added support for weekly checklist (this & last week)
+
 # v3.0.7 (September 14, 2017)
  * Cleaned up checklist (added raid)
  * Removed "Arms" from index in favor of raid
