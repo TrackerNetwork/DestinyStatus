@@ -106,7 +106,6 @@ class DestinyClient extends Client
         }
 
         if (count($batch)) {
-
             foreach (\GuzzleHttp\Promise\settle($batch)->wait() as $key => $result) {
                 $request = $requests[$key];
                 $state = $result['state'];

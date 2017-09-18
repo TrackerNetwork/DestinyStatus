@@ -8,7 +8,6 @@ use App\Account;
 use App\Enums\ActivityModeType;
 use Destiny\Definitions\Components\Character;
 use Destiny\Definitions\PublicMilestone;
-use Destiny\Milestones\MilestoneCollection;
 use Destiny\Milestones\MilestoneHandler;
 
 /**
@@ -109,6 +108,7 @@ class Destiny
 
     /**
      * @param Profile $profile
+     *
      * @internal param Player $player
      */
     public function characterStats(Profile $profile)
@@ -194,6 +194,7 @@ class Destiny
 
     /**
      * @param Group $group
+     *
      * @return PublicMilestone
      */
     public function clanRewards(Group $group) : PublicMilestone

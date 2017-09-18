@@ -136,6 +136,7 @@ class DestinyPlatform
 
     /**
      * @param Group $group
+     *
      * @return DestinyRequest
      */
     public function getClanWeeklyRewards(Group $group)
@@ -162,8 +163,9 @@ class DestinyPlatform
     }
 
     /**
-     * @param Profile $profile
+     * @param Profile   $profile
      * @param Character $character
+     *
      * @return DestinyRequest
      */
     public function getCharacterStats(Profile $profile, Character $character) : DestinyRequest

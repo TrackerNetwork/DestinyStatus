@@ -8,6 +8,7 @@ use Destiny\Milestones\RewardEntryCollection;
 
 /**
  * Class RewardCategory.
+ *
  * @property string $rewardCategoryHash
  * @property array $entries
  * @property Milestone $milestone

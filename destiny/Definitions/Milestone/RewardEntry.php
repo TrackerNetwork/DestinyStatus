@@ -3,11 +3,11 @@
 namespace Destiny\Definitions\Milestone;
 
 use Destiny\Definitions\Definition;
-use Destiny\Definitions\Manifest\ActivityMode;
 use Destiny\Definitions\Manifest\ActivityType;
 
 /**
  * Class RewardEntry.
+ *
  * @property string $rewardEntryHash
  * @property bool $earned
  * @property bool $redeemed
@@ -16,12 +16,11 @@ use Destiny\Definitions\Manifest\ActivityType;
 class RewardEntry extends Definition
 {
     protected $appends = [
-        'definition'
+        'definition',
     ];
-
 
     protected function gDefinition()
     {
-        return manifest()->activityType((string)$this->rewardEntryHash);
+        return manifest()->activityType((string) $this->rewardEntryHash);
     }
 }

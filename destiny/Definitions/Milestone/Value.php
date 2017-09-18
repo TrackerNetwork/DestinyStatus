@@ -15,7 +15,7 @@ use Destiny\Definitions\Definition;
 class Value extends Definition
 {
     protected $appends = [
-        'display'
+        'display',
     ];
 
     protected function gDisplay()
