@@ -25,7 +25,7 @@ class RewardCategory extends Definition
 {
     public function __construct(Milestone $definition = null, array $properties)
     {
-        foreach($properties['entries'] as $entry) {
+        foreach ($properties['entries'] as $entry) {
             $definitionEntry = $definition->getRewardEntry($properties['rewardCategoryHash'], $entry['rewardEntryHash']);
 
             if (count($definitionEntry) > 0) {

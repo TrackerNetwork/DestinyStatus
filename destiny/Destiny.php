@@ -206,6 +206,7 @@ class Destiny
 
     /**
      * @param Group $group
+     *
      * @return array
      */
     public function clanAll(Group $group) : array
@@ -215,7 +216,7 @@ class Destiny
 
         return $this->client->r([
             'leaderboards' => $leaderboard,
-            'reward' => $rewards,
+            'reward'       => $rewards,
         ]);
     }
 }
