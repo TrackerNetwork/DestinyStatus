@@ -33,6 +33,17 @@ class Milestone extends Definition
         'display',
     ];
 
+    public function getRewardEntry(string $category, string $entry)
+    {
+        return array_get($this->properties, 'rewards.'.$category.'.rewardEntries.'.$entry, []);
+    }
+
+    public function addRewardEntry(string $category, string $entry, array $data)
+    {
+        $this->properties['rewards'][$category]['rewardEntries'][$entry]['earned'] = $data['earned'] ?? false;
+        $this->properties['rewards'][$category]['rewardEntries'][$entry]['redeemed'] = $data['redeemed'] ?? false;
+    }
+
     protected function gDisplay()
     {
         return new DisplayProperties($this->displayProperties);

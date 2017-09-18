@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Destiny\Milestones;
 
+use Destiny\Definitions\Manifest\Milestone;
 use Destiny\Definitions\Milestone\RewardCategory;
 use Illuminate\Support\Collection;
 
@@ -17,11 +18,11 @@ class RewardCategoryCollection extends Collection
      *
      * @param array $items
      */
-    public function __construct(array $items)
+    public function __construct(Milestone $milestone, array $items)
     {
         $rewards = [];
         foreach ($items as $item) {
-            $rewards[$item['rewardCategoryHash']] = new RewardCategory($item);
+            $rewards[$item['rewardCategoryHash']] = new RewardCategory($milestone, $item);
         }
 
         parent::__construct($rewards);

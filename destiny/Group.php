@@ -53,6 +53,14 @@ class Group extends Model
         parent::__construct($properties);
     }
 
+    public function loadAll()
+    {
+        $results = destiny()->clanAll($this);
+
+        $this->leaderboards = new LeaderboardHandler($results['leaderboards'] ?? []);
+        $this->reward = new PublicMilestone($results['reward'] ?? []);
+    }
+
     public function loadMembers()
     {
         destiny()->clanMembers($this);

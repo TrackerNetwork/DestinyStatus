@@ -338,7 +338,7 @@ class DestinyManifest
      */
     public function vendor(string $hash) : Vendor
     {
-        return $this->instance('Vendors', $hash);
+        return $this->instance('Vendor', $hash);
     }
 
     /**

@@ -7,6 +7,7 @@ use Destiny\Activity\ActivityCollection;
 use Destiny\Activity\ChallengeCollection;
 use Destiny\Activity\ModifierCollection;
 use Destiny\Definitions\Manifest\Milestone;
+use Destiny\Definitions\Milestone\RewardCategory;
 use Destiny\Milestones\MilestoneActivity;
 use Destiny\Milestones\MilestonePublicQuest;
 use Destiny\Milestones\PublicQuestCollection;
@@ -36,6 +37,8 @@ use Destiny\Milestones\RewardEntryCollection;
  * @property-read ActivityCollection $activities
  * @property-read ChallengeCollection $challenges
  * @property-read RewardEntryCollection $rewards
+ * @property-read RewardCategory $lastWeekRewards
+ * @property-read RewardCategory $thisWeekRewards
  */
 class PublicMilestone extends Definition
 {
@@ -135,7 +138,17 @@ class PublicMilestone extends Definition
 
     protected function gRewards()
     {
-        return new RewardCategoryCollection($this->getNonMutatedProperty('rewards'));
+        return new RewardCategoryCollection($this->definition, $this->getNonMutatedProperty('rewards'));
+    }
+
+    protected function gLastWeekRewards()
+    {
+        return $this->rewards->last();
+    }
+
+    protected function gThisWeekRewards()
+    {
+        return $this->rewards->first();
     }
 
     protected function gVariants()

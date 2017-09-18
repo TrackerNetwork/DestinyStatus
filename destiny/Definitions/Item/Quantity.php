@@ -16,4 +16,9 @@ class Quantity extends Definition
     protected $appends = [
         'item',
     ];
+
+    protected function gItem()
+    {
+        return manifest()->inventoryItem($this->itemHash);
+    }
 }

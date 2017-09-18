@@ -203,4 +203,19 @@ class Destiny
 
         return new PublicMilestone($result);
     }
+
+    /**
+     * @param Group $group
+     * @return array
+     */
+    public function clanAll(Group $group) : array
+    {
+        $leaderboard = $this->platform->getClanLeaderboard($group, [ActivityModeType::AllPvP, ActivityModeType::AllPvE]);
+        $rewards = $this->platform->getClanWeeklyRewards($group);
+
+        return $this->client->r([
+            'leaderboards' => $leaderboard,
+            'reward' => $rewards,
+        ]);
+    }
 }

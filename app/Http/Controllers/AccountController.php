@@ -36,7 +36,8 @@ class AccountController extends Controller
     {
         $player = $this->findPlayer($platform, $name);
         $group = destiny()->groups($player);
-        $group->loadLeaderboards();
+
+        $group->loadAll();
 
         return view('clan', [
             'player' => $player,

@@ -8,7 +8,7 @@ use Destiny\Definitions\Definition;
 /**
  * Class Vendor.
  *
- * @property DisplayProperties $displayProperties
+ * @property array $displayProperties
  * @property string $buyString
  * @property string $sellString
  * @property string $displayItemHash (InventoryItem)
@@ -30,14 +30,15 @@ use Destiny\Definitions\Definition;
  * @property array $categories (Vendor/CategoryEntry)
  * @property array $originalCategories (Vendor/CategoryEntry)
  * @property array $displayCategories (Common/DisplayCategory)
- * @property array $interactions (@todo - https://bungie-net.github.io/multi/schema_Destiny-Definitions-DestinyVendorInteractionDefinition.html#schema_Destiny-Definitions-DestinyVendorInteractionDefinition)
- * @property array $inventoryFlyouts (@todo - https://bungie-net.github.io/multi/schema_Destiny-Definitions-DestinyVendorInventoryFlyoutDefinition.html#schema_Destiny-Definitions-DestinyVendorInventoryFlyoutDefinition)
- * @property array $itemList (@todo - https://bungie-net.github.io/multi/schema_Destiny-Definitions-DestinyVendorItemDefinition.html#schema_Destiny-Definitions-DestinyVendorItemDefinition)
- * @property array $services (@todo - https://bungie-net.github.io/multi/schema_Destiny-Definitions-DestinyVendorServiceDefinition.html#schema_Destiny-Definitions-DestinyVendorServiceDefinition)
- * @property array $acceptedItems (@todo - https://bungie-net.github.io/multi/schema_Destiny-Definitions-DestinyVendorAcceptedItemDefinition.html#schema_Destiny-Definitions-DestinyVendorAcceptedItemDefinition)
+ * @property array $interactions
+ * @property array $inventoryFlyouts
+ * @property array $itemList
+ * @property array $services
+ * @property array $acceptedItems
  * @property string $hash
  * @property int $index
  * @property bool $redacted
+ * @property DisplayProperties $display
  */
 class Vendor extends Definition
 {
@@ -46,6 +47,16 @@ class Vendor extends Definition
     const STAT_ITEM = 2;
 
     protected $appends = [
-        'displayProperties',
+        'display',
     ];
+
+    protected function gDisplay()
+    {
+        return new DisplayProperties($this->displayProperties);
+    }
+
+    protected function gName()
+    {
+        return $this->display->name;
+    }
 }
