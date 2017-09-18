@@ -6,6 +6,9 @@ namespace Destiny;
 
 use App\Account;
 use App\Enums\ActivityModeType;
+use Destiny\Definitions\Components\Character;
+use Destiny\Definitions\PublicMilestone;
+use Destiny\Milestones\MilestoneCollection;
 use Destiny\Milestones\MilestoneHandler;
 
 /**
@@ -105,6 +108,24 @@ class Destiny
     }
 
     /**
+     * @param Profile $profile
+     * @internal param Player $player
+     */
+    public function characterStats(Profile $profile)
+    {
+        $requests = [];
+
+        /** @var Character $character */
+        foreach ($profile->characters as $character) {
+            $requests[$character->characterId.'.stats'] = $this->platform->getCharacterStats($profile, $character);
+        }
+
+        $results = $this->client->r($requests);
+
+        dd($results);
+    }
+
+    /**
      * @return MilestoneHandler
      */
     public function publicMilestones() : MilestoneHandler
@@ -168,6 +189,17 @@ class Destiny
     {
         $result = $this->client->r($this->platform->getClanLeaderboard($group, [ActivityModeType::AllPvP, ActivityModeType::AllPvE]));
 
-        return new LeaderboardHandler($result);
+        return new LeaderboardHandler($result ?? []);
+    }
+
+    /**
+     * @param Group $group
+     * @return PublicMilestone
+     */
+    public function clanRewards(Group $group) : PublicMilestone
+    {
+        $result = $this->client->r($this->platform->getClanWeeklyRewards($group));
+
+        return new PublicMilestone($result);
     }
 }

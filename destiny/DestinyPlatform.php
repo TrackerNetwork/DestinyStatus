@@ -5,6 +5,7 @@ namespace Destiny;
 use App\Account;
 use App\Enums\ActivityModeType;
 use App\Enums\StatGroupType;
+use Destiny\Definitions\Components\Character;
 
 /**
  * Class DestinyPlatform.
@@ -134,6 +135,15 @@ class DestinyPlatform
     }
 
     /**
+     * @param Group $group
+     * @return DestinyRequest
+     */
+    public function getClanWeeklyRewards(Group $group)
+    {
+        return $this->destinyRequest("Destiny2/Clan/$group->groupId/WeeklyRewardState/", null, 60, true);
+    }
+
+    /**
      * @return DestinyRequest
      */
     public function getMilestones() : DestinyRequest
@@ -149,5 +159,18 @@ class DestinyPlatform
     public function getMilestoneContent(string $milestoneHash) : DestinyRequest
     {
         return $this->destinyRequest("Destiny2/Milestones/$milestoneHash/Content/", null, CACHE_INDEX, false);
+    }
+
+    /**
+     * @param Profile $profile
+     * @param Character $character
+     * @return DestinyRequest
+     */
+    public function getCharacterStats(Profile $profile, Character $character) : DestinyRequest
+    {
+        $membershipType = $profile->account->membership_type;
+        $membershipId = $profile->account->membership_id;
+
+        return $this->destinyRequest("Destiny2/$membershipType/Account/$membershipId/Character/$character->characterId/Stats/AggregateActivityStats/", null, CACHE_DEFAULT, true);
     }
 }

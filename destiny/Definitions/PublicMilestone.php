@@ -10,13 +10,17 @@ use Destiny\Definitions\Manifest\Milestone;
 use Destiny\Milestones\MilestoneActivity;
 use Destiny\Milestones\MilestonePublicQuest;
 use Destiny\Milestones\PublicQuestCollection;
+use Destiny\Milestones\RewardCategoryCollection;
+use Destiny\Milestones\RewardEntryCollection;
 
 /**
  * Class PublicMilestone.
  *
  * @property string $milestoneHash
  * @property array $availableQuests
+ * @property array $values
  * @property array $vendorHashes
+ * @property array $rewards
  * @property string $startDate
  * @property string $endDate
  * @property-read Milestone $definition
@@ -31,6 +35,7 @@ use Destiny\Milestones\PublicQuestCollection;
  * @property-read ModifierCollection $skulls
  * @property-read ActivityCollection $activities
  * @property-read ChallengeCollection $challenges
+ * @property-read RewardEntryCollection $rewards
  */
 class PublicMilestone extends Definition
 {
@@ -126,6 +131,11 @@ class PublicMilestone extends Definition
         }
 
         return $activity->modifiers;
+    }
+
+    protected function gRewards()
+    {
+        return new RewardCategoryCollection($this->getNonMutatedProperty('rewards'));
     }
 
     protected function gVariants()

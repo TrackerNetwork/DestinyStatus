@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Destiny;
 
+use Destiny\Definitions\PublicMilestone;
 use Destiny\Profile\Progression\ProgressionCollection;
 
 /**
@@ -43,6 +44,7 @@ use Destiny\Profile\Progression\ProgressionCollection;
  * @property LeaderboardHandler $leaderboards
  * @property-read ProgressionCollection $progressions
  * @property-read string $callsign
+ * @property-read PublicMilestone $reward
  */
 class Group extends Model
 {
@@ -59,6 +61,11 @@ class Group extends Model
     public function loadStats()
     {
         $this->stats = destiny()->clanStats($this);
+    }
+
+    public function loadRewards()
+    {
+        $this->reward = destiny()->clanRewards($this);
     }
 
     public function loadLeaderboards()

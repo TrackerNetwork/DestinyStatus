@@ -9,11 +9,17 @@ use Destiny\Definitions\Definition;
  * Class Value.
  *
  * @property string $key
- * @property DisplayProperties $displayProperties
+ * @property array $displayProperties
+ * @property DisplayProperties $display
  */
 class Value extends Definition
 {
     protected $appends = [
-        'displayProperties',
+        'display'
     ];
+
+    protected function gDisplay()
+    {
+        return new DisplayProperties($this->displayProperties);
+    }
 }

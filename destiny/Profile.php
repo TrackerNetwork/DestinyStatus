@@ -136,6 +136,7 @@ class Profile extends Model
     public function loadCharacters()
     {
         $stats = destiny()->stats($this->account);
+        //$aggregate = destiny()->characterStats($this);
 
         foreach ($this->characters as $character) {
             $charId = $character->characterId;

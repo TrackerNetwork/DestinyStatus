@@ -18,7 +18,7 @@ class LeaderboardHandler extends StatDefinition
      *
      * @param array|null $properties
      */
-    public function __construct(array $properties = null)
+    public function __construct(array $properties = [])
     {
         $leaderboards = [];
 

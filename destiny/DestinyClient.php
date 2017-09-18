@@ -96,7 +96,9 @@ class DestinyClient extends Client
             }
 
             if ($request->cache && Cache::store('file')->has($request->key)) {
+                Debugbar::startMeasure('cache: '.$request->uri);
                 $responses[$key] = Cache::store('file')->get($request->key);
+                Debugbar::stopMeasure('cache: '.$request->uri);
             } else {
                 $request = $this->applyProxyIfNeeded($request);
                 $batch[$key] = $this->applyMiddleware($request);
@@ -104,10 +106,8 @@ class DestinyClient extends Client
         }
 
         if (count($batch)) {
-            $keys = array_keys($batch);
 
-            foreach (\GuzzleHttp\Promise\settle($batch)->wait() as $i => $result) {
-                $key = $keys[$i];
+            foreach (\GuzzleHttp\Promise\settle($batch)->wait() as $key => $result) {
                 $request = $requests[$key];
                 $state = $result['state'];
 

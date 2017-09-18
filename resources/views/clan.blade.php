@@ -38,10 +38,24 @@
                     @include('partials.clan.overview', ['clan' => $group])
                 </div>
                 <div class="tab-pane" role="tabpanel" id="leaderboard-pvp">
-                    @include('partials.clan.pvp', ['stats' => $group->leaderboards->allPvP])
+                    <?php if (empty($group->leaderboards->allPvP)): ?>
+                        <br />
+                        <div class="alert alert-warning">
+                            Leaderboards empty and/or could not be loaded.
+                        </div>
+                    <?php else: ?>
+                        @include('partials.clan.pvp', ['stats' => $group->leaderboards->allPvP])
+                    <?php endif; ?>
                 </div>
                 <div class="tab-pane" role="tabpanel" id="leaderboard-pve">
-                    @include('partials.clan.pve', ['stats' => $group->leaderboards->allPvE])
+                    <?php if (empty($group->leaderboards->allPvE)): ?>
+                        <br />
+                        <div class="alert alert-warning">
+                            Leaderboards empty and/or could not be loaded.
+                        </div>
+                    <?php else: ?>
+                        @include('partials.clan.pve', ['stats' => $group->leaderboards->allPvE])
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

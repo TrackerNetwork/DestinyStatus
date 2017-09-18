@@ -318,7 +318,7 @@ class DestinyManifest
      */
     public function rewardSource(string $hash) : RewardSource
     {
-        return $this->instance('RewardSources', $hash);
+        return $this->instance('RewardSource', $hash);
     }
 
     /**
