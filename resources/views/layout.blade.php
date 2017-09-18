@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="{{ url('favicon.ico', !\App::isLocal()) }}"/>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500">
     <link rel="stylesheet" type="text/css" href="<?= mix('css/destiny.css'); ?>">
+    @include('vendor.ad_head_js')
 </head>
 <body>
 <div id="app">
