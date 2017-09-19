@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $text_color
  * @property string $background_color
  * @property string $border_color
+ * @property string $icon
  * @mixin \Eloquent
  */
 class Badge extends Model
@@ -30,7 +31,7 @@ class Badge extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'slug', 'description', 'text_color', 'background_color', 'border_color'];
+    protected $fillable = ['name', 'slug', 'description', 'text_color', 'background_color', 'border_color', 'icon'];
 
     /**
      * @var bool
@@ -63,6 +64,6 @@ class Badge extends Model
 
         return '<span class="badge" style="color: #'.$this->text_color.'; background-color: #'
             .$this->background_color.'; border: 1px solid #'.$this->border_color.';" data-toggle="popover" 
-            data-title="'.$this->name.'" data-content="'.$this->description.'">'.$this->name.'</span>';
+            data-title="'.$this->name.'" data-content="'.$this->description.'"><i class="fa fa-'.$this->icon.'" aria-hidden="true"></i></span>';
     }
 }
