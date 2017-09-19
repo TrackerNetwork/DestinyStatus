@@ -26,6 +26,10 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         \Gate::define('hide-ads', function (Bungie $user) {
+            if ($user === null) {
+                return false;
+            }
+
             return $user->isDonator();
         });
     }
