@@ -106,6 +106,10 @@ class Bungie extends Model implements Authenticatable, UserProvider
 
     public function isDonator()
     {
+        if (empty($this->account)) {
+            return false;
+        }
+
         $badges = $this->account->badges;
 
         foreach ($badges as $badge) {
