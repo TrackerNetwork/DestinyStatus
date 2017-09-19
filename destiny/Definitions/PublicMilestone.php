@@ -39,6 +39,7 @@ use Destiny\Milestones\RewardEntryCollection;
  * @property-read RewardEntryCollection $rewards
  * @property-read RewardCategory $lastWeekRewards
  * @property-read RewardCategory $thisWeekRewards
+ * @property-read bool $hasIcon
  */
 class PublicMilestone extends Definition
 {
@@ -69,6 +70,11 @@ class PublicMilestone extends Definition
     protected function gIcon()
     {
         return $this->definition->display->icon;
+    }
+
+    protected function gHasIcon()
+    {
+        return $this->definition->display->hasIcon;
     }
 
     protected function gImage()

@@ -7,7 +7,9 @@
         @if ($milestone->image !== null)
             <div class="display"><img src="<?= bungie($milestone->image) ?>"></div>
         @endif
-        <div class="icon"><img src="<?= bungie($milestone->icon) ?>"></div>
+        @if ($milestone->hasIcon)
+            <div class="icon"><img src="<?= bungie($milestone->icon) ?>"></div>
+        @endif
         <?php if(count($milestone->skulls) > 0): ?>
             <div class="skulls">
                 <?php foreach($milestone->skulls as $skull): ?>
