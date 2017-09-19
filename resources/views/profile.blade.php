@@ -35,6 +35,6 @@
         @include('partials.d1_stats', ['account' => $account, 'player' => $player])
     @endif
     <?php if ($i != 2): ?>
-    @include('vendor.ad_box')
+        @include('vendor.ad_box')
     <?php endif; ?>
 @stop
