@@ -113,7 +113,7 @@ class Bungie extends Model implements Authenticatable, UserProvider
                 return true;
             }
         }
-        
+
         return false;
     }
 
