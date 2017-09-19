@@ -1,3 +1,9 @@
+# v3.0.9 (September 19, 2017)
+ * Hide icons if not found.
+ * Bug fixes with clans and progressions.
+ * Donator support (hides ads).
+ * Badges are now icons instead of text.
+
 # v3.0.8 (September 18, 2017)
  * Bug fixes with clans failing to load
  * Added support for weekly checklist (this & last week)
