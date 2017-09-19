@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Bungie;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -24,6 +25,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        \Gate::define('hide-ads', function(Bungie $user) {
+            return $user->isDonator();
+        });
     }
 }
