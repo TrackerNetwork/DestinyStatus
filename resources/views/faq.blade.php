@@ -22,7 +22,7 @@
             <br />
             <strong>Q: How do I get the <?= $badges['donator']; ?> badge?</strong>
             <p>
-                A: Please donate via -this link- and include platform name and gamertag.
+                A: Please donate via <a href="https://paypal.me/TrackerNetwork">paypal</a> and please include the words DestinyStatus & platform name and gamertag.
             </p>
             <br />
             <strong>Q: How do I fix this privacy error?</strong>
