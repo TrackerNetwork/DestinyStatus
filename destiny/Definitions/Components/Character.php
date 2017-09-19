@@ -69,14 +69,12 @@ class Character extends Definition
 
     // activities
     const MILESTONE_NIGHTFALL = '2171429505';
-    const MILESTONE_STRIKES = '1142551194';
 
     // clan
     const MILESTONE_WEEKLYCLAN = '4253138191';
     const MILESTONE_XPCLAN = '3603098564';
 
     // pvp
-    const MILESTONE_PVP = '342166397';
     const MILESTONE_CALLTOARMS = '202035466';
     const MILESTONE_TRIALS = '3551755444';
 
@@ -169,7 +167,7 @@ class Character extends Definition
 
     protected function gMilestoneActivities()
     {
-        return $this->getMilestones([self::MILESTONE_NIGHTFALL, self::MILESTONE_STRIKES]);
+        return $this->getMilestones([self::MILESTONE_NIGHTFALL]);
     }
 
     protected function gMilestoneClan()
@@ -184,7 +182,7 @@ class Character extends Definition
 
     protected function gMilestonePvp()
     {
-        return $this->getMilestones([self::MILESTONE_PVP, self::MILESTONE_CALLTOARMS, self::MILESTONE_TRIALS]);
+        return $this->getMilestones([self::MILESTONE_CALLTOARMS, self::MILESTONE_TRIALS]);
     }
 
     protected function gMilestoneRaids()
