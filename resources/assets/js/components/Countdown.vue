@@ -1,12 +1,13 @@
 <template>
     <div class="text-center">
-        <Countdown deadline="September 6, 2017"></Countdown>
+        <Countdown :deadline="weekly"></Countdown>
     </div>
 </template>
 <script>
     import Countdown from 'vuejs-countdown'
 
     export default {
-        components: { Countdown }
+        props: ['weekly'],
+        components: { Countdown },
     }
 </script>

@@ -6,4 +6,7 @@
 @section('content')
     <h2>Weekly Milestones</h2>
     @include('partials.homepage.weekly', ['milestones' => $milestoneHandler->weeklys])
+
+    <h2>Time till Weekly Reset</h2>
+    <Countdown weekly="<?= next_weekly()->toRfc2822String(); ?>"></Countdown>
 @stop
