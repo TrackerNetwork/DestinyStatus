@@ -145,7 +145,7 @@ return [
     |
     */
 
-    'query' => env('BUGSNAG_QUERY', false),
+    'query' => env('BUGSNAG_QUERY', true),
 
     /*
     |--------------------------------------------------------------------------
