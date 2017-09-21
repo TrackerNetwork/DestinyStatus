@@ -69,6 +69,7 @@ class Character extends Definition
 
     // activities
     const MILESTONE_NIGHTFALL = '2171429505';
+    const MILESTONE_CHALLENGES = '2122634728';
 
     // clan
     const MILESTONE_WEEKLYCLAN = '4253138191';
@@ -167,7 +168,7 @@ class Character extends Definition
 
     protected function gMilestoneActivities()
     {
-        return $this->getMilestones([self::MILESTONE_NIGHTFALL]);
+        return $this->getMilestones([self::MILESTONE_NIGHTFALL, self::MILESTONE_CHALLENGES]);
     }
 
     protected function gMilestoneClan()
