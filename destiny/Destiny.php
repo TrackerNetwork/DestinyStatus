@@ -41,6 +41,13 @@ class Destiny
         return new Manifest($result);
     }
 
+    public function match(string $activityId)
+    {
+        $result = $this->client->r($this->platform->getPostGameCarnageReport($activityId));
+
+        dd($result);
+    }
+
     /**
      * @param string $gamertag
      *

@@ -46,6 +46,15 @@ class DestinyPlatform
     }
 
     /**
+     * @param string $activityId
+     * @return DestinyRequest
+     */
+    public function getPostGameCarnageReport(string $activityId)
+    {
+        return $this->destinyRequest("Destiny2/Stats/PostGameCarnageReport/$activityId/");
+    }
+
+    /**
      * @param Account $account
      *
      * @return DestinyRequest
