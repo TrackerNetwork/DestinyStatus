@@ -47,6 +47,7 @@ class DestinyPlatform
 
     /**
      * @param string $activityId
+     *
      * @return DestinyRequest
      */
     public function getPostGameCarnageReport(string $activityId)
