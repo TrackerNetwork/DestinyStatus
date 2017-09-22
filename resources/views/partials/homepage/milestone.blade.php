@@ -1,6 +1,8 @@
 <?php
 
 /** @var Destiny\Definitions\PublicMilestone $milestone */
+/** @var Destiny\Milestones\MilestoneChallenge $challenge */
+/** @var Destiny\Definitions\Manifest\Activity $variant */
 ?>
 <div class="advisor type-activity panel">
     <div class="image">
@@ -57,8 +59,12 @@
                         <?php foreach($milestone->challenges as $challenge): ?>
                         <div class="round">
                             <div class="info">
-                                <div class="round-number"><?= $challenge->objective->display->name; ?></div>
-                                <div class="enemy"><?= $challenge->objective->display->description; ?></div>
+                                <div class="round-number"><?= $challenge->activity->humanMode; ?></div>
+                                <div class="enemy" data-toggle="popover"
+                                     title="Level <?= $challenge->activity->activityLevel; ?> (Power <?= $challenge->activity->activityLightLevel; ?>)"
+                                     data-content="<?= $challenge->objective->display->description; ?>">
+                                    <?= $challenge->objective->display->name; ?>
+                                </div>
                             </div>
                         </div>
                         <?php endforeach; ?>

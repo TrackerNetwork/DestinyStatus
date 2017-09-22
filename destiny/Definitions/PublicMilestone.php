@@ -34,6 +34,7 @@ use Destiny\Milestones\RewardEntryCollection;
  * @property-read string $destinationName
  * @property-read ModifierCollection $skulls
  * @property-read ActivityCollection $activities
+ * @property-read ActivityCollection $variants
  * @property-read ChallengeCollection $challenges
  * @property-read RewardEntryCollection $rewards
  * @property-read RewardCategory $lastWeekRewards
