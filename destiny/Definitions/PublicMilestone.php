@@ -81,7 +81,7 @@ class PublicMilestone extends Definition
         $definitionIcon = $this->definition->display->hasIcon;
         $questIcon = $this->getFirstQuest()->questItem->display->hasIcon;
 
-        return ($definitionIcon || $questIcon);
+        return $definitionIcon || $questIcon;
     }
 
     protected function gImage()
