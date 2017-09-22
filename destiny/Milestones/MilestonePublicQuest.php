@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Destiny\Milestones;
 
 use Destiny\Activity\ChallengeCollection;
-use Destiny\Definitions\Manifest\Milestone;
+use Destiny\Definitions\Manifest\InventoryItem;
 use Destiny\Model;
 
 /**
@@ -14,7 +14,7 @@ use Destiny\Model;
  * @property string $questItemHash
  * @property array $activity
  * @property array $challenges
- * @property-read Milestone $questItem
+ * @property-read InventoryItem $questItem
  * @property-read MilestoneActivity $milestoneActivity
  * @property-read ChallengeCollection $milestoneChallenges
  */
@@ -26,7 +26,7 @@ class MilestonePublicQuest extends Model
 
     protected function gQuestItem()
     {
-        return manifest()->milestone((string) $this->questItemHash);
+        return manifest()->inventoryItem((string) $this->questItemHash);
     }
 
     protected function gMilestoneActivity()

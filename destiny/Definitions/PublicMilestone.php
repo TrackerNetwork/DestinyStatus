@@ -21,7 +21,6 @@ use Destiny\Milestones\RewardEntryCollection;
  * @property array $availableQuests
  * @property array $values
  * @property array $vendorHashes
- * @property array $rewards
  * @property string $startDate
  * @property string $endDate
  * @property-read Milestone $definition
@@ -69,12 +68,19 @@ class PublicMilestone extends Definition
 
     protected function gIcon()
     {
-        return $this->definition->display->icon;
+        if ($this->definition->display->hasIcon) {
+            return $this->definition->display->icon;
+        }
+
+        return $this->getFirstQuest()->questItem->display->icon;
     }
 
     protected function gHasIcon()
     {
-        return $this->definition->display->hasIcon;
+        $definitionIcon = $this->definition->display->hasIcon;
+        $questIcon = $this->getFirstQuest()->questItem->display->hasIcon;
+
+        return ($definitionIcon || $questIcon);
     }
 
     protected function gImage()
