@@ -1,3 +1,8 @@
+# v3.0.10 (September 22, 2017)
+ * Fixed milestone icon if quest has icon.
+ * Marked challenges per variant.
+ * Added weekly countdown on home page.
+
 # v3.0.9 (September 19, 2017)
  * Hide icons if not found.
  * Bug fixes with clans and progressions.
