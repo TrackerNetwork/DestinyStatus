@@ -2,8 +2,6 @@
 /** @var string $key */
 /** @var Destiny\StatisticsCollection $pvp */
 /** @var Destiny\StatisticsCollection $pve */
-xdebug_break();
-$foo = "";
 ?>
 <table class="table table-condensed table-striped">
     <thead>
