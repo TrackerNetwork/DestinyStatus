@@ -28,9 +28,9 @@
         <td><?= $pvp->weaponKillsSniper->formattedValue ?></td>
     </tr>
     <tr>
-        <td class="header">Machinegun</td>
-        <td><?= $pve->weaponKillsMachinegun->formattedValue ?></td>
-        <td><?= $pvp->weaponKillsMachinegun->formattedValue ?></td>
+        <td class="header">Grenade Launcher</td>
+        <td><?= $pve->weaponKillsGrenadeLauncher->formattedValue ?></td>
+        <td><?= $pvp->weaponKillsGrenadeLauncher->formattedValue ?></td>
     </tr>
     <tr>
         <td class="header">Rocket Launcher</td>
