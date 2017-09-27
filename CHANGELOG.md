@@ -1,3 +1,9 @@
+# v3.0.11 (September 27, 2017)
+ * Added popover for item/progression descriptions.
+ * Prevent ugly "status code" - 0 error.
+ * Removed machine gun, added grenade launcher.
+ * [dev] added additional logging to catch errors.
+
 # v3.0.10 (September 22, 2017)
  * Fixed milestone icon if quest has icon.
  * Marked challenges per variant.
