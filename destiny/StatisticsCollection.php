@@ -42,8 +42,11 @@ use Destiny\Definitions\Statistic;
  * @property \Destiny\Definitions\Statistic $weaponKillsSideArm
  * @property \Destiny\Definitions\Statistic $weaponKillsSword
  * @property \Destiny\Definitions\Statistic $weaponKillsAbility
+ * @property \Destiny\Definitions\Statistic $weaponKillsGrenade
+ * @property \Destiny\Definitions\Statistic $weaponKillsGrenadeLauncher
  * @property \Destiny\Definitions\Statistic $weaponBestType
  * @property \Destiny\Definitions\Statistic $allParticipantsCount
+ * @property \Destiny\Definitions\Statistic $allParticipantsScore
  * @property \Destiny\Definitions\Statistic $allParticipantsTimePlayed
  * @property \Destiny\Definitions\Statistic $longestKillSpree
  * @property \Destiny\Definitions\Statistic $longestSingleLife
@@ -66,6 +69,22 @@ use Destiny\Definitions\Statistic;
  * @property \Destiny\Definitions\Statistic $allParticipantsScore
  * @property \Destiny\Definitions\Statistic $teamScore
  * @property \Destiny\Definitions\Statistic $combatRating
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsAutoRifle
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsFusionRifle
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsGrenade
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsGrenadeLauncher
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsHandCannon
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsMachinegun
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsMelee
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsPulseRifle
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsRocketLauncher
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsScoutRifle
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsShotgun
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsSniper
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsSubmachinegun
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsSuper
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsRelic
+ * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsSideArm
  */
 class StatisticsCollection extends Collection
 {
