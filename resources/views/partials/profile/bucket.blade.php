@@ -8,8 +8,9 @@ $definition = $item->definition ?? null;
 ?>
 
 @if($item)
-    <div class="equipped" data-toggle="tooltip"
-         title="<?= e($definition->loreSubtitle) ?>"
+    <div class="equipped" data-toggle="popover"
+         title="<?= e($definition->itemName) ?>"
+         data-content="<?= e($definition->loreSubtitle) ?>"
          data-complete="<?= boolval($item->isGridComplete) ?>"
          data-hash="<?= $item->hash ?>"
     >

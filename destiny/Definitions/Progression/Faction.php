@@ -23,6 +23,7 @@ use Destiny\Definitions\Definition;
  * @property-read \Destiny\Definitions\Manifest\Progression $progression
  * @property-read string $percentToNextLevel
  * @property-read string $percentLabel
+ * @property-read string $description
  */
 class Faction extends Definition
 {
@@ -49,6 +50,11 @@ class Faction extends Definition
     protected function gIcon()
     {
         return $this->faction->display->icon;
+    }
+
+    protected function gDescription()
+    {
+        return $this->faction->display->description;
     }
 
     protected function gPercentToNextLevel()
