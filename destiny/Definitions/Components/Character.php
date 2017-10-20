@@ -3,11 +3,13 @@
 namespace Destiny\Definitions\Components;
 
 use Carbon\Carbon;
+use Destiny\Activity\ActivityStatCollection;
 use Destiny\Collection;
 use Destiny\Definitions\Definition;
 use Destiny\Definitions\Manifest\DestinyClass;
 use Destiny\Definitions\Manifest\Gender;
 use Destiny\Definitions\Manifest\Race;
+use Destiny\Definitions\Manifest\Stat;
 use Destiny\Definitions\Progression\Progression;
 use Destiny\Definitions\Statistic;
 use Destiny\Profile\Progression\FactionCollection;
@@ -52,6 +54,7 @@ use Destiny\StatisticsCollection;
  * @property-read StatisticsCollection $statsAll
  * @property-read StatisticsCollection $statsPvP
  * @property-read StatisticsCollection $statsPvE
+ * @property-read ActivityStatCollection $activities
  * @property-read Carbon $lastPlayed
  * @property-read string $percentLabel
  * @property-read float $lightPercentToNextLevel

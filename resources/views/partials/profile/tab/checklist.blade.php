@@ -10,31 +10,31 @@
     <div class="panel-heading">Activities</div>
     <div class="activities panel">
         @foreach($character->milestoneActivities as $milestone)
-            @include('partials.profile.milestone',  ['milestone' => $milestone])
+            @include('partials.profile.milestone',  ['milestone' => $milestone, 'activityHash' => $milestone->activityHash])
         @endforeach
     </div>
     <div class="panel-heading">Raids</div>
     <div class="activities panel">
         @foreach($character->milestoneRaids as $milestone)
-            @include('partials.profile.milestone',  ['milestone' => $milestone])
+            @include('partials.profile.milestone',  ['milestone' => $milestone, 'activityHash' => $milestone->activityHash])
         @endforeach
     </div>
     <div class="panel-heading">Clan</div>
     <div class="activities panel">
         @foreach($character->milestoneClan as $milestone)
-            @include('partials.profile.milestone',  ['milestone' => $milestone])
+            @include('partials.profile.milestone',  ['milestone' => $milestone, 'activityHash' => $milestone->activityHash])
         @endforeach
     </div>
     <div class="panel-heading">PVP</div>
     <div class="activities panel">
         @foreach($character->milestonePvp as $milestone)
-            @include('partials.profile.milestone',  ['milestone' => $milestone])
+            @include('partials.profile.milestone',  ['milestone' => $milestone, 'activityHash' => $milestone->activityHash])
         @endforeach
     </div>
     <div class="panel-heading">PVE</div>
     <div class="activities panel">
         @foreach($character->milestonePve as $milestone)
-            @include('partials.profile.milestone',  ['milestone' => $milestone])
+            @include('partials.profile.milestone',  ['milestone' => $milestone, 'activityHash' => $milestone->activityHash])
         @endforeach
     </div>
     <div class="panel-heading">

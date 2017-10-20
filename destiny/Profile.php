@@ -136,7 +136,7 @@ class Profile extends Model
     public function loadCharacters()
     {
         $stats = destiny()->stats($this->account);
-        //$aggregate = destiny()->characterStats($this);
+        $aggregate = destiny()->characterStats($this);
 
         foreach ($this->characters as $character) {
             $charId = $character->characterId;
@@ -150,6 +150,9 @@ class Profile extends Model
             $character->statsAll = $stats->getCharacterStats($charId);
             $character->statsPvP = $stats->getCharacterStats($charId, 'allPvP');
             $character->statsPvE = $stats->getCharacterStats($charId, 'allPvE');
+
+            // aggregate stats
+            $character->activities = $aggregate->getCharacterActivityStats($charId);
         }
 
         return true;

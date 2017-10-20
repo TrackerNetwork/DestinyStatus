@@ -2,6 +2,7 @@
 
 namespace Destiny;
 
+use Destiny\Activity\ActivityStatCollection;
 use Destiny\Definitions\AccountStats as StatDefinition;
 
 /**
@@ -42,5 +43,14 @@ class StatHandler extends StatDefinition
         }
 
         return new StatisticsCollection($stats[$characterId] ?? []);
+    }
+
+    /**
+     * @param string $characterId
+     * @return ActivityStatCollection
+     */
+    public function getCharacterActivityStats(string $characterId) : ActivityStatCollection
+    {
+        return new ActivityStatCollection($this->properties[$characterId.'.stats']['activities'] ?? []);
     }
 }
