@@ -117,6 +117,7 @@ class Destiny
      * @param Profile $profile
      *
      * @internal param Player $player
+     * @return StatHandler
      */
     public function characterStats(Profile $profile)
     {
@@ -129,7 +130,7 @@ class Destiny
 
         $results = $this->client->r($requests);
 
-        dd($results);
+        return new StatHandler($results);
     }
 
     /**
