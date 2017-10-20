@@ -54,7 +54,7 @@ class PublicMilestone extends Definition
 
     protected function gQuests()
     {
-        return new PublicQuestCollection($this->availableQuests);
+        return new PublicQuestCollection($this->availableQuests ?? []);
     }
 
     protected function gStart()
