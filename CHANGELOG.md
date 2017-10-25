@@ -1,3 +1,8 @@
+# v3.1.0 (October 25, 2017)
+ * PC Support
+ * Fixed D1 stat links
+ * Prevented empty quests from failing
+
 # v3.0.11 (September 27, 2017)
  * Added popover for item/progression descriptions.
  * Prevent ugly "status code" - 0 error.
