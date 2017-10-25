@@ -46,6 +46,6 @@ class Player extends Model
 
     protected function gUrl() : string
     {
-        return route('account', ['platform' => $this->platform, 'player' => $this->displayName]);
+        return route('account', ['platform' => $this->platform, 'player' => rawurlencode($this->displayName)]);
     }
 }
