@@ -6,7 +6,7 @@
 ?>
 <div class="statistics row">
     <div class="col-sm-12">
-        <h3>Destiny 1 Stats&nbsp;<small>(<a target="_blank" href="https://d1.destinystatus.com/<?= $player->platform; ?>/<?= $account->slug; ?>">view full stats</a>)</small></h3>
+        <h3>Destiny 1 Stats&nbsp;<small>(<a target="_blank" href="https://d1.destinystatus.com/<?= $player->platform; ?>/<?= $account->name; ?>">view full stats</a>)</small></h3>
     </div>
     <div class="col-sm-3">
         @include('partials.stats.stats', ['icon' => 'fa-trophy', 'header' => 'PvP & PvE', 'stats' => [
