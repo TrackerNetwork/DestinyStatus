@@ -58,6 +58,7 @@ function slug($name)
 
 function bungie_slug($name)
 {
+    $name = str_replace('#', '-', $name);
     $name = strtolower(iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $name));
 
     return rawurlencode($name);

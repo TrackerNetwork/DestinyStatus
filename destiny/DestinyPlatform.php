@@ -40,6 +40,7 @@ class DestinyPlatform
      */
     public function searchDestinyPlayer(string $gamertag) : DestinyRequest
     {
+        $gamertag = str_replace('-', '#', $gamertag);
         $gamertag = rawurlencode(trim($gamertag));
 
         return $this->destinyRequest("Destiny2/SearchDestinyPlayer/all/$gamertag/", CACHE_PLAYER, false);

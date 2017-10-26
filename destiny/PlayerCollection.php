@@ -23,7 +23,7 @@ class PlayerCollection extends Collection
         foreach ($items as $properties) {
             $player = new Player($properties);
 
-            if (slug($player->displayName) == slug($gamertag)) {
+            if (bungie_slug($player->displayName) == bungie_slug($gamertag)) {
                 $players[$player->platform] = $player;
             }
         }
