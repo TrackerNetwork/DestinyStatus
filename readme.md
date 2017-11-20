@@ -13,7 +13,7 @@ Please [read these instructions](https://laravel.com/docs/5.5#server-requirement
 * `legacy` 	- original Laravel 4.2 version of d1 destinystatus
 * `production`  - production destinystatus.com (follows `master`)
 
-### Project dependecies:
+### Project dependencies:
 
 * PHP >= 7.0
   * zip extension
@@ -22,16 +22,23 @@ Please [read these instructions](https://laravel.com/docs/5.5#server-requirement
 * [Node.js](https://nodejs.org)
 * [Composer](https://getcomposer.org)
 
+### Docker setup (optional)
+
+1. `docker-compose up --build`
+2. `docker exec -it ds bash`
+3. continue with (install the framework) steps below. They will be ran inside the container that you did on step 2.
+
 ### Install the framework
 
 1. Copy the file `.env.example` to `.env`
-2. Edit `.env` with any information needed (Bugsnag, environment)
+2. Edit `.env` with any information needed (Bugsnag, environment, db information)
 3. Visit the [Destiny API Registration Portal](https://www.bungie.net/en/user/api) to sign up for an API key
 4. Add your key to `.env` under the `DESTINY_KEY`
 5. Add your oauth information to `.env` under the `BUNGIE_CLIENT` (client id) and `BUNGIE_SECRET` (client secret) codes.
 6. Remember that the API key and oauth information need to be from same Application at Bungie.
 7. `composer install`
 8. `php artisan key:generate`
+9. `php artisan migrate`
 
 ### Compile CSS/JS
 
