@@ -122,7 +122,7 @@ class DestinyClient extends Client
                     if ($request->salvageable) {
                         $responses[$key] = null;
                     } else {
-                        /** @var \ErrorException $result */
+                        /* @var \ErrorException $result */
                         Cache::store('file')->forget($request->key);
 
                         throw new DestinyException($result->getMessage(), $result->getLine(), $result);
