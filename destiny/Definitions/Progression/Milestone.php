@@ -17,6 +17,7 @@ use Destiny\Profile\Progression\QuestCollection;
  * @property string $endDate
  * @property \Destiny\Definitions\Manifest\Milestone $definition
  * @property QuestCollection $quests
+ * @property-read string $activityHash
  */
 class Milestone extends Definition
 {
@@ -55,6 +56,17 @@ class Milestone extends Definition
         return $quest->completed;
     }
 
+    protected function gActivityHash()
+    {
+        $quest = $this->getLastQuest();
+
+        if (empty($quest)) {
+            return '';
+        }
+
+        return $quest->activity->activityHash;
+    }
+
     protected function gActivityLevel()
     {
         $quest = $this->getLastQuest();
@@ -66,6 +78,9 @@ class Milestone extends Definition
         return $quest->activityLevel;
     }
 
+    /**
+     * @return Quest
+     */
     private function getLastQuest()
     {
         return $this->quests->last();
