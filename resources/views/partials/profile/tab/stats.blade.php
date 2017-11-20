@@ -23,7 +23,7 @@ $all = $character->statsAll;
     @include('partials.profile.timespan', ['minutes' => $character->minutesPlayedTotal])
 
     <div class="info">Active Time Played</div>
-    @include('partials.profile.timespan', ['minutes' => $character->minutesPlayedActive])
+    @include('partials.profile.timespan_seconds', ['minutes' => $character->minutesPlayedActive])
 </div>
 <div class="stats panel">
     @include('partials.profile.stats.pvp', ['pvp' => $pvp, 'key' => 'stats-pvp-'.$character->characterId])
