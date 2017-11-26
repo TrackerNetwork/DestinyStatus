@@ -19,6 +19,6 @@ class ActivityStat extends Definition
 
     protected function gStats()
     {
-        return new StatisticsCollection($this->values);
+        return new StatisticsCollection($this->values ?? []);
     }
 }

@@ -6,7 +6,6 @@
  */
 
 use Destiny\Activity\ActivityStat;
-use Destiny\StatisticsCollection;
 
 /** @var ActivityStat $activityStat */
 $activityStat = $character->activities->$activityHash;
@@ -29,7 +28,7 @@ $completions = $activityStat->stats;
             @endif
             </span>
         </div>
-        @if ($completions instanceof StatisticsCollection)
+        @if ($completions instanceof Destiny\StatisticsCollection)
             <div class="stats opaque">
                 Completions:
                 <strong>{{ $completions->activityCompletions->value }}</strong>
