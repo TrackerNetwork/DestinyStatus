@@ -1,3 +1,9 @@
+# v3.2.0 (November 26, 2017)
+ * Multibyte character support
+ * Initial summed raid completions
+ * Cleanup clan leaderboard
+ * Add seconds to "active play time"
+
 # v3.1.0 (October 25, 2017)
  * PC Support
  * Fixed D1 stat links
