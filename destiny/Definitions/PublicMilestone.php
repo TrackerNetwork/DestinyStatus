@@ -4,6 +4,7 @@ namespace Destiny\Definitions;
 
 use Carbon\Carbon;
 use Destiny\Activity\ActivityCollection;
+use Destiny\Activity\ActivityStat;
 use Destiny\Activity\ChallengeCollection;
 use Destiny\Activity\ModifierCollection;
 use Destiny\Definitions\Manifest\Milestone;
@@ -32,6 +33,7 @@ use Destiny\Milestones\RewardEntryCollection;
  * @property-read string $activityName
  * @property-read string $activityDescription
  * @property-read string $destinationName
+ * @property-read string $activityHash
  * @property-read ModifierCollection $skulls
  * @property-read ActivityCollection $activities
  * @property-read ActivityCollection $variants
@@ -114,6 +116,17 @@ class PublicMilestone extends Definition
         }
 
         return $activity->definition->display->name;
+    }
+
+    protected function gActivityHash()
+    {
+        $activity = $this->getMilestoneActivity();
+
+        if (empty($activity)) {
+            return '';
+        }
+
+        return $activity->activityHash;
     }
 
     protected function gActivityDescription()

@@ -42,7 +42,6 @@ use Destiny\Definitions\Statistic;
  * @property \Destiny\Definitions\Statistic $weaponKillsSideArm
  * @property \Destiny\Definitions\Statistic $weaponKillsSword
  * @property \Destiny\Definitions\Statistic $weaponKillsAbility
- * @property \Destiny\Definitions\Statistic $weaponKillsGrenade
  * @property \Destiny\Definitions\Statistic $weaponKillsGrenadeLauncher
  * @property \Destiny\Definitions\Statistic $weaponBestType
  * @property \Destiny\Definitions\Statistic $allParticipantsCount
@@ -66,7 +65,6 @@ use Destiny\Definitions\Statistic;
  * @property \Destiny\Definitions\Statistic $averageScorePerLife
  * @property \Destiny\Definitions\Statistic $bestSingleGameScore
  * @property \Destiny\Definitions\Statistic $winLossRatio
- * @property \Destiny\Definitions\Statistic $allParticipantsScore
  * @property \Destiny\Definitions\Statistic $teamScore
  * @property \Destiny\Definitions\Statistic $combatRating
  * @property \Destiny\Definitions\Statistic $weaponPrecisionKillsAutoRifle
