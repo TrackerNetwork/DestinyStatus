@@ -46,6 +46,6 @@ class Player extends Model
 
     protected function gUrl() : string
     {
-        return route('account', ['platform' => $this->platform, 'player' => bungie_slug($this->displayName)]);
+        return route('account', ['platform' => $this->platform, 'player' => url_slug($this->displayName)]);
     }
 }

@@ -63,6 +63,13 @@ function bungie_slug($name)
     return rawurlencode($name);
 }
 
+function url_slug($name) : string
+{
+    $name = mb_strtolower($name);
+
+    return str_replace('#', '%23', $name);
+}
+
 function duration($minutes, $output = 'days,hours,minutes')
 {
     return timespan(time() + ($minutes * 60), time(), $output);

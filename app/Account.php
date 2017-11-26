@@ -71,7 +71,7 @@ class Account extends Model
 
     public function url()
     {
-        return route('account', [ConsoleHelper::getConsoleStringFromId($this->membership_type), bungie_slug($this->name)]);
+        return route('account', [ConsoleHelper::getConsoleStringFromId($this->membership_type), url_slug($this->name)]);
     }
 
     public function renderBadges()
