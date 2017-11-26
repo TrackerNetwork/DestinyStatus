@@ -47,6 +47,7 @@ class StatHandler extends StatDefinition
 
     /**
      * @param string $characterId
+     *
      * @return ActivityStatCollection
      */
     public function getCharacterActivityStats(string $characterId) : ActivityStatCollection

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Destiny;
 
 use Destiny\Definitions\Leaderboard;
-use Destiny\Definitions\LeaderboardEntry;
 use Illuminate\Support\Collection;
 
 /**

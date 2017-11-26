@@ -117,6 +117,7 @@ class Destiny
      * @param Profile $profile
      *
      * @internal param Player $player
+     *
      * @return StatHandler
      */
     public function characterStats(Profile $profile)

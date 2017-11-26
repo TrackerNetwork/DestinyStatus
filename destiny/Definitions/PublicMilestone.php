@@ -4,7 +4,6 @@ namespace Destiny\Definitions;
 
 use Carbon\Carbon;
 use Destiny\Activity\ActivityCollection;
-use Destiny\Activity\ActivityStat;
 use Destiny\Activity\ChallengeCollection;
 use Destiny\Activity\ModifierCollection;
 use Destiny\Definitions\Manifest\Milestone;

@@ -9,7 +9,6 @@ use Destiny\Definitions\Definition;
 use Destiny\Definitions\Manifest\DestinyClass;
 use Destiny\Definitions\Manifest\Gender;
 use Destiny\Definitions\Manifest\Race;
-use Destiny\Definitions\Manifest\Stat;
 use Destiny\Definitions\Progression\Progression;
 use Destiny\Definitions\Statistic;
 use Destiny\Profile\Progression\FactionCollection;

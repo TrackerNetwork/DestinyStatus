@@ -6,8 +6,7 @@ use Destiny\Collection;
 use Destiny\StatisticsCollection;
 
 /**
- * Class ActivityStatCollection
- * @package Destiny
+ * Class ActivityStatCollection.
  */
 class ActivityStatCollection extends Collection
 {
@@ -75,7 +74,7 @@ class ActivityStatCollection extends Collection
         /** @var ActivityStat $object */
         foreach ($objects as $object) {
             if ($object->stats instanceof StatisticsCollection && $object->stats->activityCompletions->value > 0) {
-                if (! isset($original->stats)) {
+                if (!isset($original->stats)) {
                     $original->setCachedProperty('stats', $object->stats);
                     continue;
                 }
