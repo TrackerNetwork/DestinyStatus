@@ -29,6 +29,11 @@
             <p>
                 A: Either sign in or disable <a href="https://www.bungie.net/en/Profile/Settings?category=Privacy" target="_blank">privacy settings</a> on your account. If you are viewing someone else, that is their wish and cannot be changed.
             </p>
+            <strong>Q: Why are PC names unclickable on clan leaderboards?</strong>
+            <p>
+                A: Blizzard believes that uniquely identifying names is bad. So we only receive the part of name before pound sign. Bungie resolves this by including a unique membershipId,
+                but if your system doesn't log/store that data you cannot connect the two.
+            </p>
             @if (\Auth::check())
                 <br />
                 <strong>Q: How do I change my signed in account to a different platform (psn/xbl/pc)?</strong>

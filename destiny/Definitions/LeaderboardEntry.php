@@ -13,6 +13,8 @@ use App\Helpers\ConsoleHelper;
  * @property mixed $value
  * @property-read string $displayValue
  * @property-read string $formattedValue
+ * @property-read string $platform
+ * @property-read string $image
  * @property string $name
  * @property string $url
  */
@@ -38,10 +40,20 @@ class LeaderboardEntry extends Definition
         return array_get($this->properties, 'player.destinyUserInfo.displayName');
     }
 
+    protected function gImage()
+    {
+        return ConsoleHelper::getPlatformImage($this->platform);
+    }
+
+    protected function gPlatform() : string
+    {
+        return ConsoleHelper::getConsoleStringFromId(array_get($this->properties, 'player.destinyUserInfo.membershipType'));
+    }
+
     protected function gUrl()
     {
-        $platform = ConsoleHelper::getConsoleStringFromId(array_get($this->properties, 'player.destinyUserInfo.membershipType'));
-        $name = bungie_slug($this->name);
+        $platform = $this->platform;
+        $name = url_slug($this->name);
 
         return route('account', [$platform, $name]);
     }

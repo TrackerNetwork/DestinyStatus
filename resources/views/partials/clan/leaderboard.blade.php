@@ -15,7 +15,16 @@ $key = 'clan-'.$category->statId;
         <?php $i = 1; foreach ($category->rankings as $place): ?>
             <tr>
                 <td class="header"><?= $i++ ?></td>
-                <td><a href="<?= $place->url; ?>"><?= $place->name; ?></a></td>
+                <td style="min-width: 150px;">
+                    <img style="width: 18px; height: 18px;" src="<?= $place->image; ?>" />
+                    @if ($place->platform !== 'pc')
+                        <a href="<?= $place->url; ?>">
+                            <?= $place->name; ?>
+                        </a>
+                    @else
+                        <?= $place->name; ?>
+                    @endif
+                </td>
                 <td><?= $place->displayValue; ?></td>
             </tr>
         <?php endforeach; ?>
