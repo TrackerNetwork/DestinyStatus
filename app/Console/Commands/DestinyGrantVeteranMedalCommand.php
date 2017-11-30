@@ -48,10 +48,15 @@ class DestinyGrantVeteranMedalCommand extends Command
 
         $neededAccountIds = \DB::query()
             ->from('accounts')
-            ->join('badge_assignment', function (JoinClause $join) {
+            ->join('badge_assignment', function (JoinClause $join) use ($veteran) {
                 $join->on('accounts.id', '=', 'badge_assignment.account_id');
+                $join->where('badge_assignment.badge_id', '=', $veteran->id);
+            }, null, null, 'LEFT OUTER')
+            ->join('d1_stats', function (JoinClause $join) {
+                $join->on('accounts.id', '=', 'd1_stats.account_id');
             }, null, null, 'LEFT OUTER')
             ->whereNull('badge_assignment.account_id')
+            ->whereNotNull('d1_stats.account_id')
             ->orderBy('accounts.id', 'DESC')
             ->pluck('accounts.id')
             ->toArray();
