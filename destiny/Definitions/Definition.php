@@ -11,7 +11,7 @@ class Definition extends Model
         $this->properties = $definition ?: [];
     }
 
-    protected function extend(Definition $definition)
+    protected function extend(self $definition)
     {
         $this->properties = array_merge($this->properties, $definition->properties);
         $this->cached = array_merge($this->cached, $definition->cached);
