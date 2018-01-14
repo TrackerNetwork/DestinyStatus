@@ -52,4 +52,9 @@ class DailyCrucible extends Activity implements ActivityInterface
     {
         return 'dailycrucible';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

@@ -42,4 +42,9 @@ class VaultOfGlass extends Activity implements ActivityInterface
     {
         return 'vaultofglass';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

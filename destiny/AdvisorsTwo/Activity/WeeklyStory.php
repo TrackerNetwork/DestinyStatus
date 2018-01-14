@@ -65,4 +65,9 @@ class WeeklyStory extends Activity implements ActivityInterface
     {
         return 'weeklystory';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

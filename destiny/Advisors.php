@@ -82,7 +82,7 @@ class Advisors extends Model
         $events = $this->events;
         $return = [];
         foreach ($events as $event) {
-            if ($event->status->active) {
+            if ($event->status->active && ! $event->isEventCancelled()) {
                 $return[] = $event;
             }
         }

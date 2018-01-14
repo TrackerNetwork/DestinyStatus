@@ -35,4 +35,9 @@ class ArmsDay extends Activity implements ActivityInterface, EventInterface
     {
         return 'armsday';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

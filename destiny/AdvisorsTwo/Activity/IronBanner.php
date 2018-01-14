@@ -29,4 +29,9 @@ class IronBanner extends Activity implements ActivityInterface, EventInterface
     {
         return 'Iron Banner';
     }
+
+    public function isEventCancelled()
+    {
+        return true;
+    }
 }

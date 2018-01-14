@@ -107,4 +107,9 @@ class WrathOfTheMachine extends Activity implements ActivityInterface
     {
         return 'wrathofthemachine';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

@@ -43,4 +43,9 @@ class WeeklyFeaturedRaid extends Activity implements ActivityInterface
     {
         return 'weeklyfeaturedraid';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

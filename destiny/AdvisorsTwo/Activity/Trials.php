@@ -50,4 +50,9 @@ class Trials extends Activity implements ActivityInterface, EventInterface
     {
         return 'Trials';
     }
+
+    public function isEventCancelled()
+    {
+        return true;
+    }
 }

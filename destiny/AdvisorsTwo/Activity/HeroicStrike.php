@@ -66,4 +66,9 @@ class HeroicStrike extends Activity implements ActivityInterface
     {
         return 'heroicstrike';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

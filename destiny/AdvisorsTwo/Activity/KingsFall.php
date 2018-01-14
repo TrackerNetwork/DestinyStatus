@@ -42,4 +42,9 @@ class KingsFall extends Activity implements ActivityInterface
     {
         return 'kingsfall';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

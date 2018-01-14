@@ -52,4 +52,9 @@ class WeeklyCrucible extends Activity implements ActivityInterface
     {
         return 'weeklycrucible';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

@@ -52,4 +52,9 @@ class DailyChapter extends Activity implements ActivityInterface
     {
         return 'dailychapter';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

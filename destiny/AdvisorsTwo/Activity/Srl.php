@@ -21,4 +21,9 @@ class Srl extends Activity implements ActivityInterface
     {
         return 'srl';
     }
+
+    public function isEventCancelled()
+    {
+        return true;
+    }
 }

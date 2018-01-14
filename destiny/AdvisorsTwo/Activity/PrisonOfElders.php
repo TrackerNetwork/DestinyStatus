@@ -24,4 +24,9 @@ class PrisonOfElders extends Activity implements ActivityInterface
     {
         return 'prisonofelders';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

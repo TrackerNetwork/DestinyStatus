@@ -43,4 +43,9 @@ class Xur extends Activity implements ActivityInterface, EventInterface
     {
         return 'xur';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

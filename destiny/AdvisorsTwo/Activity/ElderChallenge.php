@@ -49,4 +49,9 @@ class ElderChallenge extends Activity implements ActivityInterface
     {
         return 'elderchallenge';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

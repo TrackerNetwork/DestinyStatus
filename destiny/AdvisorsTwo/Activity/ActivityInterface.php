@@ -8,4 +8,6 @@ namespace Destiny\AdvisorsTwo\Activity;
 interface ActivityInterface
 {
     public static function getIdentifier();
+
+    public function isEventCancelled();
 }

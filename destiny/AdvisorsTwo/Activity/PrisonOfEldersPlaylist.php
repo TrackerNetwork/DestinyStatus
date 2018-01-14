@@ -52,4 +52,9 @@ class PrisonOfEldersPlaylist extends Activity implements ActivityInterface
     {
         return 'prisonofelders-playlist';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

@@ -42,4 +42,9 @@ class Crota extends Activity implements ActivityInterface
     {
         return 'crota';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }

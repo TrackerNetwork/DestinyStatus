@@ -66,4 +66,9 @@ class Nightfall extends Activity implements ActivityInterface
     {
         return 'nightfall';
     }
+
+    public function isEventCancelled()
+    {
+        return false;
+    }
 }
