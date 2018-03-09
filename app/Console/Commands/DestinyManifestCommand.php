@@ -124,7 +124,6 @@ class DestinyManifestCommand extends Command
             'StatGroup'                   => 'hash',
             'TalentGrid'                  => 'hash',
             'Unlock'                      => 'hash',
-            'VendorCategory'              => 'hash',
             'Vendor'                      => 'hash',
         ];
 
