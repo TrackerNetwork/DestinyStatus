@@ -83,7 +83,7 @@ class PublicMilestone extends Definition
         $definitionIcon = $this->definition->display->hasIcon;
 
         $questIcon = null;
-        if (! empty($this->getFirstQuest())) {
+        if (!empty($this->getFirstQuest())) {
             $questIcon = $this->getFirstQuest()->questItem->display->hasIcon;
         }
 
@@ -94,8 +94,8 @@ class PublicMilestone extends Definition
     {
         $quest = $this->getFirstQuest();
 
-        /** @var MilestoneActivity $activity */
-        if (! empty($quest)) {
+        /* @var MilestoneActivity $activity */
+        if (!empty($quest)) {
             $activity = $quest->milestoneActivity;
         } else {
             return $this->definition->image;
@@ -220,7 +220,7 @@ class PublicMilestone extends Definition
         $quest = $this->getFirstQuest();
 
         if (empty($quest)) {
-            return null;
+            return;
         }
 
         return $quest->milestoneActivity;
