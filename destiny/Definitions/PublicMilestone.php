@@ -23,6 +23,7 @@ use Destiny\Milestones\RewardEntryCollection;
  * @property array $vendorHashes
  * @property string $startDate
  * @property string $endDate
+ * @property int $order
  * @property-read Milestone $definition
  * @property-read PublicQuestCollection $quests
  * @property-read Carbon $start
@@ -80,7 +81,11 @@ class PublicMilestone extends Definition
     protected function gHasIcon()
     {
         $definitionIcon = $this->definition->display->hasIcon;
-        $questIcon = $this->getFirstQuest()->questItem->display->hasIcon;
+
+        $questIcon = null;
+        if (! empty($this->getFirstQuest())) {
+            $questIcon = $this->getFirstQuest()->questItem->display->hasIcon;
+        }
 
         return $definitionIcon || $questIcon;
     }
@@ -90,7 +95,11 @@ class PublicMilestone extends Definition
         $quest = $this->getFirstQuest();
 
         /** @var MilestoneActivity $activity */
-        $activity = $quest->milestoneActivity;
+        if (! empty($quest)) {
+            $activity = $quest->milestoneActivity;
+        } else {
+            return $this->definition->image;
+        }
 
         if (!empty($activity)) {
             $image = $activity->definition->pgcrImage;
@@ -198,7 +207,7 @@ class PublicMilestone extends Definition
         return $quest->milestoneChallenges;
     }
 
-    private function getFirstQuest() : MilestonePublicQuest
+    private function getFirstQuest() : ?MilestonePublicQuest
     {
         return $this->quests->first();
     }
@@ -209,6 +218,10 @@ class PublicMilestone extends Definition
     private function getMilestoneActivity()
     {
         $quest = $this->getFirstQuest();
+
+        if (empty($quest)) {
+            return null;
+        }
 
         return $quest->milestoneActivity;
     }

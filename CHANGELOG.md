@@ -1,3 +1,6 @@
+# v3.2.1 (August 27, 2018)
+ * Hotfix for support for v2.3.0 API release
+
 # v3.2.0 (November 26, 2017)
  * Multibyte character support
  * Initial summed raid completions
