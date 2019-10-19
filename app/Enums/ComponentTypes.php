@@ -17,6 +17,10 @@ abstract class ComponentTypes
 
     const ProfileCurrencies = 103;
 
+    const ProfileProgression = 104;
+
+    const ProfileSilver = 105;
+
     const Characters = 200;
 
     const CharacterInventories = 201;
@@ -54,4 +58,14 @@ abstract class ComponentTypes
     const VendorSales = 402;
 
     const Kiosks = 500;
+
+    const CurrencyLookup = 600;
+
+    const PresentationNodes = 700;
+
+    const Collectibles = 800;
+
+    const Records = 900;
+
+    const Transitory = 1000;
 }

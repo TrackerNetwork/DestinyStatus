@@ -102,6 +102,32 @@ class DestinyComponentUrlBuilder
     }
 
     /**
+     * This will get you any progression-related information that exists on a Profile-wide level, across all characters.
+
+     * @return $this
+     */
+    public function addProfileProgression(): self
+    {
+        $this->components[] = ComponentTypes::ProfileProgression;
+
+        return $this;
+    }
+
+    /**
+     * This will get you information about the silver that this profile has on every platform on which it plays.
+     * You may only request this component for the logged in user's Profile, and will not receive it if
+     * you request it for another Profile.
+     *
+     * @return $this
+     */
+    public function addProfileSilver(): self
+    {
+        $this->components[] = ComponentTypes::ProfileSilver;
+
+        return $this;
+    }
+
+    /**
      * This will get you summary info about each of the characters in the profile.
      *
      * @return $this
@@ -191,6 +217,19 @@ class DestinyComponentUrlBuilder
     public function addItemInstances() : self
     {
         $this->components[] = ComponentTypes::ItemInstances;
+
+        return $this;
+    }
+
+    /**
+     * Items can have Objectives (DestinyObjectiveDefinition) bound to them. If they do, this will return info
+     * for items that have such bound objectives.
+     *
+     * @return $this
+     */
+    public function addItemObjectives(): self
+    {
+        $this->components[] = ComponentTypes::ItemObjectives;
 
         return $this;
     }
@@ -288,6 +327,9 @@ class DestinyComponentUrlBuilder
     }
 
     /**
+     * When obtaining vendor information, this will return summary information about the Vendor
+     * or Vendors being returned.
+
      * @return $this
      */
     public function addVendors() : self
@@ -298,6 +340,9 @@ class DestinyComponentUrlBuilder
     }
 
     /**
+     * When obtaining vendor information, this will return information about the categories of
+     * items provided by the Vendor.
+     *
      * @return $this
      */
     public function addVendorCategories() : self
@@ -308,6 +353,8 @@ class DestinyComponentUrlBuilder
     }
 
     /**
+     * When obtaining vendor information, this will return the information about items being sold by the Vendor.
+     *
      * @return $this
      */
     public function addVendorSales() : self
@@ -318,11 +365,87 @@ class DestinyComponentUrlBuilder
     }
 
     /**
+     * Asking for this component will return you the account's Kiosk statuses: that is,
+     * what items have been filled out/acquired. But only if you are the currently authenticated user
+     * or the user has elected to allow anonymous viewing of its progression info.
+     *
      * @return $this
      */
     public function addKiosks() : self
     {
         $this->components[] = ComponentTypes::Kiosks;
+
+        return $this;
+    }
+
+    /**
+     * A "shortcut" component that will give you all of the item hashes/quantities of items that the requested
+     * character can use to determine if an action (purchasing, socket insertion) has the required currency.
+     * (recall that all currencies are just items, and that some vendor purchases require items that you might
+     * not traditionally consider to be a "currency", like plugs/mods!)
+     *
+     * @return $this
+     */
+    public function addCurrencyLookups(): self
+    {
+        $this->components[] = ComponentTypes::CurrencyLookup;
+
+        return $this;
+    }
+
+    /**
+     * Returns summary status information about all "Presentation Nodes". See DestinyPresentationNodeDefinition
+     * for more details, but the gist is that these are entities used by the game UI to bucket Collectibles and Records
+     * into a hierarchy of categories. You may ask for and use this data if you want to perform similar bucketing
+     * in your own UI: or you can skip it and roll your own.
+     *
+     * @return $this
+     */
+    public function addPresentationNodes(): self
+    {
+        $this->components[] = ComponentTypes::PresentationNodes;
+
+        return $this;
+    }
+
+    /**
+     * Returns summary status information about all "Collectibles". These are records of what items you've discovered
+     * while playing Destiny, and some other basic information. For detailed information, you will have to call
+     * a separate endpoint devoted to the purpose.
+     *
+     * @return $this
+     */
+    public function addCollectibles(): self
+    {
+        $this->components[] = ComponentTypes::Collectibles;
+
+        return $this;
+    }
+
+    /**
+     * Returns summary status information about all "Records (also known in the game as "Triumphs". I know, it's
+     * confusing because there's also "Moments of Triumph" that will themselves be represented as "Triumphs.")
+     *
+     * @return $this
+     */
+    public function addRecords(): self
+    {
+        $this->components[] = ComponentTypes::Records;
+
+        return $this;
+    }
+
+    /**
+     * Returns information that Bungie considers to be "Transitory": data that may change too frequently or
+     * come from a non-authoritative source such that we don't consider the data to be fully trustworthy,
+     * but that might prove useful for some limited use cases. We can provide no guarantee of timeliness nor
+     * consistency for this data: buyer beware with the Transitory component.
+     *
+     * @return $this
+     */
+    public function addTransitory(): self
+    {
+        $this->components[] = ComponentTypes::Transitory;
 
         return $this;
     }
