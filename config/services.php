@@ -39,6 +39,7 @@ return [
         'client_id'     => env('BUNGIE_CLIENT'),
         'client_secret' => env('BUNGIE_SECRET'),
         'redirect'      => env('APP_URL').'/oauth/callback',
+        'contact'       => env('BUNGIE_CONTACT', 'admin@destinystatus.com'),
     ],
 
 ];
