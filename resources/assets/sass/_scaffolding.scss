@@ -39,11 +39,6 @@ html {
 body {
   height: 100%;
   background-color: $background-color-from;
-  //@include gradient-vertical(darken($background-color-from, 5%), $background-color-from);
-  //background-repeat: no-repeat;
-  //background-attachment: fixed;
-  //@include gradient-vertical($background-color-from, $background-color-to);
-  //@include gradient-vertical(darken($background-color-from, 40%), black);
   color: white;
   font-family: Roboto, sans-serif;
 }

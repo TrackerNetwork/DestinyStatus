@@ -1,10 +1,10 @@
 // Bootstrap mixins
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 
 // Compass mixins
-@import "node_modules/compass-sass-mixins/lib/compass/utilities";
-@import "node_modules/compass-sass-mixins/lib/compass/css3";
-@import "node_modules/compass-sass-mixins/lib/animation/core";
+@import "~compass-sass-mixins/lib/compass/utilities";
+@import "~compass-sass-mixins/lib/compass/css3";
+@import "~compass-sass-mixins/lib/animation/core";
 
 //
 // Clearfix
