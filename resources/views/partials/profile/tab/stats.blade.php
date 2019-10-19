@@ -38,9 +38,6 @@ $all = $character->statsAll;
     @include('partials.profile.stats.ability', ['pve' => $pve, 'pvp' => $pvp, 'key' => 'stats-ability-'.$character->characterId])
 </div>
 <div class="stats panel">
-    @include('partials.profile.stats.primary', ['pve' => $pve, 'pvp' => $pvp, 'key' => 'stats-primary-'.$character->characterId])
-</div>
-<div class="stats panel">
-    @include('partials.profile.stats.power', ['pve' => $pve, 'pvp' => $pvp, 'key' => 'stats-power-'.$character->characterId])
+    @include('partials.profile.stats.weapons', ['pve' => $pve, 'pvp' => $pvp, 'key' => 'stats-primary-'.$character->characterId])
 </div>
 <?php endif; ?>
