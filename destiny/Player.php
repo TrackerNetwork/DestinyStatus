@@ -34,6 +34,8 @@ class Player extends Model
                 return 'PlayStation';
             case Console::Blizzard:
                 return 'PC';
+            case Console::Steam:
+                return 'Steam';
             default:
                 return 'Unknown: '.$this->membershipType;
         }

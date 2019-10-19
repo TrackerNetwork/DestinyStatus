@@ -11,6 +11,8 @@ abstract class Console
 
     const Playstation = 2;
 
+    const Steam = 3;
+
     const Blizzard = 4;
 
     // unknowns

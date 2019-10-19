@@ -25,6 +25,8 @@ class ConsoleHelper
                 return Console::Playstation;
             case 'pc':
                 return Console::Blizzard;
+            case 'steam':
+                return Console::Steam;
             default:
                 throw new \Exception('Unknown console: '.$console);
         }
@@ -44,6 +46,8 @@ class ConsoleHelper
                 return 'psn';
             case Console::Blizzard:
                 return 'pc';
+            case Console::Steam:
+                return 'steam';
             default:
                 return 'Unknown: '.$id;
         }
