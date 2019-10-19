@@ -67,7 +67,7 @@ class Character extends Definition
         'combinedStats',
     ];
 
-    const MAX_LIGHT = 385;
+    const MAX_LIGHT = 960;
 
     // activities
     const MILESTONE_NIGHTFALL = '2171429505';
