@@ -1,6 +1,7 @@
 dist: precise
 
 language: php
+node_js: "0.10"
 
 cache:
   directories:
