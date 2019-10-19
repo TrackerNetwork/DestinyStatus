@@ -1,3 +1,11 @@
+# v3.3.0 (October 19, 2019)
+ * Project wake up.
+ * Support for Steam.
+ * Maxlight updated.
+ * Upgraded to latest vue to fix countdown.
+ * Added missing finish/clan banner.
+ * Merged stats into 1 weapon category.
+
 # v3.2.1 (August 27, 2018)
  * Hotfix for support for v2.3.0 API release
 
