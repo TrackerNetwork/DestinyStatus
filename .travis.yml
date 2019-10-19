@@ -1,7 +1,6 @@
 dist: precise
 
 language: php
-node_js: "0.10"
 
 cache:
   directories:
@@ -13,11 +12,9 @@ php:
   - '7.1'
 
 install:
-  - yarn install
   - composer install
   - cp .env.example .env
   - php artisan key:generate
-  - yarn run dev
 
 script:
   - ./vendor/bin/phpunit
