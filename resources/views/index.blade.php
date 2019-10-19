@@ -8,5 +8,5 @@
     @include('partials.homepage.weekly', ['milestones' => $milestoneHandler->weeklys])
 
     <h2>Time till Weekly Reset</h2>
-    <Countdown weekly="<?= next_weekly()->toRfc2822String(); ?>"></Countdown>
+    <Countdown weekly="<?= next_weekly()->format('F d, Y'); ?>"></Countdown>
 @stop
