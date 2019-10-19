@@ -7,14 +7,12 @@ $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
     if ($group) setCookie($group, $tab.attr('href'));
 });
 
-$(function()
-{
+$(function() {
     $.each(getCookie(null), function(cookie) {
         $('a[href="'+ getCookie(cookie)+'"]').tab('show');
     });
 
-    $('canvas.sprite').each(function(i, sprite)
-    {
+    $('canvas.sprite').each(function(i, sprite) {
         let $sprite = $(sprite)
             , w = $sprite.attr('width')
             , h = $sprite.attr('height')
@@ -71,9 +69,7 @@ function getCookie(key) {
 }
 
 function allStorage() {
-    let i = 0,
-        oJson = {},
-        sKey;
+    let i = 0, oJson = {}, sKey;
     for (; sKey = window.localStorage.key(i); i++) {
         if (sKey.length < 5) {
             oJson[sKey] = window.localStorage.getItem(sKey);

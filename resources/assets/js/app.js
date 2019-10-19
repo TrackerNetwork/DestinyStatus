@@ -1,12 +1,9 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
 require('./bootstrap');
-
 window.Vue = require('vue');
 
 /**
@@ -14,10 +11,12 @@ window.Vue = require('vue');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import Autocomplete from "./components/Autocomplete";
+Vue.component('autocomplete', Autocomplete);
 
-Vue.component('autocomplete', require('./components/Autocomplete.vue'));
-Vue.component('countdown', require('./components/Countdown.vue'));
+import Countdown from "./components/Countdown";
+Vue.component('countdown', Countdown);
 
 const app = new Vue({
-    el: '#app'
+    el: '#vue-wrapper'
 });

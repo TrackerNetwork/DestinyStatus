@@ -1,6 +1,6 @@
 <template>
     <div class="text-center">
-        <Countdown :deadline="weekly"></Countdown>
+        <Countdown deadline="weekly"></Countdown>
     </div>
 </template>
 <script>
