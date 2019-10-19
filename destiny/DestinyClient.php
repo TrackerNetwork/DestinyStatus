@@ -41,12 +41,12 @@ class DestinyClient extends Client
     public function __construct(string $apiKey)
     {
         // User-Agent: DestinyStatus/v3.0.0 AppId/123456 (+destinystatus.com;admin@destinystatus.com)
-        $versionSlug = 'DestinyStatus/' . version();
-        $appIdSlug = 'AppId/' . config('services.bungie.client_id');
-        $contactSlug = 'destinystatus.com;' . config('services.bungie.contact');
+        $versionSlug = 'DestinyStatus/'.version();
+        $appIdSlug = 'AppId/'.config('services.bungie.client_id');
+        $contactSlug = 'destinystatus.com;'.config('services.bungie.contact');
 
         $headers = [
-            'User-Agent' => $versionSlug . ' ' . $appIdSlug . ' (+' . $contactSlug . ')',
+            'User-Agent' => $versionSlug.' '.$appIdSlug.' (+'.$contactSlug.')',
             'X-API-Key'  => $apiKey,
         ];
 

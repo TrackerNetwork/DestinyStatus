@@ -103,7 +103,8 @@ class DestinyComponentUrlBuilder
 
     /**
      * This will get you any progression-related information that exists on a Profile-wide level, across all characters.
-
+     *
+     *
      * @return $this
      */
     public function addProfileProgression(): self
@@ -329,7 +330,8 @@ class DestinyComponentUrlBuilder
     /**
      * When obtaining vendor information, this will return summary information about the Vendor
      * or Vendors being returned.
-
+     *
+     *
      * @return $this
      */
     public function addVendors() : self
@@ -382,7 +384,7 @@ class DestinyComponentUrlBuilder
      * A "shortcut" component that will give you all of the item hashes/quantities of items that the requested
      * character can use to determine if an action (purchasing, socket insertion) has the required currency.
      * (recall that all currencies are just items, and that some vendor purchases require items that you might
-     * not traditionally consider to be a "currency", like plugs/mods!)
+     * not traditionally consider to be a "currency", like plugs/mods!).
      *
      * @return $this
      */
@@ -424,7 +426,7 @@ class DestinyComponentUrlBuilder
 
     /**
      * Returns summary status information about all "Records (also known in the game as "Triumphs". I know, it's
-     * confusing because there's also "Moments of Triumph" that will themselves be represented as "Triumphs.")
+     * confusing because there's also "Moments of Triumph" that will themselves be represented as "Triumphs.").
      *
      * @return $this
      */
