@@ -24,6 +24,8 @@ use Destiny\Model;
  * @property \Destiny\Definitions\Components\Inventory $sparrow
  * @property \Destiny\Definitions\Components\Inventory $ship
  * @property \Destiny\Definitions\Components\Inventory $emote
+ * @property \Destiny\Definitions\Components\Inventory $finish
+ * @property \Destiny\Definitions\Components\Inventory $clanBanner
  */
 class Inventory extends Model
 {
@@ -40,8 +42,10 @@ class Inventory extends Model
     const BUCKET_VEHICLES = '2025709351';
     const BUCKET_SHIPS = '284967655';
     const BUCKET_EMBLEMS = '4274335291';
-    const BUCKET_EMOTES = '3054419239';
+    const BUCKET_EMOTES = '1107761855';
     const BUCKET_AURA = '1269569095';
+    const BUCKET_CLAN = '4292445962';
+    const BUCKET_FINISH = '3683254069';
 
     protected function gItems($key)
     {
@@ -121,5 +125,15 @@ class Inventory extends Model
     protected function gEmote()
     {
         return $this->gItems(self::BUCKET_EMOTES);
+    }
+
+    protected function gFinish()
+    {
+        return $this->gItems(self::BUCKET_FINISH);
+    }
+
+    protected function gClanBanner()
+    {
+        return $this->gItems(self::BUCKET_CLAN);
     }
 }

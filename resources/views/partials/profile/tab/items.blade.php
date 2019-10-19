@@ -22,5 +22,5 @@
     @include('partials.profile.bucket', ['item' => $inventory->aura])
     @include('partials.profile.bucket', ['item' => $inventory->sparrow])
     @include('partials.profile.bucket', ['item' => $inventory->ship])
-    @include('partials.profile.bucket', ['item' => $inventory->emote])
+    @include('partials.profile.bucket', ['item' => $inventory->finish])
 </div>
