@@ -1,31 +1,26 @@
-env:
-  - CXX=g++-4.8
+dist: precise
+
 language: php
+
 cache:
   directories:
     - node_modules
+    - vendor
+
 php:
   - '7.2'
   - '7.1'
-before_install:
-  - . $HOME/.nvm/nvm.sh
-  - nvm install 6
-  - nvm use 6
-  - npm install -g yarn
-  - yarn install
+
 install:
+  - yarn install
   - composer install
   - cp .env.example .env
   - php artisan key:generate
   - yarn run dev
+
 script:
   - ./vendor/bin/phpunit
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - g++-4.8
+
 notifications:
   email:
     on_success: never
