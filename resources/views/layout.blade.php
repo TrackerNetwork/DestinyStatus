@@ -14,8 +14,8 @@
     @include('vendor.ad_head_js')
 </head>
 <body>
-<div>
-<nav id="app" class="navbar navbar-default navbar-inverse" role="navigation">
+<div id="vue-wrapper">
+<nav class="navbar navbar-default navbar-inverse" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
