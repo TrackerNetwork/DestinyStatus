@@ -24,10 +24,10 @@ function next_daily()
     static $date;
 
     if (!$date) {
-        $date = carbon('this day 9:00 AM Z');
+        $date = carbon('this day 5:00 PM Z');
 
         if ($date->isPast()) {
-            $date = carbon('next day 9:00 AM Z');
+            $date = carbon('next day 5:00 PM Z');
         }
     }
 
@@ -57,10 +57,10 @@ function next_weekly()
     static $date;
 
     if (!$date) {
-        $date = carbon('this tuesday 9:00 AM Z');
+        $date = carbon('this tuesday 5:00 PM Z');
 
         if ($date->isPast()) {
-            $date = carbon('next tuesday 9:00 AM Z');
+            $date = carbon('next tuesday 5:00 PM Z');
         }
     }
 
