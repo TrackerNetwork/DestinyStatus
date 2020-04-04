@@ -45,7 +45,7 @@ class LeaderboardEntry extends Definition
         return ConsoleHelper::getPlatformImage($this->platform);
     }
 
-    protected function gPlatform() : string
+    protected function gPlatform(): string
     {
         return ConsoleHelper::getConsoleStringFromId(array_get($this->properties, 'player.destinyUserInfo.membershipType'));
     }

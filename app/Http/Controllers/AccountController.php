@@ -55,7 +55,7 @@ class AccountController extends Controller
      *
      * @return \Destiny\Player
      */
-    protected function findPlayer(string $platform, string $gamertag) : Player
+    protected function findPlayer(string $platform, string $gamertag): Player
     {
         $players = destiny()->player($gamertag);
         $player = $players->get($platform);

@@ -19,7 +19,7 @@ class BadgeHelper
      *
      * @return bool
      */
-    public static function grantBadge(Badge $badge, Account $account) : bool
+    public static function grantBadge(Badge $badge, Account $account): bool
     {
         $badge = new AssignedBadge([
             'badge_id'   => $badge->id,

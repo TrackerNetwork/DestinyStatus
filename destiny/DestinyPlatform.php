@@ -20,7 +20,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    protected function destinyRequest($uri, $params = [], $cacheMinutes = null, $salvageable = true) : DestinyRequest
+    protected function destinyRequest($uri, $params = [], $cacheMinutes = null, $salvageable = true): DestinyRequest
     {
         return new DestinyRequest($uri, $params, $cacheMinutes, $salvageable);
     }
@@ -28,7 +28,7 @@ class DestinyPlatform
     /**
      * @return DestinyRequest
      */
-    public function manifest() : DestinyRequest
+    public function manifest(): DestinyRequest
     {
         return $this->destinyRequest('destiny2/manifest/', false);
     }
@@ -38,7 +38,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function searchDestinyPlayer(string $gamertag) : DestinyRequest
+    public function searchDestinyPlayer(string $gamertag): DestinyRequest
     {
         $gamertag = rawurlencode(trim($gamertag));
 
@@ -60,7 +60,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getDestinyProfile(Account $account) : DestinyRequest
+    public function getDestinyProfile(Account $account): DestinyRequest
     {
         $profileBuilder = (new DestinyComponentUrlBuilder("Destiny2/$account->membership_type/Profile/$account->membership_id/"))
             ->addProfiles()
@@ -79,7 +79,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getDestinyStats(Account $account, $modes = [StatGroupType::General, StatGroupType::Activity, StatGroupType::Weapons]) : DestinyRequest
+    public function getDestinyStats(Account $account, $modes = [StatGroupType::General, StatGroupType::Activity, StatGroupType::Weapons]): DestinyRequest
     {
         return $this->destinyRequest("Destiny2/$account->membership_type/Account/$account->membership_id/Stats/", ['groups' => implode(',', $modes)], CACHE_DEFAULT, true);
     }
@@ -89,7 +89,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getGroups(Player $player) : DestinyRequest
+    public function getGroups(Player $player): DestinyRequest
     {
         // 0/1 = no filters & groupType = clan. Thanks vpzed
         return $this->destinyRequest('GroupV2/User/'.$player->membershipType.'/'.$player->membershipId.'/0/1/', null, CACHE_DEFAULT, false);
@@ -100,7 +100,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getClan(Group $group) : DestinyRequest
+    public function getClan(Group $group): DestinyRequest
     {
         return $this->destinyRequest("GroupV2/$group->groupId/", null, CACHE_DEFAULT, true);
     }
@@ -110,7 +110,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getClanMembers(Group $group) : DestinyRequest
+    public function getClanMembers(Group $group): DestinyRequest
     {
         return $this->destinyRequest('GroupV2/'.$group->groupId.'/Members/', ['currentPage' => 1], CACHE_DEFAULT, false);
     }
@@ -121,7 +121,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getClanStats(Group $group, array $modes = [ActivityModeType::AllPvE, ActivityModeType::AllPvP, ActivityModeType::Nightfall]) : DestinyRequest
+    public function getClanStats(Group $group, array $modes = [ActivityModeType::AllPvE, ActivityModeType::AllPvP, ActivityModeType::Nightfall]): DestinyRequest
     {
         return $this->destinyRequest('Destiny2/Stats/AggregateClanStats/'.$group->groupId.'/', ['modes' => $modes], CACHE_DEFAULT, false);
     }
@@ -133,7 +133,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getClanLeaderboard(Group $group, array $modes = [ActivityModeType::AllPvP, ActivityModeType::AllPvE], string $statId = '') : DestinyRequest
+    public function getClanLeaderboard(Group $group, array $modes = [ActivityModeType::AllPvP, ActivityModeType::AllPvE], string $statId = ''): DestinyRequest
     {
         $params = ['modes' => implode(',', $modes), 'maxtop' => 10];
 
@@ -157,7 +157,7 @@ class DestinyPlatform
     /**
      * @return DestinyRequest
      */
-    public function getMilestones() : DestinyRequest
+    public function getMilestones(): DestinyRequest
     {
         return $this->destinyRequest('Destiny2/Milestones/', null, CACHE_INDEX, false);
     }
@@ -167,7 +167,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getMilestoneContent(string $milestoneHash) : DestinyRequest
+    public function getMilestoneContent(string $milestoneHash): DestinyRequest
     {
         return $this->destinyRequest("Destiny2/Milestones/$milestoneHash/Content/", null, CACHE_INDEX, false);
     }
@@ -178,7 +178,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getCharacterStats(Profile $profile, Character $character) : DestinyRequest
+    public function getCharacterStats(Profile $profile, Character $character): DestinyRequest
     {
         $membershipType = $profile->account->membership_type;
         $membershipId = $profile->account->membership_id;

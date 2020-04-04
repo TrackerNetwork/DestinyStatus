@@ -38,7 +38,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
     /**
      * {@inheritdoc}
      */
-    protected function getTokenUrl() : string
+    protected function getTokenUrl(): string
     {
         return $this->baseUrl.'platform/app/oauth/token/';
     }
@@ -46,7 +46,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
     /**
      * @return string
      */
-    protected function getUserUrl() : string
+    protected function getUserUrl(): string
     {
         return $this->baseUrl.'Platform/User/GetMembershipsForCurrentUser/';
     }

@@ -30,7 +30,7 @@ class DestinyClient extends Client
 
     protected $proxyUrl = null;
 
-    /** @var TokenBucket $bucket */
+    /** @var TokenBucket */
     public static $bucket = null;
 
     /**
@@ -187,7 +187,7 @@ class DestinyClient extends Client
      *
      * @return DestinyRequest
      */
-    private function applyProxyIfNeeded(DestinyRequest $request) : DestinyRequest
+    private function applyProxyIfNeeded(DestinyRequest $request): DestinyRequest
     {
         if ($this->proxyUrl !== null) {
             if (self::$bucket === null) {

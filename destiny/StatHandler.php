@@ -26,7 +26,7 @@ class StatHandler extends StatDefinition
      *
      * @return StatisticsCollection
      */
-    public function getCharacterStats(string $characterId, string $mode = 'allTime') : StatisticsCollection
+    public function getCharacterStats(string $characterId, string $mode = 'allTime'): StatisticsCollection
     {
         if ($mode === 'allTime') {
             $mode = 'merged.allTime';
@@ -50,7 +50,7 @@ class StatHandler extends StatDefinition
      *
      * @return ActivityStatCollection
      */
-    public function getCharacterActivityStats(string $characterId) : ActivityStatCollection
+    public function getCharacterActivityStats(string $characterId): ActivityStatCollection
     {
         return new ActivityStatCollection($this->properties[$characterId.'.stats']['activities'] ?? []);
     }

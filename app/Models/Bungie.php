@@ -94,12 +94,12 @@ class Bungie extends Model implements Authenticatable, UserProvider
         return $this->hasOne(Account::class, 'id', 'preferred_account_id');
     }
 
-    public function url() : string
+    public function url(): string
     {
         return $this->account->url();
     }
 
-    public function isActive() : bool
+    public function isActive(): bool
     {
         return $this->expires->isFuture();
     }

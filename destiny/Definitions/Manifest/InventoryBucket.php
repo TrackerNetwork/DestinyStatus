@@ -42,7 +42,7 @@ class InventoryBucket extends Definition
         'displayProperties',
     ];
 
-    public function isCharacter() : bool
+    public function isCharacter(): bool
     {
         return $this->scope == self::SCOPE_CHARACTER;
     }

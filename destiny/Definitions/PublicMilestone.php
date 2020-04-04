@@ -207,7 +207,7 @@ class PublicMilestone extends Definition
         return $quest->milestoneChallenges;
     }
 
-    private function getFirstQuest() : ?MilestonePublicQuest
+    private function getFirstQuest(): ?MilestonePublicQuest
     {
         return $this->quests->first();
     }

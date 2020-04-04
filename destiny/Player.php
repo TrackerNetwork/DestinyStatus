@@ -20,12 +20,12 @@ use App\Helpers\ConsoleHelper;
  */
 class Player extends Model
 {
-    protected function gPlatform() : string
+    protected function gPlatform(): string
     {
         return ConsoleHelper::getConsoleStringFromId((int) $this->membershipType);
     }
 
-    protected function gPlatformName() : string
+    protected function gPlatformName(): string
     {
         switch ($this->membershipType) {
             case Console::Xbox:
@@ -41,12 +41,12 @@ class Player extends Model
         }
     }
 
-    protected function gPlatformIcon() : string
+    protected function gPlatformIcon(): string
     {
         return ConsoleHelper::getPlatformImage($this->platform);
     }
 
-    protected function gUrl() : string
+    protected function gUrl(): string
     {
         return route('account', ['platform' => $this->platform, 'player' => url_slug($this->displayName)]);
     }

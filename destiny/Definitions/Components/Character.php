@@ -193,7 +193,7 @@ class Character extends Definition
         return $this->getMilestones([self::MILESTONE_LEVITHIAN_27]);
     }
 
-    private function getMilestones(array $hashes) : array
+    private function getMilestones(array $hashes): array
     {
         /** @var Collection $originalMilestones */
         $originalMilestones = $this->getNonMutatedProperty('milestones');

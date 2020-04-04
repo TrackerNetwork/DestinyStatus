@@ -15,7 +15,7 @@ class ConsoleHelper
      *
      * @return int
      */
-    public static function getIdFromConsoleString(string $console) : int
+    public static function getIdFromConsoleString(string $console): int
     {
         switch (strtolower($console)) {
             case 'xbl':
@@ -37,7 +37,7 @@ class ConsoleHelper
      *
      * @return string
      */
-    public static function getConsoleStringFromId(int $id) : string
+    public static function getConsoleStringFromId(int $id): string
     {
         switch ($id) {
             case Console::Xbox:
@@ -58,7 +58,7 @@ class ConsoleHelper
      *
      * @return string
      */
-    public static function getPlatformImage(string $console) : string
+    public static function getPlatformImage(string $console): string
     {
         return asset('/img/'.$console.'.png', !\App::isLocal());
     }

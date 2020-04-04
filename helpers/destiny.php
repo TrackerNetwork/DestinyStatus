@@ -63,7 +63,7 @@ function bungie_slug($name)
     return rawurlencode($name);
 }
 
-function url_slug($name) : string
+function url_slug($name): string
 {
     $name = mb_strtolower($name);
 

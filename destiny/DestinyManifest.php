@@ -46,7 +46,7 @@ class DestinyManifest
      *
      * @return Activity
      */
-    public function activity(string $hash) : Activity
+    public function activity(string $hash): Activity
     {
         return $this->instance('Activity', $hash);
     }
@@ -56,7 +56,7 @@ class DestinyManifest
      *
      * @return ActivityGraph
      */
-    public function activityGraph(string $hash) : ActivityGraph
+    public function activityGraph(string $hash): ActivityGraph
     {
         return $this->instance('ActivityGraph', $hash);
     }
@@ -66,7 +66,7 @@ class DestinyManifest
      *
      * @return ActivityMode
      */
-    public function activityMode(string $hash) : ActivityMode
+    public function activityMode(string $hash): ActivityMode
     {
         return $this->instance('ActivityMode', $hash);
     }
@@ -76,7 +76,7 @@ class DestinyManifest
      *
      * @return ActivityModifier
      */
-    public function activityModifier(string $hash) : ActivityModifier
+    public function activityModifier(string $hash): ActivityModifier
     {
         return $this->instance('ActivityModifier', $hash);
     }
@@ -86,7 +86,7 @@ class DestinyManifest
      *
      * @return ActivityType
      */
-    public function activityType(string $hash) : ActivityType
+    public function activityType(string $hash): ActivityType
     {
         return $this->instance('ActivityType', $hash);
     }
@@ -96,7 +96,7 @@ class DestinyManifest
      *
      * @return DestinyClass
      */
-    public function destinyClass(string $hash) : DestinyClass
+    public function destinyClass(string $hash): DestinyClass
     {
         return $this->instance('Class', $hash);
     }
@@ -106,7 +106,7 @@ class DestinyManifest
      *
      * @return DamageType
      */
-    public function damageTypes(string $hash) : DamageType
+    public function damageTypes(string $hash): DamageType
     {
         return $this->instance('DamageType', $hash);
     }
@@ -116,7 +116,7 @@ class DestinyManifest
      *
      * @return Destination
      */
-    public function destination(string $hash) : Destination
+    public function destination(string $hash): Destination
     {
         return $this->instance('Destination', $hash);
     }
@@ -126,7 +126,7 @@ class DestinyManifest
      *
      * @return Faction
      */
-    public function faction(string $hash) : Faction
+    public function faction(string $hash): Faction
     {
         return $this->instance('Faction', $hash);
     }
@@ -136,7 +136,7 @@ class DestinyManifest
      *
      * @return Gender
      */
-    public function gender(string $hash) : Gender
+    public function gender(string $hash): Gender
     {
         return $this->instance('Gender', $hash);
     }
@@ -146,7 +146,7 @@ class DestinyManifest
      *
      * @return HistoricalStat
      */
-    public function historicalStat(string $hash) : HistoricalStat
+    public function historicalStat(string $hash): HistoricalStat
     {
         return $this->instance('HistoricalStats', $hash);
     }
@@ -156,7 +156,7 @@ class DestinyManifest
      *
      * @return Location
      */
-    public function location(string $hash) : Location
+    public function location(string $hash): Location
     {
         return $this->instance('Location', $hash);
     }
@@ -166,7 +166,7 @@ class DestinyManifest
      *
      * @return Lore
      */
-    public function lore(string $hash) : Lore
+    public function lore(string $hash): Lore
     {
         return $this->instance('Lore', $hash);
     }
@@ -176,7 +176,7 @@ class DestinyManifest
      *
      * @return Milestone
      */
-    public function milestone(string $hash) : Milestone
+    public function milestone(string $hash): Milestone
     {
         return $this->instance('Milestone', $hash);
     }
@@ -186,7 +186,7 @@ class DestinyManifest
      *
      * @return Objective
      */
-    public function objective(string $hash) : Objective
+    public function objective(string $hash): Objective
     {
         return $this->instance('Objective', $hash);
     }
@@ -196,7 +196,7 @@ class DestinyManifest
      *
      * @return Place
      */
-    public function place(string $hash) : Place
+    public function place(string $hash): Place
     {
         return $this->instance('Place', $hash);
     }
@@ -206,7 +206,7 @@ class DestinyManifest
      *
      * @return Progression
      */
-    public function progression(string $hash) : Progression
+    public function progression(string $hash): Progression
     {
         return $this->instance('Progression', $hash);
     }
@@ -216,7 +216,7 @@ class DestinyManifest
      *
      * @return InventoryBucket
      */
-    public function inventoryBucket(string $hash) : InventoryBucket
+    public function inventoryBucket(string $hash): InventoryBucket
     {
         return $this->instance('InventoryBucket', $hash);
     }
@@ -226,7 +226,7 @@ class DestinyManifest
      *
      * @return InventoryItem
      */
-    public function inventoryItem(string $hash) : InventoryItem
+    public function inventoryItem(string $hash): InventoryItem
     {
         return $this->instance('InventoryItem', $hash);
     }
@@ -236,7 +236,7 @@ class DestinyManifest
      *
      * @return ItemCategory
      */
-    public function itemCategory(string $hash) : ItemCategory
+    public function itemCategory(string $hash): ItemCategory
     {
         return $this->instance('ItemCategories', $hash);
     }
@@ -246,7 +246,7 @@ class DestinyManifest
      *
      * @return ItemTierType
      */
-    public function itemTierType(string $hash) : ItemTierType
+    public function itemTierType(string $hash): ItemTierType
     {
         return $this->instance('ItemTierTypes', $hash);
     }
@@ -256,7 +256,7 @@ class DestinyManifest
      *
      * @return Race
      */
-    public function race(string $hash) : Race
+    public function race(string $hash): Race
     {
         return $this->instance('Race', $hash);
     }
@@ -266,7 +266,7 @@ class DestinyManifest
      *
      * @return SandboxPerk
      */
-    public function sandboxPerk(string $hash) : SandboxPerk
+    public function sandboxPerk(string $hash): SandboxPerk
     {
         return $this->instance('SandboxPerks', $hash);
     }
@@ -276,7 +276,7 @@ class DestinyManifest
      *
      * @return SocketType
      */
-    public function socketType(string $hash) : SocketType
+    public function socketType(string $hash): SocketType
     {
         return $this->instance('SocketTypes', $hash);
     }
@@ -286,7 +286,7 @@ class DestinyManifest
      *
      * @return Stat
      */
-    public function stat(string $hash) : Stat
+    public function stat(string $hash): Stat
     {
         return $this->instance('Stat', $hash);
     }
@@ -296,7 +296,7 @@ class DestinyManifest
      *
      * @return StatGroup
      */
-    public function statGroup(string $hash) : StatGroup
+    public function statGroup(string $hash): StatGroup
     {
         return $this->instance('StatGroups', $hash);
     }
@@ -306,7 +306,7 @@ class DestinyManifest
      *
      * @return TalentGrid
      */
-    public function talentGrid(string $hash) : TalentGrid
+    public function talentGrid(string $hash): TalentGrid
     {
         return $this->instance('Talents', $hash);
     }
@@ -316,7 +316,7 @@ class DestinyManifest
      *
      * @return RewardSource
      */
-    public function rewardSource(string $hash) : RewardSource
+    public function rewardSource(string $hash): RewardSource
     {
         return $this->instance('RewardSource', $hash);
     }
@@ -326,7 +326,7 @@ class DestinyManifest
      *
      * @return Unlock
      */
-    public function unlock(string $hash) : Unlock
+    public function unlock(string $hash): Unlock
     {
         return $this->instance('Unlocks', $hash);
     }
@@ -336,7 +336,7 @@ class DestinyManifest
      *
      * @return Vendor
      */
-    public function vendor(string $hash) : Vendor
+    public function vendor(string $hash): Vendor
     {
         return $this->instance('Vendor', $hash);
     }

@@ -13,7 +13,9 @@ use Illuminate\Queue\SerializesModels;
  */
 class BungieSignedIn
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable;
+    use InteractsWithSockets;
+    use SerializesModels;
 
     /**
      * @var Bungie
