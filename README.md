@@ -2,9 +2,9 @@
 
 [![Join the chat at https://gitter.im/TrackerNetwork/DestinyStatus](https://badges.gitter.im/TrackerNetwork/DestinyStatus.svg)](https://gitter.im/TrackerNetwork/DestinyStatus?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/TrackerNetwork/DestinyStatus.svg?branch=master)](https://travis-ci.org/TrackerNetwork/DestinyStatus)
 
-This project is based on the Laravel framework [v5.5].
+This project is based on the Laravel framework [v5.6].
 
-Please [read these instructions](https://laravel.com/docs/5.5#server-requirements) on how to configure your server to get started.
+Please [read these instructions](https://laravel.com/docs/5.6#server-requirements) on how to configure your server to get started.
 
 ### Understanding Branches
 
@@ -15,7 +15,7 @@ Please [read these instructions](https://laravel.com/docs/5.5#server-requirement
 
 ### Project dependencies:
 
-* PHP >= 7.0
+* PHP >= 7.1
   * zip extension
   * sqlite3 extension
 * Mcrypt extension
