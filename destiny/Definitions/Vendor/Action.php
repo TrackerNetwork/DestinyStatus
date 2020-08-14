@@ -1,6 +1,6 @@
 <?php
 
-namespace Destiny\Definition\Vendor;
+namespace Destiny\Definitions\Vendor;
 
 use Destiny\Definitions\Definition;
 
