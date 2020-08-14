@@ -8,10 +8,10 @@ use Destiny\Definitions\Definition;
 /**
  * Class ActivityModifier.
  *
- * @property array $displayProperties
+ * @property array  $displayProperties
  * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property int    $index
+ * @property bool   $redacted
  * @property-read DisplayProperties $display
  */
 class ActivityModifier extends Definition

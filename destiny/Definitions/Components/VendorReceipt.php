@@ -8,14 +8,14 @@ use Destiny\Definitions\Item\Quantity;
 /**
  * Class VendorReceipt.
  *
- * @property array $currencyPaid
- * @property array $itemReceived
- * @property string $licenseUnlockHash
- * @property string $purchasedByCharacterId
- * @property int $refundPolicy
- * @property string $sequenceNumber
- * @property string $timeToExpiration
- * @property string $expiresOn
+ * @property array    $currencyPaid
+ * @property array    $itemReceived
+ * @property string   $licenseUnlockHash
+ * @property string   $purchasedByCharacterId
+ * @property int      $refundPolicy
+ * @property string   $sequenceNumber
+ * @property string   $timeToExpiration
+ * @property string   $expiresOn
  * @property Quantity $currency
  * @property Quantity $item
  */

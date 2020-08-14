@@ -9,17 +9,17 @@ use Destiny\Definitions\Definition;
  * Class InventoryBucket.
  *
  * @property DisplayProperties $displayProperties
- * @property int $scope
- * @property int $category
- * @property int $bucketOrder
- * @property int $itemCount
- * @property int $location
- * @property bool $hasTransferDestination
- * @property bool $enabled
- * @property bool $fifo
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property int               $scope
+ * @property int               $category
+ * @property int               $bucketOrder
+ * @property int               $itemCount
+ * @property int               $location
+ * @property bool              $hasTransferDestination
+ * @property bool              $enabled
+ * @property bool              $fifo
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  */
 class InventoryBucket extends Definition
 {

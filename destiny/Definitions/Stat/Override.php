@@ -8,7 +8,7 @@ use Destiny\Definitions\Definition;
 /**
  * Class Override.
  *
- * @property string $statHash
+ * @property string            $statHash
  * @property DisplayProperties $displayProperties
  */
 class Override extends Definition

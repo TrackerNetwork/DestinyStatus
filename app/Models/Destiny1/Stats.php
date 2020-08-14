@@ -9,13 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Account.
  *
- * @property int $account_id
- * @property int $raid_completions
- * @property int $playtime
- * @property float $kd
- * @property int $total_games
- * @property int $total_kills
- * @property int $grimoire
+ * @property int    $account_id
+ * @property int    $raid_completions
+ * @property int    $playtime
+ * @property float  $kd
+ * @property int    $total_games
+ * @property int    $total_kills
+ * @property int    $grimoire
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property-read \App\Account $account

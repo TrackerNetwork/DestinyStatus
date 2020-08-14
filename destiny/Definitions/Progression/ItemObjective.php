@@ -10,8 +10,8 @@ use Destiny\Definitions\Definition;
  * @property string $objectiveHash
  * @property string $destinationHash
  * @property string $activityHash
- * @property int $progress
- * @property bool $complete
+ * @property int    $progress
+ * @property bool   $complete
  */
 class ItemObjective extends Definition
 {

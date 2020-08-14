@@ -18,12 +18,12 @@ use Destiny\Milestones\RewardEntryCollection;
  * Class PublicMilestone.
  *
  * @property string $milestoneHash
- * @property array $availableQuests
- * @property array $values
- * @property array $vendorHashes
+ * @property array  $availableQuests
+ * @property array  $values
+ * @property array  $vendorHashes
  * @property string $startDate
  * @property string $endDate
- * @property int $order
+ * @property int    $order
  * @property-read Milestone $definition
  * @property-read PublicQuestCollection $quests
  * @property-read Carbon $start

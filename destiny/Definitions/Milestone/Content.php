@@ -9,8 +9,8 @@ use Destiny\Definitions\Definition;
  *
  * @property string $about
  * @property string $status
- * @property array $tips
- * @property array $itemCategories (@todo - https://bungie-net.github.io/multi/schema_Destiny-Milestones-DestinyMilestoneContentItemCategory.html#schema_Destiny-Milestones-DestinyMilestoneContentItemCategory)
+ * @property array  $tips
+ * @property array  $itemCategories (@todo - https://bungie-net.github.io/multi/schema_Destiny-Milestones-DestinyMilestoneContentItemCategory.html#schema_Destiny-Milestones-DestinyMilestoneContentItemCategory)
  */
 class Content extends Definition
 {

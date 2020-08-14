@@ -8,11 +8,11 @@ use Destiny\Definitions\Definition;
 /**
  * Class Faction.
  *
- * @property array $displayProperties
- * @property string $progressionHash
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property array             $displayProperties
+ * @property string            $progressionHash
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  * @property DisplayProperties $display
  * @property-read Progression $progression
  */

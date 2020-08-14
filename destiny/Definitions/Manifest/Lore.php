@@ -9,10 +9,10 @@ use Destiny\Definitions\Definition;
  * Class Lore.
  *
  * @property DisplayProperties $displayProperties
- * @property string $subtitle
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property string            $subtitle
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  */
 class Lore extends Definition
 {

@@ -9,10 +9,10 @@ use Destiny\Definitions\Definition;
  * Class RewardSource.
  *
  * @property DisplayProperties $displayProperties
- * @property int $category
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property int               $category
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  */
 class RewardSource extends Definition
 {

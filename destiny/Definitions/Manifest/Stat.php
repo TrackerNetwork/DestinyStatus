@@ -9,11 +9,11 @@ use Destiny\Definitions\Definition;
  * Class Stat.
  *
  * @property DisplayProperties $displayProperties
- * @property int $aggregationType
- * @property bool $hasComputedBlock
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property int               $aggregationType
+ * @property bool              $hasComputedBlock
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  */
 class Stat extends Definition
 {

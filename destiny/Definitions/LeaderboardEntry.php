@@ -7,10 +7,10 @@ use App\Helpers\ConsoleHelper;
 /**
  * Class LeaderboardEntry.
  *
- * @property int $rank
- * @property array $player
+ * @property int    $rank
+ * @property array  $player
  * @property string $characterId
- * @property mixed $value
+ * @property mixed  $value
  * @property-read string $displayValue
  * @property-read string $formattedValue
  * @property-read string $platform

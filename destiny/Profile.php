@@ -19,20 +19,20 @@ use Destiny\Profile\VendorReceiptCollection;
 /**
  * Class Profile.
  *
- * @property VendorReceiptCollection $vendorReceipts
- * @property InventoryCollection $profileInventory
- * @property CurrencyCollection $profileCurrencies
- * @property \Destiny\Profile\Profile $profile
- * @property KioskItemCollection $profileKiosks
- * @property CharacterCollection $characters
- * @property CharacterInventoryCollection $characterInventories
+ * @property VendorReceiptCollection        $vendorReceipts
+ * @property InventoryCollection            $profileInventory
+ * @property CurrencyCollection             $profileCurrencies
+ * @property \Destiny\Profile\Profile       $profile
+ * @property KioskItemCollection            $profileKiosks
+ * @property CharacterCollection            $characters
+ * @property CharacterInventoryCollection   $characterInventories
  * @property CharacterProgressionCollection $characterProgressions
- * @property array $characterRenderData
- * @property CharacterActivityCollection $characterActivities
- * @property CharacterEquipmentCollection $characterEquipment
- * @property array $characterKiosks
- * @property array $itemComponents
- * @property Account $account
+ * @property array                          $characterRenderData
+ * @property CharacterActivityCollection    $characterActivities
+ * @property CharacterEquipmentCollection   $characterEquipment
+ * @property array                          $characterKiosks
+ * @property array                          $itemComponents
+ * @property Account                        $account
  */
 class Profile extends Model
 {

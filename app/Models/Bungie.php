@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Bungie.
  *
- * @property int $id
- * @property int $membership_id
+ * @property int    $id
+ * @property int    $membership_id
  * @property Carbon $first_access
  * @property Carbon $last_update
  * @property string $unique_name
@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $access_token
  * @property Carbon $expires
  * @property string $remember_token
- * @property int $preferred_account_id
+ * @property int    $preferred_account_id
  * @property-read Account $account
  * @property-read Account[] $accounts
  * @mixin \Eloquent

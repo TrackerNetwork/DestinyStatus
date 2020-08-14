@@ -9,7 +9,7 @@ use Destiny\Definitions\Item\Inventory;
 /**
  * Class InventoryItem.
  *
- * @property array $displayProperties
+ * @property array  $displayProperties
  * @property string $secondaryIcon
  * @property string $secondaryOverlay
  * @property string $secondarySpecial
@@ -18,28 +18,28 @@ use Destiny\Definitions\Item\Inventory;
  * @property string $itemTypeAndTierDisplayName
  * @property string $displaySource
  * @property string $tooltipStyle
- * @property array $action
- * @property array $inventory
- * @property array $stats
- * @property array $equippingBlock
- * @property array $quality
- * @property array $sourceData
- * @property array $talentGrid
- * @property array $investmentStats
- * @property array $perks
+ * @property array  $action
+ * @property array  $inventory
+ * @property array  $stats
+ * @property array  $equippingBlock
+ * @property array  $quality
+ * @property array  $sourceData
+ * @property array  $talentGrid
+ * @property array  $investmentStats
+ * @property array  $perks
  * @property string $loreHash
- * @property bool $allowActions
- * @property bool $nonTransferrable
- * @property array $itemCategoryHashes
- * @property int $specialItemType
- * @property int $itemType
- * @property int $itemSubType
- * @property int $classType
- * @property bool $equippable
- * @property int $defaultDamageType
+ * @property bool   $allowActions
+ * @property bool   $nonTransferrable
+ * @property array  $itemCategoryHashes
+ * @property int    $specialItemType
+ * @property int    $itemType
+ * @property int    $itemSubType
+ * @property int    $classType
+ * @property bool   $equippable
+ * @property int    $defaultDamageType
  * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property int    $index
+ * @property bool   $redacted
  * @property-read Lore $lore
  * @property-read DisplayProperties $display
  * @property-read string $itemName

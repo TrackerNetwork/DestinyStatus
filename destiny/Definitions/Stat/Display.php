@@ -9,9 +9,9 @@ use Destiny\Definitions\InterpolationPoint;
  * Class Display.
  *
  * @property string $statHash
- * @property int $maximumValue
- * @property bool $displayAsNumeric
- * @property array $displayInterpolation (InterpolationPoint)
+ * @property int    $maximumValue
+ * @property bool   $displayAsNumeric
+ * @property array  $displayInterpolation (InterpolationPoint)
  * @property-read InterpolationPoint $interpolationPoint
  */
 class Display extends Definition

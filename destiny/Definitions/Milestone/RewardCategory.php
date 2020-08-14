@@ -10,13 +10,13 @@ use Destiny\Milestones\RewardEntryCollection;
 /**
  * Class RewardCategory.
  *
- * @property string $categoryHash
- * @property string $rewardCategoryHash
- * @property string $categoryIdentifier
- * @property array $displayProperties
- * @property array $rewardEntries
- * @property int $order
- * @property array $entries
+ * @property string    $categoryHash
+ * @property string    $rewardCategoryHash
+ * @property string    $categoryIdentifier
+ * @property array     $displayProperties
+ * @property array     $rewardEntries
+ * @property int       $order
+ * @property array     $entries
  * @property Milestone $definition
  * @property-read RewardEntryCollection $rewards
  * @property-read DisplayProperties $display

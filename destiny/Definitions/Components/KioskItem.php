@@ -7,8 +7,8 @@ use Destiny\Definitions\Definition;
 /**
  * Class KioskItem.
  *
- * @property int $index
- * @property bool $canAcquire
+ * @property int   $index
+ * @property bool  $canAcquire
  * @property array $failureIndex
  */
 class KioskItem extends Definition

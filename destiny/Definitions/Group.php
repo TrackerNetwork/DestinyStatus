@@ -8,8 +8,8 @@ namespace Destiny\Definitions;
  * @property array $detail
  * @property array $founder
  * @property array $alliedIds
- * @property int $allianceStatus
- * @property int $groupJoinInviteCount
+ * @property int   $allianceStatus
+ * @property int   $groupJoinInviteCount
  * @property array $currentUserMemberMap
  * @property array $currentUserPotentialMemberMap
  */

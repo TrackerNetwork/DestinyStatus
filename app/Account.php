@@ -13,16 +13,16 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Account.
  *
- * @property int $id
- * @property string $name
- * @property string $slug
- * @property string $membership_id
- * @property int $membership_type
- * @property Carbon $created_at
- * @property Carbon $updated_at
- * @property int $bungie_id
- * @property Stats $stats
- * @property Bungie $bungie
+ * @property int     $id
+ * @property string  $name
+ * @property string  $slug
+ * @property string  $membership_id
+ * @property int     $membership_type
+ * @property Carbon  $created_at
+ * @property Carbon  $updated_at
+ * @property int     $bungie_id
+ * @property Stats   $stats
+ * @property Bungie  $bungie
  * @property Badge[] $badges
  * @mixin \Eloquent
  * @mixin \Illuminate\Database\Eloquent\Builder

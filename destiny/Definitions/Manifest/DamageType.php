@@ -8,13 +8,13 @@ use Destiny\Definitions\Definition;
 /**
  * Class DamageType.
  *
- * @property array $displayProperties
- * @property string $transparentIconPath
- * @property bool $showIcon
- * @property int $enumValue
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property array             $displayProperties
+ * @property string            $transparentIconPath
+ * @property bool              $showIcon
+ * @property int               $enumValue
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  * @property DisplayProperties $display
  */
 class DamageType extends Definition

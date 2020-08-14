@@ -10,7 +10,7 @@ use Destiny\Definitions\Definition;
  * @property string $description
  * @property string $name
  * @property string $icon
- * @property bool $hasIcon
+ * @property bool   $hasIcon
  */
 class DisplayProperties extends Definition
 {

@@ -7,11 +7,11 @@ use Destiny\Definitions\Definition;
 /**
  * Class Quest.
  *
- * @property string $questItemHash
- * @property Status $status
+ * @property string   $questItemHash
+ * @property Status   $status
  * @property Activity $activity
- * @property array $variants
- * @property Status $instance
+ * @property array    $variants
+ * @property Status   $instance
  * @property-read int $activityLevel
  * @property-read bool $completed
  */

@@ -9,10 +9,10 @@ use Destiny\Definitions\Definition;
  * Class ItemTierType.
  *
  * @property DisplayProperties $displayProperties
- * @property array $infusionProcess (TierTypeInfusionBlock)
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property array             $infusionProcess   (TierTypeInfusionBlock)
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  */
 class ItemTierType extends Definition
 {

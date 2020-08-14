@@ -9,10 +9,10 @@ use Destiny\Definitions\Definition;
  * Class Mapping.
  *
  * @property DisplayProperties $displayProperties
- * @property string $displayUnits
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property string            $displayUnits
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  */
 class Mapping extends Definition
 {

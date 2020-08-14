@@ -8,13 +8,13 @@ use Destiny\Definitions\Definition;
 /**
  * Class DestinyClass.
  *
- * @property int $classType
- * @property array $displayProperties
- * @property array $genderedClassNames
- * @property array $mentorVendorHash
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property int               $classType
+ * @property array             $displayProperties
+ * @property array             $genderedClassNames
+ * @property array             $mentorVendorHash
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  * @property DisplayProperties $display
  */
 class DestinyClass extends Definition

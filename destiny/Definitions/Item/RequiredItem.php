@@ -8,9 +8,9 @@ use Destiny\Definitions\Manifest\InventoryItem;
 /**
  * Class RequiredItem.
  *
- * @property int $count
- * @property string $itemHash
- * @property bool $deleteOnAction
+ * @property int           $count
+ * @property string        $itemHash
+ * @property bool          $deleteOnAction
  * @property InventoryItem $item
  */
 class RequiredItem extends Definition

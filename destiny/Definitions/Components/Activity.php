@@ -8,7 +8,7 @@ use Destiny\Definitions\Definition;
  * Class Activity.
  *
  * @property string $dateActivityStarted
- * @property array $availableActivities
+ * @property array  $availableActivities
  * @property string $currentActivityHash
  * @property string $currentActivityModeHash
  * @property string $lastCompletedStoryHash

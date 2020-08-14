@@ -7,13 +7,13 @@ use GuzzleHttp\Psr7\Request;
 /**
  * Class DestinyRequest.
  *
- * @property string $key
- * @property string $uri
- * @property string $url
- * @property array $params
+ * @property string        $key
+ * @property string        $uri
+ * @property string        $url
+ * @property array         $params
  * @property \DateTime|int $cache
- * @property bool $raw
- * @property bool $salvageable
+ * @property bool          $raw
+ * @property bool          $salvageable
  */
 class DestinyRequest extends Request
 {

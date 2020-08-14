@@ -8,15 +8,15 @@ use Destiny\Profile\Progression\QuestCollection;
 /**
  * Class Milestone.
  *
- * @property string $milestoneHash
- * @property array $availableQuests
- * @property array $values
- * @property array $vendorHashes
- * @property array $rewards
- * @property string $startDate
- * @property string $endDate
+ * @property string                                  $milestoneHash
+ * @property array                                   $availableQuests
+ * @property array                                   $values
+ * @property array                                   $vendorHashes
+ * @property array                                   $rewards
+ * @property string                                  $startDate
+ * @property string                                  $endDate
  * @property \Destiny\Definitions\Manifest\Milestone $definition
- * @property QuestCollection $quests
+ * @property QuestCollection                         $quests
  * @property-read string $activityHash
  */
 class Milestone extends Definition

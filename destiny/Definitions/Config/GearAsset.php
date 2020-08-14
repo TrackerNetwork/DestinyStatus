@@ -7,7 +7,7 @@ use Destiny\Definitions\Definition;
 /**
  * Class GearAsset.
  *
- * @property int $version
+ * @property int    $version
  * @property string $path
  */
 class GearAsset extends Definition

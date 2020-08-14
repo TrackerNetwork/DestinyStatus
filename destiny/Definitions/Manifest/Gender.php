@@ -8,10 +8,10 @@ use Destiny\Definitions\Definition;
 /**
  * Class Gender.
  *
- * @property array $displayProperties
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property array             $displayProperties
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  * @property DisplayProperties $display
  */
 class Gender extends Definition

@@ -9,16 +9,16 @@ use Destiny\Definitions\Definition;
  *
  * @property string $factionHash
  * @property string $progressionHash
- * @property int $dailyProgress
- * @property int $dailyLimit
- * @property int $weeklyProgress
- * @property int $weeklyLimit
- * @property int $currentProgress
- * @property int $level
- * @property int $levelCap
- * @property int $stepIndex
- * @property int $progressToNextLevel
- * @property int $nextLevelAt
+ * @property int    $dailyProgress
+ * @property int    $dailyLimit
+ * @property int    $weeklyProgress
+ * @property int    $weeklyLimit
+ * @property int    $currentProgress
+ * @property int    $level
+ * @property int    $levelCap
+ * @property int    $stepIndex
+ * @property int    $progressToNextLevel
+ * @property int    $nextLevelAt
  * @property-read \Destiny\Definitions\Manifest\Faction $faction
  * @property-read \Destiny\Definitions\Manifest\Progression $progression
  * @property-read string $percentToNextLevel

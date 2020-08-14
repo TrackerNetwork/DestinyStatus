@@ -12,8 +12,8 @@ use Destiny\Model;
  * Class MilestonePublicQuest.
  *
  * @property string $questItemHash
- * @property array $activity
- * @property array $challenges
+ * @property array  $activity
+ * @property array  $challenges
  * @property-read InventoryItem $questItem
  * @property-read MilestoneActivity $milestoneActivity
  * @property-read ChallengeCollection $milestoneChallenges

@@ -8,15 +8,15 @@ use Destiny\Definitions\Manifest\InventoryItem;
 /**
  * Class Inventory.
  *
- * @property string $itemHash
- * @property string $itemInstanceId
- * @property int $quantity
- * @property int $bindStatus
- * @property int $location
- * @property string $bucketHash
- * @property int $transferStatus
- * @property bool $lockable
- * @property int $state
+ * @property string        $itemHash
+ * @property string        $itemInstanceId
+ * @property int           $quantity
+ * @property int           $bindStatus
+ * @property int           $location
+ * @property string        $bucketHash
+ * @property int           $transferStatus
+ * @property bool          $lockable
+ * @property int           $state
  * @property InventoryItem $definition
  * @property InstancedItem $instance
  * @property-read array $primaryStat

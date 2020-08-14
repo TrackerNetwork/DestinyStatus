@@ -13,8 +13,8 @@ use Destiny\Model;
  * Class MilestoneActivity.
  *
  * @property string $activityHash
- * @property array $modifierHashes
- * @property array $variants
+ * @property array  $modifierHashes
+ * @property array  $variants
  * @property-read Activity $definition
  * @property-read ModifierCollection $modifiers
  * @property-read ActivityCollection $activities

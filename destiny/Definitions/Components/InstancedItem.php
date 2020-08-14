@@ -8,16 +8,16 @@ use Destiny\Definitions\Manifest\DamageType;
 /**
  * Class InstancedItem.
  *
- * @property int $damageType
+ * @property int    $damageType
  * @property string $damageTypeHash
- * @property array $primaryStat
- * @property int $itemLevel
- * @property int $quality
- * @property bool $isEquipped
- * @property bool $canEquip
- * @property int $equipRequiredLevel
- * @property array $unlockHashesRequiredToEquip
- * @property int $cannotEquipReason
+ * @property array  $primaryStat
+ * @property int    $itemLevel
+ * @property int    $quality
+ * @property bool   $isEquipped
+ * @property bool   $canEquip
+ * @property int    $equipRequiredLevel
+ * @property array  $unlockHashesRequiredToEquip
+ * @property int    $cannotEquipReason
  * @property-read DamageType $damage
  */
 class InstancedItem extends Definition

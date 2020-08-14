@@ -8,8 +8,8 @@ use Destiny\LeaderboardEntryCollection;
 /**
  * Class Leaderboard.
  *
- * @property string $statId
- * @property array $entries
+ * @property string         $statId
+ * @property array          $entries
  * @property HistoricalStat $definition
  * @property-read LeaderboardEntryCollection $rankings
  */

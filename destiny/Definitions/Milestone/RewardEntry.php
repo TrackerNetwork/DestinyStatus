@@ -11,14 +11,14 @@ use Destiny\Definitions\Item\ItemCollection;
  *
  * @property string $rewardEntryHash
  * @property string $rewardEntryIdentifier
- * @property array $items
+ * @property array  $items
  * @property string $vendorHash
- * @property array $displayProperties
- * @property int $order
+ * @property array  $displayProperties
+ * @property int    $order
  * @property string $earnedUnlockHash
  * @property string $redeemedUnlockHash
- * @property bool $earned
- * @property bool $redeemed
+ * @property bool   $earned
+ * @property bool   $redeemed
  * @property-read string $icon
  * @property-read string $name
  * @property-read bool $isCompleted

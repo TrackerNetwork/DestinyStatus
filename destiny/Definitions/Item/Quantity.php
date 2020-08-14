@@ -8,8 +8,8 @@ use Destiny\Definitions\Definition;
  * Class Quantity.
  *
  * @property string $itemHash
- * @property int $itemInstanceId
- * @property int $quantity
+ * @property int    $itemInstanceId
+ * @property int    $quantity
  */
 class Quantity extends Definition
 {

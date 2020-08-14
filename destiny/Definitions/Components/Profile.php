@@ -8,10 +8,10 @@ use Destiny\Player;
 /**
  * Class Profile.
  *
- * @property array $userInfo
+ * @property array  $userInfo
  * @property string $dateLastPlayed
- * @property int $versionsOwned
- * @property array $characterIds
+ * @property int    $versionsOwned
+ * @property array  $characterIds
  * @property-read Player $player
  */
 class Profile extends Definition

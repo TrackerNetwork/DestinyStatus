@@ -8,36 +8,36 @@ use Destiny\Definitions\Definition;
 /**
  * Class Vendor.
  *
- * @property array $displayProperties
- * @property string $buyString
- * @property string $sellString
- * @property string $displayItemHash (InventoryItem)
- * @property bool $inhibitBuying
- * @property bool $inhibitSelling
- * @property string $factionHash (Faction)
- * @property int $resetIntervalMinutes
- * @property array $failureStrings
- * @property array $unlockRanges (DateRange)
- * @property string $vendorIdentifier
- * @property string $vendorPortrait
- * @property string $vendorBanner
- * @property bool $enabled
- * @property bool $visible
- * @property string $vendorCategoryIdentifier
- * @property string $vendorSubcategoryIdentifier
- * @property bool $consolidateCategories
- * @property array $actions (Vendor/Action)
- * @property array $categories (Vendor/CategoryEntry)
- * @property array $originalCategories (Vendor/CategoryEntry)
- * @property array $displayCategories (Common/DisplayCategory)
- * @property array $interactions
- * @property array $inventoryFlyouts
- * @property array $itemList
- * @property array $services
- * @property array $acceptedItems
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property array             $displayProperties
+ * @property string            $buyString
+ * @property string            $sellString
+ * @property string            $displayItemHash             (InventoryItem)
+ * @property bool              $inhibitBuying
+ * @property bool              $inhibitSelling
+ * @property string            $factionHash                 (Faction)
+ * @property int               $resetIntervalMinutes
+ * @property array             $failureStrings
+ * @property array             $unlockRanges                (DateRange)
+ * @property string            $vendorIdentifier
+ * @property string            $vendorPortrait
+ * @property string            $vendorBanner
+ * @property bool              $enabled
+ * @property bool              $visible
+ * @property string            $vendorCategoryIdentifier
+ * @property string            $vendorSubcategoryIdentifier
+ * @property bool              $consolidateCategories
+ * @property array             $actions                     (Vendor/Action)
+ * @property array             $categories                  (Vendor/CategoryEntry)
+ * @property array             $originalCategories          (Vendor/CategoryEntry)
+ * @property array             $displayCategories           (Common/DisplayCategory)
+ * @property array             $interactions
+ * @property array             $inventoryFlyouts
+ * @property array             $itemList
+ * @property array             $services
+ * @property array             $acceptedItems
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  * @property DisplayProperties $display
  */
 class Vendor extends Definition

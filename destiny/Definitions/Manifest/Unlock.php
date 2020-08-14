@@ -9,9 +9,9 @@ use Destiny\Definitions\Definition;
  * Class Unlock.
  *
  * @property DisplayProperties $displayProperties
- * @property string $hash
- * @property int $index
- * @property bool $redacted
+ * @property string            $hash
+ * @property int               $index
+ * @property bool              $redacted
  */
 class Unlock extends Definition
 {

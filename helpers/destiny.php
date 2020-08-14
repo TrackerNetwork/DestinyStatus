@@ -13,7 +13,7 @@ function de($var)
 {
     header('Content-Type: application/json', true);
     echo json_encode($var);
-    die;
+    exit;
 }
 
 function bool($var)
