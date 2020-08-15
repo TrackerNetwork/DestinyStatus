@@ -31,7 +31,7 @@ class EventServiceProvider extends ServiceProvider
             \Bugsnag::leaveBreadcrumb('Cache written', 'process', [
                 'key'   => $event->key,
                 'value' => $event->value,
-                'ttl'   => "{$event->minutes}mins",
+                'ttl'   => "{$event->seconds}secs",
             ]);
         });
 

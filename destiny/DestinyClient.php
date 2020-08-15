@@ -163,7 +163,8 @@ class DestinyClient extends Client
                     }
 
                     if ($request->cache) {
-                        Cache::store('file')->put($request->key, $response, $request->cache);
+                        $seconds = 60 * $request->cache;
+                        Cache::store('file')->put($request->key, $response, $seconds);
                     }
 
                     $responses[$key] = $response;
