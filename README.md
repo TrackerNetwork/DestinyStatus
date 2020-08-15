@@ -2,9 +2,7 @@
 
 [![Join the chat at https://gitter.im/TrackerNetwork/DestinyStatus](https://badges.gitter.im/TrackerNetwork/DestinyStatus.svg)](https://gitter.im/TrackerNetwork/DestinyStatus?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/TrackerNetwork/DestinyStatus.svg?branch=master)](https://travis-ci.org/TrackerNetwork/DestinyStatus)
 
-This project is based on the Laravel framework [v5.6].
-
-Please [read these instructions](https://laravel.com/docs/5.6#server-requirements) on how to configure your server to get started.
+This project is based on the Laravel framework [v7.x].
 
 ### Understanding Branches
 
@@ -15,18 +13,11 @@ Please [read these instructions](https://laravel.com/docs/5.6#server-requirement
 
 ### Project dependencies:
 
-* PHP >= 7.1
+* PHP >= 7.4
   * zip extension
   * sqlite3 extension
-* Mcrypt extension
 * [Node.js](https://nodejs.org)
 * [Composer](https://getcomposer.org)
-
-### Docker setup (optional)
-
-1. `docker-compose up --build`
-2. `docker exec -it ds bash`
-3. continue with (install the framework) steps below. They will be ran inside the container that you did on step 2.
 
 ### Install the framework
 
