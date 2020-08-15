@@ -3,24 +3,11 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Arr;
 
-/**
- * Class DestinyManifestCommand.
- */
 class DestinyManifestCommand extends Command
 {
-    /**
-     * The console command name.
-     *
-     * @var string
-     */
     protected $signature = 'destiny:manifest {--extract} {--download}';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Update definitions from Bungie.';
 
     protected $url;
@@ -35,7 +22,7 @@ class DestinyManifestCommand extends Command
         $manifest = destiny()->manifest();
 
         $this->version = $manifest->version;
-        $this->url = bungie(array_get($manifest, 'mobileWorldContentPaths.en'));
+        $this->url = bungie(Arr::get($manifest, 'mobileWorldContentPaths.en'));
         $this->versionFile = base_path('database/manifest/.version');
         $this->versionDb = base_path("database/manifest/$this->version.sqlite");
 
@@ -58,6 +45,7 @@ class DestinyManifestCommand extends Command
         }
 
         $this->line("<info>Current version:</info> <comment>$this->version</comment>");
+        return 0;
     }
 
     protected function download()
@@ -132,7 +120,7 @@ class DestinyManifestCommand extends Command
             $result = $db->prepare("SELECT json FROM $table")->execute();
             while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                 $json = json_decode($row['json'], true);
-                $hash = (string) array_get($json, $key);
+                $hash = (string) Arr::get($json, $key);
 
                 $this->export($folder, $hash, $json);
             }

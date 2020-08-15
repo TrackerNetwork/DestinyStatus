@@ -11,31 +11,9 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class DestinyMedalCommand extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'destiny:medal {action} {name} {type} {medal}';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'destiny:medal [give|take] iBot xbl donator';
 
-    /**
-     * DestinyMedalCommand constructor.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
-     * @throws \Exception
-     */
     public function handle()
     {
         $action = $this->argument('action');
@@ -83,5 +61,6 @@ class DestinyMedalCommand extends Command
                 $this->info('Badge revoked!');
             }
         }
+        return 0;
     }
 }

@@ -9,38 +9,11 @@ use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Query\JoinClause;
 
-/**
- * Class DestinyGrantVeteranMedalCommand.
- */
 class DestinyGrantVeteranMedalCommand extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'destiny:grant-veteran';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Gives Veteran Medal to those who earned it';
 
-    /**
-     * DestinyGrantVeteranMedalCommand constructor.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle()
     {
         /** @var Badge $veteran */
@@ -78,5 +51,7 @@ class DestinyGrantVeteranMedalCommand extends Command
                 'badge_id'   => $veteran->id,
             ]);
         }
+
+        return 0;
     }
 }
