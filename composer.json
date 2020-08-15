@@ -13,7 +13,6 @@
         "bandwidth-throttle/token-bucket": "^1.1",
         "barryvdh/laravel-debugbar": "^3.0",
         "barryvdh/laravel-ide-helper": "^2.4",
-        "bugsnag/bugsnag-laravel": "^2.0",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
