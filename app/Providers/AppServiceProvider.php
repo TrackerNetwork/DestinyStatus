@@ -7,12 +7,7 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
         if (!defined('CACHE_ENABLED')) {
             define('CACHE_ENABLED', config('destiny.cache', true));
@@ -31,15 +26,9 @@ class AppServiceProvider extends ServiceProvider
         $this->bootBladeChanges();
     }
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
+    public function register(): void
     {
-        $this->app->alias('bugsnag.logger', \Illuminate\Contracts\Logging\Log::class);
-        $this->app->alias('bugsnag.logger', \Psr\Log\LoggerInterface::class);
+        //
     }
 
     private function bootBungieSocialite()

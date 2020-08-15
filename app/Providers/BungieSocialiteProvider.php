@@ -75,7 +75,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
         $bungie->refresh_token = $tokenResponse['refresh_token'];
         $bungie->refresh_expires = $tokenResponse['refresh_expires_in'];
 
-        if ($bungie->save()) {
+        if ($bungie->saveOrFail()) {
             return $bungie;
         }
 
@@ -121,7 +121,7 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
             $bungie->refresh_token = $tokenResponse['refresh_token'];
             $bungie->refresh_expires = $tokenResponse['refresh_expires_in'];
 
-            if ($bungie->save()) {
+            if ($bungie->saveOrFail()) {
                 return $bungie;
             }
         }
@@ -215,21 +215,5 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
             'client_secret' => $this->clientSecret,
             'grant_type'    => 'authorization_code',
         ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function getUserByToken($token)
-    {
-        return parent::getUserByToken($token);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function mapUserToObject(array $user)
-    {
-        return parent::mapUserToObject($user);
     }
 }
