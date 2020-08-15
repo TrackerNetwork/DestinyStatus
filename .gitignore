@@ -1,23 +1,38 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-/.idea
-/.vagrant
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-.env
-/_ide_helper.php
-.phpstorm.meta.php
+# Public
 public/css/*
 public/js/*
 public/img/*
 public/images/*
 public/fonts/*
+public/hot
+public/storage
 public/mix-manifest.json
-/.version.php
+
+.version.php
 storage/cookies
 database/manifest/*
+
+# Env
+.env
+
+# Testing
+.phpunit.result.cache
+
+# Container
+.vagrant
+
+# Node
+yarn-error.log
+node_modules
+
+# PHP
+vendor
+
+# Framework
+storage/*.key
+
+
+# IDE
+.idea
+_ide_helper.php
+.phpstorm.meta.php
