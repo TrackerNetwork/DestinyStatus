@@ -33,8 +33,8 @@ This project is based on the Laravel framework [v7.x].
 
 ### Compile CSS/JS
 
-1. Install yarn: `npm install -g yarn`
-2. Install npm dependencies: `yarn install`
+1. Install yarn.
+2. Install node dependencies: `yarn install`
 3. Build:
     * Local: `yarn run dev`
     * Production: `yarn run prod`
