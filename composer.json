@@ -8,22 +8,24 @@
         "php": ">=7.1.0",
         "ext-json": "*",
         "ext-mbstring": "*",
+        "ext-zip": "*",
+        "ext-sqlite3": "*",
         "bandwidth-throttle/token-bucket": "^1.1",
         "barryvdh/laravel-debugbar": "^3.0",
         "barryvdh/laravel-ide-helper": "^2.4",
         "bugsnag/bugsnag-laravel": "^2.0",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "5.8.*",
-        "laravel/socialite": "^3.0",
-        "laravel/tinker": "~1.0",
+        "laravel/framework": "^7.0",
+        "laravel/socialite": "^4.0",
+        "laravel/tinker": "^2.0",
         "predis/predis": "^1.1"
     },
     "require-dev": {
-        "filp/whoops": "~2.0",
+        "facade/ignition": "^2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "^7.0",
+        "phpunit/phpunit": "^8.5",
         "doctrine/dbal": "~2.3"
     },
     "autoload": {
@@ -75,7 +77,7 @@
         "sort-packages": true,
         "optimize-autoloader": true,
         "platform": {
-            "php": "7.1.4"
+            "php": "7.2.5"
         }
     },
     "minimum-stability": "dev",
