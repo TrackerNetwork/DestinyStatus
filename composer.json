@@ -58,13 +58,11 @@
             "@php artisan key:generate"
         ],
         "post-install-cmd": [
-            "@php artisan destiny:manifest",
-            "@php artisan destiny:version"
+            "@php artisan destiny:manifest"
         ],
         "post-update-cmd": [
             "@php artisan ide-helper:generate",
-            "@php artisan destiny:manifest",
-            "@php artisan destiny:version"
+            "@php artisan destiny:manifest"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
