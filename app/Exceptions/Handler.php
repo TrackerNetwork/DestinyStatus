@@ -2,7 +2,6 @@
 
 namespace App\Exceptions;
 
-use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -42,8 +41,6 @@ class Handler extends ExceptionHandler
             return response()->view('error', ['error' => $exception->getMessage()]);
         }
         if ($exception instanceof \DestinyException) {
-            Bugsnag::notifyException($exception);
-
             return response()->view('error', ['error' => $exception->getMessage(), 'bungie' => true]);
         }
 
