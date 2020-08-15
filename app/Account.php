@@ -9,6 +9,9 @@ use App\Models\Bungie;
 use App\Models\Destiny1\Stats;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * Class Account.
@@ -62,19 +65,19 @@ class Account extends Model
     // Public Methods
     //---------------------------------------------------------------------------------
 
-    public function platformImage()
+    public function platformImage(): string
     {
         $platform = ConsoleHelper::getConsoleStringFromId($this->membership_type);
 
         return ConsoleHelper::getPlatformImage($platform);
     }
 
-    public function url()
+    public function url(): string
     {
         return route('account', [ConsoleHelper::getConsoleStringFromId($this->membership_type), url_slug($this->name)]);
     }
 
-    public function renderBadges()
+    public function renderBadges(): string
     {
         $contents = '';
 
@@ -85,17 +88,21 @@ class Account extends Model
         return $contents;
     }
 
-    public function stats()
+    //---------------------------------------------------------------------------------
+    // Relationships
+    //---------------------------------------------------------------------------------
+
+    public function stats(): HasOne
     {
         return $this->hasOne(Stats::class, 'account_id', 'id');
     }
 
-    public function badges()
+    public function badges(): HasManyThrough
     {
         return $this->hasManyThrough(Badge::class, AssignedBadge::class, 'account_id', 'id', null, 'badge_id');
     }
 
-    public function bungie()
+    public function bungie(): BelongsTo
     {
         return $this->belongsTo(Bungie::class, 'id', 'bungie_id');
     }
