@@ -3,6 +3,7 @@
 namespace Destiny\Definitions;
 
 use Destiny\Definitions\Manifest\HistoricalStat;
+use Illuminate\Support\Arr;
 
 /**
  * @property string         $statId
@@ -26,16 +27,16 @@ class Statistic extends Definition
 
     protected function gValue()
     {
-        return array_get($this->properties, 'basic.value');
+        return Arr::get($this->properties, 'basic.value');
     }
 
     protected function gDisplayValue()
     {
-        return array_get($this->properties, 'basic.displayValue');
+        return Arr::get($this->properties, 'basic.displayValue');
     }
 
     protected function gFormattedValue()
     {
-        return number_format(array_get($this->properties, 'basic.value'));
+        return number_format(Arr::get($this->properties, 'basic.value'));
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Destiny;
 
 use Destiny\Definitions\Leaderboard;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 
 /**
@@ -41,7 +42,7 @@ class LeaderboardCollection extends Collection
      */
     public function offsetGet($key)
     {
-        return array_get($this->items, $key, new Leaderboard(['statId' => $key]));
+        return Arr::get($this->items, $key, new Leaderboard(['statId' => $key]));
     }
 
     /**

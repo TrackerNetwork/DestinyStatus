@@ -6,6 +6,7 @@ namespace Destiny\Profile;
 
 use Destiny\Collection;
 use Destiny\Definitions\Components\Character as CharacterDefinition;
+use Illuminate\Support\Arr;
 
 /**
  * Class CharacterCollection.
@@ -24,7 +25,7 @@ class CharacterCollection extends Collection
             }
         }
 
-        $characters = array_sort($characters, function ($value) {
+        $characters = Arr::sort($characters, function ($value) {
             return $value['characterId'];
         });
 

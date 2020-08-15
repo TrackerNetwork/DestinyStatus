@@ -3,6 +3,7 @@
 namespace Destiny\Definitions;
 
 use App\Helpers\ConsoleHelper;
+use Illuminate\Support\Arr;
 
 /**
  * Class LeaderboardEntry.
@@ -22,22 +23,22 @@ class LeaderboardEntry extends Definition
 {
     protected function gValue()
     {
-        return array_get($this->properties, 'value.basic.value');
+        return Arr::get($this->properties, 'value.basic.value');
     }
 
     protected function gDisplayValue()
     {
-        return array_get($this->properties, 'value.basic.displayValue');
+        return Arr::get($this->properties, 'value.basic.displayValue');
     }
 
     protected function gFormattedValue()
     {
-        return number_format(array_get($this->properties, 'value.basic.value'));
+        return number_format(Arr::get($this->properties, 'value.basic.value'));
     }
 
     protected function gName()
     {
-        return array_get($this->properties, 'player.destinyUserInfo.displayName');
+        return Arr::get($this->properties, 'player.destinyUserInfo.displayName');
     }
 
     protected function gImage()
@@ -47,7 +48,7 @@ class LeaderboardEntry extends Definition
 
     protected function gPlatform(): string
     {
-        return ConsoleHelper::getConsoleStringFromId(array_get($this->properties, 'player.destinyUserInfo.membershipType'));
+        return ConsoleHelper::getConsoleStringFromId(Arr::get($this->properties, 'player.destinyUserInfo.membershipType'));
     }
 
     protected function gUrl()

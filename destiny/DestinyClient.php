@@ -19,6 +19,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Redis;
 
 class DestinyClient extends Client
@@ -137,25 +138,25 @@ class DestinyClient extends Client
                 if ($result !== null) {
                     $response = json_decode($result->getBody()->getContents(), true);
 
-                    if (array_get($response, 'ErrorStatus') !== 'Success') {
+                    if (Arr::get($response, 'ErrorStatus') !== 'Success') {
                         Cache::store('file')->forget($request->key);
                         Bugsnag::setMetaData(['bungie' => $response]);
 
-                        if (array_get($response, 'ErrorCode') === $this->destinyPrivacyRestriction) {
+                        if (Arr::get($response, 'ErrorCode') === $this->destinyPrivacyRestriction) {
                             $response = ['private' => true];
                         } else {
                             if ($request->salvageable) {
                                 $response = null;
                             } else {
                                 if ($response !== null) {
-                                    throw new DestinyException(array_get($response, 'Message'), $result->getStatusCode());
+                                    throw new DestinyException(Arr::get($response, 'Message'), $result->getStatusCode());
                                 } else {
                                     throw new DestinyException($result->getReasonPhrase(), $result->getStatusCode());
                                 }
                             }
                         }
                     } else {
-                        $response = array_get($response, 'Response');
+                        $response = Arr::get($response, 'Response');
                     }
 
                     if (empty($response)) {

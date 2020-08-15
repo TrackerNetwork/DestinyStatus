@@ -4,6 +4,7 @@ namespace Destiny\Activity;
 
 use Destiny\Collection;
 use Destiny\StatisticsCollection;
+use Illuminate\Support\Arr;
 
 /**
  * Class ActivityStatCollection.
@@ -61,11 +62,11 @@ class ActivityStatCollection extends Collection
                 break;
 
             default:
-                return array_get($this->items, $key, new ActivityStat(['activityHash' => $key]));
+                return Arr::get($this->items, $key, new ActivityStat(['activityHash' => $key]));
         }
 
         foreach ($raidSet as $activityHash) {
-            $objects[] = array_get($this->items, $activityHash, new ActivityStat(['activityHash' => $activityHash]));
+            $objects[] = Arr::get($this->items, $activityHash, new ActivityStat(['activityHash' => $activityHash]));
         }
 
         // We only care about the activityCompletions flag, so lets iterate, find and append

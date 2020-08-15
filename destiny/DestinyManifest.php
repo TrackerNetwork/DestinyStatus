@@ -33,6 +33,7 @@ use Destiny\Definitions\Manifest\StatGroup;
 use Destiny\Definitions\Manifest\TalentGrid;
 use Destiny\Definitions\Manifest\Unlock;
 use Destiny\Definitions\Manifest\Vendor;
+use Illuminate\Support\Arr;
 
 class DestinyManifest
 {
@@ -375,11 +376,11 @@ class DestinyManifest
     protected function instance(string $type, string $key)
     {
         $key = (string) $key;
-        $instance = array_get(static::$instances, "$type.$key");
+        $instance = Arr::get(static::$instances, "$type.$key");
 
         if (!$instance) {
             $namespace = '\\Destiny\\Definitions\\Manifest\\';
-            $class = array_get(['Class' => 'DestinyClass'], $type, $type);
+            $class = Arr::get(['Class' => 'DestinyClass'], $type, $type);
 
             $className = $namespace.$class;
             $instance = new $className($this->load($type, $key));

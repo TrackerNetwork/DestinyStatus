@@ -6,6 +6,7 @@ namespace Destiny;
 
 use Destiny\Definitions\PublicMilestone;
 use Destiny\Profile\Progression\ProgressionCollection;
+use Illuminate\Support\Arr;
 
 /**
  * Class Group.
@@ -83,14 +84,14 @@ class Group extends Model
 
     protected function gProgressions()
     {
-        $progressions = array_get($this->clanInfo, 'd2ClanProgressions', []);
+        $progressions = Arr::get($this->clanInfo, 'd2ClanProgressions', []);
 
         return new ProgressionCollection($progressions);
     }
 
     protected function gCallsign()
     {
-        return array_get($this->clanInfo, 'clanCallsign');
+        return Arr::get($this->clanInfo, 'clanCallsign');
     }
 
     protected function gCreated()

@@ -4,6 +4,7 @@ namespace Destiny\Definitions\Manifest;
 
 use Destiny\Definitions\Common\DisplayProperties;
 use Destiny\Definitions\Definition;
+use Illuminate\Support\Arr;
 
 /**
  * Class Milestone.
@@ -35,7 +36,7 @@ class Milestone extends Definition
 
     public function getRewardEntry(string $category, string $entry)
     {
-        return array_get($this->properties, 'rewards.'.$category.'.rewardEntries.'.$entry, []);
+        return Arr::get($this->properties, 'rewards.'.$category.'.rewardEntries.'.$entry, []);
     }
 
     public function addRewardEntry(string $category, string $entry, array $data)

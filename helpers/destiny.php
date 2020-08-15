@@ -1,6 +1,7 @@
 <?php
 
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 require 'instance.php';
 
@@ -23,7 +24,7 @@ function bool($var)
 
 function bungie($url)
 {
-    if (starts_with($url, 'http')) {
+    if (Str::startsWith($url, 'http')) {
         return $url;
     }
 

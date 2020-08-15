@@ -3,6 +3,7 @@
 namespace Destiny;
 
 use Destiny\Definitions\Statistic;
+use Illuminate\Support\Arr;
 
 /**
  * @property \Destiny\Definitions\Statistic $activitiesCleared
@@ -131,7 +132,7 @@ class StatisticsCollection extends Collection
      */
     public function offsetGet($key)
     {
-        return array_get($this->items, $key, new Statistic(['statId' => $key]));
+        return Arr::get($this->items, $key, new Statistic(['statId' => $key]));
     }
 
     /**
