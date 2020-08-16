@@ -6,10 +6,9 @@ This project is based on the Laravel framework [v7.x].
 
 ### Understanding Branches
 
-* `master` 	- developer branch of production destinystatus.com
-* `destiny1` 	- legacy version of d1.destinystatus.com
-* `legacy` 	- original Laravel 4.2 version of d1 destinystatus
-* `production`  - production destinystatus.com (follows `master`)
+* `master` - developer branch of production destinystatus.com (automatic deploy)
+* `destiny1` - legacy version of d1.destinystatus.com
+* `legacy` - original Laravel 4.2 version of d1 destinystatus
 
 ### Project dependencies:
 
