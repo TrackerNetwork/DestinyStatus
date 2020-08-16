@@ -2,6 +2,9 @@
 
 namespace App\Exceptions;
 
+use App\Exceptions\Destiny\GenericDestinyException;
+use App\Exceptions\Destiny\NoClanException;
+use App\Exceptions\Destiny\UnknownPlayerException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -34,13 +37,13 @@ class Handler extends ExceptionHandler
 
     public function render($request, \Throwable $exception)
     {
-        if ($exception instanceof \UnknownPlayerException) {
+        if ($exception instanceof UnknownPlayerException) {
             return response()->view('error', ['error' => $exception->getMessage()]);
         }
-        if ($exception instanceof \DestinyNoClanException) {
+        if ($exception instanceof NoClanException) {
             return response()->view('error', ['error' => $exception->getMessage()]);
         }
-        if ($exception instanceof \DestinyException) {
+        if ($exception instanceof GenericDestinyException) {
             return response()->view('error', ['error' => $exception->getMessage(), 'bungie' => true]);
         }
 

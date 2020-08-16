@@ -1,21 +1,5 @@
 <?php
 
-class DestinyException extends \Exception
-{
-}
-class DestinyLegacyPlatformException extends \Exception
-{
-}
-class UnknownPlayerException extends DestinyException
-{
-}
-class FailingTooHardException extends \Exception
-{
-}
-class DestinyNoClanException extends \Exception
-{
-}
-
 /**
  * @return \Carbon\Carbon
  */

@@ -2,6 +2,7 @@
 
 namespace Destiny;
 
+use App\Exceptions\Destiny\GenericDestinyException;
 use App\Http\Controllers\AuthController;
 use App\Models\Bungie;
 use bandwidthThrottle\tokenBucket\Rate;
@@ -10,7 +11,6 @@ use bandwidthThrottle\tokenBucket\TokenBucket;
 use Barryvdh\Debugbar\Facade as Debugbar;
 use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
 use Cache;
-use DestinyException;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\FileCookieJar;
@@ -77,7 +77,7 @@ class DestinyClient extends Client
     /**
      * @param \Destiny\DestinyRequest[]|\Destiny\DestinyRequest $requests
      *
-     * @throws \DestinyException
+     * @throws GenericDestinyException
      * @throws \Exception
      *
      * @return array
@@ -131,7 +131,7 @@ class DestinyClient extends Client
                         /* @var \ErrorException $result */
                         Cache::store('file')->forget($request->key);
 
-                        throw new DestinyException($result->getMessage(), $result->getLine(), $result);
+                        throw new GenericDestinyException($result->getMessage(), $result->getLine(), $result);
                     }
                 }
 
@@ -149,10 +149,9 @@ class DestinyClient extends Client
                                 $response = null;
                             } else {
                                 if ($response !== null) {
-                                    throw new DestinyException(Arr::get($response, 'Message'), $result->getStatusCode());
-                                } else {
-                                    throw new DestinyException($result->getReasonPhrase(), $result->getStatusCode());
+                                    throw new GenericDestinyException(Arr::get($response, 'Message'), $result->getStatusCode());
                                 }
+                                throw new GenericDestinyException($result->getReasonPhrase(), $result->getStatusCode());
                             }
                         }
                     } else {
