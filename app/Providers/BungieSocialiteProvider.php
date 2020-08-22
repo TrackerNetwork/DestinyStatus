@@ -10,55 +10,27 @@ use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\InvalidStateException;
 use Laravel\Socialite\Two\ProviderInterface;
 
-/**
- * Class BungieSocialiteProvider.
- */
 class BungieSocialiteProvider extends AbstractProvider implements ProviderInterface
 {
-    /**
-     * Flag to determine difference between Access Token refresh or creation.
-     *
-     * @var bool
-     */
-    public $isRefresh = false;
+    public bool $isRefresh = false;
+    public string $baseUrl = 'https://www.bungie.net/';
 
-    /**
-     * @var string
-     */
-    public $baseUrl = 'https://www.bungie.net/';
-
-    /**
-     * {@inheritdoc}
-     */
     protected function getAuthUrl($state)
     {
         return $this->buildAuthUrlFromBase($this->baseUrl.'en/oauth/authorize', $state);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function getTokenUrl(): string
     {
         return $this->baseUrl.'platform/app/oauth/token/';
     }
 
-    /**
-     * @return string
-     */
     protected function getUserUrl(): string
     {
         return $this->baseUrl.'Platform/User/GetMembershipsForCurrentUser/';
     }
 
-    /**
-     * @param Bungie $bungie
-     *
-     * @throws \Exception
-     *
-     * @return Bungie
-     */
-    public function refreshToken(Bungie $bungie)
+    public function refreshToken(Bungie $bungie): Bungie
     {
         $this->isRefresh = true;
 
@@ -82,9 +54,6 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
         throw new \Exception('Could not refresh token from Bungie.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function user()
     {
         if ($this->hasInvalidState()) {
@@ -215,5 +184,21 @@ class BungieSocialiteProvider extends AbstractProvider implements ProviderInterf
             'client_secret' => $this->clientSecret,
             'grant_type'    => 'authorization_code',
         ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    protected function getUserByToken($token)
+    {
+        return (new Account());
+    }
+
+    /**
+     * @inheritDoc
+     */
+    protected function mapUserToObject(array $user)
+    {
+        // TODO: Implement mapUserToObject() method.
     }
 }

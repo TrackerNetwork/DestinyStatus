@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 /**
  * Class Bungie.
@@ -24,7 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $remember_token
  * @property int    $preferred_account_id
  * @property-read Account $account
- * @property-read Account[] $accounts
+ * @property-read Collection|Account[] $accounts
  * @mixin \Eloquent
  */
 class Bungie extends Model implements Authenticatable, UserProvider
