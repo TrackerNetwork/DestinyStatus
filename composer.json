@@ -7,8 +7,8 @@
         "php": ">=7.4.0",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "ext-zip": "*",
         "ext-sqlite3": "*",
+        "ext-zip": "*",
         "bandwidth-throttle/token-bucket": "^1.1",
         "barryvdh/laravel-debugbar": "^3.0",
         "barryvdh/laravel-ide-helper": "^2.4",
@@ -17,7 +17,8 @@
         "laravel/framework": "^7.0",
         "laravel/socialite": "^4.0",
         "laravel/tinker": "^2.0",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "squizlabs/php_codesniffer": "^3.5"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
