@@ -1,15 +1,16 @@
 <?php
 
-namespace Destiny;
+namespace App\Providers;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+use Destiny\Destiny;
+use Destiny\DestinyClient;
+use Destiny\DestinyManifest;
+use Destiny\DestinyPlatform;
+use Illuminate\Support\ServiceProvider;
+
+class DestinyServiceProvider extends ServiceProvider
 {
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('destiny.client', function () {
             $apiKey = config('destiny.key');
