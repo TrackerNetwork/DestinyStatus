@@ -21,7 +21,6 @@ class CharacterEquipmentCollection extends Collection
         if (isset($properties['data'])) {
             foreach ($properties['data'] as $characterId => $bucket) {
                 foreach ($bucket['items'] as $item) {
-
                     // Grab the specific instance of this data, if it exists
                     if (isset($instanceItems[$item['itemInstanceId']])) {
                         $item['instance'] = new InstancedItem($instanceItems[$item['itemInstanceId']]);

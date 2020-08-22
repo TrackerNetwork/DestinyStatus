@@ -18,7 +18,6 @@ class KioskItemCollection extends Collection
 
         if (isset($properties['data']['kioskItems'])) {
             foreach ($properties['data']['kioskItems'] as $item) {
-
                 // Not sure why the kioskItems are contained in an array of their own.
                 // This will probably make sense when real API data comes out
                 if (isset($item['index'])) {
