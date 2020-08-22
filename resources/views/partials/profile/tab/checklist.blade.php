@@ -1,10 +1,11 @@
 <?php
-/**
- * @var Destiny\Player $player
- * @var Destiny\Profile $profile
- * @var Destiny\Definitions\Components\Character $character
- */
-
+    /**
+     * @var Destiny\Player $player
+     * @var Destiny\Profile $profile
+     * @var Destiny\Definitions\Components\Character $character
+     */
+    use App\Helpers\ResetHelper;
+    use App\Helpers\TimeHelper;
 ?>
 @if (count($character->milestoneActivities) > 0)
     <div class="panel-heading">Activities</div>
@@ -38,7 +39,7 @@
         @endforeach
     </div>
     <div class="panel-heading">
-        <?= duration_human(next_weekly()->diffInMinutes()) ?> until reset
+        <?= TimeHelper::durationHuman(ResetHelper::nextWeekly()->diffInMinutes()) ?> until reset
     </div>
 @else
     <br />

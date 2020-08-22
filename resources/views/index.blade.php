@@ -1,5 +1,6 @@
 <?php
-/** @var Destiny\Milestones\MilestoneHandler $milestoneHandler */
+    /** @var Destiny\Milestones\MilestoneHandler $milestoneHandler */
+    use App\Helpers\ResetHelper;
 ?>
 
 @extends('layout')
@@ -8,5 +9,5 @@
     @include('partials.homepage.weekly', ['milestones' => $milestoneHandler->weeklys])
 
     <h2>Time till Weekly Reset</h2>
-    <Countdown weekly="<?= next_weekly()->format('F d, Y'); ?>"></Countdown>
+    <Countdown weekly="<?= ResetHelper::nextWeekly()->format('F d, Y'); ?>"></Countdown>
 @stop

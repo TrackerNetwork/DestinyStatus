@@ -27,7 +27,7 @@ class Milestone extends Definition
 
     protected function gDefinition()
     {
-        return manifest()->milestone((string) $this->milestoneHash);
+        return app('destiny.manifest')->milestone((string) $this->milestoneHash);
     }
 
     protected function gName()

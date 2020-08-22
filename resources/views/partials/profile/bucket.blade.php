@@ -14,7 +14,7 @@ $definition = $item->definition ?? null;
          data-complete="<?= boolval($item->isGridComplete) ?>"
          data-hash="<?= $item->hash ?>"
     >
-        <img class="icon" src="<?= bungie($definition->itemIcon) ?>">
+        <img class="icon" src="@bungie($definition->itemIcon)">
         <div class="name"><?= e($definition->itemName) ?></div>
         <div class="tier"><?= e($definition->tierName) ?></div>
         <div class="type opaque"><?= e($definition->itemTypeDisplayName) ?></div>

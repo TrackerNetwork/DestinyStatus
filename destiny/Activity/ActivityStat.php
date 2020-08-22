@@ -14,7 +14,7 @@ class ActivityStat extends Definition
 {
     protected function gDefinition()
     {
-        return manifest()->activity($this->activityHash);
+        return app('destiny.manifest')->activity($this->activityHash);
     }
 
     protected function gStats()

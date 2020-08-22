@@ -3,6 +3,7 @@
 namespace Destiny\Definitions\Components;
 
 use Carbon\Carbon;
+use Carbon\CarbonImmutable;
 use Destiny\Activity\ActivityStatCollection;
 use Destiny\Collection;
 use Destiny\Definitions\Definition;
@@ -97,9 +98,9 @@ class Character extends Definition
         return new StatCollection($this->properties['stats']);
     }
 
-    protected function gLastPlayed()
+    protected function gLastPlayed(): CarbonImmutable
     {
-        return carbon($this->dateLastPlayed);
+        return CarbonImmutable::parse($this->dateLastPlayed);
     }
 
     protected function gMinutesPlayedActive()
@@ -116,21 +117,21 @@ class Character extends Definition
 
     protected function gClass()
     {
-        $class = manifest()->destinyClass($this->classHash);
+        $class = app('destiny.manifest')->destinyClass($this->classHash);
 
         return $class->display->name;
     }
 
     protected function gRace()
     {
-        $race = manifest()->race($this->raceHash);
+        $race = app('destiny.manifest')->race($this->raceHash);
 
         return $race->display->name;
     }
 
     protected function gGender()
     {
-        $gender = manifest()->gender($this->genderHash);
+        $gender = app('destiny.manifest')->gender($this->genderHash);
 
         return $gender->display->name;
     }

@@ -6,6 +6,7 @@ namespace Destiny;
 
 use App\Enums\Console;
 use App\Helpers\ConsoleHelper;
+use App\Helpers\StringHelper;
 
 /**
  * @property string $supplementalDisplayName
@@ -48,6 +49,9 @@ class Player extends Model
 
     protected function gUrl(): string
     {
-        return route('account', ['platform' => $this->platform, 'player' => url_slug($this->displayName)]);
+        return route('account', [
+            'platform' => $this->platform,
+            'name' => StringHelper::urlSlug($this->displayName)
+        ]);
     }
 }

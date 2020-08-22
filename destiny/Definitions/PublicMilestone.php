@@ -3,6 +3,7 @@
 namespace Destiny\Definitions;
 
 use Carbon\Carbon;
+use Carbon\CarbonImmutable;
 use Destiny\Activity\ActivityCollection;
 use Destiny\Activity\ChallengeCollection;
 use Destiny\Activity\ModifierCollection;
@@ -50,7 +51,7 @@ class PublicMilestone extends Definition
 
     public function __construct($properties = null)
     {
-        $properties['definition'] = manifest()->milestone($properties['milestoneHash']);
+        $properties['definition'] = app('destiny.manifest')->milestone($properties['milestoneHash']);
         parent::__construct($properties);
     }
 
@@ -59,14 +60,14 @@ class PublicMilestone extends Definition
         return new PublicQuestCollection($this->availableQuests ?? []);
     }
 
-    protected function gStart()
+    protected function gStart(): CarbonImmutable
     {
-        return carbon($this->startDate);
+        return CarbonImmutable::parse($this->startDate);
     }
 
-    protected function gEnd()
+    protected function gEnd(): CarbonImmutable
     {
-        return carbon($this->endDate);
+        return CarbonImmutable::parse($this->endDate);
     }
 
     protected function gIcon()

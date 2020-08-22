@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Helpers\ConsoleHelper;
+use App\Helpers\StringHelper;
 use App\Models\AssignedBadge;
 use App\Models\Badge;
 use App\Models\Bungie;
@@ -58,7 +59,7 @@ class Account extends Model
     public function setNameAttribute($value)
     {
         $this->attributes['name'] = $value;
-        $this->attributes['slug'] = slug($value);
+        $this->attributes['slug'] = StringHelper::slug($value);
     }
 
     //---------------------------------------------------------------------------------
@@ -74,7 +75,10 @@ class Account extends Model
 
     public function url(): string
     {
-        return route('account', [ConsoleHelper::getConsoleStringFromId($this->membership_type), url_slug($this->name)]);
+        return route('account', [
+            ConsoleHelper::getConsoleStringFromId($this->membership_type),
+            StringHelper::urlSlug($this->name)
+        ]);
     }
 
     public function renderBadges(): string

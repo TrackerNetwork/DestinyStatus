@@ -19,6 +19,6 @@ class Quantity extends Definition
 
     protected function gItem()
     {
-        return manifest()->inventoryItem($this->itemHash);
+        return app('destiny.manifest')->inventoryItem($this->itemHash);
     }
 }

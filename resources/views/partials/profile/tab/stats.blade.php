@@ -8,6 +8,8 @@
 $pvp = $character->statsPvP;
 $pve = $character->statsPvE;
 $all = $character->statsAll;
+
+use App\Helpers\TimeHelper;
 ?>
 <?php if ($pvp->isEmpty() && $pve->isEmpty() && $all->isEmpty()): ?>
     <div class="panel">
@@ -16,7 +18,7 @@ $all = $character->statsAll;
 <?php else: ?>
 <div class="time panel"
      <?php if($character->minutesPlayedThisSession): ?>
-     title="Played <?= e($character->lastPlayed->diffForHumans()) ?> for <?= strip_tags(duration_human($character->minutesPlayedThisSession)) ?>" data-toggle="tooltip"
+     title="Played <?= e($character->lastPlayed->diffForHumans()) ?> for <?= strip_tags(TimeHelper::durationHuman($character->minutesPlayedThisSession)) ?>" data-toggle="tooltip"
 <?php endif; ?>
 >
     <div class="info">Total Time Played (including Tower and Orbit)</div>

@@ -21,7 +21,7 @@ class ActivityCollection extends Collection
     {
         $variants = [];
         foreach ($items as $item) {
-            $variants[$item['activityHash']] = manifest()->activity((string) $item['activityHash']);
+            $variants[$item['activityHash']] = app('destiny.manifest')->activity((string) $item['activityHash']);
         }
 
         parent::__construct($variants);

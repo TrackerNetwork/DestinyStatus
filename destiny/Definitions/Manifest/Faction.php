@@ -29,6 +29,6 @@ class Faction extends Definition
 
     protected function gProgression()
     {
-        return manifest()->progression($this->progressionHash);
+        return app('destiny.manifest')->progression($this->progressionHash);
     }
 }

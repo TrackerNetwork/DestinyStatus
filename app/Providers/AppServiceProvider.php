@@ -46,5 +46,23 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('env', function ($environment) {
             return app()->environment($environment);
         });
+
+        Blade::directive('bool', function ($expression) {
+            return "<?php echo boolval($expression) ? 'true' : 'false'; ?>";
+        });
+
+        Blade::directive('bungie', function ($expression) {
+            return "<?php echo App\Helpers\DestinyHelper::bungie($expression); ?>";
+        });
+
+        Blade::directive('n', function ($expression) {
+            [$value, $decimals] = explode(',', $expression);
+
+            if (empty($decimals)) {
+                $decimals = 0;
+            }
+
+            return "<?php echo Aoo\Helpers\StringHelper::number($value, $decimals); ?>";
+        });
     }
 }

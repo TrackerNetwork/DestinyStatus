@@ -9,26 +9,10 @@ use App\Models\Badge;
 
 class SignedInBadgeCheck
 {
-    /**
-     * The events handled by the listener.
-     *
-     * @var array
-     */
     public static $listensFor = [
         BungieSignedIn::class,
     ];
 
-    /**
-     * SignedInBadgeCheck constructor.
-     */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
-     * @param BungieSignedIn $event
-     */
     public function handle(BungieSignedIn $event)
     {
         /** @var Badge $confirmed */

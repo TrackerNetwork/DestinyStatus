@@ -1,10 +1,8 @@
 <?php
-/**
- * @var int $minutes
- */
+    /** @var int $minutes */
+    use App\Helpers\TimeHelper;
 
-$duration = duration($minutes, 'hours,minutes');
-
+$duration = TimeHelper::duration($minutes, 'hours,minutes');
 ?>
 
 <div class="timespan" title="Total playtime">

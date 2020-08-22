@@ -2,6 +2,8 @@
 
 namespace Destiny;
 
+use Illuminate\Support\Str;
+
 /**
  * Class Collection.
  */
@@ -14,7 +16,7 @@ class Collection extends \Illuminate\Support\Collection
      */
     public function __get($key)
     {
-        $mutator = 'g'.studly_case($key);
+        $mutator = 'g'.Str::studly($key);
 
         if (method_exists($this, $mutator)) {
             return call_user_func([$this, $mutator]);

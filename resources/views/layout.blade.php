@@ -52,7 +52,9 @@
     <div class="footer row">
         <div class="col-md-12 about">
             <p class="version">
-                <?= date('Y') ?> &copy; DestinyStatus <a href="https://github.com/TrackerNetwork/DestinyStatus/blob/master/CHANGELOG.md" target="_blank">v<?= version(); ?></a>
+                <?= date('Y') ?> &copy; DestinyStatus <a href="https://github.com/TrackerNetwork/DestinyStatus/blob/master/CHANGELOG.md" target="_blank">
+                    v<?= App\Helpers\VersionHelper::version(); ?>
+                </a>
                 @if (App::isLocal())
                     [<?= App::environment() ?>]
                 @endif

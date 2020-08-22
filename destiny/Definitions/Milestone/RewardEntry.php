@@ -52,7 +52,7 @@ class RewardEntry extends Definition
 
     protected function gVendor()
     {
-        return manifest()->vendor($this->vendorHash);
+        return app('destiny.manifest')->vendor($this->vendorHash);
     }
 
     protected function gRewards()

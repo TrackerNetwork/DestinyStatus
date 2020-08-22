@@ -7,9 +7,9 @@
 $itemReward = $reward->rewards->first();
 ?>
 
-<div class="activity" data-hash="<?= $reward->rewardEntryHash ?>" data-identifier="<?= $reward->rewardEntryIdentifier ?>" data-completed="<?= bool($reward->isCompleted) ?>">
+<div class="activity" data-hash="<?= $reward->rewardEntryHash ?>" data-identifier="<?= $reward->rewardEntryIdentifier ?>" data-completed="@bool($reward->isCompleted)">
     <div class="image">
-        <img class="icon" src="<?= bungie($reward->icon) ?>">
+        <img class="icon" src="@bungie($reward->icon)">
     </div>
     <div class="activity-details">
         <div class="name">

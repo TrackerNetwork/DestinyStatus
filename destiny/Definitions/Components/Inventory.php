@@ -41,7 +41,7 @@ class Inventory extends Definition
 
     public function __construct($properties = null)
     {
-        $properties['definition'] = manifest()->inventoryItem($properties['itemHash']);
+        $properties['definition'] = app('destiny.manifest')->inventoryItem($properties['itemHash']);
 
         parent::__construct($properties);
     }

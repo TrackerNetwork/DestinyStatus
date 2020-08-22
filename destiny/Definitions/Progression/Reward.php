@@ -20,6 +20,6 @@ class Reward extends Definition
 
     protected function gProgressionMapping()
     {
-        //return destiny()->progressionMapping($this->progressionMappingHash);
+        //return app('destiny')->progressionMapping($this->progressionMappingHash);
     }
 }

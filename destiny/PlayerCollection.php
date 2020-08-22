@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Destiny;
 
+use App\Helpers\StringHelper;
 use Illuminate\Support\Collection;
 
 /**
@@ -23,7 +24,7 @@ class PlayerCollection extends Collection
         foreach ($items as $properties) {
             $player = new Player($properties);
 
-            if (bungie_slug($player->displayName) == bungie_slug($gamertag)) {
+            if (StringHelper::bungieSlug($player->displayName) == StringHelper::bungieSlug($gamertag)) {
                 $players[$player->platform] = $player;
             }
         }

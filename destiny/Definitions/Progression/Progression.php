@@ -2,6 +2,7 @@
 
 namespace Destiny\Definitions\Progression;
 
+use App\Helpers\StringHelper;
 use Destiny\Definitions\Definition;
 
 /**
@@ -33,7 +34,7 @@ class Progression extends Definition
 
     protected function gDefinition()
     {
-        return manifest()->progression($this->progressionHash);
+        return app('destiny.manifest')->progression($this->progressionHash);
     }
 
     protected function gIcon()
@@ -66,7 +67,7 @@ class Progression extends Definition
             return 'MAX';
         }
 
-        return n($this->progressToNextLevel).'/'.n($this->nextLevelAt);
+        return StringHelper::number($this->progressToNextLevel) . '/' . StringHelper::number($this->nextLevelAt);
     }
 
     private function isMax()

@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Helpers\DestinyHelper;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 
@@ -19,10 +20,10 @@ class DestinyManifestCommand extends Command
     {
         $this->info('Updating manifest');
 
-        $manifest = destiny()->manifest();
+        $manifest = app('destiny')->manifest();
 
         $this->version = $manifest->version;
-        $this->url = bungie(Arr::get($manifest, 'mobileWorldContentPaths.en'));
+        $this->url = DestinyHelper::bungie(Arr::get($manifest, 'mobileWorldContentPaths.en'));
         $this->versionFile = base_path('database/manifest/.version');
         $this->versionDb = base_path("database/manifest/$this->version.sqlite");
 

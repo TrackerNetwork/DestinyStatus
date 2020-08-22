@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\StringHelper;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -50,7 +51,7 @@ class Badge extends Model
     public function setNameAttribute($value)
     {
         $this->attributes['name'] = $value;
-        $this->attributes['slug'] = slug($value);
+        $this->attributes['slug'] = StringHelper::slug($value);
     }
 
     //---------------------------------------------------------------------------------

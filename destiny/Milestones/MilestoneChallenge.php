@@ -28,11 +28,11 @@ class MilestoneChallenge extends Model
 
     protected function gObjective()
     {
-        return manifest()->objective((string) $this->objectiveHash);
+        return app('destiny.manifest')->objective((string) $this->objectiveHash);
     }
 
     protected function gActivity()
     {
-        return manifest()->activity((string) $this->activityHash);
+        return app('destiny.manifest')->activity((string) $this->activityHash);
     }
 }

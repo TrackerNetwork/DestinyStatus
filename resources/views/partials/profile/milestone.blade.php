@@ -12,9 +12,9 @@ $activityStat = $character->activities->$activityHash;
 $completions = $activityStat->stats;
 ?>
 
-<div class="activity" data-activityhash="<?= $activityHash; ?>" data-hash="<?= $milestone->milestoneHash ?>" data-identifier="<?= $milestone->milestoneHash ?>" data-completed="<?= bool($milestone->isCompleted) ?>">
+<div class="activity" data-activityhash="<?= $activityHash; ?>" data-hash="<?= $milestone->milestoneHash ?>" data-identifier="<?= $milestone->milestoneHash ?>" data-completed="@bool($milestone->isCompleted)">
     <div class="image">
-        <img class="icon" src="<?= bungie($milestone->icon) ?>">
+        <img class="icon" src="@bungie($milestone->icon)">
     </div>
     <div class="activity-details">
         <div class="name">

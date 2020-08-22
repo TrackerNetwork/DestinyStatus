@@ -16,7 +16,7 @@ class StatCollection extends Collection
     {
         $items = [];
         foreach ($properties as $statHash => $value) {
-            $item = manifest()->stat((string) $statHash)->toArray();
+            $item = app('destiny.manifest')->stat((string) $statHash)->toArray();
             $items[$statHash] = new Entry($item, (string) $value);
         }
 

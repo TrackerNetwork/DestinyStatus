@@ -3,6 +3,7 @@
 namespace Destiny;
 
 use App\Exceptions\Destiny\GenericDestinyException;
+use App\Helpers\VersionHelper;
 use App\Http\Controllers\AuthController;
 use App\Models\Bungie;
 use bandwidthThrottle\tokenBucket\Rate;
@@ -42,7 +43,7 @@ class DestinyClient extends Client
     public function __construct(string $apiKey)
     {
         // User-Agent: DestinyStatus/v3.0.0 AppId/123456 (+destinystatus.com;admin@destinystatus.com)
-        $versionSlug = 'DestinyStatus/'.version();
+        $versionSlug = 'DestinyStatus/'.VersionHelper::version();
         $appIdSlug = 'AppId/'.config('services.bungie.client_id');
         $contactSlug = 'destinystatus.com;'.config('services.bungie.contact');
 

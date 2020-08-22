@@ -21,7 +21,7 @@ class ModifierCollection extends Collection
     {
         $modifiers = [];
         foreach ($items as $item) {
-            $modifiers[$item] = manifest()->activityModifier((string) $item);
+            $modifiers[$item] = app('destiny.manifest')->activityModifier((string) $item);
         }
 
         parent::__construct($modifiers);

@@ -15,7 +15,7 @@ class AccountController extends Controller
     public function index(string $platform, string $name)
     {
         $player = $this->findPlayer($platform, $name);
-        $profile = destiny()->profile($player);
+        $profile = app('destiny')->profile($player);
 
         $profile->loadCharacters();
 
@@ -35,7 +35,7 @@ class AccountController extends Controller
     public function clan(string $platform, string $name)
     {
         $player = $this->findPlayer($platform, $name);
-        $group = destiny()->groups($player);
+        $group = app('destiny')->groups($player);
 
         $group->loadAll();
 
@@ -57,7 +57,7 @@ class AccountController extends Controller
      */
     protected function findPlayer(string $platform, string $gamertag): Player
     {
-        $players = destiny()->player($gamertag);
+        $players = app('destiny')->player($gamertag);
         $player = $players->get($platform);
 
         abort_if(!($player instanceof Player), 404, "The player '$gamertag' on '$platform' could not be found.");

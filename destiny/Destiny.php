@@ -6,6 +6,7 @@ namespace Destiny;
 
 use App\Account;
 use App\Enums\ActivityModeType;
+use App\Exceptions\Destiny\NoClanException;
 use Destiny\Definitions\Components\Character;
 use Destiny\Definitions\PublicMilestone;
 use Destiny\Milestones\MilestoneHandler;
@@ -15,15 +16,8 @@ use Destiny\Milestones\MilestoneHandler;
  */
 class Destiny
 {
-    /**
-     * @var DestinyClient
-     */
-    protected $client;
-
-    /**
-     * @var DestinyPlatform
-     */
-    protected $platform;
+    protected DestinyClient $client;
+    protected DestinyPlatform $platform;
 
     public function __construct(DestinyClient $client, DestinyPlatform $platform)
     {
@@ -60,7 +54,7 @@ class Destiny
             return new Group($result['results'][0]['group']);
         }
 
-        throw new \DestinyNoClanException('Could not locate clan for user');
+        throw new NoClanException('Could not locate clan for user');
     }
 
     public function profile(Player $player): Profile

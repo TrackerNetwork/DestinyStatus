@@ -57,7 +57,7 @@ class InventoryItem extends Definition
 
     protected function gLore()
     {
-        return manifest()->lore((string) $this->loreHash);
+        return app('destiny.manifest')->lore((string) $this->loreHash);
     }
 
     protected function gDisplay()

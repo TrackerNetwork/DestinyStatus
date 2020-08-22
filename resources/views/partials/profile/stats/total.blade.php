@@ -2,6 +2,7 @@
 /** @var string $key */
 /** @var Destiny\StatisticsCollection $pvp */
 /** @var Destiny\StatisticsCollection $pve */
+    use App\Helpers\TimeHelper;
 ?>
 <table class="table table-condensed table-striped">
     <thead>
@@ -44,8 +45,8 @@
     </tr>
     <tr>
         <td class="header">Time Played</td>
-        <td><?= duration_human($pve->secondsPlayed->value / 60, 'days,hours,minutes', true, ' ') ?></td>
-        <td><?= duration_human($pvp->secondsPlayed->value / 60, 'days,hours,minutes', true, ' ') ?></td>
+        <td><?= TimeHelper::durationHuman($pve->secondsPlayed->value / 60, 'days,hours,minutes', true, ' ') ?></td>
+        <td><?= TimeHelper::durationHuman($pvp->secondsPlayed->value / 60, 'days,hours,minutes', true, ' ') ?></td>
     </tr>
     </tbody>
 </table>

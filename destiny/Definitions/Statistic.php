@@ -17,7 +17,7 @@ class Statistic extends Definition
 {
     protected function gDefinition()
     {
-        return manifest()->historicalStat($this->statId);
+        return app('destiny.manifest')->historicalStat($this->statId);
     }
 
     protected function gStatName()

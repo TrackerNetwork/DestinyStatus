@@ -46,7 +46,7 @@ class HomeController extends Controller
         $gamertag = $this->request->get('gamertag');
 
         if ($gamertag) {
-            $result = destiny()->player($gamertag);
+            $result = app('destiny')->player($gamertag);
 
             if ($result->count() == 1) {
                 return $this->redirect->to($result->first()->url);
@@ -58,7 +58,7 @@ class HomeController extends Controller
         }
 
         return $this->view->make('index', [
-            'milestoneHandler' => destiny()->publicMilestones(),
+            'milestoneHandler' => app('destiny')->publicMilestones(),
         ]);
     }
 
@@ -69,7 +69,7 @@ class HomeController extends Controller
      */
     public function select($gamertag)
     {
-        $players = destiny()->player($gamertag);
+        $players = app('destiny')->player($gamertag);
 
         if ($players->count() == 1) {
             return $this->redirect->to($players->first()->url);

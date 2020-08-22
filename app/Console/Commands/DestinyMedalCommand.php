@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Account;
 use App\Helpers\ConsoleHelper;
+use App\Helpers\StringHelper;
 use App\Models\AssignedBadge;
 use App\Models\Badge;
 use Illuminate\Console\Command;
@@ -28,14 +29,14 @@ class DestinyMedalCommand extends Command
         $membershipType = ConsoleHelper::getIdFromConsoleString($type);
 
         try {
-            $badge = Badge::where('slug', slug($badge))
+            $badge = Badge::where('slug', StringHelper::slug($badge))
                 ->firstOrFail();
         } catch (ModelNotFoundException $ex) {
             throw new \Exception($badge.' was not a medal in our system.');
         }
 
         try {
-            $account = Account::where('slug', slug($name))
+            $account = Account::where('slug', StringHelper::slug($name))
                 ->where('membership_type', $membershipType)
                 ->firstOrFail();
         } catch (ModelNotFoundException $ex) {

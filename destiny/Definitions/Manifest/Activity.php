@@ -59,22 +59,22 @@ class Activity extends Definition
 
     protected function gDestination()
     {
-        return manifest()->destination($this->destinationHash);
+        return app('destiny.manifest')->destination($this->destinationHash);
     }
 
     protected function gPlace()
     {
-        return manifest()->place($this->placeHash);
+        return app('destiny.manifest')->place($this->placeHash);
     }
 
     protected function gActivityType()
     {
-        return manifest()->activityType($this->activityTypeHash);
+        return app('destiny.manifest')->activityType($this->activityTypeHash);
     }
 
     protected function gActivityMode()
     {
-        return manifest()->activityMode($this->activityModeHash);
+        return app('destiny.manifest')->activityMode($this->activityModeHash);
     }
 
     protected function gHumanMode()

@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Helpers\StringHelper;
 use Tests\TestCase;
 
 class Issue100Test extends TestCase
@@ -14,9 +15,9 @@ class Issue100Test extends TestCase
     public function testSluggingOfSpace()
     {
         $xorth = 'HT Xorth';
-        $this->assertEquals(bungie_slug($xorth), 'ht%20xorth');
+        $this->assertEquals(StringHelper::bungieSlug($xorth), 'ht%20xorth');
 
         $ibot = 'iBot';
-        $this->assertEquals(bungie_slug($ibot), 'ibot');
+        $this->assertEquals(StringHelper::bungieSlug($ibot), 'ibot');
     }
 }

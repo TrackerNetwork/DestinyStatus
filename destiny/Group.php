@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Destiny;
 
+use Carbon\CarbonImmutable;
 use Destiny\Definitions\PublicMilestone;
 use Destiny\Profile\Progression\ProgressionCollection;
 use Illuminate\Support\Arr;
@@ -56,7 +57,7 @@ class Group extends Model
 
     public function loadAll()
     {
-        $results = destiny()->clanAll($this);
+        $results = app('destiny')->clanAll($this);
 
         $this->leaderboards = new LeaderboardHandler($results['leaderboards'] ?? []);
         $this->reward = new PublicMilestone($results['reward'] ?? []);
@@ -64,22 +65,22 @@ class Group extends Model
 
     public function loadMembers()
     {
-        destiny()->clanMembers($this);
+        app('destiny')->clanMembers($this);
     }
 
     public function loadStats()
     {
-        $this->stats = destiny()->clanStats($this);
+        $this->stats = app('destiny')->clanStats($this);
     }
 
     public function loadRewards()
     {
-        $this->reward = destiny()->clanRewards($this);
+        $this->reward = app('destiny')->clanRewards($this);
     }
 
     public function loadLeaderboards()
     {
-        $this->leaderboards = destiny()->clanLeaderboards($this);
+        $this->leaderboards = app('destiny')->clanLeaderboards($this);
     }
 
     protected function gProgressions()
@@ -94,8 +95,8 @@ class Group extends Model
         return Arr::get($this->clanInfo, 'clanCallsign');
     }
 
-    protected function gCreated()
+    protected function gCreated(): CarbonImmutable
     {
-        return carbon($this->creationDate);
+        return CarbonImmutable::parse($this->creationDate);
     }
 }

@@ -17,7 +17,7 @@
         <?php $i = 0; foreach($result as $player): ?>
             <div class="panel col-md-4">
                 <a href="<?= $player->url ?>">
-                    <img src="<?= bungie($player->iconPath) ?>">
+                    <img src="@bungie($player->iconPath)">
                     <span><?= e($player->displayName) ?></span>
                 </a>
             </div>

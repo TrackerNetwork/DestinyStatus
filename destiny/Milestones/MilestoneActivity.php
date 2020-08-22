@@ -26,7 +26,7 @@ class MilestoneActivity extends Model
 
     protected function gDefinition()
     {
-        return manifest()->activity((string) $this->activityHash);
+        return app('destiny.manifest')->activity((string) $this->activityHash);
     }
 
     protected function gModifiers()

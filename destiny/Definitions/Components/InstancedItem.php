@@ -28,7 +28,7 @@ class InstancedItem extends Definition
     protected function gDamage()
     {
         if ($this->damageType > 0) {
-            return manifest()->damageTypes($this->damageTypeHash);
+            return app('destiny.manifest')->damageTypes($this->damageTypeHash);
         }
     }
 }

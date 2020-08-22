@@ -34,12 +34,12 @@ class Faction extends Definition
 
     protected function gFaction()
     {
-        return manifest()->faction((string) $this->factionHash);
+        return app('destiny.manifest')->faction((string) $this->factionHash);
     }
 
     protected function gProgression()
     {
-        return manifest()->progression((string) $this->progressionHash);
+        return app('destiny.manifest')->progression((string) $this->progressionHash);
     }
 
     protected function gName()

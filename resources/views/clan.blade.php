@@ -13,8 +13,8 @@
     <div class="arenas row">
         <div class="col-md-12 arena">
             <div class="display" data-toggle="popover" title="<?= e($group->name) ?>" data-content="<?= e($group->about) ?>">
-                <img class="background" src="<?= bungie($group->bannerPath) ?>" />
-                <img class="icon" src="<?= bungie($group->avatarPath) ?>" alt="" align="left" />
+                <img class="background" src="@bungie($group->bannerPath)" />
+                <img class="icon" src="@bungie($group->avatarPath)" align="left" />
                 <h3>
                     <div class="pull-left">
                         <?= e($group->name) ?>

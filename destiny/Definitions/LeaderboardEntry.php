@@ -3,6 +3,7 @@
 namespace Destiny\Definitions;
 
 use App\Helpers\ConsoleHelper;
+use App\Helpers\StringHelper;
 use Illuminate\Support\Arr;
 
 /**
@@ -54,7 +55,7 @@ class LeaderboardEntry extends Definition
     protected function gUrl()
     {
         $platform = $this->platform;
-        $name = url_slug($this->name);
+        $name = StringHelper::urlSlug($this->name);
 
         return route('account', [$platform, $name]);
     }

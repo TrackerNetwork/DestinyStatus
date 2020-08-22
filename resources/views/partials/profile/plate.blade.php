@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="plate" style="background-image: url(<?= bungie($character->emblemBackgroundPath) ?>);">
+<div class="plate" style="background-image: url(@bungie($character->emblemBackgroundPath));">
     <div class="details">
         <div class="class"><?= e($character->class) ?></div>
         <div class="race"><?= e($character->raceGender) ?></div>
