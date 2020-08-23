@@ -7,16 +7,16 @@ namespace App\Enums;
  */
 abstract class Console
 {
-    const Xbox = 1;
+    const XBOX = 1;
 
-    const Playstation = 2;
+    const PLAYSTATION = 2;
 
-    const Steam = 3;
+    const STEAM = 3;
 
-    const Blizzard = 4;
+    const BLIZZARD = 4;
 
     // unknowns
-    const Demon = 10;
+    const DEMON = 10;
 
-    const BungieNext = 254;
+    const BUNGIE_NEXT = 254;
 }

@@ -7,35 +7,35 @@ namespace App\Enums;
  */
 abstract class StatsCategoryType
 {
-    const None = 0;
+    const NONE = 0;
 
-    const Kills = 1;
+    const KILLS = 1;
 
-    const Assists = 2;
+    const ASSISTS = 2;
 
-    const Deaths = 3;
+    const DEATHS = 3;
 
-    const Criticals = 4;
+    const CRITICALS = 4;
 
-    const KDa = 5;
+    const KDA = 5;
 
     const KD = 6;
 
-    const Score = 7;
+    const SCORE = 7;
 
-    const Entered = 8;
+    const ENTERED = 8;
 
-    const TimePlayed = 9;
+    const TIME_PLAYED = 9;
 
-    const MedalWins = 10;
+    const MEDAL_WINS = 10;
 
-    const MedalGames = 11;
+    const MEDAL_GAMES = 11;
 
-    const MedalSpecialKills = 12;
+    const MEDAL_SPECIAL_KILLS = 12;
 
-    const MedalSprees = 13;
+    const MEDAL_SPREES = 13;
 
-    const MedalMultiKills = 14;
+    const MEDAL_MULTI_KILLS = 14;
 
-    const MedalAbilities = 15;
+    const MEDAL_ABILITIES = 15;
 }

@@ -7,9 +7,9 @@ namespace App\Enums;
  */
 abstract class PrivacySetting
 {
-    const None = 0;
+    const NONE = 0;
 
-    const Public = 1;
+    const PUBLIC = 1;
 
-    const Private = 2;
+    const PRIVATE = 2;
 }

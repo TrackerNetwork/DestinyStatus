@@ -7,9 +7,9 @@ namespace App\Enums;
  */
 abstract class Gender
 {
-    const Male = 0;
+    const MALE = 0;
 
-    const Female = 1;
+    const FEMALE = 1;
 
-    const Unknown = 2;
+    const UNKNOWN = 2;
 }

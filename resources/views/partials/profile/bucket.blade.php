@@ -20,7 +20,7 @@ $definition = $item->definition ?? null;
         <div class="type opaque"><?= e($definition->itemTypeDisplayName) ?></div>
 
         <?php if($item->damage > 1): ?>
-        <?php if($item->damageType > App\Enums\DamageType::None): ?>
+        <?php if($item->damageType > App\Enums\DamageType::NONE): ?>
         <div class="damage" data-type-id="<?= e($item->damageType) ?>" data-type="<?= e($item->damageTypeName) ?>">
             <div class="icon"><img src="<?= asset($item->damageTypeIcon, !\App::isLocal()) ?>" alt="<?= e($item->damageTypeName) ?>">
             </div>

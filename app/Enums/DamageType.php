@@ -7,15 +7,15 @@ namespace App\Enums;
  */
 abstract class DamageType
 {
-    const None = 0;
+    const NONE = 0;
 
-    const Kinectic = 1;
+    const KINECTIC = 1;
 
-    const Arc = 2;
+    const ARC = 2;
 
-    const Thermal = 3;
+    const THERMAL = 3;
 
-    const Void = 4;
+    const VOID = 4;
 
-    const Raid = 5;
+    const RAID = 5;
 }

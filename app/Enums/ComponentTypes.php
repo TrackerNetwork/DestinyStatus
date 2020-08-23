@@ -7,65 +7,65 @@ namespace App\Enums;
  */
 abstract class ComponentTypes
 {
-    const None = 0;
+    const NONE = 0;
 
-    const Profiles = 100;
+    const PROFILES = 100;
 
-    const VendorReceipts = 101;
+    const VENDOR_RECEIPTS = 101;
 
-    const ProfileInventories = 102;
+    const PROFILE_INVENTORIES = 102;
 
-    const ProfileCurrencies = 103;
+    const PROFILE_CURRENCIES = 103;
 
-    const ProfileProgression = 104;
+    const PROFILE_PROGRESSION = 104;
 
-    const ProfileSilver = 105;
+    const PROFILE_SILVER = 105;
 
-    const Characters = 200;
+    const CHARACTERS = 200;
 
-    const CharacterInventories = 201;
+    const CHARACTER_INVENTORIES = 201;
 
-    const CharacterProgressions = 202;
+    const CHARACTER_PROGRESSIONS = 202;
 
-    const CharacterRenderData = 203;
+    const CHARACTER_RENDER_DATA = 203;
 
-    const CharacterActivities = 204;
+    const CHARACTER_ACTIVITIES = 204;
 
-    const CharacterEquipment = 205;
+    const CHARACTER_EQUIPMENT = 205;
 
-    const ItemInstances = 300;
+    const ITEM_INSTANCES = 300;
 
-    const ItemObjectives = 301;
+    const ITEM_OBJECTIVES = 301;
 
-    const ItemPerks = 302;
+    const ITEM_PERKS = 302;
 
-    const ItemRenderData = 303;
+    const ITEM_RENDER_DATA = 303;
 
-    const ItemStats = 304;
+    const ITEM_STATS = 304;
 
-    const ItemSockets = 305;
+    const ITEM_SOCKETS = 305;
 
-    const ItemTalentGrids = 306;
+    const ITEM_TALENT_GRIDS = 306;
 
-    const ItemCommonData = 307;
+    const ITEM_COMMON_DATA = 307;
 
-    const ItemPlugStates = 308;
+    const ITEM_PLUG_STATES = 308;
 
-    const Vendors = 400;
+    const VENDORS = 400;
 
-    const VendorCategories = 401;
+    const VENDOR_CATEGORIES = 401;
 
-    const VendorSales = 402;
+    const VENDOR_SALES = 402;
 
-    const Kiosks = 500;
+    const KIOSKS = 500;
 
-    const CurrencyLookup = 600;
+    const CURRENCY_LOOKUP = 600;
 
-    const PresentationNodes = 700;
+    const PRESENTATION_NODES = 700;
 
-    const Collectibles = 800;
+    const COLLECTIBLES = 800;
 
-    const Records = 900;
+    const RECORDS = 900;
 
-    const Transitory = 1000;
+    const TRANSITORY = 1000;
 }

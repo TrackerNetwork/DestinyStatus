@@ -79,7 +79,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getDestinyStats(Account $account, $modes = [StatGroupType::General, StatGroupType::Activity, StatGroupType::Weapons]): DestinyRequest
+    public function getDestinyStats(Account $account, $modes = [StatGroupType::GENERAL, StatGroupType::ACTIVITY, StatGroupType::WEAPONS]): DestinyRequest
     {
         return $this->destinyRequest("Destiny2/$account->membership_type/Account/$account->membership_id/Stats/", ['groups' => implode(',', $modes)], CACHE_DEFAULT, true);
     }
@@ -121,7 +121,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getClanStats(Group $group, array $modes = [ActivityModeType::AllPvE, ActivityModeType::AllPvP, ActivityModeType::Nightfall]): DestinyRequest
+    public function getClanStats(Group $group, array $modes = [ActivityModeType::ALL_PVE, ActivityModeType::ALL_PVP, ActivityModeType::NIGHTFALL]): DestinyRequest
     {
         return $this->destinyRequest('Destiny2/Stats/AggregateClanStats/'.$group->groupId.'/', ['modes' => $modes], CACHE_DEFAULT, false);
     }
@@ -133,7 +133,7 @@ class DestinyPlatform
      *
      * @return DestinyRequest
      */
-    public function getClanLeaderboard(Group $group, array $modes = [ActivityModeType::AllPvP, ActivityModeType::AllPvE], string $statId = ''): DestinyRequest
+    public function getClanLeaderboard(Group $group, array $modes = [ActivityModeType::ALL_PVP, ActivityModeType::ALL_PVE], string $statId = ''): DestinyRequest
     {
         $params = ['modes' => implode(',', $modes), 'maxtop' => 10];
 

@@ -10,26 +10,26 @@ class ConsoleHelperTest extends TestCase
 {
     public function testCapitalXbox()
     {
-        $this->assertEquals(Console::Xbox, ConsoleHelper::getIdFromConsoleString('XBOX'));
+        $this->assertEquals(Console::XBOX, ConsoleHelper::getIdFromConsoleString('XBOX'));
     }
 
     public function testNormalXbox()
     {
-        $this->assertEquals(Console::Xbox, ConsoleHelper::getIdFromConsoleString('xbox'));
+        $this->assertEquals(Console::XBOX, ConsoleHelper::getIdFromConsoleString('xbox'));
     }
 
     public function testXboxLive()
     {
-        $this->assertEquals(Console::Xbox, ConsoleHelper::getIdFromConsoleString('xbl'));
+        $this->assertEquals(Console::XBOX, ConsoleHelper::getIdFromConsoleString('xbl'));
     }
 
     public function testPlaystation()
     {
-        $this->assertEquals(Console::Playstation, ConsoleHelper::getIdFromConsoleString('psn'));
+        $this->assertEquals(Console::PLAYSTATION, ConsoleHelper::getIdFromConsoleString('psn'));
     }
 
     public function testPc()
     {
-        $this->assertEquals(Console::Blizzard, ConsoleHelper::getIdFromConsoleString('pc'));
+        $this->assertEquals(Console::BLIZZARD, ConsoleHelper::getIdFromConsoleString('pc'));
     }
 }

@@ -7,21 +7,21 @@ namespace App\Enums;
  */
 abstract class StatGroupType
 {
-    const None = 0;
+    const NONE = 0;
 
-    const General = 1;
+    const GENERAL = 1;
 
-    const Weapons = 2;
+    const WEAPONS = 2;
 
-    const Medals = 3;
+    const MEDALS = 3;
 
-    const ReservedGroups = 100;
+    const RESERVED_GROUPS = 100;
 
-    const Leaderboard = 101;
+    const LEADERBOARD = 101;
 
-    const Activity = 102;
+    const ACTIVITY = 102;
 
-    const UniqueWeapon = 103;
+    const UNIQUE_WEAPON = 103;
 
-    const Internal = 104;
+    const INTERNAL = 104;
 }

@@ -7,39 +7,39 @@ namespace App\Enums;
  */
 abstract class ItemSubType
 {
-    const None = 0;
+    const NONE = 0;
 
-    const Crucible = 1;
+    const CRUCIBLE = 1;
 
-    const Vanguard = 2;
+    const VANGUARD = 2;
 
-    const Exotic = 5;
+    const EXOTIC = 5;
 
-    const AutoRifle = 6;
+    const AUTO_RIFLE = 6;
 
-    const Shotgun = 7;
+    const SHOTGUN = 7;
 
-    const Machinegun = 8;
+    const MACHINE_GUN = 8;
 
-    const HandCannon = 9;
+    const HAND_CANNON = 9;
 
-    const RocketLauncher = 10;
+    const ROCKET_LAUNCHER = 10;
 
-    const FusionRifle = 11;
+    const FUSION_RIFLE = 11;
 
-    const SniperRifle = 12;
+    const SNIPER_RIFLE = 12;
 
-    const PulseRifle = 13;
+    const PULSE_RIFLE = 13;
 
-    const ScoutRifle = 14;
+    const SCOUT_RIFLE = 14;
 
-    const Crm = 16;
+    const CRM = 16;
 
-    const Sidearm = 17;
+    const SIDEARM = 17;
 
-    const Sword = 18;
+    const SWORD = 18;
 
-    const Mask = 19;
+    const MASK = 19;
 
-    const Shader = 20;
+    const SHADER = 20;
 }

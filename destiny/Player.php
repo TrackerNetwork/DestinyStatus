@@ -29,13 +29,13 @@ class Player extends Model
     protected function gPlatformName(): string
     {
         switch ($this->membershipType) {
-            case Console::Xbox:
+            case Console::XBOX:
                 return 'Xbox';
-            case Console::Playstation:
+            case Console::PLAYSTATION:
                 return 'PlayStation';
-            case Console::Blizzard:
+            case Console::BLIZZARD:
                 return 'PC';
-            case Console::Steam:
+            case Console::STEAM:
                 return 'Steam';
             default:
                 return 'Unknown: '.$this->membershipType;

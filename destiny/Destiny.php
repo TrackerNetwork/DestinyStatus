@@ -134,7 +134,7 @@ class Destiny
 
     public function clanLeaderboards(Group $group): LeaderboardHandler
     {
-        $result = $this->client->r($this->platform->getClanLeaderboard($group, [ActivityModeType::AllPvP, ActivityModeType::AllPvE]));
+        $result = $this->client->r($this->platform->getClanLeaderboard($group, [ActivityModeType::ALL_PVP, ActivityModeType::ALL_PVE]));
 
         return new LeaderboardHandler($result ?? []);
     }
@@ -148,7 +148,7 @@ class Destiny
 
     public function clanAll(Group $group): array
     {
-        $leaderboard = $this->platform->getClanLeaderboard($group, [ActivityModeType::AllPvP, ActivityModeType::AllPvE]);
+        $leaderboard = $this->platform->getClanLeaderboard($group, [ActivityModeType::ALL_PVP, ActivityModeType::ALL_PVE]);
         $rewards = $this->platform->getClanWeeklyRewards($group);
 
         return $this->client->r([

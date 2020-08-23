@@ -58,7 +58,7 @@ class DestinyComponentUrlBuilder
      */
     public function addProfiles(): self
     {
-        $this->components[] = ComponentTypes::Profiles;
+        $this->components[] = ComponentTypes::PROFILES;
 
         return $this;
     }
@@ -70,7 +70,7 @@ class DestinyComponentUrlBuilder
      */
     public function addVendorReceipts(): self
     {
-        $this->components[] = ComponentTypes::VendorReceipts;
+        $this->components[] = ComponentTypes::VENDOR_RECEIPTS;
 
         return $this;
     }
@@ -83,7 +83,7 @@ class DestinyComponentUrlBuilder
      */
     public function addProfileInventories(): self
     {
-        $this->components[] = ComponentTypes::ProfileInventories;
+        $this->components[] = ComponentTypes::PROFILE_INVENTORIES;
 
         return $this;
     }
@@ -96,7 +96,7 @@ class DestinyComponentUrlBuilder
      */
     public function addProfileCurrencies(): self
     {
-        $this->components[] = ComponentTypes::ProfileCurrencies;
+        $this->components[] = ComponentTypes::PROFILE_CURRENCIES;
 
         return $this;
     }
@@ -109,7 +109,7 @@ class DestinyComponentUrlBuilder
      */
     public function addProfileProgression(): self
     {
-        $this->components[] = ComponentTypes::ProfileProgression;
+        $this->components[] = ComponentTypes::PROFILE_PROGRESSION;
 
         return $this;
     }
@@ -123,7 +123,7 @@ class DestinyComponentUrlBuilder
      */
     public function addProfileSilver(): self
     {
-        $this->components[] = ComponentTypes::ProfileSilver;
+        $this->components[] = ComponentTypes::PROFILE_SILVER;
 
         return $this;
     }
@@ -135,7 +135,7 @@ class DestinyComponentUrlBuilder
      */
     public function addCharacters(): self
     {
-        $this->components[] = ComponentTypes::Characters;
+        $this->components[] = ComponentTypes::CHARACTERS;
 
         return $this;
     }
@@ -150,7 +150,7 @@ class DestinyComponentUrlBuilder
      */
     public function addCharacterInventories(): self
     {
-        $this->components[] = ComponentTypes::CharacterInventories;
+        $this->components[] = ComponentTypes::CHARACTER_INVENTORIES;
 
         return $this;
     }
@@ -164,7 +164,7 @@ class DestinyComponentUrlBuilder
      */
     public function addCharacterProgressions(): self
     {
-        $this->components[] = ComponentTypes::CharacterProgressions;
+        $this->components[] = ComponentTypes::CHARACTER_PROGRESSIONS;
 
         return $this;
     }
@@ -178,7 +178,7 @@ class DestinyComponentUrlBuilder
      */
     public function addCharacterRenderData(): self
     {
-        $this->components[] = ComponentTypes::CharacterRenderData;
+        $this->components[] = ComponentTypes::CHARACTER_RENDER_DATA;
 
         return $this;
     }
@@ -192,7 +192,7 @@ class DestinyComponentUrlBuilder
      */
     public function addCharacterActivities(): self
     {
-        $this->components[] = ComponentTypes::CharacterActivities;
+        $this->components[] = ComponentTypes::CHARACTER_ACTIVITIES;
 
         return $this;
     }
@@ -204,7 +204,7 @@ class DestinyComponentUrlBuilder
      */
     public function addCharacterEquipment(): self
     {
-        $this->components[] = ComponentTypes::CharacterEquipment;
+        $this->components[] = ComponentTypes::CHARACTER_EQUIPMENT;
 
         return $this;
     }
@@ -217,7 +217,7 @@ class DestinyComponentUrlBuilder
      */
     public function addItemInstances(): self
     {
-        $this->components[] = ComponentTypes::ItemInstances;
+        $this->components[] = ComponentTypes::ITEM_INSTANCES;
 
         return $this;
     }
@@ -230,7 +230,7 @@ class DestinyComponentUrlBuilder
      */
     public function addItemObjectives(): self
     {
-        $this->components[] = ComponentTypes::ItemObjectives;
+        $this->components[] = ComponentTypes::ITEM_OBJECTIVES;
 
         return $this;
     }
@@ -243,7 +243,7 @@ class DestinyComponentUrlBuilder
      */
     public function addItemPerks(): self
     {
-        $this->components[] = ComponentTypes::ItemPerks;
+        $this->components[] = ComponentTypes::ITEM_PERKS;
 
         return $this;
     }
@@ -255,7 +255,7 @@ class DestinyComponentUrlBuilder
      */
     public function addItemRenderData(): self
     {
-        $this->components[] = ComponentTypes::ItemRenderData;
+        $this->components[] = ComponentTypes::ITEM_RENDER_DATA;
 
         return $this;
     }
@@ -268,7 +268,7 @@ class DestinyComponentUrlBuilder
      */
     public function addStats(): self
     {
-        $this->components[] = ComponentTypes::ItemStats;
+        $this->components[] = ComponentTypes::ITEM_STATS;
 
         return $this;
     }
@@ -281,7 +281,7 @@ class DestinyComponentUrlBuilder
      */
     public function addSockets(): self
     {
-        $this->components[] = ComponentTypes::ItemSockets;
+        $this->components[] = ComponentTypes::ITEM_SOCKETS;
 
         return $this;
     }
@@ -294,7 +294,7 @@ class DestinyComponentUrlBuilder
      */
     public function addTalentGrids(): self
     {
-        $this->components[] = ComponentTypes::ItemTalentGrids;
+        $this->components[] = ComponentTypes::ITEM_TALENT_GRIDS;
 
         return $this;
     }
@@ -308,7 +308,7 @@ class DestinyComponentUrlBuilder
      */
     public function addCommonData(): self
     {
-        $this->components[] = ComponentTypes::ItemCommonData;
+        $this->components[] = ComponentTypes::ITEM_COMMON_DATA;
 
         return $this;
     }
@@ -322,7 +322,7 @@ class DestinyComponentUrlBuilder
      */
     public function addItemPlugStates(): self
     {
-        $this->components[] = ComponentTypes::ItemPlugStates;
+        $this->components[] = ComponentTypes::ITEM_PLUG_STATES;
 
         return $this;
     }
@@ -336,7 +336,7 @@ class DestinyComponentUrlBuilder
      */
     public function addVendors(): self
     {
-        $this->components[] = ComponentTypes::Vendors;
+        $this->components[] = ComponentTypes::VENDORS;
 
         return $this;
     }
@@ -349,7 +349,7 @@ class DestinyComponentUrlBuilder
      */
     public function addVendorCategories(): self
     {
-        $this->components[] = ComponentTypes::VendorCategories;
+        $this->components[] = ComponentTypes::VENDOR_CATEGORIES;
 
         return $this;
     }
@@ -361,7 +361,7 @@ class DestinyComponentUrlBuilder
      */
     public function addVendorSales(): self
     {
-        $this->components[] = ComponentTypes::VendorSales;
+        $this->components[] = ComponentTypes::VENDOR_SALES;
 
         return $this;
     }
@@ -375,7 +375,7 @@ class DestinyComponentUrlBuilder
      */
     public function addKiosks(): self
     {
-        $this->components[] = ComponentTypes::Kiosks;
+        $this->components[] = ComponentTypes::KIOSKS;
 
         return $this;
     }
@@ -390,7 +390,7 @@ class DestinyComponentUrlBuilder
      */
     public function addCurrencyLookups(): self
     {
-        $this->components[] = ComponentTypes::CurrencyLookup;
+        $this->components[] = ComponentTypes::CURRENCY_LOOKUP;
 
         return $this;
     }
@@ -405,7 +405,7 @@ class DestinyComponentUrlBuilder
      */
     public function addPresentationNodes(): self
     {
-        $this->components[] = ComponentTypes::PresentationNodes;
+        $this->components[] = ComponentTypes::PRESENTATION_NODES;
 
         return $this;
     }
@@ -419,7 +419,7 @@ class DestinyComponentUrlBuilder
      */
     public function addCollectibles(): self
     {
-        $this->components[] = ComponentTypes::Collectibles;
+        $this->components[] = ComponentTypes::COLLECTIBLES;
 
         return $this;
     }
@@ -432,7 +432,7 @@ class DestinyComponentUrlBuilder
      */
     public function addRecords(): self
     {
-        $this->components[] = ComponentTypes::Records;
+        $this->components[] = ComponentTypes::RECORDS;
 
         return $this;
     }
@@ -447,7 +447,7 @@ class DestinyComponentUrlBuilder
      */
     public function addTransitory(): self
     {
-        $this->components[] = ComponentTypes::Transitory;
+        $this->components[] = ComponentTypes::TRANSITORY;
 
         return $this;
     }

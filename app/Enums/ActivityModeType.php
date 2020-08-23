@@ -7,67 +7,67 @@ namespace App\Enums;
  */
 abstract class ActivityModeType
 {
-    const None = 0;
+    const NONE = 0;
 
-    const Story = 2;
+    const STORY = 2;
 
-    const Strike = 3;
+    const STRIKE = 3;
 
-    const Reserved4 = 4;
+    const RESERVED_4 = 4;
 
-    const AllPvP = 5;
+    const ALL_PVP = 5;
 
-    const Patrol = 6;
+    const PATROL = 6;
 
-    const AllPvE = 7;
+    const ALL_PVE = 7;
 
-    const Reserved9 = 9;
+    const RESERVED_9 = 9;
 
-    const Control = 10;
+    const CONTROL = 10;
 
-    const Reserved11 = 11;
+    const RESERVED_11 = 11;
 
-    const Team = 12;
+    const TEAM = 12;
 
-    const Reserved13 = 13;
+    const RESERVED_13 = 13;
 
-    const Reserved15 = 15;
+    const RESERVED_15 = 15;
 
-    const Nightfall = 16;
+    const NIGHTFALL = 16;
 
-    const Heroic = 17;
+    const HEROIC = 17;
 
-    const AllStrikes = 18;
+    const ALL_STRIKES = 18;
 
-    const Reserved19 = 19;
+    const RESERVED_19 = 19;
 
-    const Reserved20 = 20;
+    const RESERVED_20 = 20;
 
-    const Reserved21 = 21;
+    const RESERVED_21 = 21;
 
-    const Reserved22 = 22;
+    const RESERVED_22 = 22;
 
-    const Reserved24 = 24;
+    const RESERVED_24 = 24;
 
-    const Reserved25 = 25;
+    const RESERVED_25 = 25;
 
-    const Reserved26 = 26;
+    const RESERVED_26 = 26;
 
-    const Reserved27 = 27;
+    const RESERVED_27 = 27;
 
-    const Reserved28 = 28;
+    const RESERVED_28 = 28;
 
-    const Reserved29 = 29;
+    const RESERVED_29 = 29;
 
-    const Reserved30 = 30;
+    const RESERVED_30 = 30;
 
-    const Reserved32 = 32;
+    const RESERVED_32 = 32;
 
-    const Survival = 37;
+    const SURVIVAL = 37;
 
-    const Countdown = 38;
+    const COUNTDOWN = 38;
 
-    const Reserved39 = 39;
+    const RESERVED_39 = 39;
 
-    const Social = 40;
+    const SOCIAL = 40;
 }

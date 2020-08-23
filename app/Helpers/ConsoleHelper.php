@@ -20,13 +20,13 @@ class ConsoleHelper
         switch (strtolower($console)) {
             case 'xbl':
             case 'xbox':
-                return Console::Xbox;
+                return Console::XBOX;
             case 'psn':
-                return Console::Playstation;
+                return Console::PLAYSTATION;
             case 'pc':
-                return Console::Blizzard;
+                return Console::BLIZZARD;
             case 'steam':
-                return Console::Steam;
+                return Console::STEAM;
             default:
                 throw new \Exception('Unknown console: '.$console);
         }
@@ -40,13 +40,13 @@ class ConsoleHelper
     public static function getConsoleStringFromId(int $id): string
     {
         switch ($id) {
-            case Console::Xbox:
+            case Console::XBOX:
                 return 'xbl';
-            case Console::Playstation:
+            case Console::PLAYSTATION:
                 return 'psn';
-            case Console::Blizzard:
+            case Console::BLIZZARD:
                 return 'pc';
-            case Console::Steam:
+            case Console::STEAM:
                 return 'steam';
             default:
                 return 'Unknown: '.$id;

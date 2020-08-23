@@ -7,11 +7,11 @@ namespace App\Enums;
  */
 abstract class DestinyClass
 {
-    const Titan = 0;
+    const TITAN = 0;
 
-    const Hunter = 1;
+    const HUNTER = 1;
 
-    const Warlock = 2;
+    const WARLOCK = 2;
 
-    const Unknown = 3;
+    const UNKNOWN = 3;
 }

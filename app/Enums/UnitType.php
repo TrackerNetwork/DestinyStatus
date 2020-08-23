@@ -7,35 +7,35 @@ namespace App\Enums;
  */
 abstract class UnitType
 {
-    const None = 0;
+    const NONE = 0;
 
     /**
      * Indicates the statistic is a simple count of something.
      */
-    const Count = 1;
+    const COUNT = 1;
 
     /**
      * Indicates the statistic is a per game average.
      */
-    const PerGame = 2;
+    const PER_GAME = 2;
 
-    const Seconds = 3;
+    const SECONDS = 3;
 
-    const Points = 4;
+    const POINTS = 4;
 
-    const Team = 5;
+    const TEAM = 5;
 
-    const Distance = 6;
+    const DISTANCE = 6;
 
-    const Percent = 7;
+    const PERCENT = 7;
 
-    const Ratio = 8;
+    const RATIO = 8;
 
-    const Boolean = 9;
+    const BOOLEAN = 9;
 
-    const WeaponType = 10;
+    const WEAPON_TYPE = 10;
 
-    const Standing = 11;
+    const STANDING = 11;
 
-    const Milliseconds = 12;
+    const MILLISECONDS = 12;
 }

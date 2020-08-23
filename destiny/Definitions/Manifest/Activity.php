@@ -80,10 +80,10 @@ class Activity extends Definition
     protected function gHumanMode()
     {
         switch ($this->tier) {
-            case Difficulty::Trivial:
+            case Difficulty::TRIVIAL:
                 return 'Normal';
 
-            case Difficulty::Normal:
+            case Difficulty::NORMAL:
                 return 'Prestige';
             default:
                 return 'Tier: '.$this->tier;

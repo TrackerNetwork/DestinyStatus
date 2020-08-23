@@ -7,19 +7,19 @@ namespace App\Enums;
  */
 abstract class Difficulty
 {
-    const Trivial = 0; // Normal
+    const TRIVIAL = 0; // Normal
 
-    const Easy = 1;
+    const EASY = 1;
 
-    const Normal = 2; // Prestige
+    const NORMAL = 2; // Prestige
 
-    const Challenging = 3;
+    const CHALLENGING = 3;
 
-    const Hard = 4;
+    const HARD = 4;
 
-    const Brave = 5;
+    const BRAVE = 5;
 
-    const AlmostImpossible = 6;
+    const ALMOST_IMPOSSIBLE = 6;
 
-    const Impossible = 7;
+    const IMPOSSIBLE = 7;
 }
